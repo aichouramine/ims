@@ -1,11 +1,11 @@
 import React from 'react';
-import './Layout.css'
+import classes from './Layout.module.css'
 import Hoc from '../../hoc/Hoc'
 
 const layout = (props) => (
     <Hoc>
         <div>Toolbar</div>
-        <main className="Content">{props.children}</main>
+        <main className={classes.Content}>{props.children}</main>
     </Hoc>
 );
 
