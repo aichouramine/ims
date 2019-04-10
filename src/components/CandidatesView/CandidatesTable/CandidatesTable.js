@@ -8,7 +8,13 @@ const candidatesTable = (props) => (
             <th scope="col">#</th>
             <th scope="col">First</th>
             <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Level</th>
+            <th scope="col">Date & Time of Interview</th>
+            <th scope="col">Interviewer(s)</th>
+            <th scope="col">HR Interviewer(s)</th>
+            <th scope="col">Status</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">Comment</th>
         </tr>
         </thead>
         <tbody>
