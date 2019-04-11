@@ -1,4 +1,9 @@
+.Wrapper{
+    display: flex;
+}
+
 .Content{
-    margin-top: 60px;
+    /*margin-top: 60px;*/
     background-color: #a0a7af;
+    flex: 1 0 auto;
 }

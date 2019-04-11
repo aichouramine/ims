@@ -6,7 +6,7 @@ import CandidatesStatistic from './containers/CandidatesStatistic/CandidatesStat
 class App extends Component {
   render() {
     return (
-      <div className="App container-fluid">
+      <div className="App">
         <Layout>
           <CandidatesStatistic/>
         </Layout>
