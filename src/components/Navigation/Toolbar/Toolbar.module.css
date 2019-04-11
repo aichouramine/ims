@@ -1,0 +1,94 @@
+.Toolbar {
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: #282c34;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+}
+
+.Toolbar nav {
+    height: 100%;
+}
+
+.Notification {
+    border-left: 1px solid #e1e5eb;
+    border-right: 1px solid #e1e5eb;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.Notification div {
+    position: relative;
+    padding: 5px 10px;
+}
+
+.Notification div i{
+    font-size: 1.5625rem;
+    color: #c3c7cc;
+}
+
+.Notification div span {
+    position: absolute;
+    padding: .25rem .375rem;
+    font-size: .5rem;
+    left: 50%;
+    top: 50%;
+}
+
+.Profile_Nav {
+    /*position: relative;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Profile_Nav .Avatar {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    /*box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);*/
+    transform: translatey(0px);
+    /*animation: float 6s ease-in-out infinite;*/
+    transition: all .4s ease-in-out;
+    background-size: cover;
+    background-image: url("../../../assets/images/user_avatar.jpeg");
+}
+
+.Profile_Nav span{
+    font-size: .8125rem;
+    font-weight: 400;
+}
+
+.Profile_Nav .Avatar:hover{
+    animation:bounceOut .4s linear;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+@keyframes bounceOut {
+    0% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 0.8;
+    }
+    50% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 0.9;
+    }
+    100% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+}
