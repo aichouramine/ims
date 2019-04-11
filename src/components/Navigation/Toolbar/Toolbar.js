@@ -24,8 +24,10 @@ const toolbar = (props) => (
                     </div>
                 </div>
                 <div className={classes.Profile_Nav}>
-                    <div className={classes.Avatar}/>
-                    <span>Dzmitry Ihnatovich</span>
+                    <div className={`${classes.Wrapper} nav-link text-nowrap px-3`}>
+                        <div className={classes.Avatar}/>
+                        <span>d.ihnatovich</span>
+                    </div>
                 </div>
             </nav>
         </div>

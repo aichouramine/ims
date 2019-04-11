@@ -59,6 +59,14 @@
     align-items: center;
 }
 
+.Profile_Nav .Wrapper {
+    min-width: 8.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .Profile_Nav .Avatar {
     width: 40px;
     height: 40px;
@@ -75,8 +83,9 @@
 }
 
 .Profile_Nav span{
-    font-size: .8125rem;
+    font-size: .7125rem;
     font-weight: 400;
+    padding-left: 5px;
 }
 
 .Profile_Nav .Avatar:hover{
