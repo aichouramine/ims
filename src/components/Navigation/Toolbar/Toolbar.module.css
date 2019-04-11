@@ -1,21 +1,29 @@
 .Toolbar {
-    height: 56px;
-    width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    background-color: #ffffff;
-    box-shadow: #282c34;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    box-sizing: border-box;
-    z-index: 90;
+    z-index: 1020;
+    box-shadow: 0 0.125rem 0.625rem rgba(90,97,105,.12);
+    background-color: #fff;
 }
 
-.Toolbar nav {
-    height: 100%;
+.Input_group{
+    min-width: 7.5rem;
+}
+
+.Input_search {
+    height: auto;
+    padding: .4375rem .75rem;
+    font-size: .8125rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #e1e5eb;
+    font-weight: 300;
+    will-change: border-color,box-shadow;
+    border-radius: .25rem;
+    box-shadow: none;
+    -webkit-transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
+    transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
 }
 
 .Notification {
