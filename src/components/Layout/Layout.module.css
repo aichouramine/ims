@@ -1,9 +1,24 @@
 .Wrapper{
     display: flex;
+    /*background-color: #c7cfd7;*/
 }
 
 .Content{
-    /*margin-top: 60px;*/
-    background-color: #a0a7af;
+    margin-top: 10px;
     flex: 1 0 auto;
+}
+
+.Page_subtitle{
+    letter-spacing: .125rem;
+    color: #818ea3;
+    font-size: .625rem;
+}
+
+.Page_title{
+    font-size: 1.625rem;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: #3d5170;
 }

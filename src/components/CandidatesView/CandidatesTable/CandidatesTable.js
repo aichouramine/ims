@@ -1,20 +1,20 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
+import classes from './CandidatesTable.module.css'
 
 const candidatesTable = (props) => (
-    <table className="table">
-        <thead>
+    <table className="table mb-0">
+        <thead className="bg-light">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
+            <th scope="col">Name</th>
             <th scope="col">Level</th>
             <th scope="col">Date & Time of Interview</th>
             <th scope="col">Interviewer(s)</th>
             <th scope="col">HR Interviewer(s)</th>
             <th scope="col">Status</th>
             <th scope="col">Start Date</th>
-            <th scope="col">Comment</th>
+            <th scope="col">Comments</th>
         </tr>
         </thead>
         <tbody>

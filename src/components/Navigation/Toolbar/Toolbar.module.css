@@ -8,6 +8,9 @@
 
 .Input_group{
     min-width: 7.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .Input_search {
@@ -17,13 +20,25 @@
     line-height: 1.5;
     color: #495057;
     background-color: #fff;
-    border: 1px solid #e1e5eb;
+    border: none;
     font-weight: 300;
-    will-change: border-color,box-shadow;
     border-radius: .25rem;
     box-shadow: none;
     -webkit-transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
     transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
+    outline:none;
+}
+
+.Input_search .Search_icon{
+    color: #f5f6f8;
+}
+
+.Input_search input:focus{
+    outline:none;
+}
+
+.Input_search input:active{
+    outline:none;
 }
 
 .Notification {
@@ -79,7 +94,7 @@
     /*animation: float 6s ease-in-out infinite;*/
     transition: all .4s ease-in-out;
     background-size: cover;
-    /*background-image: url("../../../assets/images/user_avatar.jpeg");*/
+    background-image: url("../../../assets/images/user_avatar.jpeg");
 }
 
 .Profile_Nav span{

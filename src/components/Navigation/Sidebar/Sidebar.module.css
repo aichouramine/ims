@@ -3,7 +3,7 @@
     min-height: 100vh;
     top: 0;
     position: fixed;
-    height: 100vh;
+    height: calc(100vh);
     background: #fff;
     z-index: 1070;
     will-change: transform;
@@ -15,10 +15,16 @@
 
 @media (min-width: 768px) {
     .Sidebar {
-        width: 14rem !important;
+        /*width: 15rem !important;*/
     }
 }
 
-.Logo{
+.Sidebar .Main_Logo{
+    height: 3.75rem;
+}
 
+.Sidebar .Menu_wrapper{
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 3.75rem - 1px);
 }
