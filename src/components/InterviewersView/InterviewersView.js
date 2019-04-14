@@ -1,20 +1,20 @@
 import React from 'react';
-import CandidatesTable from './CandidatesTable/CandidatesTable';
-import classes from './CandidatesView.module.css';
-import CandidatesFilterControls from './CandidatesFilterControls/CandidatesFilterControls';
+import classes from './InterviewersView.module.css';
+import InterviewersFilterControls from '../InterviewersView/InterviewersFilterControls/InterviewersFilterControls';
 import Hoc from '../../hoc/Hoc';
+import InterviewersTable from '../InterviewersView/InterviewersTable/InterviewersTable';
 
-const candidatesView = (props) => (
+const interviewersView = (props) => (
     <Hoc>
-        <CandidatesFilterControls/>
+        <InterviewersFilterControls/>
         <div className="row">
             <div className="col">
                 <div className={`${classes.Card} card-small mb-4`}>
                     <div className={`${classes.Card_header} card-header border-bottom`}>
-                        <h6 className="m-0">Candidates</h6>
+                        <h6 className="m-0">Interviewers</h6>
                     </div>
                     <div className="card-body p-0 pb-3 text-center">
-                        <CandidatesTable/>
+                        <InterviewersTable/>
                     </div>
                 </div>
             </div>
@@ -22,4 +22,4 @@ const candidatesView = (props) => (
     </Hoc>
 );
 
-export default candidatesView;
+export default interviewersView;

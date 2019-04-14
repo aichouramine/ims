@@ -1,13 +1,10 @@
 import React from 'react';
-import Hoc from '../../../hoc/Hoc'
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import 'react-day-picker/lib/style.css';
+import classes from './Datepicker.module.css';
 
 const datepicker = () => (
-    <Hoc>
-        <p>Please type a day:</p>
-        <DayPickerInput onDayChange={day => console.log(day)} />
-    </Hoc>
+    <DayPickerInput classNames={classes} onDayChange={day => console.log(day)} />
 );
 
 export default datepicker;

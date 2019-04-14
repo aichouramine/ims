@@ -1,0 +1,20 @@
+input{
+    height: auto;
+    padding: .4375rem .75rem;
+    font-size: .8125rem;
+    line-height: 1.5;
+    color: #3d5170;
+    background-color: #fff;
+    border: 1px solid #e1e5eb;
+    font-weight: 300;
+    will-change: border-color,box-shadow;
+    border-radius: .25rem;
+    box-shadow: none;
+    outline:none;
+    -webkit-transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
+    transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
+}
+
+input:focus{
+    outline:none;
+}

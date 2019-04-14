@@ -1,12 +1,36 @@
 import React from 'react';
 import Hoc from '../../../hoc/Hoc';
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
+import Dropdown from '../../shared_components/Dropdown/Dropdown';
+import classes from './CandidatesFilterControls.module.css';
+
+const LEVEL_OPTIONS = ['Choose...', 'Mastery', 'Junior', 'Middle', 'Senior', 'Lead'];
+const STATUS_OPTIONS = ['Choose...', 'To Do', 'Done', 'JO Made', 'JO Rejected', 'JO Accepted', 'Rejected'];
+const INTERVIEWER_OPTIONS = ['Choose...', 'Dzmitry Ihnatovich', 'Vitaly Rodin', 'Volha Mukasey'];
 
 const candidatesFilterControls = () => (
-    <Hoc>
-        <Datepicker/>
-        <Datepicker/>
-    </Hoc>
+    <div className={classes.Wrapper}>
+        <div className="form-group">
+            <label className={classes.Label}>From</label>
+            <Datepicker/>
+        </div>
+        <div className="form-group p-0">
+            <label className={classes.Label}>To</label>
+            <Datepicker/>
+        </div>
+        <div className="form-group p-0">
+            <label className={classes.Label}>Interviewer</label>
+            <Dropdown options={INTERVIEWER_OPTIONS}/>
+        </div>
+        <div className="form-group p-0">
+            <label className={classes.Label}>Level</label>
+            <Dropdown options={LEVEL_OPTIONS}/>
+        </div>
+        <div className="form-group">
+            <label className={classes.Label}>Status</label>
+            <Dropdown options={STATUS_OPTIONS}/>
+        </div>
+    </div>
 );
 
 export default candidatesFilterControls;

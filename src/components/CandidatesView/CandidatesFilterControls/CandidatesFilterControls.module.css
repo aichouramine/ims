@@ -1,0 +1,12 @@
+.Wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.Label{
+    color: #3d5170;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}

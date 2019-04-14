@@ -15,7 +15,7 @@ const layout = (props) => (
                             Overview
                         </span>
                         <h3 className={classes.Page_title}>
-                            Interviews
+                            {props.title}
                         </h3>
                     </div>
                 </div>
