@@ -1,0 +1,14 @@
+.Button{
+    display: flex;
+    background-color: transparent;
+    background-image: none;
+    border-color: #446acb;
+    color: #446acb;
+    max-width: 150px;
+    /*margin-right: 0 !important;*/
+}
+
+.Button:hover{
+    background-color: #446acb;
+    color: #ffffff;
+}

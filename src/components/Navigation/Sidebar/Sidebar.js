@@ -14,13 +14,13 @@ const sidebar = (props) => (
         </div>
         <nav className={classes.Menu_wrapper}>
             <ul className="nav flex-column">
-                <MenuRow title="Dashboard" icon="insert_chart_outlined"/>
-                <MenuRow title="Statistic" icon="table_chart"/>
-                <MenuRow title="Calendar" icon="insert_invitation"/>
-                <MenuRow title="Interview Follow-Up" icon="create"/>
-                <MenuRow title="QA Needs" icon="how_to_reg"/>
-                <MenuRow title="Interviewers" icon="people"/>
-                <MenuRow title="Help" icon="question_answer"/>
+                <MenuRow title="Dashboard" navLink="/" icon="insert_chart_outlined"/>
+                <MenuRow title="Statistic" navLink="/" icon="table_chart"/>
+                <MenuRow title="Calendar" navLink="/" icon="insert_invitation"/>
+                <MenuRow title="Interview Follow-Up" navLink="/" icon="create"/>
+                <MenuRow title="QA Needs" navLink="/" icon="how_to_reg"/>
+                <MenuRow title="Interviewers" navLink="/interviewers" icon="people"/>
+                <MenuRow title="Help" navLink="/" icon="question_answer"/>
             </ul>
         </nav>
     </aside>

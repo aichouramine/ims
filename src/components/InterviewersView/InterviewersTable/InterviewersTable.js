@@ -12,6 +12,7 @@ const interviewersTable = (props) => (
             <th scope="col">Location</th>
             <th scope="col">Total # of i-views</th>
             <th scope="col">Last date of i-view</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -25,7 +26,10 @@ const interviewersTable = (props) => (
             <th scope="row">2</th>
             <td>Jacob</td>
             <td>Thornton</td>
+            <td>Minsk</td>
             <td>@fat</td>
+            <td>@fat</td>
+            <td>Actions</td>
         </tr>
         <tr>
             <th scope="row">3</th>

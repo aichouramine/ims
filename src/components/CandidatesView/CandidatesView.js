@@ -3,10 +3,16 @@ import CandidatesTable from './CandidatesTable/CandidatesTable';
 import classes from './CandidatesView.module.css';
 import CandidatesFilterControls from './CandidatesFilterControls/CandidatesFilterControls';
 import Hoc from '../../hoc/Hoc';
+import Button from '../shared_components/Button/Button';
 
-const candidatesView = (props) => (
+const candidatesView = () => (
     <Hoc>
         <CandidatesFilterControls/>
+        <div style={{display: 'flex'}}>
+            <div style={{marginLeft: 'auto'}}>
+                <Button text="Add"/>
+            </div>
+        </div>
         <div className="row">
             <div className="col">
                 <div className={`${classes.Card} card-small mb-4`}>
