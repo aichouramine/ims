@@ -8,8 +8,8 @@ class App extends Component {
     return (
       <div>
         <Layout title="Overview">
-          <InterviewersStatistic/>
-          {/*<CandidatesStatistic/>*/}
+          {/*<InterviewersStatistic/>*/}
+          <CandidatesStatistic/>
         </Layout>
       </div>
     );

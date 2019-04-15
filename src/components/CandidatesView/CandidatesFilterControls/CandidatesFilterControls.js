@@ -7,6 +7,7 @@ import classes from './CandidatesFilterControls.module.css';
 const LEVEL_OPTIONS = ['Choose...', 'Mastery', 'Junior', 'Middle', 'Senior', 'Lead'];
 const STATUS_OPTIONS = ['Choose...', 'To Do', 'Done', 'JO Made', 'JO Rejected', 'JO Accepted', 'Rejected'];
 const INTERVIEWER_OPTIONS = ['Choose...', 'Dzmitry Ihnatovich', 'Vitaly Rodin', 'Volha Mukasey'];
+const HR_INTERVIEWER_OPTIONS = ['Choose...', 'Olga Kazimirskaya', 'Yulia Haurys',];
 
 const candidatesFilterControls = () => (
     <div className={classes.Wrapper}>
@@ -21,6 +22,10 @@ const candidatesFilterControls = () => (
         <div className="form-group p-0">
             <label className={classes.Label}>Interviewer</label>
             <Dropdown options={INTERVIEWER_OPTIONS}/>
+        </div>
+        <div className="form-group p-0">
+            <label className={classes.Label}>HR Interviewer</label>
+            <Dropdown options={HR_INTERVIEWER_OPTIONS}/>
         </div>
         <div className="form-group p-0">
             <label className={classes.Label}>Level</label>

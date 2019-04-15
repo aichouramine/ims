@@ -15,6 +15,7 @@ const candidatesTable = (props) => (
             <th scope="col">Status</th>
             <th scope="col">Start Date</th>
             <th scope="col">Comments</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>

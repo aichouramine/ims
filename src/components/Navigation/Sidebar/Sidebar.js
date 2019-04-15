@@ -17,6 +17,7 @@ const sidebar = (props) => (
                 <MenuRow title="Dashboard" icon="insert_chart_outlined"/>
                 <MenuRow title="Statistic" icon="table_chart"/>
                 <MenuRow title="Calendar" icon="insert_invitation"/>
+                <MenuRow title="Interview Follow-Up" icon="create"/>
                 <MenuRow title="QA Needs" icon="how_to_reg"/>
                 <MenuRow title="Interviewers" icon="people"/>
                 <MenuRow title="Help" icon="question_answer"/>
