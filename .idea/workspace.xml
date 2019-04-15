@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8356a6a-4d2d-43a6-82c2-9503874e915c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/shared_components/Button/Button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared_components/Button/Button.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css" afterDir="false" />
+    <list default="true" id="e8356a6a-4d2d-43a6-82c2-9503874e915c" name="Default" comment="Added react router">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CandidatesView/CandidatesView.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CandidatesView/CandidatesView.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/InterviewersView/InterviewersTable/InterviewersTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/InterviewersView/InterviewersTable/InterviewersTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/MenuRow/MenuRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/MenuRow/MenuRow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared_components/Datepicker/Datepicker.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared_components/Datepicker/Datepicker.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/shared_components/Dropdown/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared_components/Dropdown/Dropdown.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CandidatesView/CandidatesTable/CandidatesTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CandidatesView/CandidatesTable/CandidatesTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,36 +27,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="39" />
+          <entry key="css" value="42" />
           <entry key="gitignore" value="1" />
           <entry key="html" value="2" />
-          <entry key="js" value="62" />
+          <entry key="js" value="66" />
           <entry key="json" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="39" />
+          <entry key="CSS" value="42" />
           <entry key="HTML" value="2" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="62" />
+          <entry key="JavaScript" value="66" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="1236" />
+          <entry key="css" value="1301" />
           <entry key="html" value="5" />
-          <entry key="js" value="4182" />
-          <entry key="txt" value="171" />
+          <entry key="js" value="4350" />
+          <entry key="txt" value="189" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="1236" />
+          <entry key="CSS" value="1301" />
           <entry key="HTML" value="5" />
-          <entry key="JavaScript" value="4182" />
-          <entry key="PLAIN_TEXT" value="171" />
+          <entry key="JavaScript" value="4350" />
+          <entry key="PLAIN_TEXT" value="189" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -79,11 +68,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/InterviewersView/InterviewersTable/InterviewersTable.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/CandidatesView/CandidatesTable/CandidatesTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+            <state relative-caret-position="459">
+              <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+              <folding>
+                <element signature="e#66#116#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="9" selection-start-column="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -92,28 +105,21 @@
         <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -163,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/components/InterviewersView/InterviewersView.js" />
         <option value="$PROJECT_DIR$/src/components/InterviewersView/InterviewersView.module.css" />
         <option value="$PROJECT_DIR$/src/components/shared_components/Checkbox/Checkbox.js" />
-        <option value="$PROJECT_DIR$/src/components/CandidatesView/CandidatesTable/CandidatesTable.js" />
         <option value="$PROJECT_DIR$/src/components/CandidatesView/CandidatesFilterControls/CandidatesFilterControls.js" />
         <option value="$PROJECT_DIR$/src/components/shared_components/Dropdown/Dropdown.module.css" />
         <option value="$PROJECT_DIR$/src/components/shared_components/Button/Игеещтюьщвгду.css" />
@@ -178,11 +183,12 @@
         <option value="$PROJECT_DIR$/src/components/shared_components/Dropdown/Dropdown.js" />
         <option value="$PROJECT_DIR$/src/components/shared_components/Datepicker/Datepicker.js" />
         <option value="$PROJECT_DIR$/src/components/shared_components/Datepicker/Datepicker.module.css" />
-        <option value="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css" />
         <option value="$PROJECT_DIR$/src/components/InterviewersView/InterviewersTable/InterviewersTable.js" />
-        <option value="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.js" />
-        <option value="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css" />
         <option value="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.js" />
+        <option value="$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css" />
+        <option value="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.js" />
+        <option value="$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css" />
+        <option value="$PROJECT_DIR$/src/components/CandidatesView/CandidatesTable/CandidatesTable.js" />
       </list>
     </option>
   </component>
@@ -251,7 +257,30 @@
               <item name="ims" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="CandidatesView" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ims" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ims" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="CandidatesView" type="462c0819:PsiDirectoryNode" />
+              <item name="CandidatesTable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ims" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ims" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Navigation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ims" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ims" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="Navigation" type="462c0819:PsiDirectoryNode" />
+              <item name="Toolbar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ims" type="b2602c69:ProjectViewProjectNode" />
@@ -430,7 +459,7 @@
       <workItem from="1554893740053" duration="1899000" />
       <workItem from="1554896208929" duration="20704000" />
       <workItem from="1555012722401" duration="13744000" />
-      <workItem from="1555315923847" duration="9485000" />
+      <workItem from="1555315923847" duration="11557000" />
     </task>
     <task id="LOCAL-00001" summary="Added CandidatesView layout">
       <created>1554898384694</created>
@@ -495,11 +524,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555317530024</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added react router">
+      <created>1555332221755</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555332221755</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60563000" />
+    <option name="totallyTimeSpent" value="62635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1035" extended-state="6" />
@@ -550,7 +586,8 @@
     <MESSAGE value="Navbar changes" />
     <MESSAGE value="Sidebar changes" />
     <MESSAGE value="Small changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small changes" />
+    <MESSAGE value="Added react router" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added react router" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -598,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Navigation/Sidebar/MenuRow/MenuRow.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -623,13 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.module.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -692,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CandidatesView/CandidatesTable/CandidatesTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shared_components/Dropdown/Dropdown.module.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -723,16 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CandidatesView/CandidatesView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -845,9 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/InterviewersView/InterviewersTable/InterviewersTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="423">
@@ -855,20 +858,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CandidatesView/CandidatesView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="39" lean-forward="true" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Navigation/Toolbar/Toolbar.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="57" selection-start-line="57" selection-end-line="58" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="24" lean-forward="true" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/TableActions.module.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.module.css">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/shared_components/TableActions/Remove/Remove.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="102">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/CandidatesView/CandidatesTable/CandidatesTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" column="13" lean-forward="true" selection-start-line="39" selection-start-column="13" selection-end-line="39" selection-end-column="13" />
+          <folding>
+            <element signature="e#66#116#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

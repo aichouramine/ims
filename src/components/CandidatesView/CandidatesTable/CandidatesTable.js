@@ -1,6 +1,9 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import classes from './CandidatesTable.module.css'
+import TableActions from '../../shared_components/TableActions/TableActions'
+import Remove from '../../shared_components/TableActions/Remove/Remove'
+
 
 const candidatesTable = (props) => (
     <table className={`${classes.Table} table mb-0`}>
@@ -24,6 +27,16 @@ const candidatesTable = (props) => (
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>
+                <TableActions>
+                    <Remove/>
+                </TableActions>
+            </td>
         </tr>
         <tr>
             <th scope="row">2</th>
