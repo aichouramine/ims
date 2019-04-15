@@ -8,7 +8,6 @@ const interviewersTable = (props) => (
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Level</th>
             <th scope="col">Location</th>
             <th scope="col">Total # of i-views</th>
             <th scope="col">Last date of i-view</th>
@@ -27,7 +26,6 @@ const interviewersTable = (props) => (
             <td>Jacob</td>
             <td>Thornton</td>
             <td>Minsk</td>
-            <td>@fat</td>
             <td>@fat</td>
             <td>Actions</td>
         </tr>

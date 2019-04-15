@@ -15,7 +15,7 @@ const sidebar = (props) => (
         <nav className={classes.Menu_wrapper}>
             <ul className="nav flex-column">
                 <MenuRow title="Dashboard" navLink="/" icon="insert_chart_outlined"/>
-                <MenuRow title="Statistic" navLink="/" icon="table_chart"/>
+                <MenuRow title="Statistic" navLink="/candidates" icon="table_chart"/>
                 <MenuRow title="Calendar" navLink="/" icon="insert_invitation"/>
                 <MenuRow title="Interview Follow-Up" navLink="/" icon="create"/>
                 <MenuRow title="QA Needs" navLink="/" icon="how_to_reg"/>

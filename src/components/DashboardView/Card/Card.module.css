@@ -1,0 +1,36 @@
+.Stats_small{
+    min-height: 8.7rem;
+}
+
+.Card_body{
+    flex: 1 1 auto;
+}
+
+.Stats_small_label{
+    font-size: .75rem;
+    letter-spacing: .0625rem;
+    color: #818ea3;
+}
+
+.Stats_small_value{
+    font-size: 2.0625rem;
+    font-weight: 500;
+    color: #3d5170;
+}
+
+.Stats_small_data{
+    flex: 1 1;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    max-width: 100%;
+    z-index: 1;
+}
+
+.Text_center{
+    text-align: center!important;
+}
+
+.Text_uppercase{
+    text-transform: uppercase!important;
+}
