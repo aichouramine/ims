@@ -1,5 +1,6 @@
 .Stats_small{
     min-height: 8.7rem;
+    overflow: hidden!important;
 }
 
 .Card_body{
@@ -10,6 +11,7 @@
     font-size: .75rem;
     letter-spacing: .0625rem;
     color: #818ea3;
+    font-weight: 600;
 }
 
 .Stats_small_value{
@@ -25,6 +27,15 @@
     flex-flow: column;
     max-width: 100%;
     z-index: 1;
+}
+
+.Stats_small_data_percentage{
+    font-size: .75rem;
+    margin: 0 auto;
+    position: relative;
+    display: table;
+    /*padding-left: .9375rem;*/
+    margin-left: auto;
 }
 
 .Text_center{
