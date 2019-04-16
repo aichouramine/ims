@@ -1,8 +1,8 @@
-.Remove i{
+.FollowUp i{
     font-size: 1.4625rem;
     color: #c3c7cc;
 }
 
-.Remove i:hover{
+.FollowUp i:hover{
     cursor: pointer;
 }

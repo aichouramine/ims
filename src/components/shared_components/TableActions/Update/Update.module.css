@@ -1,8 +1,8 @@
-.Remove i{
+.Update i{
     font-size: 1.4625rem;
     color: #c3c7cc;
 }
 
-.Remove i:hover{
+.Update i:hover{
     cursor: pointer;
 }

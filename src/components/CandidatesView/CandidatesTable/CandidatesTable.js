@@ -3,6 +3,8 @@ import React from 'react';
 import classes from './CandidatesTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
+import Update from "../../shared_components/TableActions/Update/Update";
+import FollowUp from "../../shared_components/TableActions/FollowUp/FollowUp";
 
 
 const candidatesTable = (props) => (
@@ -32,21 +34,45 @@ const candidatesTable = (props) => (
             <td>@mdo</td>
             <td>
                 <TableActions>
+                    <Update/>
+                    <FollowUp/>
                     <Remove/>
                 </TableActions>
             </td>
         </tr>
         <tr>
             <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>
+                <TableActions>
+                    <Update/>
+                    <FollowUp/>
+                    <Remove/>
+                </TableActions>
+            </td>
         </tr>
         <tr>
             <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>
+                <TableActions>
+                    <Update/>
+                    <FollowUp/>
+                    <Remove/>
+                </TableActions>
+            </td>
         </tr>
         </tbody>
     </table>
