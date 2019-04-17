@@ -1,0 +1,23 @@
+.Entries_wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.Entries_wrapper label {
+    margin: 0;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 0.87rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3d5170;
+}
+
+.Entries_wrapper label:first-child{
+    padding-right: 7px;
+}
+
+.Entries_wrapper label:last-child{
+    padding-left: 7px;
+}

@@ -1,0 +1,18 @@
+.Pagination{
+    height: auto;
+    font-size: .8125rem;
+    line-height: 1.5;
+    color: #3d5170;
+    font-weight: 400;
+    will-change: border-color,box-shadow;
+    border-radius: .25rem;
+    box-shadow: none;
+    outline: none;
+    transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
+}
+
+.Page_link{
+    color: #4366e0;
+    font-weight: 400;
+    text-decoration: none;
+}

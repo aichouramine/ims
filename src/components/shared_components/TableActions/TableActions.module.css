@@ -5,3 +5,9 @@
     max-width: 50%;
     margin: auto;
 }
+
+@media (max-width: 1024px) {
+    .TableActions  {
+        max-width: none;
+    }
+}

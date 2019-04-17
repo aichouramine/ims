@@ -21,6 +21,22 @@
     border-radius: .625rem .625rem 0 0;
 }
 
+.Table_pagination{
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.Table_pagination_info{
+    margin: 0;
+    white-space: nowrap;
+    text-align: left;
+    font-size: 0.87rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #3d5170;
+}
+
 /*@media (min-width: 1000px) and (min-height: 700px) {*/
     /*.Table{*/
         /*width: 70%;*/
