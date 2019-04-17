@@ -1,0 +1,12 @@
+.Table{
+    width: 100%;
+    margin: auto;
+    height: auto;
+    overflow: scroll;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.Table tbody tr th, td{
+    padding: 15px;
+}
