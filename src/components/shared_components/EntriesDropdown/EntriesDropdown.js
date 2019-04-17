@@ -4,7 +4,7 @@ import classes from './EntriesDropdown.module.css';
 const entriesDropdown = props => (
     <div className={classes.Entries_wrapper}>
         <label>Show </label>
-        <select className={`${classes.Entries_dropdown} form-control custom-select form-group`}>
+        <select className={`form-control custom-select form-group ${classes.Entries_dropdown}`}>
             <option>10</option>
             <option>25</option>
             <option>50</option>
