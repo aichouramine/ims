@@ -5,6 +5,7 @@ import InterviewersStatistic from './containers/InterviewersStatistic/Interviewe
 import ResourcesNeeds from './containers/ResourcesNeeds/ResourcesNeeds';
 import Dashboard from './containers/Dashboard/Dashboard';
 import InterviewsCalendar from './containers/InterviewsCalendar/InterviewsCalendar';
+import FollowUp from './containers/FollowUp/FollowUp';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
             <Route path="/interviewers" component={InterviewersStatistic}/>
             <Route path="/needs" component={ResourcesNeeds}/>
             <Route path="/calendar" component={InterviewsCalendar}/>
+            <Route path="/feedbacks" component={FollowUp}/>
         </Layout>
       </div>
     );

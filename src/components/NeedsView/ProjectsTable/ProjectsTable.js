@@ -8,6 +8,7 @@ const projectsTable = () => (
     <table className={`${classes.Table} table mb-0`}>
         <thead className="bg-light">
         <tr>
+            <th scope="col">Location</th>
             <th scope="col">Project</th>
             <th scope="col">Person</th>
             <th scope="col">Date</th>
@@ -21,6 +22,7 @@ const projectsTable = () => (
             <td>5</td>
             <td>3</td>
             <td>L, S, M</td>
+            <td>Vitaly Rodin</td>
             <td >
                 <TableActions>
                     <Update/>

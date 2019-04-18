@@ -1,3 +1,10 @@
 .Checkbox{
     margin-right: 30px;
 }
+
+.Checkbox label{
+    font-size: 0.87rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #3d5170;
+}

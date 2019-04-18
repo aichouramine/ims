@@ -3,20 +3,16 @@ import CandidatesTable from './CandidatesTable/CandidatesTable';
 import classes from './CandidatesView.module.css';
 import CandidatesFilterControls from './CandidatesFilterControls/CandidatesFilterControls';
 import Hoc from '../../hoc/Hoc';
-import Button from '../shared_components/Button/Button';
+import TabButton from '../shared_components/TabButton/TabButton';
 import Pagination from '../Navigation/Pagination/Pagination';
 import EntriesDropdown from '../shared_components/EntriesDropdown/EntriesDropdown';
 
 const candidatesView = () => (
     <Hoc>
         <CandidatesFilterControls/>
-        <div style={{display: 'flex'}}>
-            <div style={{marginLeft: 'auto'}}>
-                <Button text="Add"/>
-            </div>
-        </div>
         <div className="d-flex justify-content-between w-100">
             <EntriesDropdown label="interviews per page"/>
+            <TabButton label="New"/>
         </div>
         <div className="row">
             <div className="col">

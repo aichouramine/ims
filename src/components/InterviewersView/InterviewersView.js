@@ -3,20 +3,18 @@ import classes from './InterviewersView.module.css';
 import InterviewersFilterControls from '../InterviewersView/InterviewersFilterControls/InterviewersFilterControls';
 import Hoc from '../../hoc/Hoc';
 import InterviewersTable from '../InterviewersView/InterviewersTable/InterviewersTable';
-import Button from '../shared_components/Button/Button';
+import TabButton from '../shared_components/TabButton/TabButton';
 import Pagination from "../Navigation/Pagination/Pagination";
 import EntriesDropdown from "../shared_components/EntriesDropdown/EntriesDropdown";
 
 const interviewersView = (props) => (
     <Hoc>
-        <InterviewersFilterControls/>
-        <div style={{display: 'flex'}}>
-            <div style={{marginLeft: 'auto'}}>
-                <Button text="Add"/>
-            </div>
+        <div className="d-flex justify-content-between w-100">
+            <InterviewersFilterControls/>
         </div>
         <div className="d-flex justify-content-between w-100">
             <EntriesDropdown label="interviewers per page"/>
+            <TabButton label="New Item"/>
         </div>
         <div className="row">
             <div className="col">
