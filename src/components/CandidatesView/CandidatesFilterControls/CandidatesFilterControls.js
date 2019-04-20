@@ -13,11 +13,11 @@ const candidatesFilterControls = () => (
     <div className={classes.Wrapper}>
         <div className="form-group">
             <label className={classes.Label}>From</label>
-            <Datepicker/>
+            <Datepicker showTimeSelect={false}/>
         </div>
         <div className="form-group p-0">
             <label className={classes.Label}>To</label>
-            <Datepicker/>
+            <Datepicker showTimeSelect={false}/>
         </div>
         <div className="form-group p-0">
             <label className={classes.Label}>Interviewer</label>

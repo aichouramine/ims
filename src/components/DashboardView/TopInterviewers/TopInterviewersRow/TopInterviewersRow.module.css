@@ -1,0 +1,17 @@
+.List_item{
+    padding: .625rem 1rem;
+    font-size: .8125rem;
+    justify-content: space-between !important;
+}
+
+.Text_semibold{
+    font-weight: 400
+}
+
+.Text_fiord_blue{
+    color: #3d5170!important;
+}
+
+.Text_reagent_gray{
+    color: #818ea3!important;
+}

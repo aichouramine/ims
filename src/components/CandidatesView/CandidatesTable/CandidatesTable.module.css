@@ -7,6 +7,6 @@
     font-size: 0.9rem;
 }
 
-.Table tbody tr th, td{
+.Table tbody tr, th, td{
     padding: 15px;
 }

@@ -2,15 +2,17 @@ import React from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import './Calendar.module.css';
 
 const localizer = BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
+// let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
 const events = [
     {
         id: 0,
         title: 'All Day Event very long title',
         allDay: true,
-        start: new Date(2015, 3, 0),
-        end: new Date(2015, 3, 1),
+        start: new Date(2019, 4, 3),
+        end: new Date(2019, 4, 20),
     },
     {
         id: 1,
@@ -23,14 +25,16 @@ const events = [
 
 const calendar = props => (
     <BigCalendar
-         events={events}
+        events={events}
         // views={allViews}
-         step={60}
-         showMultiDayTimes
-        // max={dates.add(dates.endOf(new Date(2015, 17, 1), 'day'), -1, 'hours')}
+        timeslots={2}
+        step={60}
+        showMultiDayTimes
         defaultDate={new Date()}
-         defaultView={BigCalendar.Views.WEEK}
+        defaultView={BigCalendar.Views.WEEK}
         localizer={localizer}
+        startAccessor="start"
+        endAccessor="end"
     />
 )
 

@@ -1,10 +1,17 @@
 import React from 'react';
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import 'react-day-picker/lib/style.css';
-import classes from './Datepicker.module.css';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import './Datepicker.module.css';
 
-const datepicker = () => (
-    <DayPickerInput classNames={classes} onDayChange={day => console.log(day)} />
+const datepicker = props => (
+    <DatePicker
+        selected={new Date()}
+        onChange={day => console.log(day)}
+        showTimeSelect={props.showTimeSelect}
+        dateFormat="Pp"
+        // calendarContainer={MyContainer}
+        // calendarClassName={"react-datepicker__header"}
+    />
 );
 
 export default datepicker;

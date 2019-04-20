@@ -6,9 +6,13 @@ import InterviewersTable from '../InterviewersView/InterviewersTable/Interviewer
 import TabButton from '../shared_components/TabButton/TabButton';
 import Pagination from "../Navigation/Pagination/Pagination";
 import EntriesDropdown from "../shared_components/EntriesDropdown/EntriesDropdown";
+import PageHeader from '../Layout/PageHeader/PageHeader';
 
 const interviewersView = (props) => (
     <Hoc>
+        <div className="page-header no-gutters py-4 row">
+            <PageHeader subtitle="People" title="Interviewers"/>
+        </div>
         <div className="d-flex justify-content-between w-100">
             <InterviewersFilterControls/>
         </div>

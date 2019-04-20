@@ -14,7 +14,7 @@ class App extends Component {
       <div>
         <Layout title="Overview">
             <Route path="/" exact component={Dashboard}/>
-            <Route path="/candidates" component={CandidatesStatistic}/>
+            <Route path="/interviews" component={CandidatesStatistic}/>
             <Route path="/interviewers" component={InterviewersStatistic}/>
             <Route path="/needs" component={ResourcesNeeds}/>
             <Route path="/calendar" component={InterviewsCalendar}/>

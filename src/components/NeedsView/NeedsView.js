@@ -4,9 +4,13 @@ import BenchTable from './BenchTable/BenchTable';
 import ProjectsTable from './ProjectsTable/ProjectsTable';
 import MasteryTable from './MasteryTable/MasteryTable';
 import Hoc from '../../hoc/Hoc';
+import PageHeader from '../Layout/PageHeader/PageHeader'
 
 const needsView = () => (
     <Hoc>
+        <div className="page-header no-gutters py-4 row">
+            <PageHeader subtitle="People" title="QA Needs"/>
+        </div>
         <div className="row">
             <div className="mb-4 col-sm-12 col-md-12 col-lg-12 ">
                 <div className={`${classes.Card} card-small `}>

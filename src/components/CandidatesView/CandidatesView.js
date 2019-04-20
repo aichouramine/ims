@@ -6,9 +6,13 @@ import Hoc from '../../hoc/Hoc';
 import TabButton from '../shared_components/TabButton/TabButton';
 import Pagination from '../Navigation/Pagination/Pagination';
 import EntriesDropdown from '../shared_components/EntriesDropdown/EntriesDropdown';
+import PageHeader from '../Layout/PageHeader/PageHeader';
 
 const candidatesView = () => (
     <Hoc>
+        <div className="page-header no-gutters py-4 row">
+            <PageHeader subtitle="Statistic" title="Interviews"/>
+        </div>
         <CandidatesFilterControls/>
         <div className="d-flex justify-content-between w-100">
             <EntriesDropdown label="interviews per page"/>

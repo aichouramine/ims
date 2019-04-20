@@ -1,6 +1,50 @@
-.overlay{
-
+:global .react-datepicker{
+    border-radius: 0.575rem !important;
+    z-index: 1000 !important;
+    border: none !important;
+    font-size: 0.75rem !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    background-color: #fff !important;
+    display: inline-block !important;
+    position: relative !important;
 }
+
+:global .react-datepicker__header{
+    border: none !important;
+    background: #fff !important;
+    padding-top: 20px;
+    border-bottom-left-radius: 0.575rem !important;
+    border-bottom-right-radius: 0.575rem !important;
+    text-align: center !important;
+    position: relative !important;
+}
+
+:global .react-datepicker__month-container{
+    border: none !important;
+    float: left !important;
+    box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.11), 0 10px 20px rgba(0, 0, 0, 0.05), 0 2px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+:global .react-datepicker__month{
+    padding: 10px 15px !important;
+    margin: 0.4rem !important;
+    text-align: center !important;
+}
+
+:global .react-datepicker__current-month{
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif !important;
+    color: #5a6169 !important;
+    font-weight: bold !important;
+    font-size: 0.844rem !important;
+}
+
+:global .react-datepicker__day--keyboard-selected, :global .react-datepicker__day--selected{
+    color: #fff !important;
+    background: #007bff;
+    border-radius: 50%;
+}
+
 input{
     height: auto;
     padding: .4375rem .75rem;

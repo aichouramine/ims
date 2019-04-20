@@ -1,6 +1,6 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
-import classes from './CandidatesLineChart.module.css';
+import classes from './InterviewsLineChart.module.css';
 
 const data = {
     labels: ['1', '4', '7', '10', '13', '16', '19', '22', '25', '28', '30'],
@@ -52,10 +52,10 @@ const data = {
     ]
 };
 
-const candidatesLineChart = props => (
+const interviewsLineChart = props => (
     <div className={`${props.styleClass} h-100`}>
         <div className={`${classes.Card_header} ${classes.Border_bottom}`}>
-            <h6 className="m-0">Candidates overview</h6>
+            <h6 className="m-0">Interviews overview</h6>
         </div>
         <div className="d-flex py-0 card-body">
             <Line data={data} options={{ maintainAspectRatio: false, animation: 0 }}/>
@@ -68,5 +68,5 @@ const candidatesLineChart = props => (
     </div>
 )
 
-export default candidatesLineChart;
+export default interviewsLineChart;
 
