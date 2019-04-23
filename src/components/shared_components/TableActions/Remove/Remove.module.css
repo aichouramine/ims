@@ -1,8 +1,35 @@
 .Remove i{
     font-size: 1.4625rem;
     color: #c3c7cc;
+    text-decoration: none;
 }
 
 .Remove i:hover{
     cursor: pointer;
+}
+
+.Remove i:focus{
+    outline: none;
+}
+
+.Remove_button_text{
+    font-size: 0.8rem !important;
+}
+
+.Popover{
+    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1) !important;
+}
+
+.Popover h3{
+    background-color: #f5f6f8 !important;
+}
+
+.Popover_body{
+    font-size: 0.85rem !important;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+button{
+    min-width: 50%;
 }

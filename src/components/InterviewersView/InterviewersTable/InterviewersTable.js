@@ -29,7 +29,9 @@ const interviewersTable = (props) => (
                 <TableActions>
                     <Update/>
                     <Details/>
-                    <Remove/>
+                    <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="1">
+                        You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
+                    </Remove>
                 </TableActions>
             </td>
         </tr>
@@ -43,7 +45,9 @@ const interviewersTable = (props) => (
                 <TableActions>
                     <Update/>
                     <Details/>
-                    <Remove/>
+                    <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="2">
+                        You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
+                    </Remove>
                 </TableActions>
             </td>
         </tr>
@@ -57,7 +61,9 @@ const interviewersTable = (props) => (
                 <TableActions>
                     <Update/>
                     <Details/>
-                    <Remove/>
+                    <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="3">
+                        You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
+                    </Remove>
                 </TableActions>
             </td>
         </tr>

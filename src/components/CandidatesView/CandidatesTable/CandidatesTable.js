@@ -36,7 +36,9 @@ const candidatesTable = (props) => (
                 <TableActions>
                     <Update/>
                     <FollowUp/>
-                    <Remove/>
+                    <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId="1">
+                        You are going to remove record for Dzmitry Ihnatovich. Removed item CANNOT be restored!
+                    </Remove>
                 </TableActions>
             </td>
         </tr>
@@ -53,7 +55,9 @@ const candidatesTable = (props) => (
                 <TableActions>
                     <Update/>
                     <FollowUp/>
-                    <Remove/>
+                    <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId="2">
+                        You are going to remove record for Dzmitry Ihnatovich. Removed item CANNOT be restored!
+                    </Remove>
                 </TableActions>
             </td>
         </tr>
@@ -70,7 +74,9 @@ const candidatesTable = (props) => (
                 <TableActions>
                     <Update/>
                     <FollowUp/>
-                    <Remove/>
+                    <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId="3">
+                        You are going to remove record for Dzmitry Ihnatovich. Removed item CANNOT be restored!
+                    </Remove>
                 </TableActions>
             </td>
         </tr>
