@@ -5,6 +5,7 @@ import Hoc from '../../hoc/Hoc';
 import CandidatesPieChart from '../DashboardView/CandidatesPieChart/CandidatesPieChart';
 import InterviewsLineChart from './InterviewsLineChart/InterviewsLineChart';
 import CandidatesDoughnutChart from './CandidatesDoughnutChart/CandidatesDoughnutChart';
+import BenchPolarChart from './BenchPolarChart/BenchPolarChart';
 import TopInterviewers from '../DashboardView/TopInterviewers/TopInterviewers';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
@@ -32,15 +33,18 @@ const dashboardView = () => (
                 <InterviewsLineChart styleClass={classes.Card}/>
             </div>
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
-                <CandidatesDoughnutChart styleClass={classes.Card}/>
+                <CandidatesPieChart styleClass={classes.Card}/>
             </div>
         </div>
         <div className="row">
-            <div className="mb-4 col-sm-12 col-md-6 col-lg-4">
-                <CandidatesPieChart styleClass={classes.Card}/>
+            <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
+                <CandidatesDoughnutChart styleClass={classes.Card}/>
             </div>
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
                 <TopInterviewers styleClass={classes.Card}/>
+            </div>
+            <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
+                <BenchPolarChart styleClass={classes.Card}/>
             </div>
         </div>
     </Hoc>

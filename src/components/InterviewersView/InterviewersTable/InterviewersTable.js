@@ -9,12 +9,12 @@ import Details from '../../shared_components/TableActions/Details/Details'
 const interviewersTable = (props) => (
     <table className={`${classes.Table} table mb-0`}>
         <thead className="bg-light">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Location</th>
-            <th scope="col">Total # of i-views</th>
-            <th scope="col">Last i-view</th>
+        <tr role="row">
+            <th scope="col"><span className={classes.Table_sorting}>ID</span></th>
+            <th scope="col"><span className={classes.Table_sorting}>Name</span></th>
+            <th scope="col"><span className={classes.Table_sorting}>Location</span></th>
+            <th scope="col"><span className={classes.Table_sorting}>Total # of i-views</span></th>
+            <th scope="col"><span className={classes.Table_sorting}>Last i-view</span></th>
             <th scope="col">Actions</th>
         </tr>
         </thead>

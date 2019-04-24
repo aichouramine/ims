@@ -7,7 +7,7 @@ import classes from './CalendarView.module.css';
 const calendarView = props => (
     <Hoc>
         <div className="page-header no-gutters py-4 row">
-            <PageHeader subtitle="Schedule" title="Calendar"/>
+            <PageHeader subtitle="Calendar" title="Schedule"/>
         </div>
         <div className={`${classes.Card} h-100`}>
             <div className={`${classes.Card_header} ${classes.Border_bottom}`}>

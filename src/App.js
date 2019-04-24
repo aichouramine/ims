@@ -17,7 +17,7 @@ class App extends Component {
             <Route path="/interviews" component={CandidatesStatistic}/>
             <Route path="/interviewers" component={InterviewersStatistic}/>
             <Route path="/needs" component={ResourcesNeeds}/>
-            <Route path="/calendar" component={InterviewsCalendar}/>
+            <Route path="/schedule" component={InterviewsCalendar}/>
             <Route path="/feedbacks" component={FollowUp}/>
         </Layout>
       </div>
