@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Layout from './components/Layout/Layout'
 import CandidatesStatistic from './containers/CandidatesStatistic/CandidatesStatistic';
-import InterviewersStatistic from './containers/InterviewersStatistic/InterviewersStatistic';
+import InterviewersContainer from './containers/InterviewersContainer/InterviewersContainer';
 import ResourcesNeeds from './containers/ResourcesNeeds/ResourcesNeeds';
 import Dashboard from './containers/Dashboard/Dashboard';
 import InterviewsCalendar from './containers/InterviewsCalendar/InterviewsCalendar';
@@ -15,10 +15,10 @@ class App extends Component {
         <Layout title="Overview">
             <Route path="/" exact component={Dashboard}/>
             <Route path="/interviews" component={CandidatesStatistic}/>
-            <Route path="/interviewers" component={InterviewersStatistic}/>
-            <Route path="/needs" component={ResourcesNeeds}/>
-            <Route path="/schedule" component={InterviewsCalendar}/>
-            <Route path="/feedbacks" component={FollowUp}/>
+            <Route path="/interviewers" component={InterviewersContainer}/>
+            {/*<Route path="/needs" component={ResourcesNeeds}/>*/}
+            {/*<Route path="/schedule" component={InterviewsCalendar}/>*/}
+            {/*<Route path="/feedbacks" component={FollowUp}/>*/}
         </Layout>
       </div>
     );

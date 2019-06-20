@@ -16,11 +16,11 @@ const sidebar = (props) => (
             <ul className="nav flex-column">
                 <MenuRow title="Dashboard" navLink="/" icon="insert_chart_outlined"/>
                 <MenuRow title="Interviews" navLink="/interviews" icon="table_chart"/>
-                <MenuRow title="Schedule" navLink="/schedule" icon="insert_invitation"/>
-                <MenuRow title="Interview Follow-Ups" navLink="/feedbacks" icon="create"/>
-                <MenuRow title="QA Needs" navLink="/needs" icon="how_to_reg"/>
+                {/*<MenuRow title="Schedule" navLink="/schedule" icon="insert_invitation"/>*/}
+                {/*<MenuRow title="Interview Follow-Ups" navLink="/feedbacks" icon="create"/>*/}
+                {/*<MenuRow title="QA Needs" navLink="/needs" icon="how_to_reg"/>*/}
                 <MenuRow title="Interviewers" navLink="/interviewers" icon="people"/>
-                <MenuRow title="Help" navLink="/" icon="question_answer"/>
+                {/*<MenuRow title="Help" navLink="/" icon="question_answer"/>*/}
             </ul>
         </nav>
     </aside>

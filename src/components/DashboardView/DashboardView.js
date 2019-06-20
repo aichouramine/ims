@@ -9,7 +9,7 @@ import BenchPolarChart from './BenchPolarChart/BenchPolarChart';
 import TopInterviewers from '../DashboardView/TopInterviewers/TopInterviewers';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
-const dashboardView = () => (
+const dashboardView = (props) => (
     <Hoc>
         <div className="page-header no-gutters py-4 row">
             <PageHeader subtitle="Overview" title="Dashboard"/>
@@ -41,11 +41,11 @@ const dashboardView = () => (
                 <CandidatesDoughnutChart styleClass={classes.Card}/>
             </div>
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
-                <TopInterviewers styleClass={classes.Card}/>
+                <TopInterviewers styleClass={classes.Card} topList={props.topInterviewers}/>
             </div>
-            <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
-                <BenchPolarChart styleClass={classes.Card}/>
-            </div>
+            {/*<div className="mb-4 col-sm-12 col-md-4 col-lg-4">*/}
+                {/*<BenchPolarChart styleClass={classes.Card}/>*/}
+            {/*</div>*/}
         </div>
     </Hoc>
 );

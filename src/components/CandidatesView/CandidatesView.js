@@ -10,10 +10,10 @@ import PageHeader from '../Layout/PageHeader/PageHeader';
 
 const candidatesView = () => (
     <Hoc>
-        <div className="page-header no-gutters py-4 row">
+        <div className="page-header no-gutters py-4 row mb-5">
             <PageHeader subtitle="Statistic" title="Interviews"/>
         </div>
-        <CandidatesFilterControls/>
+        {/*<CandidatesFilterControls/>*/}
         <div className="d-flex justify-content-between w-100">
             <EntriesDropdown label="interviews per page"/>
             <TabButton label="New"/>

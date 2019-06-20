@@ -6,70 +6,50 @@ import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Update from '../../shared_components/TableActions/Update/Update'
 import Details from '../../shared_components/TableActions/Details/Details'
 
-const interviewersTable = (props) => (
-    <table className={`${classes.Table} table mb-0`}>
-        <thead className="bg-light">
-        <tr role="row">
-            <th scope="col"><span className={classes.Table_sorting}>ID</span></th>
-            <th scope="col"><span className={classes.Table_sorting}>Name</span></th>
-            <th scope="col"><span className={classes.Table_sorting}>Location</span></th>
-            <th scope="col"><span className={classes.Table_sorting}>Total # of i-views</span></th>
-            <th scope="col"><span className={classes.Table_sorting}>Last i-view</span></th>
-            <th scope="col">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Minsk</td>
-            <td>@fat</td>
-            <td >
-                <TableActions>
-                    <Update/>
-                    <Details/>
-                    <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="1">
-                        You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
-                    </Remove>
-                </TableActions>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Minsk</td>
-            <td>@fat</td>
-            <td >
-                <TableActions>
-                    <Update/>
-                    <Details/>
-                    <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="2">
-                        You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
-                    </Remove>
-                </TableActions>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>Minsk</td>
-            <td>@fat</td>
-            <td >
-                <TableActions>
-                    <Update/>
-                    <Details/>
-                    <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="3">
-                        You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
-                    </Remove>
-                </TableActions>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-);
+const interviewersTable = (props) => {
+    let interviewers = props.list.map((int, i) => {
+        return(
+            <tr key={`${i}`}>
+                <th scope="row">{int.id}</th>
+                <td >{`${int.firstname} ${int.lastname}`}</td>
+                <td>{int.location}</td>
+                <td>{int.email}</td>
+                <td>{int.numberOfInterviews}</td>
+                <td>@fat</td>
+                <td >
+                    <TableActions>
+                        <Update onEdit={props.onInterviewerEdit}/>
+                        {/*<Details/>*/}
+                        <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="1">
+                            You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
+                        </Remove>
+                    </TableActions>
+                </td>
+            </tr>
+        )
+    })
+
+    return(
+        <table className={`${classes.Table} table mb-0`}>
+            <thead className="bg-light">
+            <tr role="row">
+                <th scope="col"><span >ID</span></th>
+                <th scope="col"><span >Name</span></th>
+                <th scope="col"><span >Location</span></th>
+                <th scope="col"><span >Email</span></th>
+                <th scope="col"><span >Total # of i-views</span></th>
+                <th scope="col"><span >Last i-view</span></th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {interviewers}
+            </tbody>
+        </table>
+    )
+
+
+}
 
 // candidatesTable.propTypes = {
 //     name: PropTypes.string.isRequired
