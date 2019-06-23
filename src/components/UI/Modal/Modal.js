@@ -13,7 +13,8 @@ const modal = (props) => (
                 opacity: props.show ? '1' : '0'
             }}
         >
-            {props.children}
+            {React.cloneElement(props.children, { onConfirm: props.modalClosed, onClose: props.modalClosed })}
+            {/*{props.children}*/}
         </div>
     </Hoc>
 )

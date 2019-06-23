@@ -6,16 +6,19 @@ const data = {
     labels: [
         'Minsk',
         'Brest',
-        'Grodno'
+        'Grodno',
+        'Gomel',
     ],
     datasets: [{
-        data: [300, 100, 30],
+        data: [200, 100, 30, 8],
         backgroundColor: [
+            '#0075ea',
             '#007bff',
             '#37abf5',
             '#75c8f5'
         ],
         hoverBackgroundColor: [
+            '#0075ea',
             '#007bff',
             '#37abf5',
             '#75c8f5'

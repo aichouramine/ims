@@ -16,9 +16,8 @@ const candidatesTable = (props) => (
             <th scope="col">Level</th>
             <th scope="col">Date & Time</th>
             <th scope="col">Interviewer(s)</th>
-            <th scope="col">HR Interviewer(s)</th>
+            {/*<th scope="col">HR Interviewer(s)</th>*/}
             <th scope="col">Status</th>
-            <th scope="col">Start Date</th>
             <th scope="col">Actions</th>
         </tr>
         </thead>
@@ -28,8 +27,7 @@ const candidatesTable = (props) => (
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            {/*<td>@mdo</td>*/}
             <td>@mdo</td>
             <td>@mdo</td>
             <td>
@@ -47,8 +45,7 @@ const candidatesTable = (props) => (
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            {/*<td>@mdo</td>*/}
             <td>@mdo</td>
             <td>@mdo</td>
             <td>
@@ -66,8 +63,7 @@ const candidatesTable = (props) => (
             <td>Mark</td>
             <td>Otto</td>
             <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
+            {/*<td>@mdo</td>*/}
             <td>@mdo</td>
             <td>@mdo</td>
             <td>

@@ -6,6 +6,7 @@ import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as interviewersActions from '../../store/actions/index';
 import {fetchInterviewers} from '../../store/actions/interviewers'
 import Modal from '../../components/UI/Modal/Modal';
+import InterviewerEditView from '../../components/InterviewersView/InterviewerEditView/InterviewerEditView';
 
 class InterviewersContainer extends Component{
     constructor(props) {
@@ -41,6 +42,7 @@ class InterviewersContainer extends Component{
                 <InterviewersView
                     interviewers={this.props.interviewers}
                     editInterviewer={this.editHandler}
+                    removeInterviewer={this.props.onRemoveInterviewer}
                 />
             )
         }}
@@ -48,6 +50,7 @@ class InterviewersContainer extends Component{
         return(
            <Hoc>
                <Modal show={this.state.editable} modalClosed={this.editCancelHandler}>
+                   <InterviewerEditView/>
                </Modal>
                {ints}
            </Hoc>
@@ -65,7 +68,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers())
+        onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers()),
+        onRemoveInterviewer: (id) => dispatch(interviewersActions.removeInterviewer(id))
     }
 }
 

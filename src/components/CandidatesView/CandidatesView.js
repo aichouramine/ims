@@ -1,14 +1,14 @@
 import React from 'react';
 import CandidatesTable from './CandidatesTable/CandidatesTable';
 import classes from './CandidatesView.module.css';
-import CandidatesFilterControls from './CandidatesFilterControls/CandidatesFilterControls';
+import CandidatesFilterControls from './InterviewsFilterControls/InterviewsFilterControls';
 import Hoc from '../../hoc/Hoc';
 import TabButton from '../shared_components/TabButton/TabButton';
 import Pagination from '../Navigation/Pagination/Pagination';
 import EntriesDropdown from '../shared_components/EntriesDropdown/EntriesDropdown';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
-const candidatesView = () => (
+const candidatesView = (props) => (
     <Hoc>
         <div className="page-header no-gutters py-4 row mb-5">
             <PageHeader subtitle="Statistic" title="Interviews"/>
@@ -16,7 +16,7 @@ const candidatesView = () => (
         {/*<CandidatesFilterControls/>*/}
         <div className="d-flex justify-content-between w-100">
             <EntriesDropdown label="interviews per page"/>
-            <TabButton label="New"/>
+            <TabButton label="New" onClicked={props.addNew}/>
         </div>
         <div className="row">
             <div className="col">

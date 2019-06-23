@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import classes from './InterviewersTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
@@ -20,8 +19,9 @@ const interviewersTable = (props) => {
                     <TableActions>
                         <Update onEdit={props.onInterviewerEdit}/>
                         {/*<Details/>*/}
-                        <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId="1">
-                            You are going to send Dzmitry Ihnatovich to the bench. Are you sure?
+                        <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}
+                                onConfirm={props.onInterviewerRemove} intId={int.id}>
+                            You are going to send {`${int.firstname} ${int.lastname}`} to the bench. Are you sure?
                         </Remove>
                     </TableActions>
                 </td>

@@ -2,14 +2,14 @@ import React from 'react';
 import Hoc from '../../../hoc/Hoc';
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
 import Dropdown from '../../shared_components/Dropdown/Dropdown';
-import classes from './CandidatesFilterControls.module.css';
+import classes from './InterviewsFilterControls.module.css';
 
 const LEVEL_OPTIONS = ['Choose...', 'Mastery', 'Junior', 'Middle', 'Senior', 'Lead'];
 const STATUS_OPTIONS = ['Choose...', 'To Do', 'Done', 'JO Made', 'JO Rejected', 'JO Accepted', 'Rejected'];
 const INTERVIEWER_OPTIONS = ['Choose...', 'Dzmitry Ihnatovich', 'Vitaly Rodin', 'Volha Mukasey'];
 const HR_INTERVIEWER_OPTIONS = ['Choose...', 'Olga Kazimirskaya', 'Yulia Haurys',];
 
-const candidatesFilterControls = () => (
+const interviewsFilterControls = () => (
     <div className={classes.Wrapper}>
         <div className="form-group">
             <label className={classes.Label}>From</label>
@@ -38,4 +38,4 @@ const candidatesFilterControls = () => (
     </div>
 );
 
-export default candidatesFilterControls;
+export default interviewsFilterControls;

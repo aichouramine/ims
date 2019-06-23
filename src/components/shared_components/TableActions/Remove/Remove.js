@@ -8,6 +8,9 @@ export default class Remove extends React.Component {
         super(props);
 
         this.toggle = this.toggle.bind(this);
+        this.cancelPopover = this.cancelPopover.bind(this);
+        this.confirmRemove = this.confirmRemove.bind(this);
+
         this.state = {
             popoverOpen: false,
             popoverId: `Popover${this.props.elementId}`
@@ -18,6 +21,17 @@ export default class Remove extends React.Component {
         this.setState({
             popoverOpen: !this.state.popoverOpen
         });
+    }
+
+    cancelPopover(){
+        this.setState({
+            popoverOpen: false
+        });
+    }
+
+    confirmRemove(id){
+        this.props.onConfirm(id);
+        this.cancelPopover();
     }
 
     render(){
@@ -36,8 +50,15 @@ export default class Remove extends React.Component {
                                 {this.props.children}
                             </span>
                             <div className="btn-group" style={{width: "70%", margin: 'auto'}}>
-                                <button className={`${classes.Remove_button_text} mb-2 mr-1 btn btn-danger btn-sm`} >{this.props.confirmTitle}</button>
-                                <button className={`${classes.Remove_button_text} mb-2 mr-1 btn btn-outline-secondary btn-sm`}>Cancel</button>
+                                <button className={`${classes.Remove_button_text} mb-2 mr-1 btn btn-danger btn-sm`}
+                                        onClick={() => this.confirmRemove(this.props.intId)}>
+                                    {this.props.confirmTitle}
+                                </button>
+                                <button className={`${classes.Remove_button_text} mb-2 mr-1 btn btn-outline-secondary btn-sm`}
+                                    onClick={this.cancelPopover}
+                                >
+                                    Cancel
+                                </button>
                             </div>
                         </div>
                     </PopoverBody>

@@ -1,1 +1,1 @@
-export {addInterviewer, removeInterviewer, fetchInterviewers, fetchTopInterviewers} from './interviewers';
+export {removeInterviewer, fetchInterviewers, fetchTopInterviewers} from './interviewers';

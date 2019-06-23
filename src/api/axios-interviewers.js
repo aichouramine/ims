@@ -15,3 +15,7 @@ export const getTopInterviewers = () => (
 export const addInterviewer = (id) => (
     instance.put("/addInterviewer")
 )
+
+export const updateInterviewerStatus = (id, status) => (
+    instance.put("updateInterviewerStatus/" + id + "/" + status)
+)

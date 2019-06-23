@@ -1,4 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
+import { combineReducers } from 'redux';
 
 const initialState = {
     interviewers: [],
@@ -18,6 +19,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 topInterviewers: action.topInterviewers
             }
+        case actionTypes.REMOVE_INTERVIEWER:
+            return {
+                ...state,
+                interviewers: state.interviewers.filter(({ id }) => id !== action.id)
+            }
+
 
         // case actionTypes.ADD_INTERVIEWER:
         //     return{
