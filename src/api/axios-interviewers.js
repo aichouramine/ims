@@ -19,3 +19,7 @@ export const addInterviewer = (id) => (
 export const updateInterviewerStatus = (id, status) => (
     instance.put("updateInterviewerStatus/" + id + "/" + status)
 )
+
+export const updateInterviewerProfile = (obj) => (
+    instance.put("updateInterviewerProfile", obj)
+)

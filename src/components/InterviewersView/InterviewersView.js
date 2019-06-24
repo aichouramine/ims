@@ -29,7 +29,8 @@ const interviewersView = (props) => (
                     <div className="card-body p-0 pb-3 text-center">
                         <InterviewersTable list={props.interviewers}
                                            onInterviewerEdit={props.editInterviewer}
-                                           onInterviewerRemove={props.removeInterviewer} />
+                                           onInterviewerRemove={props.removeInterviewer}
+                        />
                     </div>
                 </div>
             </div>

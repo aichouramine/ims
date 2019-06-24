@@ -32,7 +32,7 @@ const candidatesTable = (props) => (
             <td>@mdo</td>
             <td>
                 <TableActions>
-                    <Update/>
+                    {/*<Update/>*/}
                     <FollowUp/>
                     <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId="1">
                         You are going to remove record for Dzmitry Ihnatovich. Removed item CANNOT be restored!

@@ -6,28 +6,36 @@ import Update from '../../shared_components/TableActions/Update/Update'
 import Details from '../../shared_components/TableActions/Details/Details'
 
 const interviewersTable = (props) => {
-    let interviewers = props.list.map((int, i) => {
-        return(
-            <tr key={`${i}`}>
-                <th scope="row">{int.id}</th>
-                <td >{`${int.firstname} ${int.lastname}`}</td>
-                <td>{int.location}</td>
-                <td>{int.email}</td>
-                <td>{int.numberOfInterviews}</td>
-                <td>@fat</td>
-                <td >
-                    <TableActions>
-                        <Update onEdit={props.onInterviewerEdit}/>
-                        {/*<Details/>*/}
-                        <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}
-                                onConfirm={props.onInterviewerRemove} intId={int.id}>
-                            You are going to send {`${int.firstname} ${int.lastname}`} to the bench. Are you sure?
-                        </Remove>
-                    </TableActions>
-                </td>
-            </tr>
-        )
-    })
+    let interviewers = (
+        <tr>
+            <td>None</td>
+        </tr>
+    )
+
+    if(props.list && props.list.length > 0){
+        interviewers = props.list.map((int, i) => {
+            return(
+                <tr key={`${i}`}>
+                    <th scope="row">{int.id}</th>
+                    <td >{`${int.firstname} ${int.lastname}`}</td>
+                    <td>{int.location}</td>
+                    <td>{int.email}</td>
+                    <td>{int.numberOfInterviews}</td>
+                    <td>@fat</td>
+                    <td >
+                        <TableActions>
+                            <Update onEdit={props.onInterviewerEdit}/>
+                            {/*<Details/>*/}
+                            <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}
+                                    onConfirm={props.onInterviewerRemove} intId={int.id}>
+                                You are going to send {`${int.firstname} ${int.lastname}`} to the bench. Are you sure?
+                            </Remove>
+                        </TableActions>
+                    </td>
+                </tr>
+            )
+        })
+    }
 
     return(
         <table className={`${classes.Table} table mb-0`}>

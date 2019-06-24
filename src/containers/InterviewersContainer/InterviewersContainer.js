@@ -33,26 +33,18 @@ class InterviewersContainer extends Component{
     }
 
     render(){
-        let ints = (
-            <button>None</button>
-        )
-
-        {if(this.props.interviewers && this.props.interviewers.length > 0){
-            ints = (
-                <InterviewersView
-                    interviewers={this.props.interviewers}
-                    editInterviewer={this.editHandler}
-                    removeInterviewer={this.props.onRemoveInterviewer}
-                />
-            )
-        }}
-
         return(
            <Hoc>
                <Modal show={this.state.editable} modalClosed={this.editCancelHandler}>
-                   <InterviewerEditView/>
+                   <InterviewerEditView
+                       onConfirm={this.props.onUpdateInterviewer}
+                   />
                </Modal>
-               {ints}
+               <InterviewersView
+                   interviewers={this.props.interviewers}
+                   editInterviewer={this.editHandler}
+                   removeInterviewer={this.props.onRemoveInterviewer}
+               />
            </Hoc>
         )
     }
@@ -69,7 +61,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return{
         onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers()),
-        onRemoveInterviewer: (id) => dispatch(interviewersActions.removeInterviewer(id))
+        onRemoveInterviewer: (id) => dispatch(interviewersActions.removeInterviewer(id)),
+        onUpdateInterviewer: (obj) => dispatch(interviewersActions.updateInterviewer(obj))
     }
 }
 

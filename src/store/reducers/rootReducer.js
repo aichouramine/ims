@@ -24,6 +24,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 interviewers: state.interviewers.filter(({ id }) => id !== action.id)
             }
+        case actionTypes.UPDATE_INTERVIEWER:
+            return {
+                ...state,
+
+            }
 
 
         // case actionTypes.ADD_INTERVIEWER:
