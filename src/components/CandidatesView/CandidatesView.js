@@ -25,7 +25,7 @@ const candidatesView = (props) => (
                         <h6 className="m-0">Interviews</h6>
                     </div>
                     <div className="card-body p-0 pb-3 text-center">
-                        <CandidatesTable/>
+                        <CandidatesTable list={props.interviews}/>
                     </div>
                 </div>
             </div>

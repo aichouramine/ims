@@ -4,7 +4,8 @@ import { combineReducers } from 'redux';
 const initialState = {
     interviewers: [],
     topInterviewers: [],
-    error: false
+    error: false,
+    interviews: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -29,6 +30,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
 
             }
+        case actionTypes.GET_INTERVIEWS:
+            return {
+                ...state,
+                interviews: action.interviews
+            }
+
 
 
         // case actionTypes.ADD_INTERVIEWER:

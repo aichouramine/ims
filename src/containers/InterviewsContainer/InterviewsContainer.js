@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 import Hoc from '../../hoc/Hoc'
 import CandidatesView from '../../components/CandidatesView/CandidatesView';
 import Modal from '../../components/UI/Modal/Modal';
 import NewInterviewView from '../../components/CandidatesView/NewInterviewView/NewInterviewView';
+import * as interviewsActions from '../../store/actions/index';
 
 class InterviewsContainer extends Component{
     constructor(props) {
@@ -14,6 +16,10 @@ class InterviewsContainer extends Component{
 
         this.addNewHandler = this.addNewHandler.bind(this)
         this.addNewCancelHandler = this.addNewCancelHandler.bind(this)
+    }
+
+    componentDidMount(){
+        this.props.onFetchInterviews()
     }
 
     addNewHandler() {
@@ -30,10 +36,23 @@ class InterviewsContainer extends Component{
                 <Modal show={this.state.showNew} modalClosed={this.addNewCancelHandler}>
                     <NewInterviewView/>
                 </Modal>
-                <CandidatesView addNew={this.addNewHandler}/>
+                <CandidatesView addNew={this.addNewHandler} interviews={this.props.interviews}/>
             </Hoc>
         )
     }
 }
 
-export default InterviewsContainer;
+const mapStateToProps = state => {
+    return{
+        interviews: state.interviews
+    }
+
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return{
+        onFetchInterviews: () => dispatch(interviewsActions.fetchInterviews())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(InterviewsContainer);
