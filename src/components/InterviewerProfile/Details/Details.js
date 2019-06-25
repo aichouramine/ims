@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Details.module.css';
+import {levels} from "../../../enums/levels";
 
 const details = props => {
     let profileUpdate = {
