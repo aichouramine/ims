@@ -35,6 +35,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 interviews: action.interviews
             }
+        case actionTypes.REMOVE_INTERVIEW:
+            return {
+                ...state,
+                interviews: state.interviews.filter(({ id }) => id !== action.id)
+            }
 
 
 

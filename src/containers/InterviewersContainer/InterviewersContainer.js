@@ -25,7 +25,11 @@ class InterviewersContainer extends Component{
     }
 
     editHandler() {
-        this.setState({editable: true})
+        this.props.history.push({
+            pathname: 'profile',
+            state: { interviewer: true }
+        })
+        // this.setState({editable: true})
     }
 
     editCancelHandler() {

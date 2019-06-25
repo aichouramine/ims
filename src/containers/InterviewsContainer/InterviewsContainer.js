@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Hoc from '../../hoc/Hoc'
-import CandidatesView from '../../components/CandidatesView/CandidatesView';
+import InterviewsView from '../../components/InterviewsView/InterviewsView';
 import Modal from '../../components/UI/Modal/Modal';
-import NewInterviewView from '../../components/CandidatesView/NewInterviewView/NewInterviewView';
+import NewInterviewView from '../../components/InterviewsView/NewInterviewView/NewInterviewView';
 import * as interviewsActions from '../../store/actions/index';
 
 class InterviewsContainer extends Component{
@@ -36,7 +36,10 @@ class InterviewsContainer extends Component{
                 <Modal show={this.state.showNew} modalClosed={this.addNewCancelHandler}>
                     <NewInterviewView/>
                 </Modal>
-                <CandidatesView addNew={this.addNewHandler} interviews={this.props.interviews}/>
+                <InterviewsView addNew={this.addNewHandler}
+                                interviews={this.props.interviews}
+                                removeInterview={this.props.onRemoveInterview}
+                />
             </Hoc>
         )
     }
@@ -51,7 +54,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        onFetchInterviews: () => dispatch(interviewsActions.fetchInterviews())
+        onFetchInterviews: () => dispatch(interviewsActions.fetchInterviews()),
+        onRemoveInterview: (id) => dispatch(interviewsActions.removeInterviewRecord(id))
     }
 }
 

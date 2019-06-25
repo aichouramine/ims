@@ -75,7 +75,7 @@ const benchTable = (props) => (
     </table>
 );
 
-// candidatesTable.propTypes = {
+// interviewsTable.propTypes = {
 //     name: PropTypes.string.isRequired
 // };
 

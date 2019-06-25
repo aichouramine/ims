@@ -1,6 +1,6 @@
 import React from 'react';
-import CandidatesTable from './CandidatesTable/CandidatesTable';
-import classes from './CandidatesView.module.css';
+import InterviewsTable from './InterviewsTable/InterviewsTable';
+import classes from './InterviewsView.module.css';
 import CandidatesFilterControls from './InterviewsFilterControls/InterviewsFilterControls';
 import Hoc from '../../hoc/Hoc';
 import TabButton from '../shared_components/TabButton/TabButton';
@@ -8,7 +8,7 @@ import Pagination from '../Navigation/Pagination/Pagination';
 import EntriesDropdown from '../shared_components/EntriesDropdown/EntriesDropdown';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
-const candidatesView = (props) => (
+const interviewsView = (props) => (
     <Hoc>
         <div className="page-header no-gutters py-4 row mb-5">
             <PageHeader subtitle="Statistic" title="Interviews"/>
@@ -25,7 +25,7 @@ const candidatesView = (props) => (
                         <h6 className="m-0">Interviews</h6>
                     </div>
                     <div className="card-body p-0 pb-3 text-center">
-                        <CandidatesTable list={props.interviews}/>
+                        <InterviewsTable list={props.interviews} onInterviewRemove={props.removeInterview}/>
                     </div>
                 </div>
             </div>
@@ -41,4 +41,4 @@ const candidatesView = (props) => (
     </Hoc>
 );
 
-export default candidatesView;
+export default interviewsView;

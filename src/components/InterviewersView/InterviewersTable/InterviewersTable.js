@@ -16,7 +16,7 @@ const interviewersTable = (props) => {
         interviewers = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    <th scope="row">{int.id}</th>
+                    <th scope="row">{i+1}</th>
                     <td >{`${int.firstname} ${int.lastname}`}</td>
                     <td>{int.location}</td>
                     <td>{int.email}</td>
@@ -59,7 +59,7 @@ const interviewersTable = (props) => {
 
 }
 
-// candidatesTable.propTypes = {
+// interviewsTable.propTypes = {
 //     name: PropTypes.string.isRequired
 // };
 

@@ -7,3 +7,7 @@ const instance = axios.create({
 export const getInterviews = () => (
     instance.get("/getAllInterviews")
 )
+
+export const setInterviewToInactive = (id) => (
+    instance.put("updateInterviewToInactive/" + id)
+)

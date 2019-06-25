@@ -1,18 +1,39 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
-import classes from './CandidatesTable.module.css'
+import classes from './InterviewsTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Update from "../../shared_components/TableActions/Update/Update";
 import FollowUp from "../../shared_components/TableActions/FollowUp/FollowUp";
+import {levels} from "../../../enums/levels";
+import {statuses} from "../../../enums/statuses";
+import moment from 'moment';
 
-
-const candidatesTable = (props) => {
+const interviewsTable = (props) => {
     let interviews = (
             <tr>
                 <td>None</td>
             </tr>
         )
+
+    let interviewers = (
+        <tr>
+            <td>None</td>
+        </tr>
+    )
+
+    function printInterviewers(arr) {
+        if(arr && arr.length > 0){
+            interviewers = arr.map((int, i) => {
+                console.log(int)
+                return(
+                    <td>{`${int.firstname} ${int.lastname}`}</td>
+                )
+            })
+        }
+
+        return interviewers;
+    }
 
     if(props.list && props.list.length > 0){
         interviews = props.list.map((int, i) => {
@@ -20,17 +41,19 @@ const candidatesTable = (props) => {
                 <tr key={`${i}`}>
                     <th scope="row">{int.id}</th>
                     <td>{`${int.candidate.firstname} ${int.candidate.lastname}`}</td>
-                    <td>{int.candidate.level}</td>
+                    <td>{levels[int.candidate.level]}</td>
                     <td>{int.candidate.location}</td>
-                    <td>{int.date}</td>
+                    <td>{moment(int.date).format("DD-MM-YYYY, hh:mm:ss a")}</td>
                     {/*<td>@mdo</td>*/}
-                    <td>@mdo</td>
-                    <td>{int.status}</td>
+                    {printInterviewers(int.interviewers)}
+                    <td>{statuses[int.status]}</td>
                     <td>
                         <TableActions>
                             {/*<Update/>*/}
                             <FollowUp/>
-                            <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId={`${int.id}`}>
+                            <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId={`${int.id}`}
+                                    onConfirm={props.onInterviewRemove} intId={int.id}>
+                            >
                                 You are going to remove record for {`${int.candidate.firstname} ${int.candidate.lastname}`}.
                                 Removed item CANNOT be restored!
                             </Remove>
@@ -63,8 +86,8 @@ const candidatesTable = (props) => {
     )
 };
 
-// candidatesTable.propTypes = {
+// interviewsTable.propTypes = {
 //     name: PropTypes.string.isRequired
 // };
 
-export default candidatesTable;
+export default interviewsTable;
