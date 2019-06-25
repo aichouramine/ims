@@ -5,8 +5,6 @@ import InterviewersView from '../../components/InterviewersView/InterviewersView
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as interviewersActions from '../../store/actions/index';
 import {fetchInterviewers} from '../../store/actions/interviewers'
-import Modal from '../../components/UI/Modal/Modal';
-import InterviewerEditView from '../../components/InterviewersView/InterviewerEditView/InterviewerEditView';
 
 class InterviewersContainer extends Component{
     constructor(props) {
@@ -24,10 +22,10 @@ class InterviewersContainer extends Component{
          this.props.onFetchInterviewers();
     }
 
-    editHandler() {
+    editHandler(interviewer) {
         this.props.history.push({
             pathname: 'profile',
-            state: { interviewer: true }
+            state: { interviewer: interviewer }
         })
         // this.setState({editable: true})
     }
@@ -39,11 +37,6 @@ class InterviewersContainer extends Component{
     render(){
         return(
            <Hoc>
-               <Modal show={this.state.editable} modalClosed={this.editCancelHandler}>
-                   <InterviewerEditView
-                       onConfirm={this.props.onUpdateInterviewer}
-                   />
-               </Modal>
                <InterviewersView
                    interviewers={this.props.interviewers}
                    editInterviewer={this.editHandler}

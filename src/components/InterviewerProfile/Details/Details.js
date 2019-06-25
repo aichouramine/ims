@@ -3,9 +3,9 @@ import classes from './Details.module.css';
 
 const details = props => {
     let profileUpdate = {
-        firstName: "",
-        lastName: "",
-        email: ""
+        firstName: props.data.firstname,
+        lastName: props.data.lastname,
+        email: props.data.email
     }
 
     function onFirstnameChanged(event){
@@ -32,17 +32,17 @@ const details = props => {
                             <div className="form-group col-md-6">
                                 <label htmlFor="feFirstname" className={classes.label}>Firstname</label>
                                 <input id="feFirstname" type="text" placeholder="Firstname" onChange={onFirstnameChanged}
-                                       className={`form-control ${classes.custom_form_control}`}/>
+                                       className={`form-control ${classes.custom_form_control}`} value={profileUpdate.firstName}/>
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="feLastname" className={classes.label}>Lastname</label>
                                 <input id="feLastname" type="text" placeholder="Lastname" onChange={onLastnameChanged}
-                                       className={`form-control ${classes.custom_form_control}`}/>
+                                       className={`form-control ${classes.custom_form_control}`} value={profileUpdate.lastName}/>
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="feEmail" className={classes.label}>Email</label>
                                 <input id="feEmail" type="text" placeholder="Email" onChange={onEmailChanged}
-                                       className={`form-control ${classes.custom_form_control}`}/>
+                                       className={`form-control ${classes.custom_form_control}`} value={profileUpdate.email}/>
                             </div>
                             <div className="form-group col-md-6">
                                 <label htmlFor="fePosition" className={classes.label}>Title</label>

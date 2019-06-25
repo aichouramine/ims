@@ -11,6 +11,10 @@ const interviewersTable = (props) => {
             <td>None</td>
         </tr>
     )
+    
+    function goToProfile(obj) {
+        props.onInterviewerEdit(obj)
+    }
 
     if(props.list && props.list.length > 0){
         interviewers = props.list.map((int, i) => {
@@ -21,10 +25,9 @@ const interviewersTable = (props) => {
                     <td>{int.location}</td>
                     <td>{int.email}</td>
                     <td>{int.numberOfInterviews}</td>
-                    <td>@fat</td>
                     <td >
                         <TableActions>
-                            <Update onEdit={props.onInterviewerEdit}/>
+                            <Update onEdit={() => goToProfile(int)}/>
                             {/*<Details/>*/}
                             <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}
                                     onConfirm={props.onInterviewerRemove} intId={int.id}>
@@ -46,7 +49,6 @@ const interviewersTable = (props) => {
                 <th scope="col"><span >Location</span></th>
                 <th scope="col"><span >Email</span></th>
                 <th scope="col"><span >Total # of i-views</span></th>
-                <th scope="col"><span >Last i-view</span></th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>

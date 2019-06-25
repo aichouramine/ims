@@ -3,9 +3,10 @@ import Hoc from '../../hoc/Hoc';
 import InterviewerProfile from '../../components/InterviewerProfile/InterviewerProfile';
 
 class InterviewerProfileContainer extends Component{
+
     render(){
         return(
-            <InterviewerProfile/>
+            <InterviewerProfile interviewer={this.props.history.location.state.interviewer}/>
         )
     }
 }

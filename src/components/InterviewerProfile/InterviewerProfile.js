@@ -14,10 +14,10 @@ const interviewerProfile = props => {
             </div>
             <div className="row">
                 <div className="col-lg-4 col-sm-6 col-md-4">
-                    <Introduction/>
+                    <Introduction data={props.interviewer}/>
                 </div>
                 <div className="col-lg-8 col-sm-6 col-md-8">
-                    <Details/>
+                    <Details data={props.interviewer}/>
                 </div>
             </div>
         </Hoc>
