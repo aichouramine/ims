@@ -31,6 +31,9 @@
 
 .Card_footer{
     padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .Card_footer:last-child{
@@ -73,4 +76,16 @@
     border-image: initial;
     border-radius: 0.25rem;
     transition: box-shadow 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s, border 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s;
+}
+
+.close i{
+    font-size: 1.4625rem;
+    color: #c3c7cc;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.close i:hover{
+    cursor: pointer;
 }

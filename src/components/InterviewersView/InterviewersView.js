@@ -24,7 +24,7 @@ const interviewersView = (props) => (
             <div className="col">
                 <div className={`${classes.Card} card-small mb-4`}>
                     <div className={`${classes.Card_header} card-header border-bottom`}>
-                        <h6 className="m-0">Interviewers</h6>
+                        <h6 className="m-0 pt-2 pb-2" >Interviewers</h6>
                     </div>
                     <div className="card-body p-0 pb-3 text-center">
                         <InterviewersTable list={props.interviewers}
@@ -37,10 +37,10 @@ const interviewersView = (props) => (
         </div>
         <div className="d-flex justify-content-between w-100">
             <div className={`${classes.Table_pagination_info}`}>
-                Showing 1 to 10 of 57 entries
+                Showing 1 to {props.interviewers.length} of {props.interviewersNumber} entries
             </div>
             <div className={`${classes.Table_pagination}`}>
-                <Pagination/>
+                <Pagination getList={props.getInterviewers} itemsNumber={props.interviewersNumber}/>
             </div>
         </div>
     </Hoc>

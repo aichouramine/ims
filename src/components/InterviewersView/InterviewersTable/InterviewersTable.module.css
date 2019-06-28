@@ -43,3 +43,17 @@ span.Table_sorting:after {
     border-top-color: #666;
     margin-top: 1px;
 }
+
+.small_avatar{
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    /*box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);*/
+    transform: translatey(0px);
+    /*animation: float 6s ease-in-out infinite;*/
+    transition: all .4s ease-in-out;
+    background-size: cover;
+}

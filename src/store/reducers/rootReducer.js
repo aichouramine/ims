@@ -5,7 +5,8 @@ const initialState = {
     interviewers: [],
     topInterviewers: [],
     error: false,
-    interviews: []
+    interviews: [],
+    interviewersNum: null
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -39,6 +40,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 interviews: state.interviews.filter(({ id }) => id !== action.id)
+            }
+        case actionTypes.GET_INTERVIEWERS_COUNT:
+            return {
+                ...state,
+                interviewersNum: action.interviewersNum
             }
 
 

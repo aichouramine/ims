@@ -25,9 +25,11 @@ const interviewsTable = (props) => {
     function printInterviewers(arr) {
         if(arr && arr.length > 0){
             interviewers = arr.map((int, i) => {
-                console.log(int)
+                // console.log(int)
                 return(
-                    <td key={`${i}`}>{`${int.firstname} ${int.lastname}`}</td>
+                    <td key={`${i}`} >
+                        {`${int.firstname} ${int.lastname}`}
+                    </td>
                 )
             })
         }
@@ -43,7 +45,7 @@ const interviewsTable = (props) => {
                     <td>{`${int.candidate.firstname} ${int.candidate.lastname}`}</td>
                     <td>{levels[int.candidate.level]}</td>
                     <td>{int.candidate.location}</td>
-                    <td>{moment(int.date).format("DD-MM-YYYY, hh:mm:ss a")}</td>
+                    <td>{moment(int.date).format("DD-MMMM-YY, hh:mm a")}</td>
                     {/*<td>@mdo</td>*/}
                     {printInterviewers(int.interviewers)}
                     <td>{statuses[int.status]}</td>

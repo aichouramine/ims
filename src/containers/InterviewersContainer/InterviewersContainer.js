@@ -19,7 +19,8 @@ class InterviewersContainer extends Component{
     }
 
     componentDidMount(){
-         this.props.onFetchInterviewers();
+         this.props.onFetchInterviewers(0, 10);
+         this.props.onFetchInterviewersNumber()
     }
 
     editHandler(interviewer) {
@@ -41,6 +42,8 @@ class InterviewersContainer extends Component{
                    interviewers={this.props.interviewers}
                    editInterviewer={this.editHandler}
                    removeInterviewer={this.props.onRemoveInterviewer}
+                   interviewersNumber={this.props.interviewersNum}
+                   getInterviewers={this.props.onFetchInterviewers}
                />
            </Hoc>
         )
@@ -50,16 +53,18 @@ class InterviewersContainer extends Component{
 const mapStateToProps = state => {
 
     return{
-        interviewers: state.interviewers
+        interviewers: state.interviewers,
+        interviewersNum: state.interviewersNum
     }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers()),
+        onFetchInterviewers: (page, size) => dispatch(interviewersActions.fetchInterviewers(page, size)),
         onRemoveInterviewer: (id) => dispatch(interviewersActions.removeInterviewer(id)),
-        onUpdateInterviewer: (obj) => dispatch(interviewersActions.updateInterviewer(obj))
+        onUpdateInterviewer: (obj) => dispatch(interviewersActions.updateInterviewer(obj)),
+        onFetchInterviewersNumber: () => dispatch(interviewersActions.fetchInterviewersNumber())
     }
 }
 

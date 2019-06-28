@@ -11,7 +11,7 @@ const interviewersTable = (props) => {
             <td>None</td>
         </tr>
     )
-    
+
     function goToProfile(obj) {
         props.onInterviewerEdit(obj)
     }
@@ -21,10 +21,14 @@ const interviewersTable = (props) => {
             return(
                 <tr key={`${i}`}>
                     <th scope="row">{i+1}</th>
-                    <td >{`${int.firstname} ${int.lastname}`}</td>
+                    <td className="d-flex" style={{justifyItems: 'space-between', alignItems: 'center'}}>
+                        <div className={`${classes.small_avatar} user-avatar rounded-circle mr-2 pr-2`}
+                             style={{backgroundImage: `url(${int.profilePhoto})`}}/>
+                        {`${int.firstname} ${int.lastname}`}
+                    </td>
                     <td>{int.location}</td>
                     <td>{int.email}</td>
-                    <td>{int.numberOfInterviews}</td>
+                    {/*<td>{int.numberOfInterviews}</td>*/}
                     <td >
                         <TableActions>
                             <Update onEdit={() => goToProfile(int)}/>
@@ -48,7 +52,7 @@ const interviewersTable = (props) => {
                 <th scope="col"><span >Name</span></th>
                 <th scope="col"><span >Location</span></th>
                 <th scope="col"><span >Email</span></th>
-                <th scope="col"><span >Total # of i-views</span></th>
+                {/*<th scope="col"><span >Total # of i-views</span></th>*/}
                 <th scope="col">Actions</th>
             </tr>
             </thead>

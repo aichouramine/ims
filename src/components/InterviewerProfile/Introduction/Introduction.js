@@ -4,15 +4,14 @@ import classes from './Introduction.module.css';
 import {levels} from "../../../enums/levels";
 
 const introduction = props => {
-
-
     return(
         <Hoc>
             <div className={` ${classes.card} mb-4 pt-3`}>
+                <div className={classes.update} onClick={props.onEdit}>
+                    <i className="material-icons">edit</i>
+                </div>
                 <div className={`${classes.text_center} ${classes.card_header}`}>
-                    <div className="mb-3 mx-auto">
-                        <img className="rounded-circle" src={require("../../../assets/images/user_avatar.jpeg")}
-                             alt="Dzmitry Ihnatovich" style={{width: '110px'}}/>
+                    <div className={`mb-3 mx-auto ${classes.avatar_img}` } style={{backgroundImage: `url(${props.data.profilePhoto})`}}>
                     </div>
                     <h4 className={`${classes.name_text} mb-1`}>
                         {`${props.data.firstname} ${props.data.lastname}`}
@@ -20,7 +19,7 @@ const introduction = props => {
                     <span className={`${classes.position_text} d-block mb-2`}>{`${levels[props.data.level]} Engineer`}</span>
                     <span className={`${classes.email_text} d-block mb-2`}>{props.data.email}</span>
                     <input type="submit" className={`mt-1 mb-2 mr-1 btn btn-outline-danger btn-sm ${classes.action_button}`}
-                           value="Remove"/>
+                           value="Remove" onClick={props.removeInterviewer}/>
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="px-4 list-group-item">

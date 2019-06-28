@@ -1,5 +1,6 @@
 import * as actionTypes from '../actions/actionTypes';
-import {getInterviewers, getTopInterviewers, updateInterviewerStatus, updateInterviewerProfile} from '../../api/axios-interviewers'
+import {getInterviewers, getTopInterviewers, updateInterviewerStatus,
+    updateInterviewerProfile, getInterviewersNumber} from '../../api/axios-interviewers'
 
 export const addInterviewer = (obj) => {
     return{
@@ -22,6 +23,13 @@ export const getAllInterviewers = (interviewers) => {
     }
 }
 
+export const getCountOfActiveInterviewers = (interviewersNum) => {
+    return{
+        type: actionTypes.GET_INTERVIEWERS_COUNT,
+        interviewersNum: interviewersNum
+    }
+}
+
 export const getTopOfInterviewers = (topInterviewers) => {
     return{
         type: actionTypes.GET_TOP_INTERVIEWERS,
@@ -32,19 +40,31 @@ export const getTopOfInterviewers = (topInterviewers) => {
 export const updateInterviewerData = (obj) => {
     return{
         type: actionTypes.UPDATE_INTERVIEWER,
-        payload: obj
+        interviewerProfile: obj
     }
 }
 
-export const fetchInterviewers = () => {
+export const fetchInterviewers = (page, size) => {
     return (dispatch) => {
         // dispatch(allOrdersCountFetchInProgress(true));
 
-        getInterviewers()
+        getInterviewers(page, size)
             .then((response) => dispatch(getAllInterviewers(response.data)))
 
             // .then(() => dispatch(allOrdersCountFetchSuccess()))
             // .catch((e) => {console.error(e);dispatch(allOrdersCountFetchHasErrored(true))});
+    }
+}
+
+export const fetchInterviewersNumber = () => {
+    return (dispatch) => {
+        // dispatch(allOrdersCountFetchInProgress(true));
+
+        getInterviewersNumber()
+            .then((response) => dispatch(getCountOfActiveInterviewers(response.data)))
+
+        // .then(() => dispatch(allOrdersCountFetchSuccess()))
+        // .catch((e) => {console.error(e);dispatch(allOrdersCountFetchHasErrored(true))});
     }
 }
 
@@ -62,6 +82,7 @@ export const removeInterviewer = (id) => {
     return (dispatch) => {
         updateInterviewerStatus(id, "false")
             .then(() => dispatch(deactivateInterviewer(id)))
+            // .then(() => dispatch(fetchInterviewersNumber()))
     }
 }
 

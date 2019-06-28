@@ -94,7 +94,7 @@
     /*animation: float 6s ease-in-out infinite;*/
     transition: all .4s ease-in-out;
     background-size: cover;
-    background-image: url("../../../assets/images/user_avatar.jpeg");
+    /*background-image: url("../../../assets/images/user_avatar.jpeg");*/
 }
 
 .Profile_Nav span{

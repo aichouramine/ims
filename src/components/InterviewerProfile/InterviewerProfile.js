@@ -1,27 +1,59 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classes from './InterviewerProfile.module.css';
 import Introduction from './Introduction/Introduction';
 import Details from './Details/Details';
 import Hoc from '../../hoc/Hoc';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
-const interviewerProfile = props => {
+class InterviewerProfile extends Component{
+    constructor(props) {
+        super(props);
 
-    return(
-        <Hoc>
-            <div className="page-header no-gutters py-4 row mb-4">
-                <PageHeader subtitle="People" title="Interviewer Profile"/>
-            </div>
-            <div className="row">
-                <div className="col-lg-4 col-sm-6 col-md-4">
-                    <Introduction data={props.interviewer}/>
+        this.state = {
+            editable: false,
+        };
+
+        this.editHandler = this.editHandler.bind(this)
+        this.editCancelHandler = this.editCancelHandler.bind(this)
+    }
+
+    editHandler() {
+        this.setState({
+            editable: true
+        })
+    }
+    //
+    editCancelHandler() {
+        this.setState({editable: false})
+    }
+
+    render(){
+        let secondaryView = (<div>Statistic</div>)
+
+        if(this.state.editable){
+            secondaryView = (
+                <Details data={this.props.interviewer} update={this.props.updateInterviewer} onCancel={this.editCancelHandler}/>
+            )
+        }
+
+        return(
+            <Hoc>
+                <div className="page-header no-gutters py-4 row mb-4">
+                    <PageHeader subtitle="People" title="Interviewer Profile"/>
                 </div>
-                <div className="col-lg-8 col-sm-6 col-md-8">
-                    <Details data={props.interviewer}/>
+                <div className="row">
+                    <div className="col-lg-4 col-sm-6 col-md-4">
+                        <Introduction onEdit={this.editHandler} data={this.props.interviewer}
+                                      removeInterviewer={this.props.remove}/>
+                    </div>
+                    <div className="col-lg-8 col-sm-6 col-md-8">
+                        {secondaryView}
+                    </div>
                 </div>
-            </div>
-        </Hoc>
-    )
+            </Hoc>
+        )
+    }
+
 }
 
-export default interviewerProfile;
+export default InterviewerProfile;
