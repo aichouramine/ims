@@ -4,6 +4,7 @@ import Introduction from './Introduction/Introduction';
 import Details from './Details/Details';
 import Hoc from '../../hoc/Hoc';
 import PageHeader from '../Layout/PageHeader/PageHeader';
+import Statistic from '../InterviewerProfile/Statistic/Statistic';
 
 class InterviewerProfile extends Component{
     constructor(props) {
@@ -28,11 +29,12 @@ class InterviewerProfile extends Component{
     }
 
     render(){
-        let secondaryView = (<div>Statistic</div>)
+        let secondaryView = (<Statistic styleClass={classes.card}/>)
 
         if(this.state.editable){
             secondaryView = (
-                <Details data={this.props.interviewer} update={this.props.updateInterviewer} onCancel={this.editCancelHandler}/>
+                <Details styleClass={classes.card} data={this.props.interviewer} update={this.props.updateInterviewer}
+                         onCancel={this.editCancelHandler}/>
             )
         }
 
@@ -43,7 +45,7 @@ class InterviewerProfile extends Component{
                 </div>
                 <div className="row">
                     <div className="col-lg-4 col-sm-6 col-md-4">
-                        <Introduction onEdit={this.editHandler} data={this.props.interviewer}
+                        <Introduction styleClass={classes.card} onEdit={this.editHandler} data={this.props.interviewer}
                                       removeInterviewer={this.props.remove}/>
                     </div>
                     <div className="col-lg-8 col-sm-6 col-md-8">

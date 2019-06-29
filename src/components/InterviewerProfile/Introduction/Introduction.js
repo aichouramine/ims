@@ -6,7 +6,7 @@ import {levels} from "../../../enums/levels";
 const introduction = props => {
     return(
         <Hoc>
-            <div className={` ${classes.card} mb-4 pt-3`}>
+            <div className={` ${props.styleClass} mb-4 pt-3`}>
                 <div className={classes.update} onClick={props.onEdit}>
                     <i className="material-icons">edit</i>
                 </div>

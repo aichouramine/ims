@@ -25,10 +25,11 @@ const details = props => {
     function updateProfile() {
         // console.log(profileUpdate)
         props.update(profileUpdate)
+        props.onCancel()
     }
 
     return(
-        <div className={`${classes.card} h-100 `}>
+        <div className={`${props.styleClass} h-100 `}>
             <div className={`${classes.card_header} ${classes.Border_bottom}`}>
                 <h6 className="m-0">Profile Details</h6>
             </div>
