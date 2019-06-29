@@ -4,7 +4,7 @@ import Hoc from '../../hoc/Hoc'
 import InterviewsView from '../../components/InterviewsView/InterviewsView';
 import Modal from '../../components/UI/Modal/Modal';
 import NewInterviewView from '../../components/InterviewsView/NewInterviewView/NewInterviewView';
-import * as interviewsActions from '../../store/actions/index';
+import * as interviewsActions from '../../store/actions/interviewsIndex';
 
 class InterviewsContainer extends Component{
     constructor(props) {

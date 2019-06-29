@@ -16,13 +16,13 @@ const dashboardView = (props) => (
         </div>
         <div className="row">
             <div className="col-lg mb-4 col-sm-6 col-md-6">
-                <Card label="Interviews" count="500" styleClass={classes.Card}/>
+                <Card label="Interviews" count={props.totalNumberOfInterviews} styleClass={classes.Card}/>
+            </div>
+            <div className="col-lg mb-4 col-sm-6 col-md-6">
+                <Card label="Rejected" count="1" styleClass={classes.Card}/>
             </div>
             <div className="col-lg mb-4 col-sm-6 col-md-6">
                 <Card label="JO Made" count="250" styleClass={classes.Card}/>
-            </div>
-            <div className="col-lg mb-4 col-sm-6 col-md-6">
-                <Card label="JO Accepted" count="249" styleClass={classes.Card}/>
             </div>
             <div className="col-lg mb-4 col-sm-6 col-md-6">
                 <Card label="JO Rejected" count="1" styleClass={classes.Card}/>

@@ -46,7 +46,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 interviewersNum: action.interviewersNum
             }
-
+        case actionTypes.GET_INTERVIEWS_COUNT:
+            return {
+                ...state,
+                interviewsNumber: action.interviewsNumber
+            }
 
 
         // case actionTypes.ADD_INTERVIEWER:

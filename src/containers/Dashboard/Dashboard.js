@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import DashboardView from '../../components/DashboardView/DashboardView';
 import * as interviewersActions from '../../store/actions/index';
-import {fetchTopInterviewers} from '../../store/actions/interviewers'
-
+import * as interviewsActions from '../../store/actions/interviewsIndex';
 
 class Dashboard extends Component{
     constructor(props) {
@@ -12,11 +11,15 @@ class Dashboard extends Component{
 
     componentDidMount(){
         this.props.onFetchTopInterviewers();
+        this.props.onFetchTotalInterviewsNumber();
     }
 
     render(){
         return(
-            <DashboardView topInterviewers={this.props.topInterviewers}/>
+            <DashboardView
+                totalNumberOfInterviews={this.props.interviewsNumber}
+                topInterviewers={this.props.topInterviewers}
+            />
         )
     }
 }
@@ -24,14 +27,16 @@ class Dashboard extends Component{
 const mapStateToProps = state => {
 
     return{
-        topInterviewers: state.topInterviewers
+        topInterviewers: state.topInterviewers,
+        interviewsNumber: state.interviewsNumber
     }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        onFetchTopInterviewers: () => dispatch(interviewersActions.fetchTopInterviewers())
+        onFetchTopInterviewers: () => dispatch(interviewersActions.fetchTopInterviewers()),
+        onFetchTotalInterviewsNumber: () => dispatch(interviewsActions.fetchInterviewsNumber())
     }
 }
 

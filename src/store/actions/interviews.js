@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import {getInterviews, setInterviewToInactive} from '../../api/axios-interviews';
+import {getInterviews, setInterviewToInactive, getInterviewsNumber} from '../../api/axios-interviews';
 
 export const getAllInterviews = (interviews) => {
     return{
@@ -15,10 +15,24 @@ export const deactivateInterview = (id) => {
     }
 };
 
+export const getCountOfInterviews = (interviewsNumber) => {
+    return{
+        type: actionTypes.GET_INTERVIEWS_COUNT,
+        interviewsNumber: interviewsNumber
+    }
+}
+
 export const fetchInterviews = () => {
     return (dispatch) => {
         getInterviews()
             .then((response) => dispatch(getAllInterviews(response.data)))
+    }
+}
+
+export const fetchInterviewsNumber = () => {
+    return (dispatch) => {
+        getInterviewsNumber()
+            .then((response) => dispatch(getCountOfInterviews(response.data)))
     }
 }
 

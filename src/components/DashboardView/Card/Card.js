@@ -9,9 +9,9 @@ const card = props => (
                     <span className={`${classes.Stats_small_label} mb-1 ${classes.Text_uppercase}`}>{props.label}</span>
                     <h6 className={`${classes.Stats_small_value} count m-0`}>{props.count}</h6>
                 </div>
-                <div className={classes.Stats_small_data}>
-                    <span className={`${classes.Stats_small_data_percentage} stats-small__percentage--increase`}>4.7%</span>
-                </div>
+                {/*<div className={classes.Stats_small_data}>*/}
+                    {/*<span className={`${classes.Stats_small_data_percentage} stats-small__percentage--increase`}>4.7%</span>*/}
+                {/*</div>*/}
             </div>
             {/*<canvas height="60" className="analytics-overview-stats-small-1"*/}
                     {/*style={{display: "block", height: "88px", width: "220px"}}></canvas>*/}
