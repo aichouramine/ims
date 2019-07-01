@@ -12,3 +12,14 @@
     text-align: left;
     vertical-align: inherit !important;
 }
+
+.info i{
+    font-size: 0.9625rem;
+    color: #c3c7cc;
+    text-decoration: none;
+    padding-left: 5px;
+}
+
+.info i:hover{
+    cursor: pointer;
+}

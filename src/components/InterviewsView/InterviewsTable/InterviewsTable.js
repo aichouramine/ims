@@ -1,9 +1,7 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import classes from './InterviewsTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
-import Update from "../../shared_components/TableActions/Update/Update";
 import FollowUp from "../../shared_components/TableActions/FollowUp/FollowUp";
 import {levels} from "../../../enums/levels";
 import {statuses} from "../../../enums/statuses";
@@ -27,9 +25,9 @@ const interviewsTable = (props) => {
             interviewers = arr.map((int, i) => {
                 // console.log(int)
                 return(
-                    <td key={`${i}`} >
-                        {`${int.firstname} ${int.lastname}`}
-                    </td>
+                    <div>
+                        {`${int.firstname} ${int.lastname} `}
+                    </div>
                 )
             })
         }
@@ -42,20 +40,24 @@ const interviewsTable = (props) => {
             return(
                 <tr key={`${i}`}>
                     <th scope="row">{int.id}</th>
-                    <td>{`${int.candidate.firstname} ${int.candidate.lastname}`}</td>
+                    <td>
+                        {`${int.candidate.firstname} ${int.candidate.lastname}`}
+                    </td>
                     <td>{levels[int.candidate.level]}</td>
                     <td>{int.candidate.location}</td>
                     <td>{moment(int.date).format("DD-MMMM-YY, hh:mm a")}</td>
                     {/*<td>@mdo</td>*/}
-                    {printInterviewers(int.interviewers)}
-                    <td>{statuses[int.status]}</td>
                     <td>
+                    {printInterviewers(int.interviewers)}
+                    </td>
+                    <td>{statuses[int.status]}</td>
+                    <td >
                         <TableActions>
                             {/*<Update/>*/}
                             <FollowUp/>
                             <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId={`${int.id}`}
                                     onConfirm={props.onInterviewRemove} intId={int.id}>
-                            >
+
                                 You are going to remove record for {`${int.candidate.firstname} ${int.candidate.lastname}`}.
                                 Removed item CANNOT be restored!
                             </Remove>

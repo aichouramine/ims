@@ -28,7 +28,7 @@ const mapStateToProps = state => {
 
     return{
         topInterviewers: state.interviewersReducer.topInterviewers,
-        interviewsNumber: state.interviewersReducer.interviewsNumber
+        interviewsNumber: state.interviewsReducer.interviewsNumber
     }
 
 }

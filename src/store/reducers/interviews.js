@@ -23,7 +23,6 @@ const interviewReducer = (state = initialState, action) => {
                 ...state,
                 interviewsNumber: action.interviewsNumber
             }
-
         default:
             return state;
     }
