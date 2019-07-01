@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import InterviewerProfile from '../../components/InterviewerProfile/InterviewerProfile';
-import * as interviewersActions from '../../store/actions/index';
+import * as interviewersActions from '../../store/actions/interviewersIndex';
 import Modal from '../../components/UI/Modal/Modal';
 import Hoc from '../../hoc/Hoc';
 import Details from '../../components/InterviewerProfile/Details/Details'

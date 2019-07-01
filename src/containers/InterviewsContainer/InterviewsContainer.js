@@ -47,7 +47,7 @@ class InterviewsContainer extends Component{
 
 const mapStateToProps = state => {
     return{
-        interviews: state.interviews
+        interviews: state.interviewsReducer.interviews
     }
 
 }

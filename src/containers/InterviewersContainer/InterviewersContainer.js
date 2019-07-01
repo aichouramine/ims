@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Hoc from '../../hoc/Hoc'
 import InterviewersView from '../../components/InterviewersView/InterviewersView';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import * as interviewersActions from '../../store/actions/index';
+import * as interviewersActions from '../../store/actions/interviewersIndex';
 import {fetchInterviewers} from '../../store/actions/interviewers'
 
 class InterviewersContainer extends Component{
@@ -53,8 +53,8 @@ class InterviewersContainer extends Component{
 const mapStateToProps = state => {
 
     return{
-        interviewers: state.interviewers,
-        interviewersNum: state.interviewersNum
+        interviewers: state.interviewersReducer.interviewers,
+        interviewersNum: state.interviewersReducer.interviewersNum
     }
 
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import DashboardView from '../../components/DashboardView/DashboardView';
-import * as interviewersActions from '../../store/actions/index';
+import * as interviewersActions from '../../store/actions/interviewersIndex';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
 
 class Dashboard extends Component{
@@ -27,8 +27,8 @@ class Dashboard extends Component{
 const mapStateToProps = state => {
 
     return{
-        topInterviewers: state.topInterviewers,
-        interviewsNumber: state.interviewsNumber
+        topInterviewers: state.interviewersReducer.topInterviewers,
+        interviewsNumber: state.interviewersReducer.interviewsNumber
     }
 
 }
