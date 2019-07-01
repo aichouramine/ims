@@ -25,7 +25,7 @@ const interviewsTable = (props) => {
             interviewers = arr.map((int, i) => {
                 // console.log(int)
                 return(
-                    <div>
+                    <div key={`${i}`}>
                         {`${int.firstname} ${int.lastname} `}
                     </div>
                 )

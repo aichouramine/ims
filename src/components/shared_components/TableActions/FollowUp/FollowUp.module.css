@@ -1,8 +1,10 @@
 .FollowUp i{
     font-size: 1.4625rem;
     color: #c3c7cc;
+    transition: all .2s ease-in-out;
 }
 
 .FollowUp i:hover{
     cursor: pointer;
+    color: #0075ea;
 }

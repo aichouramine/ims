@@ -2,10 +2,16 @@
     font-size: 1.4625rem;
     color: #c3c7cc;
     text-decoration: none;
+    transition: all .2s ease-in-out;
 }
 
 .Remove i:hover{
     cursor: pointer;
+    color: red;
+    /*animation:bounceOut .4s linear;*/
+    /*box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);*/
+    /*opacity: 1;*/
+    /*transform: scale(1.1);*/
 }
 
 .Remove i:focus{
@@ -32,4 +38,19 @@
 
 button{
     min-width: 50%;
+}
+
+@keyframes bounceOut {
+    0% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 0.8;
+    }
+    50% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 0.9;
+    }
+    100% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
 }

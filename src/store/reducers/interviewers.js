@@ -4,7 +4,8 @@ const initialState = {
     interviewers: [],
     topInterviewers: [],
     error: false,
-    interviewersNum: null
+    interviewersNum: null,
+    interviewerProfile: {}
 }
 
 const interviewerReducer = (state = initialState, action) => {
@@ -27,7 +28,7 @@ const interviewerReducer = (state = initialState, action) => {
         case actionTypes.UPDATE_INTERVIEWER:
             return {
                 ...state,
-
+                interviewerProfile: action.interviewerProfile
             }
         case actionTypes.GET_INTERVIEWERS_COUNT:
             return {
