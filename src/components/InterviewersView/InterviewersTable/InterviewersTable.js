@@ -3,7 +3,7 @@ import classes from './InterviewersTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Update from '../../shared_components/TableActions/Update/Update'
-import Details from '../../shared_components/TableActions/Details/Details'
+import {levels} from '../../../enums/levels'
 
 const interviewersTable = (props) => {
     let interviewers = (
@@ -26,6 +26,7 @@ const interviewersTable = (props) => {
                              style={{backgroundImage: `url(${int.profilePhoto})`}}/>
                         {`${int.firstname} ${int.lastname}`}
                     </td>
+                    <td>{levels[int.level]}</td>
                     <td>{int.location}</td>
                     <td>{int.email}</td>
                     {/*<td>{int.numberOfInterviews}</td>*/}
@@ -50,6 +51,7 @@ const interviewersTable = (props) => {
             <tr role="row">
                 <th scope="col"><span >ID</span></th>
                 <th scope="col"><span >Name</span></th>
+                <th scope="col"><span >Title</span></th>
                 <th scope="col"><span >Location</span></th>
                 <th scope="col"><span >Email</span></th>
                 {/*<th scope="col"><span >Total # of i-views</span></th>*/}

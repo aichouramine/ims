@@ -10,14 +10,21 @@ import PageHeader from '../Layout/PageHeader/PageHeader';
 
 const interviewsView = (props) => (
     <Hoc>
-        <div className="page-header no-gutters py-4 row mb-5">
+        <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
             <PageHeader subtitle="Statistic" title="Interviews"/>
+            <div style={{width: '200px'}} className="d-flex justify-content-end">
+                <button className="btn btn-primary d-flex align-items-center" style={{width: '30px', fontSize: '14px'}}
+                        onClick={props.addNew}>
+                    <i className="material-icons" style={{fontSize: '14px', paddingRight: '5px'}}>add_circle_outline</i>
+                    Add new
+                </button>
+            </div>
         </div>
         {/*<CandidatesFilterControls/>*/}
-        <div className="d-flex justify-content-between w-100">
-            <EntriesDropdown label="interviews per page"/>
-            <TabButton label="New" onClicked={props.addNew}/>
-        </div>
+        {/*<div className="d-flex justify-content-between w-100">*/}
+            {/*/!*<EntriesDropdown label="interviews per page"/>*!/*/}
+            {/**/}
+        {/*</div>*/}
         <div className="row">
             <div className="col">
                 <div className={`${classes.Card} card-small mb-4`}>
