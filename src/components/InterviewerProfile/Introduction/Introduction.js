@@ -8,6 +8,25 @@ const introduction = props => {
         <div>Loading</div>
     )
 
+    let interviewerStatus = (
+        <input type="submit" className={`mt-1 mb-2 mr-1 btn btn-outline-danger btn-sm ${classes.action_button}`}
+               value="Remove" onClick={props.removeInterviewer}/>
+    )
+
+    let edit = (
+        <div className={classes.update} onClick={props.onEdit}>
+            <i className="material-icons">edit</i>
+        </div>
+    )
+
+    if(props.currentStatus){
+        interviewerStatus = (
+            <span style={{color: 'red', fontWeight: '500'}}>NOT ACTIVE</span>
+        )
+
+        edit = null
+    }
+
     if(props.data) {
         mainData = (
             <Hoc>
@@ -19,8 +38,7 @@ const introduction = props => {
                     </h4>
                     <span className={`${classes.position_text} d-block mb-2`}>{`${levels[props.data.level]} Engineer`}</span>
                     <span className={`${classes.email_text} d-block mb-2`}>{props.data.email}</span>
-                    <input type="submit" className={`mt-1 mb-2 mr-1 btn btn-outline-danger btn-sm ${classes.action_button}`}
-                           value="Remove" onClick={props.removeInterviewer}/>
+                    {interviewerStatus}
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="px-4 list-group-item">
@@ -54,9 +72,7 @@ const introduction = props => {
     return(
         <Hoc>
             <div className={` ${props.styleClass} mb-4 pt-3`}>
-                <div className={classes.update} onClick={props.onEdit}>
-                    <i className="material-icons">edit</i>
-                </div>
+                {edit}
                 {mainData}
             </div>
         </Hoc>

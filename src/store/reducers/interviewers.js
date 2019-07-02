@@ -5,7 +5,7 @@ const initialState = {
     topInterviewers: [],
     error: false,
     interviewersNum: null,
-    interviewerProfile: {}
+    interviewerProfile: {},
 }
 
 const interviewerReducer = (state = initialState, action) => {
@@ -25,6 +25,12 @@ const interviewerReducer = (state = initialState, action) => {
                 ...state,
                 interviewers: state.interviewers.filter(({ id }) => id !== action.id)
             }
+        case actionTypes.REMOVE_INTERVIEWER_SUCCESS:
+            return Object.assign({}, state, {
+                removeSuccess: true,
+                removeInProgress: false,
+                removeHasErrored: false,
+            });
         case actionTypes.UPDATE_INTERVIEWER_PROFILE_OFFLINE:
             return {
                 ...state,

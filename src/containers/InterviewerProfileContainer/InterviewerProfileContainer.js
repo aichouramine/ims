@@ -20,6 +20,7 @@ class InterviewerProfileContainer extends Component{
     }
 
     onRemoveFromProfile = () => {
+        this.props.onRemoveInterviewer(this.props.interviewerProfile.id)
         // console.log('removed')
         // this.props.history.push({
         //     pathname: 'interviewers'
@@ -47,6 +48,7 @@ class InterviewerProfileContainer extends Component{
                     interviewer={this.props.interviewerProfile}
                     updateInterviewer={this.props.onUpdateInterviewerProfile}
                     remove={this.confirmHandler}
+                    removeStatus={this.props.removeSuccess}
                 />
             </Hoc>
         )
@@ -56,6 +58,7 @@ class InterviewerProfileContainer extends Component{
 const mapStateToProps = state => {
     return{
         interviewerProfile: state.interviewersReducer.interviewerProfile,
+        removeSuccess: state.interviewersReducer.removeSuccess
     }
 
 }
@@ -63,6 +66,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return{
         onUpdateInterviewerProfile: (obj) => dispatch(interviewersActions.updateInterviewer(obj)),
+        onRemoveInterviewer: (id) => dispatch(interviewersActions.removeInterviewer(id))
     }
 }
 

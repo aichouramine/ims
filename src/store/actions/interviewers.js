@@ -2,17 +2,17 @@ import * as actionTypes from '../actions/actionTypes';
 import {getInterviewers, getTopInterviewers, updateInterviewerStatus,
     updateInterviewerProfile, getInterviewersNumber} from '../../api/axios-interviewers'
 
-export const addInterviewer = (obj) => {
-    return{
-        type: actionTypes.ADD_INTERVIEWER,
-        obj
-    }
-};
-
 export const deactivateInterviewer = (id) => {
     return{
         type: actionTypes.REMOVE_INTERVIEWER,
         id
+    }
+};
+
+export const deactivateInterviewerSuccess = () => {
+    return{
+        type: actionTypes.REMOVE_INTERVIEWER_SUCCESS,
+        removeSuccess: true
     }
 };
 
@@ -89,7 +89,7 @@ export const removeInterviewer = (id) => {
     return (dispatch) => {
         updateInterviewerStatus(id, "false")
             .then(() => dispatch(deactivateInterviewer(id)))
-            // .then(() => dispatch(fetchInterviewersNumber()))
+            .then(() => dispatch(deactivateInterviewerSuccess()))
     }
 }
 

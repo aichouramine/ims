@@ -46,7 +46,7 @@ class InterviewerProfile extends Component{
                 <div className="row">
                     <div className="col-lg-4 col-sm-6 col-md-4">
                         <Introduction styleClass={classes.card} onEdit={this.editHandler} data={this.props.interviewer}
-                                      removeInterviewer={this.props.remove}/>
+                                      removeInterviewer={this.props.remove} currentStatus={this.props.removeStatus}/>
                     </div>
                     <div className="col-lg-8 col-sm-6 col-md-8">
                         {secondaryView}

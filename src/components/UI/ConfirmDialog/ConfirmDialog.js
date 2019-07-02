@@ -9,7 +9,7 @@ const confirmDialog = props => {
                 <h6 className="m-0">Confirm to remove</h6>
             </div>
             <div className={`d-flex p-0 ml-3 card-body ${classes.card_body}`}>
-                <span>Are you sure to do this? This action cannot be undone!</span>
+                <span>Are you sure you want to do this? This action cannot be undone!</span>
             </div>
             <div className={`${classes.card_footer}`}>
                 <div className={classes.confirm_alert_button_group}>
