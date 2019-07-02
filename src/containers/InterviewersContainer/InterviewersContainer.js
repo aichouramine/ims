@@ -4,7 +4,6 @@ import Hoc from '../../hoc/Hoc'
 import InterviewersView from '../../components/InterviewersView/InterviewersView';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
-import {fetchInterviewers} from '../../store/actions/interviewers'
 
 class InterviewersContainer extends Component{
     constructor(props) {
@@ -28,6 +27,7 @@ class InterviewersContainer extends Component{
             pathname: 'profile',
             state: { interviewer: interviewer }
         })
+        this.props.onUpdateInterviewerProfileOffline(interviewer)
         // this.setState({editable: true})
     }
 
@@ -64,7 +64,8 @@ const mapDispatchToProps = (dispatch) => {
         onFetchInterviewers: (page, size) => dispatch(interviewersActions.fetchInterviewers(page, size)),
         onRemoveInterviewer: (id) => dispatch(interviewersActions.removeInterviewer(id)),
         onUpdateInterviewer: (obj) => dispatch(interviewersActions.updateInterviewer(obj)),
-        onFetchInterviewersNumber: () => dispatch(interviewersActions.fetchInterviewersNumber())
+        onFetchInterviewersNumber: () => dispatch(interviewersActions.fetchInterviewersNumber()),
+        onUpdateInterviewerProfileOffline: obj => dispatch(interviewersActions.updateInterviewerProfileOffline(obj))
     }
 }
 

@@ -44,7 +44,7 @@ class InterviewerProfileContainer extends Component{
                     <ConfirmDialog onConfirmRemove={this.onRemoveFromProfile} onCancel={this.confirmCancelHandler}/>
                 </Modal>
                 <InterviewerProfile
-                    interviewer={this.props.history.location.state.interviewer}
+                    interviewer={this.props.interviewerProfile}
                     updateInterviewer={this.props.onUpdateInterviewerProfile}
                     remove={this.confirmHandler}
                 />
@@ -54,9 +54,8 @@ class InterviewerProfileContainer extends Component{
 }
 
 const mapStateToProps = state => {
-
     return{
-        interviewerProfile: state.interviewerProfile,
+        interviewerProfile: state.interviewersReducer.interviewerProfile,
     }
 
 }

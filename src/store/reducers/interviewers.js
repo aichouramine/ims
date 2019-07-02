@@ -25,7 +25,12 @@ const interviewerReducer = (state = initialState, action) => {
                 ...state,
                 interviewers: state.interviewers.filter(({ id }) => id !== action.id)
             }
-        case actionTypes.UPDATE_INTERVIEWER:
+        case actionTypes.UPDATE_INTERVIEWER_PROFILE_OFFLINE:
+            return {
+                ...state,
+                interviewerProfile: action.interviewerProfile
+            }
+        case actionTypes.UPDATE_INTERVIEWER_ONLINE:
             return {
                 ...state,
                 interviewerProfile: action.interviewerProfile

@@ -39,7 +39,14 @@ export const getTopOfInterviewers = (topInterviewers) => {
 
 export const updateInterviewerData = (obj) => {
     return{
-        type: actionTypes.UPDATE_INTERVIEWER,
+        type: actionTypes.UPDATE_INTERVIEWER_ONLINE,
+        interviewerProfile: obj
+    }
+}
+
+export const addInterviewerProfileOffline = (obj) => {
+    return{
+        type: actionTypes.UPDATE_INTERVIEWER_PROFILE_OFFLINE,
         interviewerProfile: obj
     }
 }
@@ -89,6 +96,12 @@ export const removeInterviewer = (id) => {
 export const updateInterviewer = (obj) => {
     return (dispatch) => {
         updateInterviewerProfile(obj)
-            .then(() => dispatch(updateInterviewerData(obj)))
+            .then((response) => dispatch(updateInterviewerData(response.data)))
     }
+}
+
+export const updateInterviewerProfileOffline = (obj) => {
+    return(dispatch => {
+        dispatch(addInterviewerProfileOffline(obj))
+    })
 }

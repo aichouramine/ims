@@ -4,12 +4,13 @@ import classes from './Introduction.module.css';
 import {levels} from "../../../enums/levels";
 
 const introduction = props => {
-    return(
-        <Hoc>
-            <div className={` ${props.styleClass} mb-4 pt-3`}>
-                <div className={classes.update} onClick={props.onEdit}>
-                    <i className="material-icons">edit</i>
-                </div>
+    let mainData = (
+        <div>Loading</div>
+    )
+
+    if(props.data) {
+        mainData = (
+            <Hoc>
                 <div className={`${classes.text_center} ${classes.card_header}`}>
                     <div className={`mb-3 mx-auto ${classes.avatar_img}` } style={{backgroundImage: `url(${props.data.profilePhoto})`}}>
                     </div>
@@ -46,6 +47,17 @@ const introduction = props => {
                         </span>
                     </li>
                 </ul>
+            </Hoc>
+        )
+    }
+
+    return(
+        <Hoc>
+            <div className={` ${props.styleClass} mb-4 pt-3`}>
+                <div className={classes.update} onClick={props.onEdit}>
+                    <i className="material-icons">edit</i>
+                </div>
+                {mainData}
             </div>
         </Hoc>
     )
