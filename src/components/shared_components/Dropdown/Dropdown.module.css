@@ -23,3 +23,7 @@ select:focus{
 select:active{
     outline: none;
 }
+
+.Dropdown::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 11px;
+}

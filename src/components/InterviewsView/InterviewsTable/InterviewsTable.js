@@ -5,6 +5,7 @@ import Remove from '../../shared_components/TableActions/Remove/Remove'
 import FollowUp from "../../shared_components/TableActions/FollowUp/FollowUp";
 import {levels} from "../../../enums/levels";
 import {statuses} from "../../../enums/statuses";
+import {locations} from "../../../enums/locations";
 import moment from 'moment';
 
 const interviewsTable = (props) => {
@@ -44,7 +45,7 @@ const interviewsTable = (props) => {
                         {`${int.candidate.firstname} ${int.candidate.lastname}`}
                     </td>
                     <td>{levels[int.candidate.level]}</td>
-                    <td>{int.candidate.location}</td>
+                    <td>{locations[int.candidate.location]}</td>
                     <td>{moment(int.date).format("DD-MMMM-YY, hh:mm a")}</td>
                     {/*<td>@mdo</td>*/}
                     <td>

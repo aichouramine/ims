@@ -31,7 +31,7 @@
 .confirm_alert_button_group button{
     display: inline-block;
     padding: 6px 18px;
-    margin-right: 10px;
+    margin-right: 5px;
     border-radius: 5px;
     font-size: 12px;
     cursor: pointer;

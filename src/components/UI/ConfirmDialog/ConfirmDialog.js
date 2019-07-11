@@ -12,7 +12,7 @@ const confirmDialog = props => {
                 <span>Are you sure you want to do this? This action cannot be undone!</span>
             </div>
             <div className={`${classes.card_footer}`}>
-                <div className={classes.confirm_alert_button_group}>
+                <div className={`btn-group ${classes.confirm_alert_button_group}`}>
                     <button type="button" className="btn btn-danger btn-sm" onClick={props.onConfirmRemove}>Yes</button>
                     <button type="button" className="btn btn-outline-dark btn-sm" onClick={props.onCancel}>No</button>
                 </div>

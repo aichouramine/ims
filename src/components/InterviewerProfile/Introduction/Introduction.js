@@ -9,8 +9,8 @@ const introduction = props => {
     )
 
     let interviewerStatus = (
-        <input type="submit" className={`mt-1 mb-2 mr-1 btn btn-outline-danger btn-sm ${classes.action_button}`}
-               value="Remove" onClick={props.removeInterviewer}/>
+        <input type="submit" className={`mt-1 mb-2 mr-1 btn btn-outline-primary btn-sm ${classes.action_button}`}
+               value="Edit" onClick={props.onEdit}/>
     )
 
     let edit = (
@@ -72,7 +72,7 @@ const introduction = props => {
     return(
         <Hoc>
             <div className={` ${props.styleClass} mb-4 pt-3`}>
-                {edit}
+                {/*{edit}*/}
                 {mainData}
             </div>
         </Hoc>
