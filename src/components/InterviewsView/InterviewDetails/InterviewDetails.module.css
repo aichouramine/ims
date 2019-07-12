@@ -120,3 +120,17 @@
     justify-content: space-between;
     align-items: baseline;
 }
+
+.cancel i{
+    font-size: 1.4625rem;
+    color: #c3c7cc;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.cancel i:hover{
+    cursor: pointer;
+    color: #868e96;
+}

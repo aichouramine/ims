@@ -6,11 +6,14 @@ import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
 import {statuses} from "../../../enums/statuses";
 
-const newInterviewerView = props => {
+const interviewerDetails = props => {
     return(
         <div className={`${classes.card} h-100 `}>
             <div className={`${classes.card_header} ${classes.border_bottom}`}>
                 <h6 className="m-0">Add new record</h6>
+                <div className={classes.cancel} onClick={props.onClose}>
+                    <i className="material-icons">clear</i>
+                </div>
             </div>
             <div className="row">
                 <div className="col">
@@ -72,4 +75,4 @@ const newInterviewerView = props => {
     )
 }
 
-export default newInterviewerView;
+export default interviewerDetails;

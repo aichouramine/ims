@@ -41,9 +41,9 @@ class InterviewerProfileContainer extends Component{
     render(){
         return(
             <Hoc>
-                <Modal show={this.state.confirm} modalClosed={this.confirmCancelHandler} confirmed={this.onRemoveFromProfile}>
-                    <ConfirmDialog onConfirmRemove={this.onRemoveFromProfile} onCancel={this.confirmCancelHandler}/>
-                </Modal>
+                {/*<Modal show={this.state.confirm} modalClosed={this.confirmCancelHandler} confirmed={this.onRemoveFromProfile}>*/}
+                    {/*<ConfirmDialog onConfirmRemove={this.onRemoveFromProfile} onCancel={this.confirmCancelHandler}/>*/}
+                {/*</Modal>*/}
                 <InterviewerProfile
                     interviewer={this.props.interviewerProfile}
                     updateInterviewer={this.props.onUpdateInterviewerProfile}
