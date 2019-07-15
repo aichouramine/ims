@@ -19,14 +19,14 @@ const interviewerDetails = props => {
                 <div className="col">
                     <form>
                         <div className={`px-3 list-group-item ${classes.form_body}`}>
-                            <strong className={`d-block mb-2 ${classes.text_muted}`}>Candidate details</strong>
+                            <strong className={`d-block mb-2 mt-3 ${classes.text_muted}`}>Candidate details</strong>
                             <div className={classes.form_group_wrapper}>
-                                <div className="form-group pl-0 mb-0">
+                                <div className="form-group pl-0 mb-0" style={{width: '45%'}}>
                                     <label htmlFor="feFirstname" className={classes.label}>Firstname</label>
                                     <input id="feFirstname" type="text" placeholder="Firstname"
                                            className={`form-control ${classes.custom_input_control}`}/>
                                 </div>
-                                <div className="form-group p-0 mb-0">
+                                <div className="form-group p-0 mb-0" style={{width: '45%'}}>
                                     <label htmlFor="feLastname" className={classes.label}>Lastname</label>
                                     <input id="feLastname" type="text" placeholder="Lastname"
                                            className={`form-control ${classes.custom_input_control}`}/>
@@ -43,11 +43,11 @@ const interviewerDetails = props => {
                                 </div>
                             </div>
 
-                            <strong className={`d-block mb-2 ${classes.text_muted}`}>Interview details</strong>
+                            <strong className={`d-block mb-2 mt-3 ${classes.text_muted}`}>Interview details</strong>
                             <div className={classes.form_group_wrapper}>
                                 <div className="form-group p-0 mb-0 d-flex flex-column">
                                     <label className={classes.label}>When</label>
-                                    <Datepicker showTimeSelect={true}/>
+                                    <Datepicker showTimeSelect={false}/>
                                 </div>
                                 <div className="form-group p-0 mb-0">
                                     <label className={classes.label}>Who</label>
