@@ -18,7 +18,7 @@ class InterviewersContainer extends Component{
     }
 
     componentDidMount(){
-         this.props.onFetchInterviewers(0, 10);
+         this.props.onFetchInterviewers(0, 30);
          this.props.onFetchInterviewersNumber()
     }
 

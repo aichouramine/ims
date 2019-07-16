@@ -39,6 +39,70 @@
     color: #3d5170;
 }
 
+.interviewers_view__body{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: left;
+    justify-content: space-between;
+}
+
+.interviewers_view__body > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+}
+
+ul {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.toggle_wrapper{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #818ea3;
+    cursor: pointer;
+    padding: 0 5px 20px 0;
+}
+
+.toggle_wrapper::before{
+    background: #818ea3;
+    content: "";
+    display: inline-block;
+    height: 24px;
+    margin-right: 5px;
+    width: 1px;
+}
+
+.toggle_wrapper__view{
+    color: #818ea3;
+    cursor: pointer;
+
+}
+
+.toggle_wrapper__grid{
+    font-size: 21px;
+
+}
+
+.toggle_wrapper__list{
+    font-size: 29px;
+}
+
+.toggle_wrapper__grid:hover{
+    color: #007bff;
+}
+
+.toggle_wrapper__list:hover{
+    color: #007bff;
+}
+
+.active_view{
+    color: #007bff;
+}
+
 /*@media (min-width: 1000px) and (min-height: 700px) {*/
 /*.Table{*/
 /*width: 70%;*/

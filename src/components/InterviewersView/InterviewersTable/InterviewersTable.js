@@ -20,7 +20,7 @@ const interviewersTable = (props) => {
         interviewers = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    <th scope="row" >{i+1}</th>
+                    {/*<th scope="row" >{i+1}</th>*/}
                     <td className="d-flex" style={{justifyItems: 'space-between', alignItems: 'center'}}>
                         <div className={`${classes.small_avatar} user-avatar rounded-circle mr-2 pr-2`}
                              style={{backgroundImage: `url(${int.profilePhoto})`}}/>
@@ -49,7 +49,7 @@ const interviewersTable = (props) => {
         <table className={`${classes.Table} table mb-0`}>
             <thead className="bg-light">
             <tr role="row">
-                <th scope="col"><span >ID</span></th>
+                {/*<th scope="col"><span >ID</span></th>*/}
                 <th scope="col"><span >Name</span></th>
                 <th scope="col"><span >Title</span></th>
                 <th scope="col"><span >Location</span></th>

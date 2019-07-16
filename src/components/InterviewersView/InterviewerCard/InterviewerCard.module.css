@@ -1,0 +1,97 @@
+.card{
+    background-color: #fff;
+    border: none;
+    border-radius: .625rem;
+    position: relative;
+    color: #818ea3;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: initial;
+    width: 100%;
+    transition: all .2s ease-in-out;
+    margin: 5px;
+    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px 20px 25px;
+    flex-wrap: wrap;
+}
+
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.small_avatar{
+    width: 75px;
+    height: 75px;
+    box-sizing: border-box;
+    border: 1px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    /*box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);*/
+    transform: translatey(0px);
+    /*animation: float 6s ease-in-out infinite;*/
+    transition: all .4s ease-in-out;
+    background-size: cover;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start ;
+    align-items: flex-start;
+    width: 60%;
+}
+
+.right__name{
+    font-size: 16px;
+    font-weight: 500;
+    color: #3d5170;
+    padding-bottom: 10px;
+}
+
+.right__level{
+    font-size: 12px;
+}
+
+.right__location{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.email_wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    align-items: center;
+}
+
+.email_wrapper i{
+    font-size: 14px;
+    color: #818ea3;
+}
+
+.email_wrapper span{
+    font-size: 12px;
+}
+
+.card.active:hover{
+    animation: none;
+}
+
+.card:hover{
+    /*animation: zoomIn 1.6s linear;*/
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    transform: scale(1.03);
+    cursor: pointer;
+}
