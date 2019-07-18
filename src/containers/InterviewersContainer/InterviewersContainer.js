@@ -15,6 +15,7 @@ class InterviewersContainer extends Component{
 
         this.editHandler = this.editHandler.bind(this)
         this.editCancelHandler = this.editCancelHandler.bind(this)
+        this.updateUrl = this.updateUrl.bind(this)
     }
 
     componentDidMount(){
@@ -35,6 +36,10 @@ class InterviewersContainer extends Component{
         this.setState({editable: false})
     }
 
+    updateUrl(url){
+        this.props.history.push(`?${url}`);
+    }
+
     render(){
         return(
            <Hoc>
@@ -44,6 +49,8 @@ class InterviewersContainer extends Component{
                    removeInterviewer={this.props.onRemoveInterviewer}
                    interviewersNumber={this.props.interviewersNum}
                    getInterviewers={this.props.onFetchInterviewers}
+                   onUrlUpdate={this.updateUrl}
+                   history={this.props.history}
                />
            </Hoc>
         )

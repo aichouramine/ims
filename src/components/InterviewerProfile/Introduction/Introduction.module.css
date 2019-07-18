@@ -81,6 +81,10 @@
     height: 0.3125rem;
 }
 
+.workload{
+    margin: 0 !important;
+}
+
 .progress_wrapper{
     color: rgb(90, 97, 105);
 }
@@ -98,6 +102,7 @@
 
 .skills_group{
     border-radius: 0 0 .625rem .625rem !important;
+    text-align: left !important;
 }
 
 .update i{

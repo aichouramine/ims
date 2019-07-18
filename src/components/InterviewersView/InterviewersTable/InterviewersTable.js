@@ -29,7 +29,7 @@ const interviewersTable = (props) => {
                     <td>{levels[int.level]}</td>
                     <td>{int.location}</td>
                     <td>{int.email}</td>
-                    {/*<td>{int.numberOfInterviews}</td>*/}
+                    <td>Date</td>
                     <td >
                         <TableActions>
                             <Update onEdit={() => goToProfile(int)}/>
@@ -54,7 +54,7 @@ const interviewersTable = (props) => {
                 <th scope="col"><span >Title</span></th>
                 <th scope="col"><span >Location</span></th>
                 <th scope="col"><span >Email</span></th>
-                {/*<th scope="col"><span >Total # of i-views</span></th>*/}
+                <th scope="col"><span >Last i-view date</span></th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>

@@ -40,7 +40,7 @@ const introduction = props => {
                     <span className={`${classes.email_text} d-block mb-2`}>{props.data.email}</span>
                     {interviewerStatus}
                 </div>
-                <ul className="list-group list-group-flush">
+                <ul className={`list-group list-group-flush ${classes.workload}`} >
                     <li className="px-4 list-group-item">
                         <div className={classes.progress_wrapper}>
                             <div className={classes.workload_wrapper}>

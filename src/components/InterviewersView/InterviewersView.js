@@ -14,31 +14,65 @@ class InterviewersView extends Component{
         super(props);
 
         this.state = {
-            cardView: false
+            cardView: this.getPageLayout()
         };
 
         // this.editHandler = this.editHandler.bind(this)
         // this.editCancelHandler = this.editCancelHandler.bind(this)
     }
 
-    toggleTableView = (e) => {
-        let activeClass = `${classes.active_view}`
+    componentDidMount(){
+        let activeClass = `${classes.active_view}`;
+        if(this.state.cardView){
+            document.getElementById("grid_1").classList.add(activeClass)
+            document.getElementById("list_1").classList.remove(activeClass)
+        }
+    }
+
+    toggleTableView = () => {
+        let activeClass = `${classes.active_view}`;
         this.setState((prevState, props) =>{
             return {cardView: false}
         })
 
+        const url = this.setPageLayout({ query: "table" });
+
         document.getElementById("list_1").classList.add(activeClass)
         document.getElementById("grid_1").classList.remove(activeClass)
+
+        this.props.onUrlUpdate(url)
     }
 
-    toggleCardView = (e) => {
+    toggleCardView = () => {
         let activeClass = `${classes.active_view}`
         this.setState((prevState, props) =>{
             return {cardView: true}
         })
 
+        const url = this.setPageLayout({ query: "card" });
+
         document.getElementById("grid_1").classList.add(activeClass)
         document.getElementById("list_1").classList.remove(activeClass)
+
+        this.props.onUrlUpdate(url)
+
+    }
+
+    setPageLayout = ({query = "table"}) => {
+        const searchParams = new URLSearchParams();
+        searchParams.set("layout", query);
+        return searchParams.toString();
+    }
+
+    getPageLayout = () => {
+        if(this.props.history.location.search){
+            const searchParams = new URLSearchParams(this.props.history.location.search);
+            if(searchParams.get('layout') === "card"){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     render(){
@@ -90,7 +124,8 @@ class InterviewersView extends Component{
                         <i className={`material-icons ${classes.toggle_wrapper__grid}`} id="grid_1" onClick={this.toggleCardView}>
                             grid_on
                         </i>
-                        <i className={`material-icons ${classes.toggle_wrapper__list}`} id="list_1" onClick={this.toggleTableView}>
+                        <i className={`material-icons ${classes.toggle_wrapper__list} ${classes.active_view}`}
+                           id="list_1" onClick={this.toggleTableView}>
                             list
                         </i>
                     </div>
