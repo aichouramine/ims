@@ -11,6 +11,7 @@ const interviewReducer = (state = initialState, action) => {
         case actionTypes.GET_INTERVIEWS:
             return {
                 ...state,
+                // list: [...state.list, ...action.list]
                 interviews: action.interviews
             }
         case actionTypes.REMOVE_INTERVIEW:

@@ -32,7 +32,11 @@ const interviewsView = (props) => (
                         <h6 className="m-0 pt-2 pb-2">Interviews</h6>
                     </div>
                     <div className="card-body p-0 pb-3 text-center">
-                        <InterviewsTable list={props.interviews} onInterviewRemove={props.removeInterview}/>
+                        <InterviewsTable
+                            list={props.interviews}
+                            onInterviewRemove={props.removeInterview}
+                            loadMoreItems={props.loadMoreItems}
+                        />
                     </div>
                 </div>
             </div>
@@ -41,9 +45,9 @@ const interviewsView = (props) => (
             <div className={`${classes.Table_pagination_info}`}>
                 Showing 1 to 10 of 57 entries
             </div>
-            <div className={`${classes.Table_pagination}`}>
-                <Pagination/>
-            </div>
+            {/*<div className={`${classes.Table_pagination}`}>*/}
+                {/*<Pagination/>*/}
+            {/*</div>*/}
         </div>
     </Hoc>
 );

@@ -1,3 +1,7 @@
+.Remove{
+    display: flex;
+}
+
 .Remove i{
     font-size: 1.3625rem;
     color: #c3c7cc;

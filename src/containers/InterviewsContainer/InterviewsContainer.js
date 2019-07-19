@@ -19,7 +19,7 @@ class InterviewsContainer extends Component{
     }
 
     componentDidMount(){
-        this.props.onFetchInterviews()
+        this.props.onFetchInterviews(0, 10)
     }
 
     addNewHandler() {
@@ -44,6 +44,7 @@ class InterviewsContainer extends Component{
                 <InterviewsView addNew={this.addNewHandler}
                                 interviews={this.props.interviews}
                                 removeInterview={this.props.onRemoveInterview}
+                                loadMoreItems={this.props.onFetchInterviews}
                 />
             </Hoc>
         )
@@ -59,7 +60,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        onFetchInterviews: () => dispatch(interviewsActions.fetchInterviews()),
+        onFetchInterviews: (page, size) => dispatch(interviewsActions.fetchInterviews(page, size)),
         onRemoveInterview: (id) => dispatch(interviewsActions.removeInterviewRecord(id))
     }
 }

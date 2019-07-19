@@ -22,9 +22,9 @@ export const getCountOfInterviews = (interviewsNumber) => {
     }
 }
 
-export const fetchInterviews = () => {
+export const fetchInterviews = (page, size) => {
     return (dispatch) => {
-        getInterviews()
+        getInterviews(page, size)
             .then((response) => dispatch(getAllInterviews(response.data)))
     }
 }

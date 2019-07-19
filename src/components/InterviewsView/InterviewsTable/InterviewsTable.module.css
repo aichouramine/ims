@@ -7,6 +7,15 @@
     font-size: 0.8rem;
 }
 
+.Table > thead > tr > th {
+    padding: 0.85rem 1.75rem !important;
+}
+
+.Table > tbody > tr > td {
+    padding: 0.75rem 1.75rem !important;
+    height: 60px !important;
+}
+
 .Table tbody tr, th, td{
     padding: 15px;
     text-align: left;
@@ -37,8 +46,8 @@
 
 .custom_badge{
     border-radius: 0.2rem !important;
-    font-size: 0.7rem !important;
+    font-size: 0.8rem !important;
     font-weight: 500 !important;
     padding: .25em 0;
-    width: 75% !important;
+    width: 80% !important;
 }

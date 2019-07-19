@@ -24,7 +24,6 @@ const interviewsTable = (props) => {
     function printInterviewers(arr) {
         if(arr && arr.length > 0){
             interviewers = arr.map((int, i) => {
-                // console.log(int)
                 return(
                     <div key={`${i}`}>
                         {`${int.firstname} ${int.lastname} `}
@@ -78,7 +77,6 @@ const interviewsTable = (props) => {
                         </td>
                     <td >
                         <TableActions>
-                            {/*<Update/>*/}
                             <FollowUp/>
                             <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId={`${int.id}`}
                                     onConfirm={props.onInterviewRemove} intId={int.id}>
