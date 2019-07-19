@@ -36,11 +36,33 @@ const interviewsTable = (props) => {
         return interviewers;
     }
 
+    function printStatus(status) {
+        let attachedClass = `${classes.custom_badge} badge badge-secondary`;
+
+        switch (status){
+            case "Done": attachedClass = `${classes.custom_badge} badge badge-primary`
+                break;
+            case "JO Accepted": attachedClass = `${classes.custom_badge} badge badge-success`
+                break;
+            case "JO Rejected": attachedClass = `${classes.custom_badge} badge badge-warning`
+                break;
+            case "Rejected": attachedClass = `${classes.custom_badge} badge badge-danger`
+                break;
+            case "JO Made": attachedClass = `${classes.custom_badge} badge badge-info`
+                break;
+        }
+
+        return(
+            <span className={attachedClass}>{status}</span>
+            )
+
+    }
+
     if(props.list && props.list.length > 0){
         interviews = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    <th scope="row">{int.id}</th>
+                    {/*<th scope="row">{i+1}</th>*/}
                     <td>
                         {`${int.candidate.firstname} ${int.candidate.lastname}`}
                     </td>
@@ -51,7 +73,9 @@ const interviewsTable = (props) => {
                     <td>
                     {printInterviewers(int.interviewers)}
                     </td>
-                    <td>{statuses[int.status]}</td>
+                    <td>
+                        {printStatus(statuses[int.status])}
+                        </td>
                     <td >
                         <TableActions>
                             {/*<Update/>*/}
@@ -73,7 +97,7 @@ const interviewsTable = (props) => {
         <table className={`${classes.Table} table mb-0`}>
             <thead className="bg-light">
             <tr>
-                <th scope="col">#</th>
+                {/*<th scope="col">#</th>*/}
                 <th scope="col">Name</th>
                 <th scope="col">Level</th>
                 <th scope="col">Location</th>

@@ -13,8 +13,19 @@
     vertical-align: inherit !important;
 }
 
+/*.Table tr{*/
+    /*transition: all .2s ease-in-out;*/
+/*}*/
+
+/*.Table tr:hover{*/
+    /*box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);*/
+    /*opacity: 1;*/
+    /*transform: scale(1.02);*/
+    /*cursor: pointer;*/
+/*}*/
+
 .info i{
-    font-size: 0.9625rem;
+    font-size: 0.8625rem !important;
     color: #c3c7cc;
     text-decoration: none;
     padding-left: 5px;
@@ -22,4 +33,12 @@
 
 .info i:hover{
     cursor: pointer;
+}
+
+.custom_badge{
+    border-radius: 0.2rem !important;
+    font-size: 0.7rem !important;
+    font-weight: 500 !important;
+    padding: .25em 0;
+    width: 75% !important;
 }
