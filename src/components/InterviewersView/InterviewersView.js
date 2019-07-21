@@ -80,7 +80,9 @@ class InterviewersView extends Component{
         if(this.props.interviewers){
             interviewers = this.props.interviewers.map((int, ind) => {
                 return (
-                    <InterviewerCard interviewer={int} key={ind} onInterviewerEdit={this.props.editInterviewer}/>
+                    <InterviewerCard interviewer={int} key={ind}
+                                     onInterviewerEdit={this.props.editInterviewer}
+                                     onInterviewerRemove={this.props.onRemoving}/>
                 )
             })
         }
@@ -95,7 +97,7 @@ class InterviewersView extends Component{
                         <div className="card-body p-0 pb-3 text-center">
                             <InterviewersTable list={this.props.interviewers}
                                                onInterviewerEdit={this.props.editInterviewer}
-                                               onInterviewerRemove={this.props.removeInterviewer}
+                                               onInterviewerRemove={this.props.onRemoving}
                             />
                         </div>
                     </div>

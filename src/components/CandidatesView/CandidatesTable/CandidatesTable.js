@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './InterviewersTable.module.css'
+import classes from './CandidatesTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Update from '../../shared_components/TableActions/Update/Update'
 import {levels} from '../../../enums/levels'
 
-const interviewersTable = (props) => {
+const candidatesTable = (props) => {
     let interviewers = (
         <tr>
             <td>None</td>
@@ -71,4 +71,4 @@ const interviewersTable = (props) => {
 //     name: PropTypes.string.isRequired
 // };
 
-export default interviewersTable;
+export default candidatesTable;

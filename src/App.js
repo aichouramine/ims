@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Layout from './components/Layout/Layout'
 import InterviewsContainer from './containers/InterviewsContainer/InterviewsContainer';
 import InterviewersContainer from './containers/InterviewersContainer/InterviewersContainer';
-import ResourcesNeeds from './containers/ResourcesNeeds/ResourcesNeeds';
+import CandidatesContainer from './containers/CandidatesContainer/CandidatesContainer';
 import Dashboard from './containers/Dashboard/Dashboard';
 import InterviewerProfileContainer from './containers/InterviewerProfileContainer/InterviewerProfileContainer';
 import InterviewsCalendar from './containers/InterviewsCalendar/InterviewsCalendar';
@@ -18,6 +18,7 @@ class App extends Component {
             <Route path="/interviews" component={InterviewsContainer}/>
             <Route path="/interviewers" component={InterviewersContainer}/>
             <Route path="/profile" component={InterviewerProfileContainer}/>
+            <Route path="/candidates" component={CandidatesContainer}/>
             {/*<Route path="/needs" component={ResourcesNeeds}/>*/}
             {/*<Route path="/schedule" component={InterviewsCalendar}/>*/}
             {/*<Route path="/feedbacks" component={FollowUp}/>*/}
