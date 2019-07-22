@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './InterviewerCard.module.css'
 import {levels} from "../../../enums/levels";
+import {locations} from "../../../enums/locations";
 
 const interviewerCard = props => {
     function goToProfile(obj) {
@@ -25,7 +26,7 @@ const interviewerCard = props => {
                         <i className="material-icons" >
                             location_on
                         </i>
-                        <span>{props.interviewer.location}</span>
+                        <span>{locations[props.interviewer.location]}</span>
                     </li>
                     <li className={`${classes.right_info__field} ${classes.right_info__field_email} ${classes.right_info__field_icon}`}>
                         <i className="material-icons" >

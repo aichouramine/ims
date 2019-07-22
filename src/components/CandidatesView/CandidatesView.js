@@ -10,6 +10,13 @@ const candidatesView = props => {
         <Hoc>
             <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
                 <PageHeader subtitle="People" title="Candidates"/>
+                <div style={{width: '200px'}} className="d-flex justify-content-end">
+                    <button className="btn btn-primary d-flex align-items-center" style={{width: '30px', fontSize: '14px'}}
+                            onClick={props.addNew}>
+                        <i className="material-icons" style={{fontSize: '14px', paddingRight: '5px'}}>add_circle_outline</i>
+                        Add new
+                    </button>
+                </div>
             </div>
                 <div className="row ">
                     <div className="col">
@@ -18,7 +25,7 @@ const candidatesView = props => {
                                 <h6 className="m-0 pt-2 pb-2" >Candidates</h6>
                             </div>
                             <div className="card-body p-0 pb-3 text-center">
-                                <CandidatesTable/>
+                                <CandidatesTable list={props.candidates}/>
                             </div>
                         </div>
                     </div>

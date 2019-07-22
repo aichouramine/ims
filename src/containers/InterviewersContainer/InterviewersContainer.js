@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Hoc from '../../hoc/Hoc'
 import InterviewersView from '../../components/InterviewersView/InterviewersView';
-import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 
 class InterviewersContainer extends Component{

@@ -4,6 +4,7 @@ import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Update from '../../shared_components/TableActions/Update/Update'
 import {levels} from '../../../enums/levels'
+import {locations} from '../../../enums/locations'
 
 const interviewersTable = (props) => {
     let interviewers = (
@@ -27,7 +28,7 @@ const interviewersTable = (props) => {
                         {`${int.firstname} ${int.lastname}`}
                     </td>
                     <td>{levels[int.level]}</td>
-                    <td>{int.location}</td>
+                    <td>{locations[int.location]}</td>
                     <td>{int.email}</td>
                     <td>Date</td>
                     <td >

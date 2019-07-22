@@ -82,3 +82,11 @@ span.Table_sorting:after {
 .details img {
     width: 25px;
 }
+
+.custom_badge{
+    border-radius: 0.2rem !important;
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    padding: .25em 0;
+    width: 80% !important;
+}

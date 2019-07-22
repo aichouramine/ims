@@ -2,38 +2,67 @@ import React from 'react';
 import classes from './CandidatesTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
-import Update from '../../shared_components/TableActions/Update/Update'
+import Details from '../../shared_components/TableActions/Details/Details'
 import {levels} from '../../../enums/levels'
+import {locations} from '../../../enums/locations'
+import moment from "moment/moment";
 
 const candidatesTable = (props) => {
-    let interviewers = (
+    let candidates = (
         <tr>
             <td>None</td>
         </tr>
     )
 
-    function goToProfile(obj) {
-        props.onInterviewerEdit(obj)
+    // function goToProfile(obj) {
+    //     props.onInterviewerEdit(obj)
+    // }
+
+    function printStatus(status) {
+        let attachedClass = `${classes.custom_badge} badge badge-secondary`;
+
+        switch (status){
+            case "DONE": attachedClass = `${classes.custom_badge} badge badge-primary`
+                break;
+            case "JO_ACCEPTED": attachedClass = `${classes.custom_badge} badge badge-success`
+                break;
+            case "JO_REJECTED": attachedClass = `${classes.custom_badge} badge badge-warning`
+                break;
+            case "REJECTED": attachedClass = `${classes.custom_badge} badge badge-danger`
+                break;
+            case "JO_MADE": attachedClass = `${classes.custom_badge} badge badge-info`
+                break;
+        }
+
+        return(
+            <span className={attachedClass}>{status}</span>
+        )
+
+    }
+
+    function returnDate(date) {
+        if(date===null){
+            return "";
+        }
+
+        return moment(date).format("DD-MMMM-YY")
     }
 
     if(props.list && props.list.length > 0){
-        interviewers = props.list.map((int, i) => {
+        candidates = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    {/*<th scope="row" >{i+1}</th>*/}
                     <td className="d-flex" style={{justifyItems: 'space-between', alignItems: 'center'}}>
-                        <div className={`${classes.small_avatar} user-avatar rounded-circle mr-2 pr-2`}
-                             style={{backgroundImage: `url(${int.profilePhoto})`}}/>
                         {`${int.firstname} ${int.lastname}`}
                     </td>
                     <td>{levels[int.level]}</td>
-                    <td>{int.location}</td>
-                    <td>{int.email}</td>
-                    <td>Date</td>
+                    <td>{locations[int.location]}</td>
+                    <td>{printStatus(int.status)}</td>
+                    <td>{returnDate(int.startDate)}</td>
                     <td >
                         <TableActions>
-                            <Update onEdit={() => goToProfile(int)}/>
-                            {/*<Details/>*/}
+                            {/*<Update onEdit={() => goToProfile(int)}/>*/}
+                            <Details/>
                             {/*<Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}*/}
                                     {/*onConfirm={props.onInterviewerRemove} intId={int.id}>*/}
                                 {/*You are going to send {`${int.firstname} ${int.lastname}`} to the bench. Are you sure?*/}
@@ -51,15 +80,15 @@ const candidatesTable = (props) => {
             <tr role="row">
                 {/*<th scope="col"><span >ID</span></th>*/}
                 <th scope="col"><span >Name</span></th>
-                <th scope="col"><span >Title</span></th>
+                <th scope="col"><span >Level</span></th>
                 <th scope="col"><span >Location</span></th>
-                <th scope="col"><span >Email</span></th>
-                <th scope="col"><span >Last i-view date</span></th>
+                <th scope="col"><span >Status</span></th>
+                <th scope="col"><span >Start Date</span></th>
                 <th scope="col">Actions</th>
             </tr>
             </thead>
             <tbody>
-            {interviewers}
+            {candidates}
             </tbody>
         </table>
     )

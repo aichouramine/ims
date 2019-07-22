@@ -9,11 +9,13 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import interviewerReducer from './store/reducers/interviewers';
 import interviewReducer from './store/reducers/interviews';
+import candidateReducer from './store/reducers/candidates';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const rootReducer = combineReducers({
     interviewersReducer: interviewerReducer,
-    interviewsReducer: interviewReducer
+    interviewsReducer: interviewReducer,
+    candidatesReducer: candidateReducer
 })
 
 const store = createStore(
