@@ -5,6 +5,7 @@ import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Details from '../../shared_components/TableActions/Details/Details'
 import {levels} from '../../../enums/levels'
 import {locations} from '../../../enums/locations'
+import {statuses} from "../../../enums/statuses";
 import moment from "moment/moment";
 
 const candidatesTable = (props) => {
@@ -22,20 +23,20 @@ const candidatesTable = (props) => {
         let attachedClass = `${classes.custom_badge} badge badge-secondary`;
 
         switch (status){
-            case "DONE": attachedClass = `${classes.custom_badge} badge badge-primary`
+            case status.DONE: attachedClass = `${classes.custom_badge} badge badge-primary`
                 break;
-            case "JO_ACCEPTED": attachedClass = `${classes.custom_badge} badge badge-success`
+            case status.JO_ACCEPTED: attachedClass = `${classes.custom_badge} badge badge-success`
                 break;
-            case "JO_REJECTED": attachedClass = `${classes.custom_badge} badge badge-warning`
+            case status.JO_REJECTED: attachedClass = `${classes.custom_badge} badge badge-warning`
                 break;
-            case "REJECTED": attachedClass = `${classes.custom_badge} badge badge-danger`
+            case status.REJECTED: attachedClass = `${classes.custom_badge} badge badge-danger`
                 break;
-            case "JO_MADE": attachedClass = `${classes.custom_badge} badge badge-info`
+            case status.JO_MADE: attachedClass = `${classes.custom_badge} badge badge-info`
                 break;
         }
 
         return(
-            <span className={attachedClass}>{status}</span>
+            <span className={attachedClass}>{statuses[status]}</span>
         )
 
     }
