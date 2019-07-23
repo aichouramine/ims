@@ -12,7 +12,7 @@ const candidatesView = props => {
                 <PageHeader subtitle="People" title="Candidates"/>
                 <div style={{width: '200px'}} className="d-flex justify-content-end">
                     <button className="btn btn-primary d-flex align-items-center" style={{width: '30px', fontSize: '14px'}}
-                            onClick={props.addNew}>
+                            onClick={props.addNewCandidate}>
                         <i className="material-icons" style={{fontSize: '14px', paddingRight: '5px'}}>add_circle_outline</i>
                         Add new
                     </button>

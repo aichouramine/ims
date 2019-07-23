@@ -18,7 +18,7 @@ class InterviewersContainer extends Component{
     }
 
     componentDidMount(){
-         this.props.onFetchInterviewers(0, 30);
+         this.props.onFetchInterviewers();
          this.props.onFetchInterviewersNumber()
     }
 
@@ -67,7 +67,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = (dispatch) => {
     return{
-        onFetchInterviewers: (page, size) => dispatch(interviewersActions.fetchInterviewers(page, size)),
+        onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers()),
         onRemoveInterviewer: (id) => dispatch(interviewersActions.removeInterviewer(id)),
         onUpdateInterviewer: (obj) => dispatch(interviewersActions.updateInterviewer(obj)),
         onFetchInterviewersNumber: () => dispatch(interviewersActions.fetchInterviewersNumber()),

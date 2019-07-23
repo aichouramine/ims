@@ -4,8 +4,8 @@ const instance = axios.create({
     baseURL: 'http://localhost:8892/api/v1/interviewers'
 })
 
-export const getInterviewers = (page, size) => (
-    instance.get("/getAllInterviewers/" + page + "/" + size)
+export const getInterviewers = () => (
+    instance.get("/getAllInterviewersWithInterviewNumber")
 )
 
 export const getInterviewersNumber = () => (

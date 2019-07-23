@@ -7,16 +7,26 @@ class CandidatesContainer extends Component{
     constructor(props) {
         super(props);
 
+        this.addNewHandler = this.addNewHandler.bind(this)
     }
 
     componentDidMount(){
         this.props.onFetchCandidates(0, 30);
     }
 
+    addNewHandler() {
+        this.props.history.push({
+            pathname: '/candidates/details'
+        })
+        // this.props.onUpdateInterviewerProfileOffline(interviewer)
+        // this.setState({editable: true})
+    }
+
     render(){
         return(
             <CandidatesView
                 candidates={this.props.candidates}
+                addNewCandidate={this.addNewHandler}
             />
         )
     }

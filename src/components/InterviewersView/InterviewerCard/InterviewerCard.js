@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './InterviewerCard.module.css'
 import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
+import moment from "moment/moment";
 
 const interviewerCard = props => {
     function goToProfile(obj) {
@@ -39,11 +40,11 @@ const interviewerCard = props => {
             <ul className={classes.footer}>
                 <li>
                     <span className={classes.header}>Total interviews</span>
-                    <span className={classes.number}>40</span>
+                    <span className={classes.number}>{props.interviewer.totalInterviews}</span>
                 </li>
                 <li>
                     <span className={classes.header}>Last i-view date</span>
-                    <span className={classes.date}>25-June-19, 09:30 am</span>
+                    <span className={classes.date}>{moment(props.interviewer.lastInterviewDate).format("DD-MMMM-YY")}</span>
                 </li>
             </ul>
         </li>

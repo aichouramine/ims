@@ -51,11 +51,11 @@ export const addInterviewerProfileOffline = (obj) => {
     }
 }
 
-export const fetchInterviewers = (page, size) => {
+export const fetchInterviewers = () => {
     return (dispatch) => {
         // dispatch(allOrdersCountFetchInProgress(true));
 
-        getInterviewers(page, size)
+        getInterviewers()
             .then((response) => dispatch(getAllInterviewers(response.data)))
 
             // .then(() => dispatch(allOrdersCountFetchSuccess()))

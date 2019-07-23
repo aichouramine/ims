@@ -1,6 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
 import { getCandidates } from '../../api/axios-candidates'
-import {getInterviewers} from "../../api/axios-interviewers";
 
 export const getAllCandidates = (candidates) => {
     return{

@@ -5,6 +5,7 @@ import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Update from '../../shared_components/TableActions/Update/Update'
 import {levels} from '../../../enums/levels'
 import {locations} from '../../../enums/locations'
+import moment from "moment/moment";
 
 const interviewersTable = (props) => {
     let interviewers = (
@@ -30,7 +31,8 @@ const interviewersTable = (props) => {
                     <td>{levels[int.level]}</td>
                     <td>{locations[int.location]}</td>
                     <td>{int.email}</td>
-                    <td>Date</td>
+                    <td style={{textAlign: 'center'}}>{int.totalInterviews}</td>
+                    <td>{moment(int.lastInterviewDate).format("DD-MMMM-YY")}</td>
                     <td >
                         <TableActions>
                             <Update onEdit={() => goToProfile(int)}/>
@@ -55,6 +57,7 @@ const interviewersTable = (props) => {
                 <th scope="col"><span >Title</span></th>
                 <th scope="col"><span >Location</span></th>
                 <th scope="col"><span >Email</span></th>
+                <th scope="col"><span >Total # of i-views</span></th>
                 <th scope="col"><span >Last i-view date</span></th>
                 <th scope="col">Actions</th>
             </tr>
