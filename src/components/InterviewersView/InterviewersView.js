@@ -1,11 +1,7 @@
 import React, {Component} from 'react';
 import classes from './InterviewersView.module.css';
-import InterviewersFilterControls from '../InterviewersView/InterviewersFilterControls/InterviewersFilterControls';
 import Hoc from '../../hoc/Hoc';
 import InterviewersTable from '../InterviewersView/InterviewersTable/InterviewersTable';
-import TabButton from '../shared_components/TabButton/TabButton';
-import Pagination from "../Navigation/Pagination/Pagination";
-import EntriesDropdown from "../shared_components/EntriesDropdown/EntriesDropdown";
 import PageHeader from '../Layout/PageHeader/PageHeader';
 import InterviewerCard from './InterviewerCard/InterviewerCard';
 
@@ -16,9 +12,6 @@ class InterviewersView extends Component{
         this.state = {
             cardView: this.getPageLayout()
         };
-
-        // this.editHandler = this.editHandler.bind(this)
-        // this.editCancelHandler = this.editCancelHandler.bind(this)
     }
 
     componentDidMount(){

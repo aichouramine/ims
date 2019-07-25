@@ -14,6 +14,11 @@ const candidateReducer = (state = initialState, action) => {
                 // list: [...state.list, ...action.list]
                 candidates: action.candidates
             }
+        case actionTypes.GET_CANDIDATES_COUNT:
+            return {
+                ...state,
+                candidatesNumber: action.candidatesNumber
+            }
         // case actionTypes.REMOVE_INTERVIEW:
         //     return {
         //         ...state,

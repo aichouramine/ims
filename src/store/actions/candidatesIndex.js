@@ -1,1 +1,1 @@
-export {fetchCandidates} from './candidates';
+export {fetchCandidates, fetchCandidatesNumber} from './candidates';

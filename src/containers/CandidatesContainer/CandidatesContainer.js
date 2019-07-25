@@ -11,7 +11,8 @@ class CandidatesContainer extends Component{
     }
 
     componentDidMount(){
-        this.props.onFetchCandidates(0, 30);
+        this.props.onFetchCandidates(0, 10);
+        this.props.onFetchCandidatesNumber();
     }
 
     addNewHandler() {
@@ -27,6 +28,8 @@ class CandidatesContainer extends Component{
             <CandidatesView
                 candidates={this.props.candidates}
                 addNewCandidate={this.addNewHandler}
+                loadMoreItems={this.props.onFetchCandidates}
+                candidatesNumber={this.props.candidatesNumber}
             />
         )
     }
@@ -36,6 +39,7 @@ const mapStateToProps = state => {
 
     return{
         candidates: state.candidatesReducer.candidates,
+        candidatesNumber: state.candidatesReducer.candidatesNumber
     }
 
 }
@@ -43,6 +47,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return{
         onFetchCandidates: (page, size) => dispatch(candidatesActions.fetchCandidates(page, size)),
+        onFetchCandidatesNumber: () => dispatch(candidatesActions.fetchCandidatesNumber())
     }
 }
 

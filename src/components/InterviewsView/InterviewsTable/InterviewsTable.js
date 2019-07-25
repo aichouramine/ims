@@ -111,8 +111,4 @@ const interviewsTable = (props) => {
     )
 };
 
-// interviewsTable.propTypes = {
-//     name: PropTypes.string.isRequired
-// };
-
 export default interviewsTable;

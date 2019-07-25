@@ -3,9 +3,7 @@ import InterviewsTable from './InterviewsTable/InterviewsTable';
 import classes from './InterviewsView.module.css';
 import CandidatesFilterControls from './InterviewsFilterControls/InterviewsFilterControls';
 import Hoc from '../../hoc/Hoc';
-import TabButton from '../shared_components/TabButton/TabButton';
 import Pagination from '../Navigation/Pagination/Pagination';
-import EntriesDropdown from '../shared_components/EntriesDropdown/EntriesDropdown';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
 const interviewsView = (props) => (
@@ -46,8 +44,8 @@ const interviewsView = (props) => (
                 {/*Showing 1 to 10 of 57 entries*/}
             {/*</div>*/}
             <div className={`${classes.Table_pagination}`}>
-            <Pagination total={props.interviews} totalNumber={props.interviewsNumber} loadItems={props.loadMoreItems}/>
-        </div>
+                <Pagination totalNumber={props.interviewsNumber} loadItems={props.loadMoreItems}/>
+            </div>
         </div>
     </Hoc>
 );

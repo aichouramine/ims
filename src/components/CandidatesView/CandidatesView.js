@@ -3,6 +3,7 @@ import classes from './CandidatesView.module.css';
 import Hoc from '../../hoc/Hoc';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 import CandidatesTable from './CandidatesTable/CandidatesTable'
+import Pagination from '../Navigation/Pagination/Pagination';
 
 const candidatesView = props => {
 
@@ -28,6 +29,14 @@ const candidatesView = props => {
                                 <CandidatesTable list={props.candidates}/>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="d-flex justify-content-end w-100">
+                    {/*<div className={`${classes.Table_pagination_info}`}>*/}
+                    {/*Showing 1 to 10 of 57 entries*/}
+                    {/*</div>*/}
+                    <div className={`${classes.table_pagination}`}>
+                        <Pagination totalNumber={props.candidatesNumber} loadItems={props.loadMoreItems}/>
                     </div>
                 </div>
         </Hoc>

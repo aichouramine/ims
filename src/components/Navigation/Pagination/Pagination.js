@@ -26,7 +26,7 @@ class Pagination extends Component{
         let numberOfPages = [];
         let renderPages = [];
 
-        if (this.props.total) {
+        if (this.props.totalNumber!==null) {
             for (let i = 1; i <= Math.ceil(this.props.totalNumber / this.state.per_page); i++) {
                 numberOfPages.push(i);
             }
@@ -35,7 +35,7 @@ class Pagination extends Component{
             renderPages = numberOfPages.map((p) => {
                 let attached_classes = this.state.current_page === p ? classes.active_page_link : '';
 
-                if (p == 1 || p == this.props.total || (p >= this.state.current_page - 2 && p <= this.state.current_page + 2)) {
+                if (p == 1 || p == this.props.totalNumber || (p >= this.state.current_page - 2 && p <= this.state.current_page + 2)) {
                     return (
                         <li className={` ${classes.active_page} page-item`} key={`${p}`} onClick={() => this.handlePageClick(p)}>
                             <div className={`${classes.Page_link} ${attached_classes} page-link`} >{p}</div>

@@ -22,3 +22,9 @@
 .card_header:first-child{
     border-radius: .625rem .625rem 0 0;
 }
+
+.table_pagination{
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
