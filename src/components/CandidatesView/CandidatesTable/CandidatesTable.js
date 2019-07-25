@@ -23,15 +23,15 @@ const candidatesTable = (props) => {
         let attachedClass = `${classes.custom_badge} badge badge-secondary`;
 
         switch (status){
-            case status.DONE: attachedClass = `${classes.custom_badge} badge badge-primary`
+            case 'DONE': attachedClass = `${classes.custom_badge} badge badge-primary`
                 break;
-            case status.JO_ACCEPTED: attachedClass = `${classes.custom_badge} badge badge-success`
+            case 'JO_ACCEPTED': attachedClass = `${classes.custom_badge} badge badge-success`
                 break;
-            case status.JO_REJECTED: attachedClass = `${classes.custom_badge} badge badge-warning`
+            case 'JO_REJECTED': attachedClass = `${classes.custom_badge} badge badge-warning`
                 break;
-            case status.REJECTED: attachedClass = `${classes.custom_badge} badge badge-danger`
+            case 'REJECTED': attachedClass = `${classes.custom_badge} badge badge-danger`
                 break;
-            case status.JO_MADE: attachedClass = `${classes.custom_badge} badge badge-info`
+            case 'JO_MADE': attachedClass = `${classes.custom_badge} badge badge-info`
                 break;
         }
 
@@ -43,7 +43,7 @@ const candidatesTable = (props) => {
 
     function returnDate(date) {
         if(date===null){
-            return "";
+            return "None";
         }
 
         return moment(date).format("DD-MMMM-YY")
@@ -53,13 +53,13 @@ const candidatesTable = (props) => {
         candidates = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    <td className="d-flex" style={{justifyItems: 'space-between', alignItems: 'center'}}>
+                    <td className={classes.name} style={{justifyItems: 'space-between', alignItems: 'center'}}>
                         {`${int.firstname} ${int.lastname}`}
                     </td>
                     <td>{levels[int.level]}</td>
                     <td>{locations[int.location]}</td>
                     <td>{printStatus(int.status)}</td>
-                    <td>{returnDate(int.startDate)}</td>
+                    <td className={classes.date}>{returnDate(int.startDate)}</td>
                     <td >
                         <TableActions>
                             {/*<Update onEdit={() => goToProfile(int)}/>*/}

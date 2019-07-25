@@ -21,6 +21,8 @@ class Pagination extends Component{
         this.props.loadItems(this.state.current_page + 1, this.state.per_page)
     }
 
+
+
     render(){
 
         let numberOfPages = [];
@@ -35,7 +37,7 @@ class Pagination extends Component{
             renderPages = numberOfPages.map((p) => {
                 let attached_classes = this.state.current_page === p ? classes.active_page_link : '';
 
-                if (p == 1 || p == this.props.totalNumber || (p >= this.state.current_page - 2 && p <= this.state.current_page + 2)) {
+                if (p === 1 || p === this.props.totalNumber || (p >= this.state.current_page - 2 && p <= this.state.current_page + 2)) {
                     return (
                         <li className={` ${classes.active_page} page-item`} key={`${p}`} onClick={() => this.handlePageClick(p)}>
                             <div className={`${classes.Page_link} ${attached_classes} page-link`} >{p}</div>
@@ -44,18 +46,20 @@ class Pagination extends Component{
                 }
 
             })
-
         }
+
+        let firstStateClass = this.state.current_page === 1 ? 'disabled' : '';
+        let lastStateClass = this.state.current_page === (numberOfPages.length) ? 'disabled' : '';
 
         return(
             <nav aria-label="Pagination" className={classes.Pagination}>
                 <ul className="pagination">
-                    <li className="page-item disabled">
-                        <div className={`${classes.Page_link} page-link`}  tabIndex="-1" aria-disabled="true">Previous</div>
+                    <li className={`page-item ${firstStateClass}`} onClick={() => this.handlePageClick(1)}>
+                        <div className={`${classes.Page_link} page-link`}  tabIndex="-1" aria-disabled="true">&laquo;</div>
                     </li>
                     {renderPages}
-                    <li className="page-item" >
-                        <div className={`${classes.Page_link} page-link`} >Next</div>
+                    <li className={`page-item ${lastStateClass}`} onClick={() => this.handlePageClick(numberOfPages.length)}>
+                        <div className={`${classes.Page_link} page-link`} >&raquo;</div>
                     </li>
                 </ul>
             </nav>

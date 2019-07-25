@@ -22,11 +22,12 @@ const interviewersTable = (props) => {
         interviewers = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    {/*<th scope="row" >{i+1}</th>*/}
-                    <td className="d-flex" style={{justifyItems: 'space-between', alignItems: 'center'}}>
-                        <div className={`${classes.small_avatar} user-avatar rounded-circle mr-2 pr-2`}
-                             style={{backgroundImage: `url(${int.profilePhoto})`}}/>
-                        {`${int.firstname} ${int.lastname}`}
+                    <td >
+                        <div className="d-flex" style={{justifyItems: 'space-between', alignItems: 'center'}}>
+                            <div className={`${classes.small_avatar} user-avatar rounded-circle mr-2 pr-2`}
+                                 style={{backgroundImage: `url(${int.profilePhoto})`}}/>
+                            {`${int.firstname} ${int.lastname}`}
+                            </div>
                     </td>
                     <td>{levels[int.level]}</td>
                     <td>{locations[int.location]}</td>

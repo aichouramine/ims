@@ -67,6 +67,14 @@ span.Table_sorting:after {
     background-size: cover;
 }
 
+.name{
+    width: 230px;
+}
+
+.date{
+    width: 200px;
+}
+
 .remove{
     cursor: pointer;
 }
@@ -89,4 +97,5 @@ span.Table_sorting:after {
     font-weight: 500 !important;
     padding: .25em 0;
     width: 80% !important;
+    color: #ffffff !important;
 }
