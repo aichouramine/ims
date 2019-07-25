@@ -61,14 +61,12 @@ const interviewsTable = (props) => {
         interviews = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    {/*<th scope="row">{i+1}</th>*/}
-                    <td>
+                    <td className={classes.name}>
                         {`${int.candidate.firstname} ${int.candidate.lastname}`}
                     </td>
-                    <td>{levels[int.candidate.level]}</td>
+                    <td className={classes.level}>{levels[int.candidate.level]}</td>
                     <td>{locations[int.candidate.location]}</td>
                     <td>{moment(int.date).format("DD-MMMM-YY, HH:mm a")}</td>
-                    {/*<td>@mdo</td>*/}
                     <td>
                     {printInterviewers(int.interviewers)}
                     </td>

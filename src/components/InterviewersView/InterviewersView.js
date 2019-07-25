@@ -121,7 +121,10 @@ class InterviewersView extends Component{
                 <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
                     <PageHeader subtitle="People" title="Interviewers"/>
                 </div>
-                <div className="d-flex align-items-center justify-content-end">
+                <div className="d-flex align-items-center justify-content-between">
+                    <div className={`${classes.number}`}>
+                        Showing 1 to 10 of {this.props.interviewers.length} entries
+                    </div>
                     <div className={`${classes.toggle_wrapper} ${classes.toggle_wrapper__view}`}>
                         <i className={`material-icons ${classes.toggle_wrapper__grid}`} id="grid_1" onClick={this.toggleCardView}>
                             grid_on
@@ -133,30 +136,6 @@ class InterviewersView extends Component{
                     </div>
                 </div>
                 {currentView}
-                {/*<div className={`${classes.interviewers_view__body}`}>*/}
-                    {/*{currentView}*/}
-                {/*</div>*/}
-                {/*<div className="d-flex justify-content-between w-100">*/}
-                {/*<InterviewersFilterControls/>*/}
-                {/*</div>*/}
-                {/*<div className="d-flex justify-content-between w-100">*/}
-                {/*<EntriesDropdown label="interviewers per page"/>*/}
-                {/*/!*<TabButton label="New"/>*!/*/}
-                {/*</div>*/}
-
-
-
-
-
-                {/*</div>*/}
-                {/*<div className="d-flex justify-content-between w-100">*/}
-                    {/*<div className={`${classes.Table_pagination_info}`}>*/}
-                        {/*Showing 1 to {this.props.interviewers.length} of {this.props.interviewersNumber} entries*/}
-                    {/*</div>*/}
-                    {/*/!*<div className={`${classes.Table_pagination}`}>*!/*/}
-                    {/*/!*<Pagination getList={props.getInterviewers} itemsNumber={props.interviewersNumber}/>*!/*/}
-                    {/*/!*</div>*!/*/}
-                {/*</div>*/}
             </Hoc>
         )
     }

@@ -15,4 +15,30 @@
     color: #4366e0;
     font-weight: 400;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.active_page_link{
+    color: #ffffff;
+    background-color: #4366e0;
+}
+
+.active_page{
+    outline: 0;
+    outline-color: transparent !important;
+}
+
+.active_page:active{
+    outline-style: none;
+    outline-color: transparent !important;
+}
+
+.active_page:focus{
+    outline-style: none;
+    outline-color: transparent !important;
+}
+
+.active_page:hover{
+    outline-style: none;
+    outline-color: transparent !important;
 }

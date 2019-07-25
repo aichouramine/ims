@@ -6,6 +6,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import NewInterviewView from '../../components/InterviewsView/InterviewDetails/InterviewDetails';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
 
+
 class InterviewsContainer extends Component{
     constructor(props) {
         super(props);
@@ -20,6 +21,7 @@ class InterviewsContainer extends Component{
 
     componentDidMount(){
         this.props.onFetchInterviews(0, 10)
+        this.props.onFetchTotalInterviewsNumber()
     }
 
     addNewHandler() {
@@ -45,6 +47,7 @@ class InterviewsContainer extends Component{
                                 interviews={this.props.interviews}
                                 removeInterview={this.props.onRemoveInterview}
                                 loadMoreItems={this.props.onFetchInterviews}
+                                interviewsNumber={this.props.interviewsNumber}
                 />
             </Hoc>
         )
@@ -53,7 +56,8 @@ class InterviewsContainer extends Component{
 
 const mapStateToProps = state => {
     return{
-        interviews: state.interviewsReducer.interviews
+        interviews: state.interviewsReducer.interviews,
+        interviewsNumber: state.interviewsReducer.interviewsNumber
     }
 
 }
@@ -61,7 +65,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return{
         onFetchInterviews: (page, size) => dispatch(interviewsActions.fetchInterviews(page, size)),
-        onRemoveInterview: (id) => dispatch(interviewsActions.removeInterviewRecord(id))
+        onRemoveInterview: (id) => dispatch(interviewsActions.removeInterviewRecord(id)),
+        onFetchTotalInterviewsNumber: () => dispatch(interviewsActions.fetchInterviewsNumber())
     }
 }
 

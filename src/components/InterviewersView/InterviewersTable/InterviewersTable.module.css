@@ -24,6 +24,10 @@
     cursor: pointer;
 }
 
+/*td:first-child{*/
+    /*border-top: none;*/
+/*}*/
+
 th span,
 td span {
     display: block;

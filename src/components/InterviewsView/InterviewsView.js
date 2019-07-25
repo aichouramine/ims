@@ -41,13 +41,13 @@ const interviewsView = (props) => (
                 </div>
             </div>
         </div>
-        <div className="d-flex justify-content-between w-100">
-            <div className={`${classes.Table_pagination_info}`}>
-                Showing 1 to 10 of 57 entries
-            </div>
-            {/*<div className={`${classes.Table_pagination}`}>*/}
-                {/*<Pagination/>*/}
+        <div className="d-flex justify-content-end w-100">
+            {/*<div className={`${classes.Table_pagination_info}`}>*/}
+                {/*Showing 1 to 10 of 57 entries*/}
             {/*</div>*/}
+            <div className={`${classes.Table_pagination}`}>
+            <Pagination total={props.interviews} totalNumber={props.interviewsNumber} loadItems={props.loadMoreItems}/>
+        </div>
         </div>
     </Hoc>
 );

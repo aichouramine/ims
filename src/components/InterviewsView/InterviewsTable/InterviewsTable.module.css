@@ -22,6 +22,22 @@
     vertical-align: inherit !important;
 }
 
+.name{
+    width: 200px;
+}
+
+.level{
+    width: 140px;
+}
+
+/*td:last-child{*/
+    /*width: 120px;*/
+/*}*/
+
+/*td:first-child{*/
+    /*width: 215px;*/
+/*}*/
+
 /*.Table tr{*/
     /*transition: all .2s ease-in-out;*/
 /*}*/

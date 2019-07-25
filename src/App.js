@@ -6,8 +6,6 @@ import CandidatesContainer from './containers/CandidatesContainer/CandidatesCont
 import CandidateDetailsContainer from './containers/CandidateDetailsContainer/CandidateDetailsContainer';
 import Dashboard from './containers/Dashboard/Dashboard';
 import InterviewerProfileContainer from './containers/InterviewerProfileContainer/InterviewerProfileContainer';
-import InterviewsCalendar from './containers/InterviewsCalendar/InterviewsCalendar';
-import FollowUp from './containers/FollowUp/FollowUp';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
