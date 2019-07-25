@@ -1,4 +1,4 @@
-.Card{
+.summary_card{
     background-color: #fff;
     border: none;
     border-radius: .625rem;
@@ -11,55 +11,28 @@
     box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
 }
 
-.Card_header{
+.summary_card_header{
     padding: 1rem;
     color: #3d5170;
     background-color: #fff;
 }
 
-.Card_header:first-child{
+.summary_card_header:first-child{
     border-radius: .625rem .625rem 0 0;
 }
 
-.Border_bottom{
+.border_bottom{
     border-bottom: 1px solid #e1e5eb!important;
 }
 
-.Border_top{
+.border_top{
     border-top: 1px solid #e1e5eb!important;
 }
 
-.Card_footer{
+.card_footer{
     padding: 1rem;
 }
 
-.Card_footer:last-child{
+.card_footer:last-child{
     border-radius: 0 0 .625rem .625rem;
-}
-
-.total{
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: .85rem;
-}
-
-.total {
-    text-decoration: none;
-    color: #3d5170;
-    font-weight: 600;
-    padding-right: 25px;
-}
-
-.total:hover{
-    color: #3281bf;
-}
-
-.Text_right{
-    text-align: right!important;
-}
-
-.Custom_select{
-    height: calc(1.88845rem + 2px);
-    font-size: .7875rem;
-    max-width: 130px;
 }

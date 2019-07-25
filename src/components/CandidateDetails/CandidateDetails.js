@@ -2,6 +2,8 @@ import React from 'react';
 import classes from './CandidateDetails.module.css';
 import Hoc from '../../hoc/Hoc';
 import PageHeader from '../Layout/PageHeader/PageHeader';
+import Summary from '../CandidateDetails/Summary/Summary'
+import Details from '../CandidateDetails/Details/Details'
 
 const candidateDetails = props => {
 
@@ -11,15 +13,11 @@ const candidateDetails = props => {
                 <PageHeader subtitle="People" title="Candidate Details"/>
             </div>
             <div className="row ">
-                <div className="col">
-                    <div className={`${classes.card} card-small mb-4`}>
-                        {/*<div className={`${classes.card_header} card-header border-bottom`}>*/}
-                            {/*<h6 className="m-0 pt-2 pb-2" >Candidates</h6>*/}
-                        {/*</div>*/}
-                        {/*<div className="card-body p-0 pb-3 text-center">*/}
-
-                        {/*</div>*/}
-                    </div>
+                <div className="col-md-9">
+                    <Details/>
+                </div>
+                <div className="col-md-3">
+                    <Summary/>
                 </div>
             </div>
         </Hoc>

@@ -4,6 +4,7 @@ import DashboardView from '../../components/DashboardView/DashboardView';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
 import {getInterviewsByStatus} from '../../api/axios-interviews';
+import {getCandidatesByLevel} from '../../api/axios-candidates';
 import {statuses}  from '../../enums/statuses'
 
 class Dashboard extends Component{
@@ -13,16 +14,18 @@ class Dashboard extends Component{
         this.state = {
             rejected: null,
             jo_rejected: null,
-            jo_made: null
+            jo_made: null,
+            levels: []
         }
     }
 
     componentDidMount(){
         this.props.onFetchTopInterviewers();
         this.props.onFetchTotalInterviewsNumber();
-        this.getRejectedInterviews()
-        this.getJoRejectedInterviews()
-        this.getJoMadeInterviews()
+        this.getRejectedInterviews();
+        this.getJoRejectedInterviews();
+        this.getJoMadeInterviews();
+        this.getLevels();
     }
 
     getRejectedInterviews = () => {
@@ -46,6 +49,19 @@ class Dashboard extends Component{
             }))
     }
 
+    getLevels = () => {
+        getCandidatesByLevel()
+            .then((response) => this.setState({
+                levels: response.data
+            }))
+    }
+
+    redirectTo = (page) => {
+        this.props.history.push({
+            pathname: `${page}`
+        })
+    }
+
     render(){
         return(
             <DashboardView
@@ -54,6 +70,8 @@ class Dashboard extends Component{
                 joMade={this.state.jo_made}
                 joRejected={this.state.jo_rejected}
                 topInterviewers={this.props.topInterviewers}
+                redirect={this.redirectTo}
+                countByLevels={this.state.levels}
             />
         )
     }

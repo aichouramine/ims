@@ -7,3 +7,7 @@ const instance = axios.create({
 export const getCandidates = (page, size) => (
     instance.get("/getAllCandidates/" + page + "/" + size)
 )
+
+export const getCandidatesByLevel = () => (
+    instance.get("/getNumberOfLevels/")
+)

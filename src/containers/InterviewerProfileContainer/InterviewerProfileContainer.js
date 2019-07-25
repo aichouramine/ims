@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import InterviewerProfile from '../../components/InterviewerProfile/InterviewerProfile';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
-import Modal from '../../components/UI/Modal/Modal';
-import ConfirmDialog from '../../components/UI/ConfirmDialog/ConfirmDialog';
+import { getInterviewerStatistic } from '../../api/axios-interviewers';
 import Hoc from '../../hoc/Hoc';
-import Details from '../../components/InterviewerProfile/Details/Details'
 
 class InterviewerProfileContainer extends Component{
     constructor(props) {
@@ -13,10 +11,22 @@ class InterviewerProfileContainer extends Component{
 
         this.state = {
             confirm: false,
+            statisticData: []
         };
 
         this.confirmHandler = this.confirmHandler.bind(this)
         this.confirmCancelHandler = this.confirmCancelHandler.bind(this)
+    }
+
+    componentDidMount(){
+        this.getStatisticData(this.props.interviewerProfile.id)
+    }
+
+    getStatisticData = (id) => {
+        getInterviewerStatistic(id)
+            .then((response) => this.setState({
+                statisticData: response.data.slice()
+            }))
     }
 
     onRemoveFromProfile = () => {
@@ -49,6 +59,7 @@ class InterviewerProfileContainer extends Component{
                     updateInterviewer={this.props.onUpdateInterviewerProfile}
                     remove={this.confirmHandler}
                     removeStatus={this.props.removeSuccess}
+                    statistic={this.state.statisticData}
                 />
             </Hoc>
         )

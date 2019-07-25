@@ -24,7 +24,7 @@ class InterviewersContainer extends Component{
 
     editHandler(interviewer) {
         this.props.history.push({
-            pathname: 'profile',
+            pathname: 'profile/' + interviewer.id,
             state: { interviewer: interviewer }
         })
         this.props.onUpdateInterviewerProfileOffline(interviewer)

@@ -29,7 +29,12 @@ class InterviewerProfile extends Component{
     }
 
     render(){
-        let secondaryView = (<Statistic styleClass={classes.card}/>)
+        let secondaryView = (
+            <Statistic styleClass={classes.card}
+                       total={this.props.interviewer.totalInterviews}
+                       statistic={this.props.statistic}
+            />
+        )
 
         if(this.state.editable){
             secondaryView = (

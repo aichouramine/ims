@@ -27,3 +27,7 @@ export const updateInterviewerStatus = (id, status) => (
 export const updateInterviewerProfile = (obj) => (
     instance.put("updateInterviewerProfile", obj)
 )
+
+export const getInterviewerStatistic = id => (
+    instance.get("getInterviewerStatisticById/" + id)
+)
