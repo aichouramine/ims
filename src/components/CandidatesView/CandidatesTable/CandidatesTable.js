@@ -5,7 +5,7 @@ import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Details from '../../shared_components/TableActions/Details/Details'
 import {levels} from '../../../enums/levels'
 import {locations} from '../../../enums/locations'
-import {statuses} from "../../../enums/statuses";
+import {candidate_status} from "../../../enums/candidate_status";
 import moment from "moment/moment";
 
 const candidatesTable = (props) => {
@@ -23,7 +23,7 @@ const candidatesTable = (props) => {
         let attachedClass = `${classes.custom_badge} badge badge-secondary`;
 
         switch (status){
-            case 'DONE': attachedClass = `${classes.custom_badge} badge badge-primary`
+            case 'STARTED': attachedClass = `${classes.custom_badge} badge badge-primary`
                 break;
             case 'JO_ACCEPTED': attachedClass = `${classes.custom_badge} badge badge-success`
                 break;
@@ -36,7 +36,7 @@ const candidatesTable = (props) => {
         }
 
         return(
-            <span className={attachedClass}>{statuses[status]}</span>
+            <span className={attachedClass}>{candidate_status[status]}</span>
         )
 
     }
@@ -58,7 +58,7 @@ const candidatesTable = (props) => {
                     </td>
                     <td>{levels[int.level]}</td>
                     <td>{locations[int.location]}</td>
-                    <td>{printStatus(int.status)}</td>
+                    <td>{printStatus(int.candidateStatus)}</td>
                     <td className={classes.date}>{returnDate(int.startDate)}</td>
                     <td >
                         <TableActions>

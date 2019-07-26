@@ -15,3 +15,7 @@ export const getCandidatesByLevel = () => (
 export const getCandidatesNumber = () => (
     instance.get("/getNumberOfAllCandidates/")
 )
+
+export const  getCandidatesByStatus = (status) => (
+    instance.get("getNumberOfAllCandidatesByStatus/" + status)
+)

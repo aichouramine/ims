@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import DashboardView from '../../components/DashboardView/DashboardView';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
-import {getInterviewsByStatus} from '../../api/axios-interviews';
-import {getCandidatesByLevel} from '../../api/axios-candidates';
-import {statuses}  from '../../enums/statuses'
+import {getCandidatesByLevel, getCandidatesByStatus} from '../../api/axios-candidates';
 
 class Dashboard extends Component{
     constructor(props) {
@@ -14,7 +12,7 @@ class Dashboard extends Component{
         this.state = {
             rejected: null,
             jo_rejected: null,
-            jo_made: null,
+            started: null,
             levels: []
         }
     }
@@ -22,30 +20,30 @@ class Dashboard extends Component{
     componentDidMount(){
         this.props.onFetchTopInterviewers();
         this.props.onFetchTotalInterviewsNumber();
-        this.getRejectedInterviews();
-        this.getJoRejectedInterviews();
-        this.getJoMadeInterviews();
+        this.getRejectedCandidates();
+        this.getJoRejectedCandidates();
+        this.getStartedCandidates();
         this.getLevels();
     }
 
-    getRejectedInterviews = () => {
-        getInterviewsByStatus("REJECTED")
+    getRejectedCandidates = () => {
+        getCandidatesByStatus("REJECTED")
             .then((response) => this.setState({
                 rejected: response.data
             }))
     }
 
-    getJoRejectedInterviews = () => {
-        getInterviewsByStatus("JO_REJECTED")
+    getJoRejectedCandidates = () => {
+        getCandidatesByStatus("JO_REJECTED")
             .then((response) => this.setState({
                 jo_rejected: response.data
             }))
     }
 
-    getJoMadeInterviews = () => {
-        getInterviewsByStatus("JO_MADE")
+    getStartedCandidates = () => {
+        getCandidatesByStatus("JO_MADE")
             .then((response) => this.setState({
-                jo_made: response.data
+                started: response.data
             }))
     }
 
@@ -67,7 +65,7 @@ class Dashboard extends Component{
             <DashboardView
                 totalNumberOfInterviews={this.props.interviewsNumber}
                 rejectedCandidates={this.state.rejected}
-                joMade={this.state.jo_made}
+                started={this.state.started}
                 joRejected={this.state.jo_rejected}
                 topInterviewers={this.props.topInterviewers}
                 redirect={this.redirectTo}

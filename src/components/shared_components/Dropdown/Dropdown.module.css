@@ -1,4 +1,4 @@
-.Dropdown{
+.dropdown{
     height: auto;
     max-width: 210px;
     padding: .4375rem .75rem;
@@ -24,6 +24,6 @@ select:active{
     outline: none;
 }
 
-.Dropdown::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.dropdown::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-size: 11px;
 }

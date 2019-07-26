@@ -4,25 +4,16 @@ import classes from './CandidatesDoughnutChart.module.css';
 import {levels} from '../../../enums/levels';
 
 const candidatesDoughnutChart = props => {
-    let labels = [];
-    let dataset = []
-
-    labels = props.countByLevels.map(i => {
-        return i.level;
+    let labels = props.countByLevels.map(i => {
+        return levels[i.level];
     })
 
-    dataset = props.countByLevels.map(i => {
+    let dataset = props.countByLevels.map(i => {
         return i.count;
     })
 
     let data = {
-        labels: [
-            'Intern QA',
-            'Junior QA',
-            'Middle QA',
-            'Senior QA',
-            'Lead QA'
-        ],
+        labels: labels,
         datasets: [{
             data: dataset.slice(),
             backgroundColor: [
@@ -40,12 +31,8 @@ const candidatesDoughnutChart = props => {
         }]
     };
 
-
-
     return(
         <div className={`${props.styleClass} h-100 `}>
-            {/*{console.log(labels)}*/}
-            {/*{console.log(dataset)}*/}
             <div className={`${classes.Card_header} ${classes.Border_bottom}`}>
                 <h6 className="m-0">Candidates by level</h6>
             </div>

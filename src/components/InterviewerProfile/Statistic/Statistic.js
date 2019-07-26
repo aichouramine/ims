@@ -3,15 +3,23 @@ import {Line} from 'react-chartjs-2';
 import classes from './Statistic.module.css';
 import moment from "moment/moment";
 
+const LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 const statistic = props => {
-    let dates = props.statistic.map(i =>{
-        return moment(i.month).format("MMM")
+    let numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    LABELS.forEach((l, i) =>{
+        props.statistic.forEach(s => {
+            if(s.month && moment(s.month).format("MMM")===l)
+
+            numbers[i] = s.count
+        })
     })
 
     // moment(int.date).format("DD-MMMM-YY, HH:mm a")
 
     const data = {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: LABELS,
         datasets: [
             {
                 label: 'Number of Interviews',
@@ -33,14 +41,13 @@ const statistic = props => {
                 pointHoverBorderWidth: 1,
                 pointRadius: 1,
                 pointHitRadius: 1,
-                data: [0, 1, 2, 2, 4, 3, 2, 1, 0, 1, 0]
+                data: numbers
             }
         ]
     };
 
     return(
         <div className={`${props.styleClass} h-100`}>
-            {/*{console.log(dates)}*/}
             <div className={`${classes.Card_header} ${classes.Border_bottom}`}>
                 <h6 className="m-0">Interviews overview</h6>
             </div>

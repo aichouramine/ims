@@ -4,7 +4,7 @@ import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
 import FollowUp from "../../shared_components/TableActions/FollowUp/FollowUp";
 import {levels} from "../../../enums/levels";
-import {statuses} from "../../../enums/statuses";
+import {interview_status} from "../../../enums/interview_status";
 import {locations} from "../../../enums/locations";
 import moment from 'moment';
 
@@ -39,20 +39,18 @@ const interviewsTable = (props) => {
         let attachedClass = `${classes.custom_badge} badge badge-secondary`;
 
         switch (status){
-            case "Done": attachedClass = `${classes.custom_badge} badge badge-primary`
+            case 'DONE': attachedClass = `${classes.custom_badge} badge badge-primary`
                 break;
-            case "JO Accepted": attachedClass = `${classes.custom_badge} badge badge-success`
+            case 'IFU_SENT': attachedClass = `${classes.custom_badge} badge badge-success`
                 break;
-            case "JO Rejected": attachedClass = `${classes.custom_badge} badge badge-warning`
+            case 'CANCELED': attachedClass = `${classes.custom_badge} badge badge-danger`
                 break;
-            case "Rejected": attachedClass = `${classes.custom_badge} badge badge-danger`
-                break;
-            case "JO Made": attachedClass = `${classes.custom_badge} badge badge-info`
+            case 'DECISION_MADE': attachedClass = `${classes.custom_badge} badge badge-info`
                 break;
         }
 
         return(
-            <span className={attachedClass}>{status}</span>
+            <span className={attachedClass}>{interview_status[status]}</span>
             )
 
     }
@@ -71,7 +69,7 @@ const interviewsTable = (props) => {
                     {printInterviewers(int.interviewers)}
                     </td>
                     <td>
-                        {printStatus(statuses[int.status])}
+                        {printStatus(int.interviewStatus)}
                         </td>
                     <td >
                         <TableActions>

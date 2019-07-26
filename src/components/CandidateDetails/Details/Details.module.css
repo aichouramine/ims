@@ -36,3 +36,59 @@
 .card_footer:last-child{
     border-radius: 0 0 .625rem .625rem;
 }
+
+.custom_input_control {
+    height: auto;
+    width: 100%;
+    max-width: 210px;
+    padding: .4375rem .75rem;
+    font-size: .8125rem;
+    line-height: 1.5;
+    color: #3d5170;
+    background-color: #fff;
+    border: 1px solid #e1e5eb;
+    font-weight: 300;
+    will-change: border-color, box-shadow;
+    border-radius: .25rem;
+    box-shadow: none;
+    outline: none;
+    -webkit-transition: box-shadow .25s cubic-bezier(.27, .01, .38, 1.06), border .25s cubic-bezier(.27, .01, .38, 1.06);
+    transition: box-shadow .25s cubic-bezier(.27, .01, .38, 1.06), border .25s cubic-bezier(.27, .01, .38, 1.06);
+}
+
+.custom_input_control:focus{
+    outline:none;
+}
+
+.custom_input_control:active{
+    outline: none;
+}
+
+.custom_input_control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 11px;
+}
+
+.form_group_wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.label{
+    color: #3d5170;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+.text_muted{
+    color: #868e96 !important
+}
+
+.form_body{
+    border: none !important;
+    padding: 5px 25px !important;
+    /*border: 1px solid rgba(0,0,0,.125);*/
+}

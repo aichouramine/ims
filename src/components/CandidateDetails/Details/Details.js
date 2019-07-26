@@ -4,7 +4,7 @@ import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
 import Dropdown from '../../shared_components/Dropdown/Dropdown';
-import {statuses} from "../../../enums/statuses";
+import {candidate_location} from "../../../enums/candidate_location";
 
 const details = props => {
 
@@ -13,30 +13,31 @@ const details = props => {
             <div className={`${classes.summary_card_header} ${classes.border_bottom}`}>
                 <h6 className="m-0">Details</h6>
             </div>
-            <div className="d-flex py-0">
-                <div className={classes.form_group_wrapper}>
-                    <div className="form-group pl-0 mb-0" style={{width: '45%'}}>
-                        <label htmlFor="feFirstname" className={classes.label}>Firstname</label>
-                        <input id="feFirstname" type="text" placeholder="Firstname"
-                               className={`form-control ${classes.custom_input_control}`}/>
-                    </div>
-                    <div className="form-group p-0 mb-0" style={{width: '45%'}}>
-                        <label htmlFor="feLastname" className={classes.label}>Lastname</label>
-                        <input id="feLastname" type="text" placeholder="Lastname"
-                               className={`form-control ${classes.custom_input_control}`}/>
-                    </div>
+            <div className="d-flex py-2 px-2">
+                <div className="col">
+                    <form>
+                        <div className={classes.form_group_wrapper}>
+                            <div className="form-group pl-0 mb-0" style={{width: '25%'}}>
+                                <label htmlFor="feFirstname" className={classes.label}>Firstname</label>
+                                <input id="feFirstname" type="text" placeholder="Firstname"
+                                       className={`form-control ${classes.custom_input_control}`}/>
+                            </div>
+                            <div className="form-group p-0 mb-0" style={{width: '25%'}}>
+                                <label htmlFor="feLastname" className={classes.label}>Lastname</label>
+                                <input id="feLastname" type="text" placeholder="Lastname"
+                                       className={`form-control ${classes.custom_input_control}`}/>
+                            </div>
+                            <div className="form-group p-0 mb-0" style={{width: '20%'}}>
+                                <label className={classes.label}>Level</label>
+                                <Dropdown options={levels}/>
+                            </div>
+                            <div className="form-group p-0 mb-0" style={{width: '20%'}}>
+                                <label className={classes.label}>Location</label>
+                                <Dropdown options={candidate_location}/>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div className={classes.form_group_wrapper}>
-                    <div className="form-group p-0 mb-0">
-                        <label className={classes.label}>Level</label>
-                        <Dropdown options={levels}/>
-                    </div>
-                    <div className="form-group p-0 mb-0">
-                        <label className={classes.label}>Location</label>
-                        <Dropdown options={locations}/>
-                    </div>
-                </div>
-
             </div>
             {/*<div className={`${classes.card_footer} ${classes.border_top}`}>*/}
                 {/*<div className="row">*/}

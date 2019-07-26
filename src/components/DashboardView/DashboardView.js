@@ -19,10 +19,10 @@ const dashboardView = (props) => (
                 <Card label="Interviews" count={props.totalNumberOfInterviews} styleClass={classes.Card}/>
             </div>
             <div className="col-lg mb-4 col-sm-6 col-md-6">
-                <Card label="Rejected" count={props.rejectedCandidates} styleClass={classes.Card}/>
+                <Card label="Rejected Candidates" count={props.rejectedCandidates} styleClass={classes.Card}/>
             </div>
             <div className="col-lg mb-4 col-sm-6 col-md-6">
-                <Card label="JO Made" count={props.joMade} styleClass={classes.Card}/>
+                <Card label="Started Candidates" count={props.started} styleClass={classes.Card}/>
             </div>
             <div className="col-lg mb-4 col-sm-6 col-md-6">
                 <Card label="JO Rejected" count={props.joRejected} styleClass={classes.Card}/>

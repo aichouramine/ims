@@ -4,7 +4,7 @@ import Datepicker from '../../shared_components/Datepicker/Datepicker';
 import Dropdown from '../../shared_components/Dropdown/Dropdown';
 import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
-import {statuses} from "../../../enums/statuses";
+import {interview_status} from "../../../enums/interview_status";
 
 const interviewerDetails = props => {
     return(
@@ -55,7 +55,7 @@ const interviewerDetails = props => {
                                 </div>
                                 <div className="form-group p-0 mb-0">
                                     <label className={classes.label}>Status</label>
-                                    <Dropdown options={statuses}/>
+                                    <Dropdown options={interview_status}/>
                                 </div>
                             </div>
                         </div>

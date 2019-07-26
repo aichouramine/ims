@@ -39,8 +39,7 @@ const candidatesPieChart = props => (
             <div className="row">
                 <div className="col"><select className={`${classes.Custom_select} form-control custom-select form-control-sm custom-select-sm`}
                                              style={{maxWidth: "130px"}}>
-                    <option value="last-week">Last Week</option>
-                    <option value="today">Today</option>
+                    <option value="last-week">Current Year</option>
                     <option value="last-month">Last Month</option>
                     <option value="last-year">Last Year</option>
                 </select></div>
