@@ -68,6 +68,28 @@
     font-size: 11px;
 }
 
+.custom_area_control{
+    height: auto;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: rgb(73, 80, 87);
+    background-color: rgb(255, 255, 255);
+    font-weight: 300;
+    will-change: border-color, box-shadow;
+    box-shadow: none;
+    padding: 0.4375rem 0.75rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(225, 229, 235);
+    border-image: initial;
+    border-radius: 0.25rem;
+    transition: box-shadow 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s, border 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s;
+}
+
+.custom_area_control::-webkit-input-placeholder{
+    font-size: 11px;
+}
+
 .form_group_wrapper{
     display: flex;
     flex-direction: row;

@@ -9,6 +9,10 @@ class CandidateDetailsContainer extends Component{
 
     }
 
+    cancelChanges = () => {
+        this.props.history.goBack();
+    }
+
     componentDidMount(){
         // this.props.onFetchCandidates(0, 30);
     }
@@ -16,7 +20,7 @@ class CandidateDetailsContainer extends Component{
     render(){
         return(
             <CandidateDetails
-
+                onChangesCanceled={this.cancelChanges}
             />
         )
     }

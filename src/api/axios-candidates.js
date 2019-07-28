@@ -19,3 +19,7 @@ export const getCandidatesNumber = () => (
 export const  getCandidatesByStatus = (status) => (
     instance.get("getNumberOfAllCandidatesByStatus/" + status)
 )
+
+export const  getCandidatesLocationsCountByDate = (date) => (
+    instance.get("getNumberOfLocations/" + date)
+)

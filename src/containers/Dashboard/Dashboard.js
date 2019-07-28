@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DashboardView from '../../components/DashboardView/DashboardView';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
-import {getCandidatesByLevel, getCandidatesByStatus} from '../../api/axios-candidates';
+import {getCandidatesByLevel, getCandidatesByStatus, getCandidatesLocationsCountByDate} from '../../api/axios-candidates';
 
 class Dashboard extends Component{
     constructor(props) {
@@ -13,7 +13,8 @@ class Dashboard extends Component{
             rejected: null,
             jo_rejected: null,
             started: null,
-            levels: []
+            levels: [],
+            locations: []
         }
     }
 
@@ -24,6 +25,7 @@ class Dashboard extends Component{
         this.getJoRejectedCandidates();
         this.getStartedCandidates();
         this.getLevels();
+        this.getLocationsByDate("currentMonth")
     }
 
     getRejectedCandidates = () => {
@@ -54,6 +56,13 @@ class Dashboard extends Component{
             }))
     }
 
+    getLocationsByDate = (date) => {
+        getCandidatesLocationsCountByDate(date)
+            .then((response) => this.setState({
+                locations: response.data
+            }))
+    }
+
     redirectTo = (page) => {
         this.props.history.push({
             pathname: `${page}`
@@ -70,6 +79,8 @@ class Dashboard extends Component{
                 topInterviewers={this.props.topInterviewers}
                 redirect={this.redirectTo}
                 countByLevels={this.state.levels}
+                countByLocations={this.state.locations}
+                getLocationsByDate={this.getLocationsByDate}
             />
         )
     }

@@ -4,15 +4,19 @@ import classes from './Summary.module.css';
 const summary = props => {
 
     return(
-        <div className={`${classes.summary_card} h-100 `}>
+        <div className={`${classes.summary} h-100 `}>
             <div className={`${classes.summary_card_header} ${classes.border_bottom}`}>
                 <h6 className="m-0">Summary</h6>
             </div>
             <div className="d-flex py-0">
-                <ul className="list-group list-group-flush" style={{listStyle: 'none'}}>
-                    <li>1</li>
-                    <li>1</li>
-                    <li>1</li>
+                <ul className={`${classes.summary_body} list-group list-group-flush`} >
+                    <li>
+                        <span>Name:</span>
+                    </li>
+                    <li>
+                        <span>Status:</span>
+                    </li>
+                    <li>Start Date:</li>
                 </ul>
 
             </div>
@@ -23,7 +27,7 @@ const summary = props => {
                                style={{width: '30%'}} value="Save" onClick={props.onConfirm}/>
                         <input type="submit"
                                className={`mb-2 mr-1 btn btn-outline-secondary btn-sm`}
-                               style={{width: '30%'}} value="Cancel" onClick={props.onClose}/>
+                               style={{width: '30%'}} value="Cancel" onClick={props.cancel}/>
                     </div>
                 </div>
             </div>

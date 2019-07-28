@@ -33,7 +33,12 @@ const dashboardView = (props) => (
                 <InterviewsLineChart styleClass={classes.Card}/>
             </div>
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
-                <CandidatesPieChart styleClass={classes.Card}/>
+                <CandidatesPieChart
+                    styleClass={classes.Card}
+                    redirect={props.redirect}
+                    countByLocations={props.countByLocations}
+                    getLocations={props.getLocationsByDate}
+                />
             </div>
         </div>
         <div className="row">

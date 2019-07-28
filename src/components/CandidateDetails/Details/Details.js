@@ -13,30 +13,40 @@ const details = props => {
             <div className={`${classes.summary_card_header} ${classes.border_bottom}`}>
                 <h6 className="m-0">Details</h6>
             </div>
-            <div className="d-flex py-2 px-2">
-                <div className="col">
-                    <form>
-                        <div className={classes.form_group_wrapper}>
-                            <div className="form-group pl-0 mb-0" style={{width: '25%'}}>
-                                <label htmlFor="feFirstname" className={classes.label}>Firstname</label>
-                                <input id="feFirstname" type="text" placeholder="Firstname"
-                                       className={`form-control ${classes.custom_input_control}`}/>
-                            </div>
-                            <div className="form-group p-0 mb-0" style={{width: '25%'}}>
-                                <label htmlFor="feLastname" className={classes.label}>Lastname</label>
-                                <input id="feLastname" type="text" placeholder="Lastname"
-                                       className={`form-control ${classes.custom_input_control}`}/>
-                            </div>
-                            <div className="form-group p-0 mb-0" style={{width: '20%'}}>
-                                <label className={classes.label}>Level</label>
-                                <Dropdown options={levels}/>
-                            </div>
-                            <div className="form-group p-0 mb-0" style={{width: '20%'}}>
-                                <label className={classes.label}>Location</label>
-                                <Dropdown options={candidate_location}/>
-                            </div>
-                        </div>
-                    </form>
+            <div className="d-flex py-2 px-4 flex-column">
+                <div className={classes.form_group_wrapper}>
+                    <div className="form-group pl-0 mb-0" style={{width: '25%'}}>
+                        <label htmlFor="feFirstname" className={classes.label}>Firstname</label>
+                        <input id="feFirstname" type="text" placeholder="Firstname"
+                               className={`form-control ${classes.custom_input_control}`}/>
+                    </div>
+                    <div className="form-group p-0 mb-0" style={{width: '25%'}}>
+                        <label htmlFor="feLastname" className={classes.label}>Lastname</label>
+                        <input id="feLastname" type="text" placeholder="Lastname"
+                               className={`form-control ${classes.custom_input_control}`}/>
+                    </div>
+                    <div className="form-group p-0 mb-0" style={{width: '20%'}}>
+                        <label className={classes.label}>Level</label>
+                        <Dropdown options={levels}/>
+                    </div>
+                    <div className="form-group p-0 mb-0" style={{width: '20%'}}>
+                        <label className={classes.label}>Location</label>
+                        <Dropdown options={candidate_location}/>
+                    </div>
+                </div>
+                <div className="pt-4 ">
+                    <div className="form-group">
+                        <label htmlFor="feSkills" className={classes.label}>Skills</label>
+                        <textarea id="feSkills" placeholder="Skills"
+                                  className={`form-control ${classes.custom_area_control}`} rows="4" style={{resize: 'none'}}/>
+                    </div>
+                </div>
+                <div >
+                    <div className="form-group">
+                        <label htmlFor="feSkills" className={classes.label}>Comment</label>
+                        <textarea id="feSkills" placeholder="Comment"
+                                  className={`form-control ${classes.custom_area_control}`} rows="4" style={{resize: 'none'}}/>
+                    </div>
                 </div>
             </div>
             {/*<div className={`${classes.card_footer} ${classes.border_top}`}>*/}
