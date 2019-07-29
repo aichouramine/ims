@@ -1,7 +1,6 @@
 import React from 'react';
 import {Pie} from 'react-chartjs-2';
 import classes from './CandidatesPieChart.module.css';
-import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
 
 const candidatesPieChart = props => {
@@ -36,14 +35,24 @@ const candidatesPieChart = props => {
         }]
     };
 
+    let stats = (
+        <Pie data={data} options={{maintainAspectRatio: false}} width={442}
+             height={323}/>
+    )
+
+    if(props.countByLocations.length===0){
+        stats = (
+            <span style={{color: '#98a0a8'}}>No data</span>
+        )
+    }
+
     return(
         <div className={`${props.styleClass} h-100 `}>
             <div className={`${classes.Card_header} ${classes.Border_bottom}`}>
                 <h6 className="m-0">Candidates by location</h6>
             </div>
-            <div className="d-flex py-0 card-body">
-                <Pie data={data} options={{maintainAspectRatio: false}} width={442}
-                     height={323}/>
+            <div className="d-flex py-0 card-body justify-content-center align-items-center">
+                {stats}
             </div>
             <div className={`${classes.Card_footer} ${classes.Border_top}`}>
                 <div className="row">

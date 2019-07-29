@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import DashboardView from '../../components/DashboardView/DashboardView';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
-import {getCandidatesByLevel, getCandidatesByStatus, getCandidatesLocationsCountByDate} from '../../api/axios-candidates';
+import {getCandidatesLevelsCountByDate, getCandidatesByStatus, getCandidatesLocationsCountByDate} from '../../api/axios-candidates';
 
 class Dashboard extends Component{
     constructor(props) {
@@ -24,7 +24,7 @@ class Dashboard extends Component{
         this.getRejectedCandidates();
         this.getJoRejectedCandidates();
         this.getStartedCandidates();
-        this.getLevels();
+        this.getLevels("currentMonth");
         this.getLocationsByDate("currentMonth")
     }
 
@@ -49,8 +49,8 @@ class Dashboard extends Component{
             }))
     }
 
-    getLevels = () => {
-        getCandidatesByLevel()
+    getLevels = (date) => {
+        getCandidatesLevelsCountByDate(date)
             .then((response) => this.setState({
                 levels: response.data
             }))
@@ -81,6 +81,7 @@ class Dashboard extends Component{
                 countByLevels={this.state.levels}
                 countByLocations={this.state.locations}
                 getLocationsByDate={this.getLocationsByDate}
+                getLevelsByDate={this.getLevels}
             />
         )
     }

@@ -43,7 +43,12 @@ const dashboardView = (props) => (
         </div>
         <div className="row">
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
-                <CandidatesDoughnutChart countByLevels={props.countByLevels} styleClass={classes.Card}/>
+                <CandidatesDoughnutChart
+                    countByLevels={props.countByLevels}
+                    styleClass={classes.Card}
+                    redirect={props.redirect}
+                    getLevels={props.getLevelsByDate}
+                />
             </div>
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
                 <TopInterviewers styleClass={classes.Card} topList={props.topInterviewers} redirect={props.redirect}/>

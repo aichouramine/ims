@@ -10,13 +10,17 @@ const summary = props => {
             </div>
             <div className="d-flex py-0">
                 <ul className={`${classes.summary_body} list-group list-group-flush`} >
-                    <li>
-                        <span>Name:</span>
+                    <li className={classes.summary_body__row}>
+                        <span className={classes.summary_body__title}>Status:</span>
+                        <span className={classes.summary_body__text}>In Review</span>
                     </li>
-                    <li>
-                        <span>Status:</span>
+                    <li className={classes.summary_body__row}>
+                        <span className={classes.summary_body__title}>Name:</span>
+                        <span className={classes.summary_body__text}>Name Name</span>
                     </li>
-                    <li>Start Date:</li>
+                    <li className={classes.summary_body__row}>
+                        <span className={classes.summary_body__title}>Start Date:</span>
+                    </li>
                 </ul>
 
             </div>
