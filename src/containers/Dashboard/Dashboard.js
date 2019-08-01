@@ -31,8 +31,8 @@ class Dashboard extends Component{
         this.getRejectedCandidates();
         this.getJoRejectedCandidates();
         this.getStartedCandidates();
-        this.getLevels("currentMonth");
-        this.getLocationsByDate("currentMonth");
+        this.getLevels("currentYear");
+        this.getLocationsByDate("currentYear");
         this.getInterviewStatisticByDate("currentYear");
         this.getInterviewStatisticByDate("prevYear");
     }

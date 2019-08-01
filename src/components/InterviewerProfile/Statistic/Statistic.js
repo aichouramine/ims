@@ -7,15 +7,16 @@ const LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 
 const statistic = props => {
     let numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-    let total = props.total;
 
     LABELS.forEach((l, i) =>{
         props.statistic.forEach(s => {
-            if(s.month && moment(s.month).format("MMM")===l)
-
-            numbers[i] = s.count
+            if(s.month && moment(s.month).format("MMM")===l){
+                numbers[i] = s.count;
+            }
         })
     })
+
+    const total = props.statistic.reduce((a,b) => a + (b['count'] || 0), 0)
 
     const data = {
         labels: LABELS,

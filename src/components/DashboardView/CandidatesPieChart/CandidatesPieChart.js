@@ -61,9 +61,9 @@ const candidatesPieChart = props => {
                         style={{maxWidth: "130px"}}
                         onChange={onChange}
                     >
+                        <option value="currentYear">Current Year</option>
                         <option value="currentMonth">Current Month</option>
                         <option value="prevMonth">Prev Month</option>
-                        <option value="currentYear">Current Year</option>
                         <option value="prevYear">Prev Year</option>
                     </select></div>
                     <div className={`${classes.View_report} ${classes.Text_right} col`}>
