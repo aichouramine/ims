@@ -1,3 +1,11 @@
+.label{
+    display: block;
+    color: #3d5170;
+    font-size: 13px;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
 .dropdown{
     height: auto;
     max-width: 210px;
@@ -26,4 +34,8 @@ select:active{
 
 .dropdown::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-size: 11px;
+}
+
+select.form-control:not([size]):not([multiple]) {
+    height: calc(2.09375rem + 2px)
 }

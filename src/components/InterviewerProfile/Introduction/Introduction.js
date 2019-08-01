@@ -30,7 +30,7 @@ const introduction = props => {
     if(props.data) {
         mainData = (
             <Hoc>
-                <div className={`${classes.text_center} ${classes.card_header}`}>
+                <div className={`${classes.text_center} ${classes.card_header}`} >
                     <div className={`mb-3 mx-auto ${classes.avatar_img}` } style={{backgroundImage: `url(${props.data.profilePhoto})`}}>
                     </div>
                     <h4 className={`${classes.name_text} mb-1`}>
@@ -61,7 +61,7 @@ const introduction = props => {
                             Key Skills
                         </strong>
                         <span className={classes.skills_text}>
-                            Scrum Guru
+                            {props.data.skills || 'No skills are set'}
                         </span>
                     </li>
                 </ul>
@@ -71,7 +71,7 @@ const introduction = props => {
 
     return(
         <Hoc>
-            <div className={` ${props.styleClass} mb-4 pt-3`}>
+            <div className={` ${props.styleClass} mb-4 pt-3`} >
                 {/*{edit}*/}
                 {mainData}
             </div>

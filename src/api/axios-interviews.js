@@ -15,3 +15,7 @@ export const setInterviewToInactive = (id) => (
 export const getInterviewsNumber = () => (
     instance.get("/getNumberOfAllInterviews")
 )
+
+export const getInterviewsStatisticByDate = date => (
+    instance.get("getNumberOfInterviewsByDate/" + date)
+)

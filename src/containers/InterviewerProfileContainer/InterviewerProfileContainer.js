@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import InterviewerProfile from '../../components/InterviewerProfile/InterviewerProfile';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 import { getInterviewerStatistic } from '../../api/axios-interviewers';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Hoc from '../../hoc/Hoc';
 
 class InterviewerProfileContainer extends Component{
@@ -44,22 +46,43 @@ class InterviewerProfileContainer extends Component{
         })
     }
 
+    // notify = () => toast("Profile is updated successfully");
+
     confirmCancelHandler() {
         this.setState({confirm: false})
+    }
+
+    onSuccessUpdate = (obj) => {
+        this.props.onUpdateInterviewerProfile(obj);
+        // if(this.props.updateSuccess){
+        //
+        // }
+        // toast.success("Profile is updated successfully",
+        //     {
+        //         className: 'black-background',
+        //         bodyClassName: "grow-font-size"
+        //     }
+        // );
     }
 
     render(){
         return(
             <Hoc>
-                {/*<Modal show={this.state.confirm} modalClosed={this.confirmCancelHandler} confirmed={this.onRemoveFromProfile}>*/}
-                    {/*<ConfirmDialog onConfirmRemove={this.onRemoveFromProfile} onCancel={this.confirmCancelHandler}/>*/}
-                {/*</Modal>*/}
                 <InterviewerProfile
                     interviewer={this.props.interviewerProfile}
-                    updateInterviewer={this.props.onUpdateInterviewerProfile}
+                    updateInterviewer={this.onSuccessUpdate}
                     remove={this.confirmHandler}
                     removeStatus={this.props.removeSuccess}
                     statistic={this.state.statisticData}
+                />
+                <ToastContainer
+                    position="bottom-right"
+                    hideProgressBar={false}
+                    autoClose={3000}
+                    newestOnTop={true}
+                    closeOnClick={true}
+                    draggable={false}
+                    rtl={false}
                 />
             </Hoc>
         )
@@ -69,7 +92,8 @@ class InterviewerProfileContainer extends Component{
 const mapStateToProps = state => {
     return{
         interviewerProfile: state.interviewersReducer.interviewerProfile,
-        removeSuccess: state.interviewersReducer.removeSuccess
+        removeSuccess: state.interviewersReducer.removeSuccess,
+        updateSuccess: state.interviewersReducer.updateSuccess
     }
 
 }

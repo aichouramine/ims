@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import DashboardView from '../../components/DashboardView/DashboardView';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
+import { getInterviewsStatisticByDate } from '../../api/axios-interviews';
 import {getCandidatesLevelsCountByDate, getCandidatesByStatus, getCandidatesLocationsCountByDate} from '../../api/axios-candidates';
 
 class Dashboard extends Component{
@@ -14,7 +15,13 @@ class Dashboard extends Component{
             jo_rejected: null,
             started: null,
             levels: [],
-            locations: []
+            locations: [],
+            prevYearStatistic: [],
+            currentYearStatistic: [],
+            statistic: {
+                prevYear: [],
+                currentYear: []
+            }
         }
     }
 
@@ -25,7 +32,9 @@ class Dashboard extends Component{
         this.getJoRejectedCandidates();
         this.getStartedCandidates();
         this.getLevels("currentMonth");
-        this.getLocationsByDate("currentMonth")
+        this.getLocationsByDate("currentMonth");
+        this.getInterviewStatisticByDate("currentYear");
+        this.getInterviewStatisticByDate("prevYear");
     }
 
     getRejectedCandidates = () => {
@@ -63,6 +72,27 @@ class Dashboard extends Component{
             }))
     }
 
+    getInterviewStatisticByDate = date => {
+        getInterviewsStatisticByDate(date)
+            .then(response => {
+                if(date==='prevYear'){
+                    this.setState(prevState => ({
+                        statistic: {
+                            ...prevState.statistic,
+                            prevYear: response.data
+                        }
+                    }))
+                } else if(date==='currentYear'){
+                    this.setState(prevState => ({
+                        statistic: {
+                            ...prevState.statistic,
+                            currentYear: response.data
+                        }
+                    }))
+                }
+            })
+    }
+
     redirectTo = (page) => {
         this.props.history.push({
             pathname: `${page}`
@@ -82,6 +112,7 @@ class Dashboard extends Component{
                 countByLocations={this.state.locations}
                 getLocationsByDate={this.getLocationsByDate}
                 getLevelsByDate={this.getLevels}
+                statistic={this.state.statistic}
             />
         )
     }

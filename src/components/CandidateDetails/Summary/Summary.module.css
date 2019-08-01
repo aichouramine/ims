@@ -20,8 +20,8 @@
 .summary_body__row{
     display: flex;
     justify-content: space-between;
-    font-size: 13px;
-    padding: 3px 0;
+    font-size: 14px;
+    padding: 5px 0;
 }
 
 .summary_body__title{

@@ -38,7 +38,7 @@
 
 .label{
     color: #3d5170;
-    font-size: 0.9125rem;
+    font-size: 13px;
     font-weight: 400;
 }
 
@@ -63,6 +63,10 @@
     border-image: initial;
     border-radius: 0.25rem;
     transition: box-shadow 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s, border 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s;
+}
+
+.custom_form_control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 11px;
 }
 
 .close i{

@@ -41,6 +41,12 @@ const interviewerReducer = (state = initialState, action) => {
                 ...state,
                 interviewerProfile: action.interviewerProfile
             }
+        case actionTypes.UPDATE_INTERVIEWER_SUCCESS:
+            return Object.assign({}, state, {
+                updateSuccess: true,
+                updateInProgress: false,
+                updateHasErrored: false,
+            });
         case actionTypes.GET_INTERVIEWERS_COUNT:
             return {
                 ...state,

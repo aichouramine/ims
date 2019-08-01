@@ -29,8 +29,8 @@ const dashboardView = (props) => (
             </div>
         </div>
         <div className="row">
-            <div className="mb-4 col-sm-12 col-md-8 col-lg-8">
-                <InterviewsLineChart styleClass={classes.Card}/>
+            <div className="mb-4 col-sm-12 col-md-8 col-lg-8" >
+                <InterviewsLineChart statistic={props.statistic} styleClass={classes.Card} />
             </div>
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
                 <CandidatesPieChart

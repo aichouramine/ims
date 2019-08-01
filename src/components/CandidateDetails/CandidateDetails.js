@@ -18,6 +18,17 @@ class CandidateDetails extends Component{
         }
     }
 
+    onFirstNameChanged = () => {
+
+    }
+
+    onLastNameChanged = () => {
+
+    }
+
+    onStatusChanged = () => {
+
+    }
 
     render() {
         return (
@@ -28,10 +39,10 @@ class CandidateDetails extends Component{
                 <div className="row ">
                     <div className="col-md-9">
                         <Details
-                            // onFirstnameChanged={}
-                            // onLastnameChanged={}
+                            onFirstnameChanged={this.onFirstNameChanged}
+                            onLastnameChanged={this.onLastNameChanged}
                             // onSkillsChanged={}
-                            // onComment={}
+                            //  onCommentChanged={}
                         />
                     </div>
                     <div className="col-md-3">

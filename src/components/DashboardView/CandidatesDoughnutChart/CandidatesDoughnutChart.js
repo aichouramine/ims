@@ -47,7 +47,7 @@ const candidatesDoughnutChart = props => {
     }
 
     return(
-        <div className={`${props.styleClass} h-100 `}>
+        <div className={`${props.styleClass} h-100 `} style={{minHeight: '420px'}}>
             <div className={`${classes.Card_header} ${classes.Border_bottom}`}>
                 <h6 className="m-0">Candidates by level</h6>
             </div>

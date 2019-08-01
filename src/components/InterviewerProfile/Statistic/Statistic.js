@@ -7,6 +7,7 @@ const LABELS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', '
 
 const statistic = props => {
     let numbers = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    let total = props.total;
 
     LABELS.forEach((l, i) =>{
         props.statistic.forEach(s => {
@@ -15,8 +16,6 @@ const statistic = props => {
             numbers[i] = s.count
         })
     })
-
-    // moment(int.date).format("DD-MMMM-YY, HH:mm a")
 
     const data = {
         labels: LABELS,
@@ -46,17 +45,27 @@ const statistic = props => {
         ]
     };
 
+    let stats = (
+        <Line data={data} options={{maintainAspectRatio: false, animation: 0}}/>
+    )
+
+    if(props.statistic.length===0){
+        stats = (
+            <span style={{color: '#98a0a8'}}>No data</span>
+        )
+    }
+
     return(
-        <div className={`${props.styleClass} h-100`}>
+        <div className={`${props.styleClass} h-100`} >
             <div className={`${classes.Card_header} ${classes.Border_bottom}`}>
                 <h6 className="m-0">Interviews overview</h6>
             </div>
-            <div className="d-flex py-0 card-body">
-                <Line data={data} options={{maintainAspectRatio: false, animation: 0}}/>
+            <div className="d-flex py-0 card-body justify-content-center align-items-center">
+                {stats}
             </div>
             <div className={`${classes.Card_footer} ${classes.Border_top}`}>
                 <div className="row">
-                    <span className={`${classes.total} ${classes.Text_right} col`}>Total number: {props.total}</span>
+                    <span className={`${classes.total} ${classes.Text_right} col`}>Total number: {total}</span>
                 </div>
             </div>
         </div>

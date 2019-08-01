@@ -44,6 +44,13 @@ export const updateInterviewerData = (obj) => {
     }
 }
 
+const updateInterviewerSuccess = () => {
+    return{
+        type: actionTypes.UPDATE_INTERVIEWER_SUCCESS,
+        updateSuccess: true
+    }
+}
+
 export const addInterviewerProfileOffline = (obj) => {
     return{
         type: actionTypes.UPDATE_INTERVIEWER_PROFILE_OFFLINE,
@@ -97,6 +104,7 @@ export const updateInterviewer = (obj) => {
     return (dispatch) => {
         updateInterviewerProfile(obj)
             .then((response) => dispatch(updateInterviewerData(response.data)))
+            .then(() => dispatch(updateInterviewerSuccess()))
     }
 }
 
