@@ -3,7 +3,8 @@ import * as actionTypes from '../actions/actionTypes';
 const initialState = {
     error: false,
     candidates: [],
-    candidatesNumber: 0
+    candidatesNumber: 0,
+    candidateInfo: {}
 }
 
 const candidateReducer = (state = initialState, action) => {
@@ -18,6 +19,11 @@ const candidateReducer = (state = initialState, action) => {
             return {
                 ...state,
                 candidatesNumber: action.candidatesNumber
+            }
+        case actionTypes.ADD_CANDIDATE:
+            return {
+                ...state,
+                candidateInfo: action.candidateInfo
             }
         // case actionTypes.REMOVE_INTERVIEW:
         //     return {

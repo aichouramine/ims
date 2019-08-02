@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './Dropdown.module.css';
 import {levels} from "../../../enums/levels";
+import {candidate_location} from "../../../enums/candidate_location";
 
 const dropdown = (props) => {
     let options = []
@@ -8,15 +9,21 @@ const dropdown = (props) => {
         options.push(`${value}`);
     }
 
-    // {console.log(props.value)}
+    let category = null;
+    if(props.label==="Level"){
+        category = {...levels}
+    } else if(props.label==="Location"){
+        category = {...candidate_location}
+    }
 
-    return(                
+    return(
         <div>
             <label className={classes.label}>{props.label}</label>
             <select className={`${classes.dropdown} form-control custom-select`} onChange={props.onChange}
-                    value={levels[props.value]}>
+                    value={category[props.value]}>
+                <option >Select...</option>
                 {options.map((o, ind) => (
-                    <option key={ind}>{o}</option>
+                    <option key={ind} >{o}</option>
                 ))}
             </select>
         </div>

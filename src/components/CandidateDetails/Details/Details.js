@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './Details.module.css';
 import {levels} from "../../../enums/levels";
-import {locations} from "../../../enums/locations";
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
 import Input from '../../shared_components/Input/Input';
 import Dropdown from '../../shared_components/Dropdown/Dropdown';
@@ -18,29 +17,33 @@ const details = props => {
                 <form style={{padding: '15px'}}>
                     <div className={classes.form_group_wrapper}>
                         <div className=" p-0 mb-0" style={{width: '25%'}}>
-                            <Input inputtype="input" label="Firstname" type="text" placeholder="Firstname"/>
+                            <Input inputtype="input" label="Firstname" type="text" placeholder="Firstname"
+                                   onChange={props.onFirstnameChanged}
+                            />
                         </div>
                         <div className=" p-0 mb-0" style={{width: '25%'}}>
-                            <Input inputtype="input" label="Lastname" type="text" placeholder="Lastname"/>
+                            <Input inputtype="input" label="Lastname" type="text" placeholder="Lastname"
+                                   onChange={props.onLastnameChanged}
+                            />
                         </div>
                         <div className=" p-0 mb-0" style={{width: '20%'}}>
-                            <Dropdown label="Level" options={levels}/>
+                            <Dropdown label="Level" options={levels} onChange={props.onLevelChanged}/>
                         </div>
                         <div className="p-0 mb-0" style={{width: '20%'}}>
-                            <Dropdown label="Location" options={candidate_location}/>
+                            <Dropdown label="Location" options={candidate_location} onChange={props.onLocationChanged}/>
                         </div>
                     </div>
                     <div className="pt-4 ">
                         <div className="form-row">
                             <div className="col col-md-12">
                                 <Input inputtype="textarea" label="Skills" type="text" placeholder="Skills"
-                                       rows="6" style={{resize: 'none'}}/>
+                                       rows="6" style={{resize: 'none'}} onChange={props.onSkillsChanged}/>
                             </div>
                         </div>
                         <div className="form-row">
                             <div className="col col-md-12">
                                 <Input inputtype="textarea" label="Comment" type="text" placeholder="Comment"
-                                       rows="6" style={{resize: 'none'}}/>
+                                       rows="6" style={{resize: 'none'}} onChange={props.onCommentChanged}/>
                             </div>
                         </div>
                     </div>

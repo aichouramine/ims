@@ -20,14 +20,6 @@ class Details extends Component{
         }
     }
 
-    // static getDerivedStateFromProps(nextProps, prevState) {
-    //     // do things with nextProps.someProp and prevState.cachedSomeProp
-    //     return {
-    //         profile: nextProps.profile,
-    //         // ... other derived state properties
-    //     };
-    // }
-
     onFirstnameChanged = (event) => {
         let updated = {
             ...this.state.profile

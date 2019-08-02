@@ -23,3 +23,7 @@ export const getCandidatesByStatus = (status) => (
 export const getCandidatesLocationsCountByDate = (date) => (
     instance.get("getNumberOfLocations/" + date)
 )
+
+export const addCandidate = (obj) => (
+    instance.put("addCandidate", obj)
+)

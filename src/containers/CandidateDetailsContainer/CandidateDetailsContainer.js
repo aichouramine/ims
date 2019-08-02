@@ -17,26 +17,32 @@ class CandidateDetailsContainer extends Component{
         // this.props.onFetchCandidates(0, 30);
     }
 
+    addNewCandidate = obj => {
+        this.props.onAddingCandidate(obj);
+        this.props.history.goBack();
+    }
+
     render(){
         return(
             <CandidateDetails
                 onChangesCanceled={this.cancelChanges}
+                onCandidateAdded={this.addNewCandidate}
+                candidate={this.props.candidateInfo}
             />
         )
     }
 }
 
 const mapStateToProps = state => {
-
     return{
-
+        candidateInfo: state.candidatesReducer.candidateInfo,
     }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
     return{
-
+        onAddingCandidate: (obj) => dispatch(candidatesActions.addCandidateToTheList(obj))
     }
 }
 

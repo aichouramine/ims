@@ -1,5 +1,6 @@
 import * as actionTypes from '../actions/actionTypes';
-import { getCandidates, getCandidatesNumber } from '../../api/axios-candidates'
+import { getCandidates, getCandidatesNumber, addCandidate } from '../../api/axios-candidates';
+import {push} from 'connected-react-router';
 
 export const getAllCandidates = (candidates) => {
     return{
@@ -12,6 +13,14 @@ export const getCountOfCandidates = (candidatesNumber) => {
     return{
         type: actionTypes.GET_CANDIDATES_COUNT,
         candidatesNumber: candidatesNumber
+    }
+}
+
+
+const addNewCandidate = candidateInfo => {
+    return{
+        type: actionTypes.ADD_CANDIDATE,
+        candidateInfo: candidateInfo
     }
 }
 
@@ -33,3 +42,12 @@ export const fetchCandidatesNumber = () => {
             .then((response) => dispatch(getCountOfCandidates(response.data)))
     }
 }
+
+export const addCandidateToTheList = obj => {
+    return (dispatch) => {
+        addCandidate(obj)
+            .then((response) => dispatch(addNewCandidate(response.data)))
+            .then(() => dispatch(push('/candidates')))
+    }
+}
+
