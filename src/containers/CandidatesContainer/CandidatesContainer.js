@@ -10,10 +10,11 @@ class CandidatesContainer extends Component{
 
         this.addNewHandler = this.addNewHandler.bind(this)
         this.editHandler = this.editHandler.bind(this)
+        this.updateUrl = this.updateUrl.bind(this)
     }
 
     componentDidMount(){
-        this.props.onFetchCandidates(0, 10);
+        this.props.onFetchCandidates(this.getPageNumber(), 10);
         this.props.onFetchCandidatesNumber();
     }
 
@@ -33,6 +34,15 @@ class CandidatesContainer extends Component{
 
     updateUrl(url){
         this.props.history.push(`?${url}`);
+    }
+
+    getPageNumber = () => {
+        if(this.props.history.location.search){
+            const searchParams = new URLSearchParams(this.props.history.location.search);
+            return +searchParams.get('page')-1;
+        }
+
+        return 0;
     }
 
     render(){

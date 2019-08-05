@@ -17,10 +17,11 @@ class InterviewsContainer extends Component{
 
         this.addNewHandler = this.addNewHandler.bind(this)
         this.addNewCancelHandler = this.addNewCancelHandler.bind(this)
+        this.updateUrl = this.updateUrl.bind(this)
     }
 
     componentDidMount(){
-        this.props.onFetchInterviews(0, 10)
+        this.props.onFetchInterviews(this.getPageNumber(), 10)
         this.props.onFetchTotalInterviewsNumber()
     }
 
@@ -30,6 +31,19 @@ class InterviewsContainer extends Component{
 
     addNewCancelHandler() {
         this.setState({showNew: false})
+    }
+
+    updateUrl(url){
+        this.props.history.push(`?${url}`);
+    }
+
+    getPageNumber = () => {
+        if(this.props.history.location.search){
+            const searchParams = new URLSearchParams(this.props.history.location.search);
+            return +searchParams.get('page')-1;
+        }
+
+        return 0;
     }
 
     render(){
@@ -48,6 +62,8 @@ class InterviewsContainer extends Component{
                                 removeInterview={this.props.onRemoveInterview}
                                 loadMoreItems={this.props.onFetchInterviews}
                                 interviewsNumber={this.props.interviewsNumber}
+                                onUrlUpdate={this.updateUrl}
+                                history={this.props.history}
                 />
             </Hoc>
         )

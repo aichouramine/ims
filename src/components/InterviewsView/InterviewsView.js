@@ -44,7 +44,10 @@ const interviewsView = (props) => (
                 {/*Showing 1 to 10 of 57 entries*/}
             {/*</div>*/}
             <div className={`${classes.Table_pagination}`}>
-                <Pagination totalNumber={props.interviewsNumber} loadItems={props.loadMoreItems}/>
+                <Pagination totalNumber={props.interviewsNumber}
+                            loadItems={props.loadMoreItems}
+                            updateUrl={props.onUrlUpdate}
+                            history={props.history}/>
             </div>
         </div>
     </Hoc>

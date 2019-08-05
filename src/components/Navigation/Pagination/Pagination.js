@@ -11,17 +11,40 @@ class Pagination extends Component{
         }
     }
 
+    componentDidMount(){
+        this.getPageNumber();
+    }
+
     handlePageClick = (p) => {
         this.props.loadItems(p-1, this.state.per_page)
 
         this.setState({current_page: p})
+
+        const url = this.setPageNumber({ query: p });
+        this.props.updateUrl(url)
     }
 
-    handleNextPage = () =>{
-        this.props.loadItems(this.state.current_page + 1, this.state.per_page)
+    // handleNextPage = () =>{
+    //     this.props.loadItems(this.state.current_page + 1, this.state.per_page)
+    // }
+
+
+    setPageNumber = ({query = "1"}) => {
+        const searchParams = new URLSearchParams();
+        searchParams.set("page", query);
+        return searchParams.toString();
     }
 
+    getPageNumber = () => {
+        if(this.props.history.location.search){
+            const searchParams = new URLSearchParams(this.props.history.location.search);
 
+            this.setState({
+                current_page: +searchParams.get('page')
+            })
+        }
+
+    }
 
     render(){
 

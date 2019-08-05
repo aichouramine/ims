@@ -60,7 +60,8 @@ const mapStateToProps = state => {
 
     return{
         interviewers: state.interviewersReducer.interviewers,
-        interviewersNum: state.interviewersReducer.interviewersNum
+        interviewersNum: state.interviewersReducer.interviewersNum,
+        interviewerProfile: state.interviewersReducer.interviewerProfile
     }
 
 }

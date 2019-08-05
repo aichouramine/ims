@@ -6,7 +6,6 @@ import CandidatesTable from './CandidatesTable/CandidatesTable'
 import Pagination from '../Navigation/Pagination/Pagination';
 
 const candidatesView = props => {
-
     return(
         <Hoc>
             <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
@@ -32,11 +31,13 @@ const candidatesView = props => {
                     </div>
                 </div>
                 <div className="d-flex justify-content-end w-100">
-                    {/*<div className={`${classes.Table_pagination_info}`}>*/}
-                    {/*Showing 1 to 10 of 57 entries*/}
-                    {/*</div>*/}
                     <div className={`${classes.table_pagination}`}>
-                        <Pagination totalNumber={props.candidatesNumber} loadItems={props.loadMoreItems}/>
+                        <Pagination totalNumber={props.candidatesNumber}
+                                    loadItems={props.loadMoreItems}
+                                    updateUrl={props.onUrlUpdate}
+                                    history={props.history}
+
+                        />
                     </div>
                 </div>
         </Hoc>
