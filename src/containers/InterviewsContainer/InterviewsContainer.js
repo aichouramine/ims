@@ -40,9 +40,9 @@ class InterviewsContainer extends Component{
 
         return (
             <Hoc>
-                <Modal show={this.state.showNew} customStyle={modalCustomStyle} modalClosed={this.addNewCancelHandler}>
-                    <NewInterviewView/>
-                </Modal>
+                {/*<Modal show={this.state.showNew} customStyle={modalCustomStyle} modalClosed={this.addNewCancelHandler}>*/}
+                    {/*<NewInterviewView/>*/}
+                {/*</Modal>*/}
                 <InterviewsView addNew={this.addNewHandler}
                                 interviews={this.props.interviews}
                                 removeInterview={this.props.onRemoveInterview}

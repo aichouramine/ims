@@ -1,10 +1,22 @@
 import React from 'react';
 import classes from './Summary.module.css';
 import {candidate_status} from "../../../enums/candidate_status";
+import moment from "moment/moment";
 
 const summary = props => {
 
+    let date = "none"
+    if(props.interviewDate){
+        date = moment(props.interviewDate).format("DD-MMMM-YY")
+    }
+
+    let startDate = "none";
+    if(props.profile.startDate){
+        startDate = moment(props.profile.startDate).format("DD-MMMM-YY")
+    }
+
     return(
+
         <div className={`${classes.summary} h-100 `}>
             <div className={`${classes.summary_card_header} ${classes.border_bottom}`}>
                 <h6 className="m-0">Summary</h6>
@@ -19,10 +31,10 @@ const summary = props => {
                         <div className={classes.edit}>edit</div>
                     </li>
                     <li className={classes.summary_body__row}>
-                        <span><strong>Interview date: </strong>none</span>
+                        <span><strong>Interview date: </strong>{date}</span>
                     </li>
                     <li className={classes.summary_body__row}>
-                        <span><strong>Start Date: </strong>none</span>
+                        <span><strong>Start Date: </strong>{startDate}</span>
                         <div className={classes.edit}>edit</div>
                     </li>
                 </ul>

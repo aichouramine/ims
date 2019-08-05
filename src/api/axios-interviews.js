@@ -19,3 +19,7 @@ export const getInterviewsNumber = () => (
 export const getInterviewsStatisticByDate = date => (
     instance.get("getNumberOfInterviewsByDate/" + date)
 )
+
+export const getInterviewDateByCandidateId = id => (
+    instance.get("getInterviewByCandidateId/" + id)
+)

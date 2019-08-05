@@ -91,8 +91,8 @@ class CandidateCreationDetails extends Component{
     }
 
     saveCandidateProfile = () => {
-         // this.props.onCandidateAdded(this.state.profile)
-        console.log(this.state.profile)
+        this.props.onCandidateAdded(this.state.profile)
+        // console.log(this.state.profile)
     }
 
     render() {

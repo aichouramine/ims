@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CandidateDetails from '../../components/CandidateDetails/CandidateDetails';
 import * as candidatesActions from '../../store/actions/candidatesIndex';
+import {getInterviewDateByCandidateId} from '../../api/axios-interviews';
 import Hoc from '../../hoc/Hoc'
 
 class CandidateDetailsContainer extends Component{
     constructor(props) {
         super(props);
+
+        this.state = {
+            interviewDate: ""
+        }
     }
 
     cancelChanges = () => {
@@ -14,6 +19,12 @@ class CandidateDetailsContainer extends Component{
     }
 
     componentDidMount(){
+        getInterviewDateByCandidateId(this.props.candidateInfo.id)
+            .then(response => {
+                this.setState({
+                    interviewDate: response.data
+                })
+            })
         // this.props.onFetchCandidates(0, 30);
     }
 
@@ -23,6 +34,7 @@ class CandidateDetailsContainer extends Component{
                 <CandidateDetails
                     onChangesCanceled={this.cancelChanges}
                     candidate={this.props.candidateInfo}
+                    interviewDate={this.state.interviewDate}
                 />
             </Hoc>
         )

@@ -21,7 +21,7 @@ class CandidateDetails extends Component{
                 skills: this.props.candidate.skills,
                 comment: this.props.candidate.comment,
                 candidateStatus: this.props.candidate.candidateStatus,
-                startDate: this.props.candidate.startDate
+                startDate: this.props.candidate.startDate,
             }
         }
     }
@@ -120,6 +120,7 @@ class CandidateDetails extends Component{
                             onConfirm={this.saveCandidateProfile}
                             cancel={this.props.onChangesCanceled}
                             profile={this.state.profile}
+                            interviewDate={this.props.interviewDate}
                         />
                     </div>
                 </div>
