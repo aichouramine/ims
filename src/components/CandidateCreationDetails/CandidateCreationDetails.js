@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import classes from './CandidateDetails.module.css';
+import classes from './CandidateCreationDetails.module.css';
 import Hoc from '../../hoc/Hoc';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 import Summary from '../CandidateDetails/Summary/Summary'
@@ -8,20 +8,20 @@ import {levels} from "../../enums/levels";
 import {candidate_location} from "../../enums/candidate_location";
 import {candidate_status} from "../../enums/candidate_status";
 
-class CandidateDetails extends Component{
+class CandidateCreationDetails extends Component{
     constructor(props){
         super(props)
 
         this.state = {
             profile: {
-                firstname: this.props.candidate.firstname,
-                lastname: this.props.candidate.lastname,
-                level: this.props.candidate.level,
-                location: this.props.candidate.location,
-                skills: this.props.candidate.skills,
-                comment: this.props.candidate.comment,
-                candidateStatus: this.props.candidate.candidateStatus,
-                startDate: this.props.candidate.startDate
+                firstname: "",
+                lastname: "",
+                level: "",
+                location: "",
+                skills: "",
+                comment: "",
+                candidateStatus: 'IN_REVIEW',
+                startDate: ""
             }
         }
     }
@@ -100,7 +100,7 @@ class CandidateDetails extends Component{
             <Hoc>
                 <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
                     <PageHeader subtitle="People"
-                                title={`${this.props.candidate.firstname} ${this.props.candidate.lastname}`}/>
+                                title="Add new candidate"/>
                 </div>
                 <div className="row ">
                     <div className="col-md-9">
@@ -128,4 +128,4 @@ class CandidateDetails extends Component{
     }
 }
 
-export default CandidateDetails;
+export default CandidateCreationDetails;

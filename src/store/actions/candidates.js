@@ -24,6 +24,27 @@ const addNewCandidate = candidateInfo => {
     }
 }
 
+const addNewCandidateSuccess = bool => {
+    return{
+        type: actionTypes.ADD_CANDIDATE_SUCCESS,
+        addCandidateSuccess: bool
+    }
+}
+
+const addNewCandidateInProgress = bool => {
+    return{
+        type: actionTypes.ADD_CANDIDATE_IN_PROGRESS,
+        addCandidateInProgress: bool
+    }
+}
+
+const getCandidateProfileOffline = (obj) => {
+    return{
+        type: actionTypes.GET_CANDIDATE_PROFILE_OFFLINE,
+        candidateInfo: obj
+    }
+}
+
 export const fetchCandidates = (page, size) => {
     return (dispatch) => {
         // dispatch(allOrdersCountFetchInProgress(true));
@@ -45,9 +66,21 @@ export const fetchCandidatesNumber = () => {
 
 export const addCandidateToTheList = obj => {
     return (dispatch) => {
+        // dispatch(addNewCandidateSuccess(false))
+        dispatch(addNewCandidateInProgress(true))
+
         addCandidate(obj)
             .then((response) => dispatch(addNewCandidate(response.data)))
-            .then(() => dispatch(push('/candidates')))
+            .then(() => dispatch(addNewCandidateInProgress(false)))
+            .then(() => dispatch(addNewCandidateSuccess(true)))
+            // .then(() => dispatch(push('/candidates')))
     }
+}
+
+export const goToCandidateDetails = obj => {
+    return (dispatch => {
+        dispatch(addNewCandidateSuccess(false))
+        dispatch(getCandidateProfileOffline(obj))
+    })
 }
 

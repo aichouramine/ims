@@ -46,7 +46,7 @@ class InterviewerProfile extends Component{
         return(
             <Hoc>
                 <div className="page-header no-gutters py-4 row mb-4">
-                    <PageHeader subtitle="People" title="Interviewer Profile"/>
+                    <PageHeader subtitle="People" title={`${this.props.interviewer.firstname} ${this.props.interviewer.lastname}` }/>
                 </div>
                 <div className="row">
                     <div className="col-lg-4 col-sm-6 col-md-4">

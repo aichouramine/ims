@@ -15,9 +15,9 @@ const candidatesTable = (props) => {
         </tr>
     )
 
-    // function goToProfile(obj) {
-    //     props.onInterviewerEdit(obj)
-    // }
+    function goToProfile(obj) {
+        props.onCandidateEdit(obj)
+    }
 
     function printStatus(status) {
         let attachedClass = `${classes.custom_badge} badge badge-secondary`;
@@ -50,20 +50,19 @@ const candidatesTable = (props) => {
     }
 
     if(props.list && props.list.length > 0){
-        candidates = props.list.map((int, i) => {
+        candidates = props.list.map((c, i) => {
             return(
                 <tr key={`${i}`}>
                     <td className={classes.name} style={{justifyItems: 'space-between', alignItems: 'center'}}>
-                        {`${int.firstname} ${int.lastname}`}
+                        {`${c.firstname} ${c.lastname}`}
                     </td>
-                    <td>{levels[int.level]}</td>
-                    <td>{locations[int.location]}</td>
-                    <td>{printStatus(int.candidateStatus)}</td>
-                    <td className={classes.date}>{returnDate(int.startDate)}</td>
+                    <td>{levels[c.level]}</td>
+                    <td>{locations[c.location]}</td>
+                    <td>{printStatus(c.candidateStatus)}</td>
+                    <td className={classes.date}>{returnDate(c.startDate)}</td>
                     <td >
                         <TableActions>
-                            {/*<Update onEdit={() => goToProfile(int)}/>*/}
-                            <Details/>
+                            <Details onClick={() => goToProfile(c)}/>
                             {/*<Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}*/}
                                     {/*onConfirm={props.onInterviewerRemove} intId={int.id}>*/}
                                 {/*You are going to send {`${int.firstname} ${int.lastname}`} to the bench. Are you sure?*/}

@@ -6,14 +6,15 @@ const confirmDialog = props => {
     return(
         <div className={`${classes.confirm_alert_body} h-100 `}>
             <div className={`${classes.card_header} ${classes.border_bottom}`}>
-                <h6 className="m-0">Confirm to remove</h6>
+                <h6 className="m-0">Create interview</h6>
             </div>
-            <div className={`d-flex p-0 ml-3 card-body ${classes.card_body}`}>
-                <span>Are you sure you want to do this? This action cannot be undone!</span>
+            <div className={`d-flex flex-column p-0 ml-3 card-body ${classes.card_body}`}>
+                <span>Candidate is added successfully.</span>
+                <span>Would you like to create an interview record?</span>
             </div>
             <div className={`${classes.card_footer}`}>
                 <div className={`btn-group ${classes.confirm_alert_button_group}`}>
-                    <button type="button" className="btn btn-danger btn-sm" onClick={props.onConfirmRemove}>Yes</button>
+                    <button type="button" className="btn btn-primary btn-sm" onClick={props.onConfirm}>Yes</button>
                     <button type="button" className="btn btn-outline-dark btn-sm" onClick={props.onCancel}>No</button>
                 </div>
             </div>

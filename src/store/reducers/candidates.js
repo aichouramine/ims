@@ -25,6 +25,21 @@ const candidateReducer = (state = initialState, action) => {
                 ...state,
                 candidateInfo: action.candidateInfo
             }
+        case actionTypes.ADD_CANDIDATE_SUCCESS:
+            return Object.assign({}, state, {
+                addCandidateSuccess: action.addCandidateSuccess,
+                addCandidateInProgress: false,
+            });
+        case actionTypes.ADD_CANDIDATE_IN_PROGRESS:
+            return Object.assign({}, state, {
+                addCandidateSuccess: action.addCandidateSuccess,
+                addCandidateInProgress: true,
+            });
+        case actionTypes.GET_CANDIDATE_PROFILE_OFFLINE:
+            return {
+                ...state,
+                candidateInfo: action.candidateInfo
+            }
         // case actionTypes.REMOVE_INTERVIEW:
         //     return {
         //         ...state,

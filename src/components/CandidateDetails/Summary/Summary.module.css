@@ -22,6 +22,7 @@
     justify-content: space-between;
     font-size: 14px;
     padding: 5px 0;
+    color: #3d5170;
 }
 
 .summary_body__title{
@@ -38,6 +39,15 @@
     padding: 1rem;
     color: #3d5170;
     background-color: #fff;
+}
+
+.edit{
+    color: #007bff;
+}
+
+.edit:hover{
+    cursor: pointer;
+    color: #36a8ff;
 }
 
 .summary_card_header:first-child{

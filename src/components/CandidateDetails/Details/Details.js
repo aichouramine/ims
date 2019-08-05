@@ -7,7 +7,6 @@ import Dropdown from '../../shared_components/Dropdown/Dropdown';
 import {candidate_location} from "../../../enums/candidate_location";
 
 const details = props => {
-
     return(
         <div className={`${classes.summary_card} h-100 `}>
             <div className={`${classes.summary_card_header} ${classes.border_bottom}`}>
@@ -17,20 +16,21 @@ const details = props => {
                 <form style={{padding: '15px'}}>
                     <div className={classes.form_group_wrapper}>
                         <div className=" p-0 mb-0" style={{width: '25%'}}>
-                            <Input inputtype="input" label="Firstname" type="text" placeholder="Firstname"
+                            <Input value={props.profile.firstname} inputtype="input" label="Firstname" type="text" placeholder="Firstname"
                                    onChange={props.onFirstnameChanged}
                             />
                         </div>
                         <div className=" p-0 mb-0" style={{width: '25%'}}>
-                            <Input inputtype="input" label="Lastname" type="text" placeholder="Lastname"
+                            <Input value={props.profile.lastname} inputtype="input" label="Lastname" type="text" placeholder="Lastname"
                                    onChange={props.onLastnameChanged}
                             />
                         </div>
                         <div className=" p-0 mb-0" style={{width: '20%'}}>
-                            <Dropdown label="Level" options={levels} onChange={props.onLevelChanged}/>
+                            <Dropdown value={props.profile.level} label="Level" options={levels} onChange={props.onLevelChanged}/>
                         </div>
                         <div className="p-0 mb-0" style={{width: '20%'}}>
-                            <Dropdown label="Location" options={candidate_location} onChange={props.onLocationChanged}/>
+                            <Dropdown value={props.profile.location} label="Location" options={candidate_location}
+                                      onChange={props.onLocationChanged}/>
                         </div>
                     </div>
                     <div className="pt-4 ">

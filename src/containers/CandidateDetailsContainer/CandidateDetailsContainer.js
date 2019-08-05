@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CandidateDetails from '../../components/CandidateDetails/CandidateDetails';
 import * as candidatesActions from '../../store/actions/candidatesIndex';
+import Hoc from '../../hoc/Hoc'
 
 class CandidateDetailsContainer extends Component{
     constructor(props) {
         super(props);
-
     }
 
     cancelChanges = () => {
@@ -17,33 +17,27 @@ class CandidateDetailsContainer extends Component{
         // this.props.onFetchCandidates(0, 30);
     }
 
-    addNewCandidate = obj => {
-        this.props.onAddingCandidate(obj);
-        this.props.history.goBack();
-    }
-
     render(){
         return(
-            <CandidateDetails
-                onChangesCanceled={this.cancelChanges}
-                onCandidateAdded={this.addNewCandidate}
-                candidate={this.props.candidateInfo}
-            />
+            <Hoc>
+                <CandidateDetails
+                    onChangesCanceled={this.cancelChanges}
+                    candidate={this.props.candidateInfo}
+                />
+            </Hoc>
         )
     }
 }
 
 const mapStateToProps = state => {
     return{
-        candidateInfo: state.candidatesReducer.candidateInfo,
+        candidateInfo: state.candidatesReducer.candidateInfo
     }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return{
-        onAddingCandidate: (obj) => dispatch(candidatesActions.addCandidateToTheList(obj))
-    }
+
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (CandidateDetailsContainer);
+export default connect(mapStateToProps) (CandidateDetailsContainer);

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Hoc from '../../hoc/Hoc'
 import CandidatesView from '../../components/CandidatesView/CandidatesView';
 import * as candidatesActions from '../../store/actions/candidatesIndex';
 
@@ -8,6 +9,7 @@ class CandidatesContainer extends Component{
         super(props);
 
         this.addNewHandler = this.addNewHandler.bind(this)
+        this.editHandler = this.editHandler.bind(this)
     }
 
     componentDidMount(){
@@ -16,21 +18,36 @@ class CandidatesContainer extends Component{
     }
 
     addNewHandler() {
+        this.props.onSeeDetails();
         this.props.history.push({
-            pathname: '/candidates/details'
+            pathname: `${this.props.location.pathname}/addNewCandidate`
         })
-        // this.props.onUpdateInterviewerProfileOffline(interviewer)
-        // this.setState({editable: true})
+    }
+
+    editHandler(candidate) {
+        this.props.history.push({
+            pathname: `${this.props.location.pathname}/details/${candidate.id}`
+        })
+        this.props.onSeeDetails(candidate)
+    }
+
+    updateUrl(url){
+        this.props.history.push(`?${url}`);
     }
 
     render(){
         return(
-            <CandidatesView
-                candidates={this.props.candidates}
-                addNewCandidate={this.addNewHandler}
-                loadMoreItems={this.props.onFetchCandidates}
-                candidatesNumber={this.props.candidatesNumber}
-            />
+            <Hoc>
+                <CandidatesView
+                    candidates={this.props.candidates}
+                    addNewCandidate={this.addNewHandler}
+                    editCandidate={this.editHandler}
+                    loadMoreItems={this.props.onFetchCandidates}
+                    candidatesNumber={this.props.candidatesNumber}
+                    onUrlUpdate={this.updateUrl}
+                    history={this.props.history}
+                />
+            </Hoc>
         )
     }
 }
@@ -39,7 +56,7 @@ const mapStateToProps = state => {
 
     return{
         candidates: state.candidatesReducer.candidates,
-        candidatesNumber: state.candidatesReducer.candidatesNumber
+        candidatesNumber: state.candidatesReducer.candidatesNumber,
     }
 
 }
@@ -47,7 +64,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return{
         onFetchCandidates: (page, size) => dispatch(candidatesActions.fetchCandidates(page, size)),
-        onFetchCandidatesNumber: () => dispatch(candidatesActions.fetchCandidatesNumber())
+        onFetchCandidatesNumber: () => dispatch(candidatesActions.fetchCandidatesNumber()),
+        onSeeDetails: (obj) => dispatch(candidatesActions.goToCandidateDetails(obj))
     }
 }
 

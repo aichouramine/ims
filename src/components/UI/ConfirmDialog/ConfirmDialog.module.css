@@ -16,6 +16,10 @@
 
 }
 
+.card_body > span:first-child {
+    padding-bottom: 5px;
+}
+
 .border_bottom{
     border-bottom: 1px solid #e1e5eb!important;
 }

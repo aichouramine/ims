@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Summary.module.css';
+import {candidate_status} from "../../../enums/candidate_status";
 
 const summary = props => {
 
@@ -11,18 +12,18 @@ const summary = props => {
             <div className="d-flex py-0">
                 <ul className={`${classes.summary_body} list-group list-group-flush`} >
                     <li className={classes.summary_body__row}>
-                        <span className={classes.summary_body__title}>Name: Name Name</span>
+                        <span><strong>Name: </strong>{`${props.profile.firstname} ${props.profile.lastname}`}</span>
                     </li>
                     <li className={classes.summary_body__row}>
-                        <span className={classes.summary_body__title}>Status: In Review</span>
-                        <div>edit</div>
+                        <span><strong>Status: </strong>{candidate_status[props.profile.candidateStatus]}</span>
+                        <div className={classes.edit}>edit</div>
                     </li>
                     <li className={classes.summary_body__row}>
-                        <span className={classes.summary_body__title}>Interview date: none</span>
+                        <span><strong>Interview date: </strong>none</span>
                     </li>
                     <li className={classes.summary_body__row}>
-                        <span className={classes.summary_body__title}>Start Date:</span>
-                        <div>edit</div>
+                        <span><strong>Start Date: </strong>none</span>
+                        <div className={classes.edit}>edit</div>
                     </li>
                 </ul>
 

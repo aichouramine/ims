@@ -1,1 +1,1 @@
-export {fetchCandidates, fetchCandidatesNumber, addCandidateToTheList} from './candidates';
+export {fetchCandidates, fetchCandidatesNumber, addCandidateToTheList, goToCandidateDetails} from './candidates';
