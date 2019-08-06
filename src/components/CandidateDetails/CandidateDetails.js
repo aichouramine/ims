@@ -8,6 +8,16 @@ import {levels} from "../../enums/levels";
 import {candidate_location} from "../../enums/candidate_location";
 import {candidate_status} from "../../enums/candidate_status";
 
+const initialState = {
+    errors: {
+        firstNameError: '',
+        lastNameError: '',
+        levelError: '',
+        locationError: '',
+    }
+
+}
+
 class CandidateDetails extends Component{
     constructor(props){
         super(props)
@@ -22,6 +32,12 @@ class CandidateDetails extends Component{
                 comment: this.props.candidate.comment,
                 candidateStatus: this.props.candidate.candidateStatus,
                 startDate: this.props.candidate.startDate,
+            },
+            errors: {
+                firstNameError: '',
+                lastNameError: '',
+                levelError: '',
+                locationError: '',
             }
         }
     }
@@ -90,9 +106,61 @@ class CandidateDetails extends Component{
 
     }
 
+    validate = () => {
+        let errors = {
+            ...this.state.errors
+        }
+
+        let firstNameError = '';
+        let lastNameError = '';
+        let emailError = '';
+        let levelError = '';
+        let locationError = '';
+
+        if(!this.state.profile.firstname || this.state.profile.firstname.length < 3){
+            firstNameError = 'Firstname is too short'
+        }
+
+        if(!this.state.profile.lastname || this.state.profile.lastname.length < 3){
+            lastNameError = 'Lastname is too short'
+        }
+
+        if(!this.state.profile.level){
+            levelError = 'Level cannot be blank'
+        }
+
+        if(!this.state.profile.location){
+            locationError = 'Location cannot be blank'
+        }
+
+        if(emailError || firstNameError || lastNameError || levelError || locationError){
+            errors.emailError = emailError;
+            errors.firstNameError = firstNameError;
+            errors.lastNameError = lastNameError;
+            errors.levelError = levelError;
+            errors.locationError = locationError;
+
+            this.setState({
+                errors: errors
+            })
+            return false;
+        }
+
+        return true;
+    }
+
     saveCandidateProfile = () => {
+        let isValid = this.validate();
+
+        if(isValid){
+            this.setState({
+                ...initialState
+            })
+
+            console.log(this.state.profile)
+        }
          // this.props.onCandidateAdded(this.state.profile)
-        console.log(this.state.profile)
+
     }
 
     render() {
@@ -112,6 +180,7 @@ class CandidateDetails extends Component{
                             onSkillsChanged={this.onSkillsChanged}
                             onCommentChanged={this.onCommentChanged}
                             profile={this.state.profile}
+                            errors={this.state.errors}
                         />
                     </div>
                     <div className="col-md-3">

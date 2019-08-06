@@ -14,9 +14,7 @@ const initialState = {
         lastNameError: '',
         levelError: '',
         locationError: '',
-        candidateStatus: 'IN_REVIEW',
     }
-
 }
 
 class CandidateCreationDetails extends Component{
@@ -39,7 +37,6 @@ class CandidateCreationDetails extends Component{
                 lastNameError: '',
                 levelError: '',
                 locationError: '',
-                candidateStatus: 'IN_REVIEW',
             }
         }
     }
@@ -119,12 +116,12 @@ class CandidateCreationDetails extends Component{
         let levelError = '';
         let locationError = '';
 
-        if(!this.state.profile.firstname){
-            firstNameError = 'Firstname cannot be blank'
+        if(!this.state.profile.firstname || this.state.profile.firstname.length < 3){
+            firstNameError = 'Firstname is too short'
         }
 
-        if(!this.state.profile.lastname){
-            lastNameError = 'Lastname cannot be blank'
+        if(!this.state.profile.lastname || this.state.profile.lastname.length < 3){
+            lastNameError = 'Lastname is too short'
         }
 
         if(!this.state.profile.level){
