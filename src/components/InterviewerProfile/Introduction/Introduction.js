@@ -30,7 +30,7 @@ const introduction = props => {
     if(props.data) {
         mainData = (
             <Hoc>
-                <div className={`${classes.text_center} ${classes.card_header}`} >
+                <div className={`${classes.text_center} ${classes.card_header} `} >
                     <div className={`mb-3 mx-auto ${classes.avatar_img}` } style={{backgroundImage: `url(${props.data.profilePhoto})`}}>
                     </div>
                     <h4 className={`${classes.name_text} mb-1`}>

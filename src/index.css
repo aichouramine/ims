@@ -24,7 +24,19 @@ code {
   padding: 10px;
 }
 
+.toast-body__success{
+  background-color: #20a453;
+  font-size: 13px;
+  padding: 10px;
+}
+
 .toast-body__error > button {
+  min-width: 12%;
+  padding-left: 5px;
+  font-size: 13px;
+}
+
+.toast-body__success > button {
   min-width: 12%;
   padding-left: 5px;
   font-size: 13px;

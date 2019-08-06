@@ -1,6 +1,7 @@
 import * as actionTypes from '../actions/actionTypes';
 import {getInterviewers, getTopInterviewers, updateInterviewerStatus,
     updateInterviewerProfile, getInterviewersNumber} from '../../api/axios-interviewers'
+import { toast } from "react-toastify";
 
 export const deactivateInterviewer = (id) => {
     return{
@@ -105,6 +106,8 @@ export const updateInterviewer = (obj) => {
         updateInterviewerProfile(obj)
             .then((response) => dispatch(updateInterviewerData(response.data)))
             .then(() => dispatch(updateInterviewerSuccess()))
+            // .then(() => toast.success('Profile is updated successfully.'
+            // ))
     }
 }
 

@@ -43,11 +43,11 @@ const summary = props => {
             <div className={`${classes.card_footer} ${classes.border_top}`}>
                 <div className="row">
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', padding: '0 15px'}}>
-                        <input type="submit" className={`mb-2 mr-1 btn btn-primary btn-sm `}
-                               style={{width: '30%'}} value="Save" onClick={props.onConfirm}/>
-                        <input type="submit"
+                        <button type="submit" className={`mb-2 mr-1 btn btn-primary btn-sm `}
+                                style={{width: '25%'}} onClick={props.onConfirm}>Update</button>
+                        <button type="cancel"
                                className={`mb-2 mr-1 btn btn-outline-secondary btn-sm`}
-                               style={{width: '30%'}} value="Cancel" onClick={props.cancel}/>
+                                style={{width: '25%'}} onClick={props.cancel}>Cancel</button>
                     </div>
                 </div>
             </div>

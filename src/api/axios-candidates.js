@@ -27,3 +27,7 @@ export const getCandidatesLocationsCountByDate = (date) => (
 export const addCandidate = (obj) => (
     instance.put("addCandidate", obj)
 )
+
+export const updateCandidate = (obj) => (
+    instance.put("updateCandidateProfile", obj)
+)

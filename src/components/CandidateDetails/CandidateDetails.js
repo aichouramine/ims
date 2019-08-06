@@ -24,6 +24,7 @@ class CandidateDetails extends Component{
 
         this.state = {
             profile: {
+                id: this.props.candidate.id,
                 firstname: this.props.candidate.firstname,
                 lastname: this.props.candidate.lastname,
                 level: this.props.candidate.level,
@@ -157,7 +158,8 @@ class CandidateDetails extends Component{
                 ...initialState
             })
 
-            console.log(this.state.profile)
+            this.props.onProfileUpdate(this.state.profile)
+            // console.log(this.state.profile)
         }
          // this.props.onCandidateAdded(this.state.profile)
 

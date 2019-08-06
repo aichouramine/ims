@@ -13,7 +13,8 @@ class InterviewerProfileContainer extends Component{
 
         this.state = {
             confirm: false,
-            statisticData: []
+            statisticData: [],
+            updateSuccess: false
         };
 
         this.confirmHandler = this.confirmHandler.bind(this)
@@ -54,13 +55,10 @@ class InterviewerProfileContainer extends Component{
 
     onSuccessUpdate = (obj) => {
         this.props.onUpdateInterviewerProfile(obj);
-        // if(this.props.updateSuccess){
-        //
-        // }
         // toast.success("Profile is updated successfully",
         //     {
-        //         className: 'black-background',
-        //         bodyClassName: "grow-font-size"
+        //         className: 'toast-body__success',
+        //         // bodyClassName: "grow-font-size"
         //     }
         // );
     }
@@ -78,11 +76,12 @@ class InterviewerProfileContainer extends Component{
                 <ToastContainer
                     position="bottom-right"
                     hideProgressBar={false}
-                    autoClose={3000}
+                    autoClose={2000}
                     newestOnTop={true}
                     closeOnClick={true}
                     draggable={false}
                     rtl={false}
+                    className="toast-container"
                 />
             </Hoc>
         )
