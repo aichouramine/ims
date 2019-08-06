@@ -43,8 +43,8 @@ class CandidateCreationContainer extends Component{
             .catch(() => {
                 toast.error('Something went wrong. Please try again.',
                     {
-                        className: 'black-background',
-                        bodyClassName: "grow-font-size"
+                        className: 'toast-body__error',
+                        // bodyClassName: "toast-body"
                     }
                 );
             })
@@ -69,6 +69,7 @@ class CandidateCreationContainer extends Component{
                     closeOnClick={true}
                     draggable={false}
                     rtl={false}
+                    className="toast-container"
                 />
             </Hoc>
         )

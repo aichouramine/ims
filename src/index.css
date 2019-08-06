@@ -13,3 +13,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.toast-container{
+  width: 250px !important;
+}
+
+.toast-body__error{
+  background-color: #ff4e41;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.toast-body__error > button {
+  min-width: 12%;
+  padding-left: 5px;
+  font-size: 13px;
+}
