@@ -8,6 +8,17 @@ import {levels} from "../../enums/levels";
 import {candidate_location} from "../../enums/candidate_location";
 import {candidate_status} from "../../enums/candidate_status";
 
+const initialState = {
+    errors: {
+        firstNameError: '',
+        lastNameError: '',
+        levelError: '',
+        locationError: '',
+        candidateStatus: 'IN_REVIEW',
+    }
+
+}
+
 class CandidateCreationDetails extends Component{
     constructor(props){
         super(props)
@@ -22,6 +33,13 @@ class CandidateCreationDetails extends Component{
                 comment: "",
                 candidateStatus: 'IN_REVIEW',
                 startDate: ""
+            },
+            errors: {
+                firstNameError: '',
+                lastNameError: '',
+                levelError: '',
+                locationError: '',
+                candidateStatus: 'IN_REVIEW',
             }
         }
     }
@@ -90,9 +108,60 @@ class CandidateCreationDetails extends Component{
 
     }
 
+    validate = () => {
+        let errors = {
+            ...this.state.errors
+        }
+
+        let firstNameError = '';
+        let lastNameError = '';
+        let emailError = '';
+        let levelError = '';
+        let locationError = '';
+
+        if(!this.state.profile.firstname){
+            firstNameError = 'Firstname cannot be blank'
+        }
+
+        if(!this.state.profile.lastname){
+            lastNameError = 'Lastname cannot be blank'
+        }
+
+        if(!this.state.profile.level){
+            levelError = 'Level cannot be blank'
+        }
+
+        if(!this.state.profile.location){
+            locationError = 'Location cannot be blank'
+        }
+
+        if(emailError || firstNameError || lastNameError || levelError || locationError){
+            errors.emailError = emailError;
+            errors.firstNameError = firstNameError;
+            errors.lastNameError = lastNameError;
+            errors.levelError = levelError;
+            errors.locationError = locationError;
+
+            this.setState({
+                errors: errors
+            })
+            return false;
+        }
+
+        return true;
+    }
+
     saveCandidateProfile = () => {
-        this.props.onCandidateAdded(this.state.profile)
-        // console.log(this.state.profile)
+        let isValid = this.validate();
+
+        if(isValid){
+            this.setState({
+                ...initialState
+            })
+
+            this.props.onCandidateAdded(this.state.profile)
+        }
+
     }
 
     render() {
@@ -112,6 +181,7 @@ class CandidateCreationDetails extends Component{
                             onSkillsChanged={this.onSkillsChanged}
                             onCommentChanged={this.onCommentChanged}
                             profile={this.state.profile}
+                            errors={this.state.errors}
                         />
                     </div>
                     <div className="col-md-3">

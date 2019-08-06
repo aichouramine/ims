@@ -10,7 +10,7 @@ const confirmDialog = props => {
             </div>
             <div className={`d-flex flex-column p-0 ml-3 card-body ${classes.card_body}`}>
                 <span>Candidate is added successfully.</span>
-                <span>Would you like to create an interview record?</span>
+                <span>Would you like to create an interview record for candidate?</span>
             </div>
             <div className={`${classes.card_footer}`}>
                 <div className={`btn-group ${classes.confirm_alert_button_group}`}>

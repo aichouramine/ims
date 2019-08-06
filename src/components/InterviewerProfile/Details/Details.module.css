@@ -81,11 +81,3 @@
 .close i:hover{
     cursor: pointer;
 }
-
-.invalidFeedback {
-    margin-top: .25rem;
-    font-size: 80%;
-    color: #c4183c;
-    width: 100%;
-    font-weight: 300;
-}

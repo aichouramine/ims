@@ -31,6 +31,7 @@ const dropdown = (props) => {
                     <option key={ind} >{o}</option>
                 ))}
             </select>
+            <div className={classes.invalidFeedback}>{props.error}</div>
         </div>
     )
 }

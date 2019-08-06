@@ -26,6 +26,7 @@ const input = props => {
         <div>
             <label htmlFor="feFirstname" className={classes.label}>{props.label}</label>
             {inputElement}
+            <div className={classes.invalidFeedback}>{props.error}</div>
         </div>
     )
 }

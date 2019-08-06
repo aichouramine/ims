@@ -13,24 +13,29 @@ const details = props => {
                 <h6 className="m-0">Details</h6>
             </div>
             <div className="d-flex py-2 flex-column">
-                <form style={{padding: '15px'}}>
+                <form style={{padding: '15px'}} noValidate>
                     <div className={classes.form_group_wrapper}>
                         <div className=" p-0 mb-0" style={{width: '25%'}}>
                             <Input value={props.profile.firstname} inputtype="input" label="Firstname" type="text" placeholder="Firstname"
                                    onChange={props.onFirstnameChanged}
+                                   error={props.errors.firstNameError}
                             />
                         </div>
                         <div className=" p-0 mb-0" style={{width: '25%'}}>
                             <Input value={props.profile.lastname} inputtype="input" label="Lastname" type="text" placeholder="Lastname"
                                    onChange={props.onLastnameChanged}
+                                   error={props.errors.lastNameError}
                             />
                         </div>
                         <div className=" p-0 mb-0" style={{width: '20%'}}>
-                            <Dropdown value={props.profile.level} label="Level" options={levels} onChange={props.onLevelChanged}/>
+                            <Dropdown value={props.profile.level} label="Level" options={levels} onChange={props.onLevelChanged}
+                                      error={props.errors.levelError}/>
                         </div>
                         <div className="p-0 mb-0" style={{width: '20%'}}>
                             <Dropdown value={props.profile.location} label="Location" options={candidate_location}
-                                      onChange={props.onLocationChanged}/>
+                                      onChange={props.onLocationChanged}
+                                      error={props.errors.locationError}
+                            />
                         </div>
                     </div>
                     <div className="pt-4 ">

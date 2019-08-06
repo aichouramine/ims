@@ -13,11 +13,10 @@
     font-size: 14px;
     margin: auto;
     margin-top: 15px;
-
 }
 
 .card_body > span:first-child {
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 }
 
 .border_bottom{

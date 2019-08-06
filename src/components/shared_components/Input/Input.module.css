@@ -27,6 +27,14 @@
     box-sizing: border-box;
 }
 
+.invalidFeedback {
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #c4183c;
+    width: 100%;
+    font-weight: 300;
+}
+
 .custom_form_control__error {
     border-color: #c4183c;
 }

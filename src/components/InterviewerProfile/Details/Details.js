@@ -142,14 +142,13 @@ class Details extends Component{
                                     <Input inputtype="input" label="Firstname" type="text" placeholder="Firstname"
                                            onChange={this.onFirstnameChanged} value={this.state.profile.firstname}
                                            error={this.state.firstNameError}/>
-                                    <div className={classes.invalidFeedback}>{this.state.firstNameError}</div>
                                 </div>
                                 <div className="col col-md-6 form-group">
                                     <Input inputtype="input" label="Lastname" type="text" placeholder="Lastname"
                                            onChange={this.onLastnameChanged} value={this.state.profile.lastname}
                                            error={this.state.lastNameError}
                                     />
-                                    <div className={classes.invalidFeedback}>{this.state.lastNameError}</div>
+                                    {/*<div className={classes.invalidFeedback}>{this.state.lastNameError}</div>*/}
                                 </div>
                             </div>
                             <div className="form-row">
@@ -158,14 +157,14 @@ class Details extends Component{
                                            onChange={this.onEmailChanged} value={this.state.profile.email}
                                            error={this.state.emailError}
                                     />
-                                    <div className={classes.invalidFeedback}>{this.state.emailError}</div>
+                                    {/*<div className={classes.invalidFeedback}>{this.state.emailError}</div>*/}
                                 </div>
                                 <div className="col col-md-6 form-group">
                                     <Dropdown onChange={this.onLevelChanged} options={levels} label="Level"
                                               type="select" value={this.state.profile.level}
                                               error={this.state.levelError}
                                     />
-                                    <div className={classes.invalidFeedback}>{this.state.levelError}</div>
+                                    {/*<div className={classes.invalidFeedback}>{this.state.levelError}</div>*/}
                                 </div>
                             </div>
                             <div className="form-row">
@@ -182,7 +181,7 @@ class Details extends Component{
                             <button type="submit" className={`mb-2 mr-1 btn btn-primary btn-sm ${classes.action_button}`}
                             >Save</button>
 
-                            <button type="submit" className={`mb-2 mr-1 btn btn-outline-secondary btn-sm ${classes.action_button}`}
+                            <button type="button" className={`mb-2 mr-1 btn btn-outline-secondary btn-sm ${classes.action_button}`}
                                     onClick={this.props.onCancel}>Cancel</button>
                         </div>
                     </div>
