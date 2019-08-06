@@ -17,10 +17,11 @@
 }
 
 .Card_footer{
-    padding: 1rem;
+    /*padding: 1rem;*/
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    margin-top: 1.5rem;
 }
 
 .Card_footer:last-child{
@@ -79,4 +80,12 @@
 
 .close i:hover{
     cursor: pointer;
+}
+
+.invalidFeedback {
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #c4183c;
+    width: 100%;
+    font-weight: 300;
 }

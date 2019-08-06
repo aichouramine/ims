@@ -24,6 +24,10 @@
     transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
 }
 
+.dropdown__error{
+    border: 1px solid #c4183c;
+}
+
 select:focus{
     outline:none;
 }

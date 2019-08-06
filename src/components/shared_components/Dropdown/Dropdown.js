@@ -16,10 +16,15 @@ const dropdown = (props) => {
         category = {...candidate_location}
     }
 
+    let attachedClass = classes.dropdown
+    if(props.error){
+        attachedClass = `${classes.dropdown} ${classes.dropdown__error}`
+    }
+
     return(
         <div>
             <label className={classes.label}>{props.label}</label>
-            <select className={`${classes.dropdown} form-control custom-select`} onChange={props.onChange}
+            <select className={`${attachedClass} form-control`} onChange={props.onChange}
                     value={category[props.value]}>
                 <option >Select...</option>
                 {options.map((o, ind) => (
