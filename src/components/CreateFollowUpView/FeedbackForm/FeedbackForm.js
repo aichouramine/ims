@@ -1,16 +1,17 @@
 import React from 'react';
-import classes from './Details.module.css';
+import classes from './FeedbackForm.module.css';
 import {levels} from "../../../enums/levels";
+import {candidate_location} from "../../../enums/candidate_location";
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
 import Input from '../../shared_components/Input/Input';
 import Dropdown from '../../shared_components/Dropdown/Dropdown';
-import {candidate_location} from "../../../enums/candidate_location";
 
-const details = props => {
+const feedbackForm = props => {
+
     return(
-        <div className={`${classes.summary_card} h-100 `}>
-            <div className={`${classes.summary_card_header} ${classes.border_bottom}`}>
-                <h6 className="m-0">Details</h6>
+        <div className={`${classes.feedback_card} h-100 `}>
+            <div className={`${classes.feedback_card_header} ${classes.border_bottom}`}>
+                <h6 className="m-0">Feedback</h6>
             </div>
             <div className="d-flex py-2 flex-column">
                 <form style={{padding: '15px'}} noValidate>
@@ -58,4 +59,4 @@ const details = props => {
     )
 }
 
-export default details;
+export default feedbackForm;

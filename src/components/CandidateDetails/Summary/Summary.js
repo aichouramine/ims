@@ -37,6 +37,10 @@ const summary = props => {
                         <span><strong>Start Date: </strong>{startDate}</span>
                         <div className={classes.edit}>edit</div>
                     </li>
+                    <li className={classes.summary_body__row}>
+                        <span><strong>I-view follow-up: </strong>link</span>
+                        <div className={classes.edit}>add</div>
+                    </li>
                 </ul>
 
             </div>

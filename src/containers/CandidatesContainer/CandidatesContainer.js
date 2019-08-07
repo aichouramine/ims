@@ -11,6 +11,7 @@ class CandidatesContainer extends Component{
         this.addNewHandler = this.addNewHandler.bind(this)
         this.editHandler = this.editHandler.bind(this)
         this.updateUrl = this.updateUrl.bind(this)
+        this.viewFollowUp = this.viewFollowUp.bind(this)
     }
 
     componentDidMount(){
@@ -30,6 +31,12 @@ class CandidatesContainer extends Component{
             pathname: `${this.props.location.pathname}/details/${candidate.id}`
         })
         this.props.onSeeDetails(candidate)
+    }
+
+    viewFollowUp(candidate){
+        this.props.history.push({
+            pathname: `${this.props.location.pathname}/followUp/${candidate.id}`
+        })
     }
 
     updateUrl(url){
@@ -52,6 +59,7 @@ class CandidatesContainer extends Component{
                     candidates={this.props.candidates}
                     addNewCandidate={this.addNewHandler}
                     editCandidate={this.editHandler}
+                    viewFollowUp={this.viewFollowUp}
                     loadMoreItems={this.props.onFetchCandidates}
                     candidatesNumber={this.props.candidatesNumber}
                     onUrlUpdate={this.updateUrl}

@@ -5,7 +5,9 @@ import InterviewersContainer from './containers/InterviewersContainer/Interviewe
 import CandidatesContainer from './containers/CandidatesContainer/CandidatesContainer';
 import CandidateDetailsContainer from './containers/CandidateDetailsContainer/CandidateDetailsContainer';
 import CandidateCreationContainer from './containers/CandidateCreationContainer/CandidateCreationContainer';
+import ResourcesNeeds from './containers/ResourcesNeeds/ResourcesNeeds';
 import Dashboard from './containers/Dashboard/Dashboard';
+import FollowUp from './containers/FollowUp/FollowUp';
 import InterviewerProfileContainer from './containers/InterviewerProfileContainer/InterviewerProfileContainer';
 import { Route, Switch } from 'react-router-dom';
 
@@ -21,9 +23,9 @@ class App extends Component {
             <Route exact path="/candidates" component={CandidatesContainer}/>
             <Route exact path="/candidates/addNewCandidate" component={CandidateCreationContainer}/>
             <Route exact path="/candidates/details/:id" component={CandidateDetailsContainer}/>
-            {/*<Route path="/needs" component={ResourcesNeeds}/>*/}
+            <Route path="/needs" component={ResourcesNeeds}/>
             {/*<Route path="/schedule" component={InterviewsCalendar}/>*/}
-            {/*<Route path="/feedbacks" component={FollowUp}/>*/}
+            <Route path="/candidates/followUp/:id" component={FollowUp}/>
         </Layout>
       </div>
     );

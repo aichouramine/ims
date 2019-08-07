@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './CandidatesTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
+import Update from '../../shared_components/TableActions/Update/Update'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
 import Details from '../../shared_components/TableActions/Details/Details'
 import {levels} from '../../../enums/levels'
@@ -17,6 +18,10 @@ const candidatesTable = (props) => {
 
     function goToProfile(obj) {
         props.onCandidateEdit(obj)
+    }
+
+    function goToFollowUpDetails(obj) {
+        props.onViewFollowUp(obj)
     }
 
     function printStatus(status) {
@@ -63,6 +68,7 @@ const candidatesTable = (props) => {
                     <td >
                         <TableActions>
                             <Details onClick={() => goToProfile(c)}/>
+                            <Update onEdit={() => goToFollowUpDetails(c)}/>
                             {/*<Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}*/}
                                     {/*onConfirm={props.onInterviewerRemove} intId={int.id}>*/}
                                 {/*You are going to send {`${int.firstname} ${int.lastname}`} to the bench. Are you sure?*/}

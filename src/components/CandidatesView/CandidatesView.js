@@ -25,7 +25,9 @@ const candidatesView = props => {
                                 <h6 className="m-0 pt-2 pb-2" >Candidates</h6>
                             </div>
                             <div className="card-body p-0 pb-3 text-center">
-                                <CandidatesTable onCandidateEdit={props.editCandidate} list={props.candidates}/>
+                                <CandidatesTable onCandidateEdit={props.editCandidate}
+                                                 onViewFollowUp={props.viewFollowUp}
+                                                 list={props.candidates}/>
                             </div>
                         </div>
                     </div>
