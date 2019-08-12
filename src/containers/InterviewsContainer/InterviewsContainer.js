@@ -47,16 +47,11 @@ class InterviewsContainer extends Component{
     }
 
     render(){
-        let modalCustomStyle =
-            {
-                // width: '70%'
-            }
-
         return (
             <Hoc>
-                {/*<Modal show={this.state.showNew} customStyle={modalCustomStyle} modalClosed={this.addNewCancelHandler}>*/}
-                    {/*<NewInterviewView/>*/}
-                {/*</Modal>*/}
+                <Modal show={this.state.showNew} modalClosed={this.addNewCancelHandler}>
+                    <NewInterviewView/>
+                </Modal>
                 <InterviewsView addNew={this.addNewHandler}
                                 interviews={this.props.interviews}
                                 removeInterview={this.props.onRemoveInterview}

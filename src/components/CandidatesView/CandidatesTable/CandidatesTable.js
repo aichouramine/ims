@@ -69,10 +69,11 @@ const candidatesTable = (props) => {
                         <TableActions>
                             <Details onClick={() => goToProfile(c)}/>
                             <Update onEdit={() => goToFollowUpDetails(c)}/>
-                            {/*<Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${int.id}`}*/}
-                                    {/*onConfirm={props.onInterviewerRemove} intId={int.id}>*/}
-                                {/*You are going to send {`${int.firstname} ${int.lastname}`} to the bench. Are you sure?*/}
-                            {/*</Remove>*/}
+                            <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${c.id}`}
+                                    onConfirm={props.onInterviewerRemove} intId={c.id}>
+                                You are going to remove record for {`${c.firstname} ${c.lastname}`}.
+                                All related information will be removed. Are you sure?
+                            </Remove>
                         </TableActions>
                     </td>
                 </tr>

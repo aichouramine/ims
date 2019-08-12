@@ -35,7 +35,8 @@ class CandidatesContainer extends Component{
 
     viewFollowUp(candidate){
         this.props.history.push({
-            pathname: `${this.props.location.pathname}/followUp/${candidate.id}`
+            pathname: `${this.props.location.pathname}/followUp/${candidate.id}`,
+            state: { candidate: candidate }
         })
     }
 

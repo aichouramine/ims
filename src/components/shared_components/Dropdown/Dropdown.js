@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Dropdown.module.css';
 import {levels} from "../../../enums/levels";
 import {candidate_location} from "../../../enums/candidate_location";
+import {english_levels} from "../../../enums/english_levels";
 
 const dropdown = (props) => {
     let options = []
@@ -14,6 +15,8 @@ const dropdown = (props) => {
         category = {...levels}
     } else if(props.label==="Location"){
         category = {...candidate_location}
+    } else if(props.label === "English"){
+        category = {english_levels}
     }
 
     let attachedClass = classes.dropdown
@@ -24,7 +27,7 @@ const dropdown = (props) => {
     return(
         <div>
             <label className={classes.label}>{props.label}</label>
-            <select className={`${attachedClass} form-control`} onChange={props.onChange}
+            <select className={`${attachedClass} form-control`} {...props}
                     value={category[props.value]}>
                 <option >Select...</option>
                 {options.map((o, ind) => (

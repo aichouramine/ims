@@ -1,12 +1,38 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from './InterviewDetails.module.css';
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
+import Input from '../../shared_components/Input/Input';
 import Dropdown from '../../shared_components/Dropdown/Dropdown';
 import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
 import {interview_status} from "../../../enums/interview_status";
+import {candidate_location} from "../../../enums/candidate_location";
 
 const interviewerDetails = props => {
+
+    const [searchString, setSearch] = useState(" ");
+
+    let list = props.interviewers ? props.interviewers.slice() : [];
+    let selectedInterviewers = [];
+
+    function handleChange(e){
+        setSearch(e.target.value.trim().toLowerCase())
+    }
+
+    function filterInterviewers(event) {
+
+
+        // console.log(searchString);
+
+
+    }
+
+    let search = searchString.trim().toLowerCase();
+
+    if(search.length > 0) {
+        list = list.filter((el) => el.lastname.toLowerCase().match(search))
+    }
+
     return(
         <div className={`${classes.card} h-100 `}>
             <div className={`${classes.card_header} ${classes.border_bottom}`}>
@@ -22,24 +48,15 @@ const interviewerDetails = props => {
                             <strong className={`d-block mb-2 mt-3 ${classes.text_muted}`}>Candidate details</strong>
                             <div className={classes.form_group_wrapper}>
                                 <div className="form-group pl-0 mb-0" style={{width: '45%'}}>
-                                    <label htmlFor="feFirstname" className={classes.label}>Firstname</label>
-                                    <input id="feFirstname" type="text" placeholder="Firstname"
-                                           className={`form-control ${classes.custom_input_control}`}/>
+                                    <Input disabled value={`${props.candidate.firstname} ${props.candidate.lastname}`}
+                                           inputtype="input" label="Name" type="text" placeholder="Name"/>
                                 </div>
-                                <div className="form-group p-0 mb-0" style={{width: '45%'}}>
-                                    <label htmlFor="feLastname" className={classes.label}>Lastname</label>
-                                    <input id="feLastname" type="text" placeholder="Lastname"
-                                           className={`form-control ${classes.custom_input_control}`}/>
+                                <div className=" p-0 mb-0" style={{width: '25%'}}>
+                                    <Dropdown disabled value={props.candidate.level} label="Level" options={levels}/>
                                 </div>
-                            </div>
-                            <div className={classes.form_group_wrapper}>
-                                <div className="form-group p-0 mb-0">
-                                    <label className={classes.label}>Level</label>
-                                    <Dropdown options={levels}/>
-                                </div>
-                                <div className="form-group p-0 mb-0">
-                                    <label className={classes.label}>Location</label>
-                                    <Dropdown options={locations}/>
+                                <div className=" p-0 mb-0" style={{width: '25%'}}>
+                                    <Dropdown disabled value={props.candidate.location} label="Location" options={candidate_location}
+                                    />
                                 </div>
                             </div>
 
@@ -50,12 +67,19 @@ const interviewerDetails = props => {
                                     <Datepicker showTimeSelect={false}/>
                                 </div>
                                 <div className="form-group p-0 mb-0">
-                                    <label className={classes.label}>Who</label>
-                                    <Dropdown options={locations}/>
+                                    <Input onChange={handleChange} value={searchString}
+                                           inputtype="input" label="Interviewers" type="text" placeholder="Type here..."/>
                                 </div>
                                 <div className="form-group p-0 mb-0">
-                                    <label className={classes.label}>Status</label>
-                                    <Dropdown options={interview_status}/>
+                                    <input list="interviewers"/>
+                                        <datalist id="interviewers">
+                                            {list.map(el => {
+                                                return(
+                                                    <option value={`${el.firstname} ${el.lastname}`}/>
+                                                )
+                                            })}
+
+                                        </datalist>
                                 </div>
                             </div>
                         </div>

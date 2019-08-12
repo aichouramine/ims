@@ -11,7 +11,7 @@ class CreateFollowUpView extends Component{
         this.state = {
             profile: {
                 id: '',
-                firstname: '',
+                name: `${this.props.candidate.firstname} ${this.props.candidate.lastname}`,
                 lastname: '',
                 level: '',
                 location: '',
@@ -21,7 +21,7 @@ class CreateFollowUpView extends Component{
                 startDate: '',
             },
             errors: {
-                firstNameError: '',
+                nameError: '',
                 lastNameError: '',
                 levelError: '',
                 locationError: '',

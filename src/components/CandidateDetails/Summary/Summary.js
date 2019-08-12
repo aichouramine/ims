@@ -48,7 +48,7 @@ const summary = props => {
                 <div className="row">
                     <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', padding: '0 15px'}}>
                         <button type="submit" className={`mb-2 mr-1 btn btn-primary btn-sm `}
-                                style={{width: '25%'}} onClick={props.onConfirm}>Update</button>
+                                style={{width: '25%'}} onClick={props.onConfirm}>Save</button>
                         <button type="cancel"
                                className={`mb-2 mr-1 btn btn-outline-secondary btn-sm`}
                                 style={{width: '25%'}} onClick={props.cancel}>Cancel</button>

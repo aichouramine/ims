@@ -7,7 +7,9 @@ import Hoc from '../../hoc/Hoc'
 import Modal from '../../components/UI/Modal/Modal';
 import ConfirmDialog from '../../components/UI/ConfirmDialog/ConfirmDialog';
 import { toast, ToastContainer } from "react-toastify";
+import NewInterviewView from '../../components/InterviewsView/InterviewDetails/InterviewDetails';
 import "react-toastify/dist/ReactToastify.css";
+import * as interviewersActions from "../../store/actions/interviewersIndex";
 
 class CandidateCreationContainer extends Component{
     constructor(props) {
@@ -15,6 +17,8 @@ class CandidateCreationContainer extends Component{
 
         this.state = {
             showConfirm: false,
+            showInterviewModal: false,
+            createdCandidate: {}
         };
     }
 
@@ -23,20 +27,37 @@ class CandidateCreationContainer extends Component{
     }
 
     componentDidMount(){
-        // this.props.onFetchCandidates(0, 30);
+        this.props.onFetchInterviewers();
     }
 
-    callInterviewCreation = () => {
-        this.setState({showConfirm: true})
+    confirmInterviewCreation = () => {
+        this.setState({
+            showConfirm: false,
+            showInterviewModal: true,
+        })
+    }
+
+    callInterviewCreation = (obj) => {
+        this.setState({
+            showConfirm: true,
+        })
     }
 
     cancelInterviewCreation = () => {
-        this.setState({showConfirm: false})
-        setTimeout(this.props.history.goBack, 200);
+        this.setState({
+            showConfirm: false,
+            showInterviewModal: false,
+        })
+        setTimeout(this.props.history.goBack, 100);
     }
 
     addNewCandidate = obj => {
         addCandidate(obj)
+            .then(() => {
+                this.setState({
+                    createdCandidate: {...obj}
+                })
+            })
             .then(() => {
                 this.callInterviewCreation();
             })
@@ -54,7 +75,10 @@ class CandidateCreationContainer extends Component{
         return(
             <Hoc>
                 <Modal show={this.state.showConfirm} modalClosed={this.cancelInterviewCreation}>
-                    <ConfirmDialog onCancel={this.cancelInterviewCreation}/>
+                    <ConfirmDialog onConfirmAction={this.confirmInterviewCreation} onCancel={this.cancelInterviewCreation}/>
+                </Modal>
+                <Modal show={this.state.showInterviewModal} modalClosed={this.cancelInterviewCreation}>
+                    <NewInterviewView interviewers={this.props.interviewers} candidate={this.state.createdCandidate}/>
                 </Modal>
                 <CandidateCreationDetails
                     onChangesCanceled={this.cancelChanges}
@@ -80,14 +104,15 @@ class CandidateCreationContainer extends Component{
 const mapStateToProps = state => {
     return{
         candidateInfo: state.candidatesReducer.candidateInfo,
+        interviewers: state.interviewersReducer.interviewers,
     }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
-    // return{
-    //     onAddingCandidate: (obj) => dispatch(candidatesActions.addCandidateToTheList(obj))
-    // }
+    return{
+        onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers()),
+    }
 }
 
-export default connect(mapStateToProps) (CandidateCreationContainer);
+export default connect(mapStateToProps, mapDispatchToProps) (CandidateCreationContainer);
