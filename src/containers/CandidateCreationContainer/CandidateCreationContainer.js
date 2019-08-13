@@ -75,7 +75,11 @@ class CandidateCreationContainer extends Component{
         return(
             <Hoc>
                 <Modal show={this.state.showConfirm} modalClosed={this.cancelInterviewCreation}>
-                    <ConfirmDialog onConfirmAction={this.confirmInterviewCreation} onCancel={this.cancelInterviewCreation}/>
+                    <ConfirmDialog
+                        message="Candidate is added successfully."
+                        subMessage="Would you like to create an interview record for candidate?"
+                        onConfirmAction={this.confirmInterviewCreation}
+                        onCancel={this.cancelInterviewCreation}/>
                 </Modal>
                 <Modal show={this.state.showInterviewModal} modalClosed={this.cancelInterviewCreation}>
                     <NewInterviewView interviewers={this.props.interviewers} candidate={this.state.createdCandidate}/>

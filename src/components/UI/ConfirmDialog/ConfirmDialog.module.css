@@ -9,14 +9,30 @@
 }
 
 .card_body{
+    text-align: center;
     color: #5a6169;
-    font-size: 14px;
+    font-size: 15px;
     margin: auto;
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .card_body > span:first-child {
     padding-bottom: 10px;
+}
+
+.avatar_img{
+    width: 85px;
+    height: 85px;
+    box-sizing: border-box;
+    border: 2px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    /*box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);*/
+    transform: translatey(0px);
+    /*animation: float 6s ease-in-out infinite;*/
+    transition: all .4s ease-in-out;
+    background-size: cover;
+    background-image: url("../../../assets/success.png");
 }
 
 .border_bottom{
@@ -25,8 +41,9 @@
 
 .confirm_alert_button_group{
     display: flex;
-    justify-content: flex-start;
-    width: 150px;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
     margin: 5px 0 10px 5px;
 
 }
@@ -41,9 +58,13 @@
 }
 
 .card_footer{
+    display: flex;
     padding: 1rem;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .card_footer:last-child{
     border-radius: 0 0 .625rem .625rem;
 }
+
