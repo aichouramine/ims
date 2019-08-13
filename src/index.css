@@ -41,3 +41,32 @@ code {
   padding-left: 5px;
   font-size: 13px;
 }
+
+/* ENTER TRANSITION */
+/* Declare transition start properties*/
+.page-fade-appear {
+  opacity: 0;
+}
+
+.page-fade-appear.page-fade-appear-active {
+  opacity: 1;
+  transition: opacity 200ms linear 150ms;
+}
+
+.page-fade-enter {
+  opacity: 0;
+}
+
+.page-fade-enter.page-fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms linear 150ms;
+}
+
+.page-fade-exit {
+  opacity: 1;
+}
+
+.page-fade-exit.page-fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
+}

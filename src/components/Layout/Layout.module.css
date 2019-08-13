@@ -4,6 +4,9 @@
 }
 
 .Content{
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 0;*/
     margin-top: 10px;
     flex: 1 0 auto;
 }
