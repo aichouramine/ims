@@ -11,9 +11,9 @@ const dropdown = (props) => {
     }
 
     let category = null;
-    if(props.label==="Level"){
+    if(props.label.includes("Level")){
         category = {...levels}
-    } else if(props.label==="Location"){
+    } else if(props.label.includes("Location")){
         category = {...candidate_location}
     } else if(props.label === "English"){
         category = {english_levels}
