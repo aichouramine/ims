@@ -1,0 +1,30 @@
+.error{
+    height: calc(100vh - 3.75rem);
+    display: flex;
+}
+
+.error__content{
+    padding: 0 .9375rem;
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.error__content span{
+    color: #cacedb;
+    font-weight: 700;
+    font-size: 3.35rem;
+}
+
+.error__content h3{
+    font-weight: 500;
+    font-size: 1.9875rem;
+    margin-bottom: .625rem;
+}
+
+.error__content p {
+    font-weight: 500;
+    color: #818ea3;
+}

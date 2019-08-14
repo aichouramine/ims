@@ -10,16 +10,13 @@ import Dashboard from './containers/Dashboard/Dashboard';
 import FollowUp from './containers/FollowUp/FollowUp';
 import InterviewerProfileContainer from './containers/InterviewerProfileContainer/InterviewerProfileContainer';
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './index.css';
-import Sidebar from './components/Navigation/Sidebar/Sidebar'
-import Toolbar from './components/Navigation/Toolbar/Toolbar'
+import Sidebar from './components/Navigation/Sidebar/Sidebar';
+import Toolbar from './components/Navigation/Toolbar/Toolbar';
+import NotFound from './containers/NotFound/NotFound';
 
 class App extends Component {
-    constructor(props){
-        super(props);
-    }
-
   render() {
 
     return (
@@ -29,8 +26,6 @@ class App extends Component {
           <Route render={({location}) => (
               <TransitionGroup>
                   <CSSTransition
-                      // in={true}
-                      // appear={false}
                       key={location.key}
                       classNames={"page-fade"}
                       timeout={350}
@@ -48,6 +43,7 @@ class App extends Component {
                               <Route path="/needs" component={ResourcesNeeds}/>
                               {/*<Route path="/schedule" component={InterviewsCalendar}/>*/}
                               <Route path="/candidates/followUp/:id" component={FollowUp}/>
+                              <Route component={NotFound} />
                           </Switch>
                       </Layout>
                   </CSSTransition>
