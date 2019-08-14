@@ -67,8 +67,8 @@ const candidatesTable = (props) => {
                     <td className={classes.date}>{returnDate(c.startDate)}</td>
                     <td >
                         <TableActions>
-                            <Details onClick={() => goToProfile(c)}/>
-                            <Update onEdit={() => goToFollowUpDetails(c)}/>
+                            <Update onEdit={() => goToProfile(c)}/>
+                            <Details onClick={() => goToFollowUpDetails(c)}/>
                             <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${c.id}`}
                                     onConfirm={props.onInterviewerRemove} intId={c.id}>
                                 You are going to remove record for {`${c.firstname} ${c.lastname}`}.

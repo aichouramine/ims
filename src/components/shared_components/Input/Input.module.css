@@ -39,6 +39,10 @@
     border-color: #c4183c;
 }
 
+.label__error {
+    color: #c4183c;
+}
+
 .custom_form_control:focus{
     outline: none;
 }

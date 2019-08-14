@@ -28,6 +28,10 @@
     border: 1px solid #c4183c;
 }
 
+.label__error{
+    color: #c4183c;
+}
+
 .invalidFeedback {
     margin-top: .25rem;
     font-size: 80%;

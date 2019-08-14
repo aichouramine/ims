@@ -11,7 +11,6 @@
     will-change: transform;
     transition: -webkit-transform .2s ease-in-out;
     -webkit-transition: -webkit-transform .2s ease-in-out;
-    transition: transform .2s ease-in-out;
     transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out;
 }
 

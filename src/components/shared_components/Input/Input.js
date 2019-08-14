@@ -5,8 +5,10 @@ const input = props => {
     let inputElement = null;
 
     let attachedClass = classes.custom_form_control
+    let labelAttachedClass = classes.label
     if(props.error){
         attachedClass = `${classes.custom_form_control} ${classes.custom_form_control__error}`
+        labelAttachedClass = `${classes.label} ${classes.label__error}`
     }
 
     switch (props.inputtype){
@@ -24,7 +26,7 @@ const input = props => {
     
     return(
         <div>
-            <label htmlFor="feFirstname" className={classes.label}>{props.label}</label>
+            <label htmlFor="feFirstname" className={labelAttachedClass}>{props.label}</label>
             {inputElement}
             <div className={classes.invalidFeedback}>{props.error}</div>
         </div>

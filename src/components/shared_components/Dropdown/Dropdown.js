@@ -20,13 +20,15 @@ const dropdown = (props) => {
     }
 
     let attachedClass = classes.dropdown
+    let labelAttachedClass = classes.label
     if(props.error){
         attachedClass = `${classes.dropdown} ${classes.dropdown__error}`
+        labelAttachedClass = `${classes.label} ${classes.label__error}`
     }
 
     return(
         <div>
-            <label className={classes.label}>{props.label}</label>
+            <label className={labelAttachedClass}>{props.label}</label>
             <select className={`${attachedClass} form-control`} {...props}
                     value={category[props.value]}>
                 <option >Select...</option>
