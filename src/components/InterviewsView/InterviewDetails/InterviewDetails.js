@@ -7,9 +7,11 @@ import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
 import {interview_status} from "../../../enums/interview_status";
 import {candidate_location} from "../../../enums/candidate_location";
+import Select from 'react-select';
 
 const interviewerDetails = props => {
-
+    // console.log(props.interviewers)
+    // const [selectedOption]
     const [searchString, setSearch] = useState(" ");
 
     let list = props.interviewers ? props.interviewers.slice() : [];
@@ -66,21 +68,31 @@ const interviewerDetails = props => {
                                     <label className={classes.label}>When</label>
                                     <Datepicker showTimeSelect={false}/>
                                 </div>
-                                <div className="form-group p-0 mb-0">
-                                    <Input onChange={handleChange} value={searchString}
-                                           inputtype="input" label="Interviewers" type="text" placeholder="Type here..."/>
+                                <div className="form-group p-0 mb-0 d-flex flex-column">
+                                    {/*<Input onChange={handleChange} value={searchString}*/}
+                                           {/*inputtype="input" label="Interviewers" type="text" placeholder="Type here..."/>*/}
+                                    <label className={classes.label}>Interviewers</label>
+                                    {/*<Select*/}
+                                        {/*defaultValue={[]}*/}
+                                        {/*isMulti*/}
+                                        {/*name="colors"*/}
+                                        {/*options={ props.interviewers}*/}
+                                        {/*className="basic-multi-select"*/}
+                                        {/*classNamePrefix="select"*/}
+                                    {/*/>*/}
                                 </div>
-                                <div className="form-group p-0 mb-0">
-                                    <input list="interviewers"/>
-                                        <datalist id="interviewers">
-                                            {list.map(el => {
-                                                return(
-                                                    <option value={`${el.firstname} ${el.lastname}`}/>
-                                                )
-                                            })}
+                                {/*<div className="form-group p-0 mb-0">*/}
+                                    {/*<input list="interviewers"/>*/}
+                                        {/*<datalist id="interviewers">*/}
+                                            {/*{list.map(el => {*/}
+                                                {/*return(*/}
+                                                    {/*<option value={`${el.firstname} ${el.lastname}`}/>*/}
+                                                {/*)*/}
+                                            {/*})}*/}
 
-                                        </datalist>
-                                </div>
+                                        {/*</datalist>*/}
+                                {/*</div>*/}
+
                             </div>
                         </div>
                     </form>

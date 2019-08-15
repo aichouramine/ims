@@ -31,3 +31,7 @@ export const addCandidate = (obj) => (
 export const updateCandidate = (obj) => (
     instance.put("updateCandidateProfile", obj)
 )
+
+export const getCandidateInfo = id => (
+    instance.get("getCandidateInfo/" + id)
+)

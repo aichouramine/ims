@@ -23,17 +23,7 @@ class CandidateDetails extends Component{
         super(props)
 
         this.state = {
-            profile: {
-                id: this.props.candidate.id,
-                firstname: this.props.candidate.firstname,
-                lastname: this.props.candidate.lastname,
-                level: this.props.candidate.level,
-                location: this.props.candidate.location,
-                skills: this.props.candidate.skills,
-                comment: this.props.candidate.comment,
-                candidateStatus: this.props.candidate.candidateStatus,
-                startDate: this.props.candidate.startDate,
-            },
+            profile: this.props.candidate,
             errors: {
                 firstNameError: '',
                 lastNameError: '',
@@ -118,7 +108,7 @@ class CandidateDetails extends Component{
         let levelError = '';
         let locationError = '';
 
-        if(!this.state.profile.firstname || this.state.profile.firstname.length < 3){
+        if(!this.state.profile.firstName || this.state.profile.firstName.length < 3){
             firstNameError = 'Firstname is too short'
         }
 
