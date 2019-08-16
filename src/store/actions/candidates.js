@@ -1,6 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
 import { getCandidates, getCandidatesNumber, addCandidate } from '../../api/axios-candidates';
-import {push} from 'connected-react-router';
 
 export const getAllCandidates = (candidates) => {
     return{

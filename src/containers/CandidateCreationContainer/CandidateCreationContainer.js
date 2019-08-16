@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CandidateCreationDetails from '../../components/CandidateCreationDetails/CandidateCreationDetails';
-import * as candidatesActions from '../../store/actions/candidatesIndex';
 import {addCandidate} from '../../api/axios-candidates'
 import Hoc from '../../hoc/Hoc'
 import Modal from '../../components/UI/Modal/Modal';
 import ConfirmDialog from '../../components/UI/ConfirmDialog/ConfirmDialog';
 import { toast, ToastContainer } from "react-toastify";
-import InterviewView from '../../components/InterviewsView/InterviewDetails/InterviewDetails';
+import NewInterviewView from '../../components/InterviewsView/NewInterviewDetails/NewInterviewDetails';
 import "react-toastify/dist/ReactToastify.css";
 import * as interviewersActions from "../../store/actions/interviewersIndex";
+import {create} from '../../api/axios-interviews'
 
 class CandidateCreationContainer extends Component{
     constructor(props) {
@@ -53,9 +53,9 @@ class CandidateCreationContainer extends Component{
 
     addNewCandidate = obj => {
         addCandidate(obj)
-            .then(() => {
+            .then(response => {
                 this.setState({
-                    createdCandidate: {...obj}
+                    createdCandidate: response.data
                 })
             })
             .then(() => {
@@ -66,6 +66,22 @@ class CandidateCreationContainer extends Component{
                     {
                         className: 'toast-body__error',
                         // bodyClassName: "toast-body"
+                    }
+                );
+            })
+    }
+
+    createInterview = obj => {
+        create(obj)
+            .then(() => {
+                this.props.history.push({
+                    pathname: "/interviews"
+                })
+            })
+            .catch(() => {
+                toast.error('Something went wrong. Interview record is not created. Please try again.',
+                    {
+                        className: 'toast-body__error',
                     }
                 );
             })
@@ -82,7 +98,11 @@ class CandidateCreationContainer extends Component{
                         onCancel={this.cancelInterviewCreation}/>
                 </Modal>
                 <Modal show={true} modalClosed={this.cancelInterviewCreation} customStyle={{width: '500px', top: '10%'}}>
-                    <InterviewView interviewers={this.props.interviewers} candidate={this.state.createdCandidate}/>
+                    <NewInterviewView
+                        interviewers={this.props.interviewers}
+                        candidate={this.state.createdCandidate}
+                        onInterviewCreate={this.createInterview}
+                    />
                 </Modal>
                 <CandidateCreationDetails
                     onChangesCanceled={this.cancelChanges}

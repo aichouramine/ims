@@ -130,3 +130,41 @@ input{
 input:focus{
     outline:none;
 }
+
+.invalidFeedback {
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #c4183c;
+    width: 100%;
+    font-weight: 300;
+}
+
+.datepicker_calendar__append{
+    font-weight: 300;
+    line-height: 1.5;
+    color: #abb6bf;
+    background-color: #fff;
+    border: 1px solid #e1e5eb;
+    border-radius: 0 .25rem .25rem 0;
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+}
+
+.datepicker_calendar__append i {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.label{
+    color: #3d5170;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+.label__error {
+    color: #c4183c;
+    font-weight: 400;
+}

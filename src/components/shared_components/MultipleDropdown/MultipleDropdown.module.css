@@ -2,3 +2,23 @@
     width: 100%;
     color: #3d5170;
 }
+
+.label{
+    color: #3d5170;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: .5rem;
+}
+
+.label__error {
+    color: #c4183c;
+    font-weight: 400;
+}
+
+.invalidFeedback {
+    margin-top: .25rem;
+    font-size: 80%;
+    color: #c4183c;
+    width: 100%;
+    font-weight: 300;
+}

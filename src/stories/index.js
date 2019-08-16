@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Button } from '@storybook/react/demo';
-import NewInterviewView from '../components/InterviewsView/InterviewDetails/InterviewDetails';
+import NewInterviewView from '../components/InterviewsView/NewInterviewDetails/InterviewDetails';
 
 const candidate = {
     id: 229,

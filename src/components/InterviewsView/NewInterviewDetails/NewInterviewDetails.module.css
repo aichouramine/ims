@@ -157,21 +157,3 @@
 .react-select__placeholder { /* Chrome/Opera/Safari */
     font-size: 11px;
 }
-
-.datepicker_calendar__append{
-    font-weight: 300;
-    line-height: 1.5;
-    color: #abb6bf;
-    background-color: #fff;
-    border: 1px solid #e1e5eb;
-    border-radius: 0 .25rem .25rem 0;
-    display: flex;
-    align-items: center;
-    padding: .375rem .75rem;
-    margin-bottom: 0;
-}
-
-.datepicker_calendar__append i {
-    font-size: 14px;
-    font-weight: 600;
-}

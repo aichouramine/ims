@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Remove.module.css';
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
+import { Popover, PopoverHeader, PopoverBody } from 'reactstrap';
 import Hoc from '../../../../hoc/Hoc';
 
 export default class Remove extends React.Component {

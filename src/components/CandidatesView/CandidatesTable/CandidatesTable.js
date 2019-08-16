@@ -25,7 +25,7 @@ const candidatesTable = (props) => {
     }
 
     function printStatus(status) {
-        let attachedClass = `${classes.custom_badge} badge badge-secondary`;
+        let attachedClass;
 
         switch (status){
             case 'STARTED': attachedClass = `${classes.custom_badge} badge badge-primary`
@@ -38,6 +38,7 @@ const candidatesTable = (props) => {
                 break;
             case 'JO_MADE': attachedClass = `${classes.custom_badge} badge badge-info`
                 break;
+            default: attachedClass = `${classes.custom_badge} badge badge-secondary`
         }
 
         return(

@@ -72,7 +72,6 @@ const introduction = props => {
     return(
         <Hoc>
             <div className={` ${props.styleClass} mb-4 pt-3`} >
-                {/*{edit}*/}
                 {mainData}
             </div>
         </Hoc>

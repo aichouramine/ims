@@ -1,5 +1,4 @@
 import React from 'react';
-import Hoc from '../../../hoc/Hoc';
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
 import Dropdown from '../../shared_components/Dropdown/Dropdown';
 import classes from './InterviewsFilterControls.module.css';

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Hoc from '../../hoc/Hoc'
 import InterviewsView from '../../components/InterviewsView/InterviewsView';
 import Modal from '../../components/UI/Modal/Modal';
-import NewInterviewView from '../../components/InterviewsView/InterviewDetails/InterviewDetails';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
 import * as interviewersActions from "../../store/actions/interviewersIndex";
 

@@ -1,8 +1,16 @@
 import React from 'react';
 import Select from 'react-select'
 import classes from './MultipleDropdown.module.css';
+import Hoc from '../../../hoc/Hoc';
 
 const multipleDropdown = props => {
+
+    let attachedColor = 'rgb(225, 229, 235);'
+    let labelAttachedClass = classes.label
+    if(props.error){
+        labelAttachedClass = `${classes.label} ${classes.label__error}`
+        attachedColor = '#c4183c'
+    }
 
     const customStyles = {
         option: (provided, state) => ({
@@ -13,6 +21,7 @@ const multipleDropdown = props => {
         clearIndicator: () => ({
             display: 'none'
         }),
+        control: (provided) => ({...provided, borderColor: attachedColor}),
         dropdownIndicator: () => ({
             width: '0',
             height: '0',
@@ -36,18 +45,29 @@ const multipleDropdown = props => {
         }),
     }
 
+    // let attachedClass = classes.custom_form_control
+    // let labelAttachedClass = classes.label
+    // if(props.error){
+    //     attachedClass = `${classes.custom_form_control} ${classes.custom_form_control__error}`
+    //     labelAttachedClass = `${classes.label} ${classes.label__error}`
+    // }
+
     return(
-        <Select
-            defaultValue={[]}
-            isMulti
-            styles={customStyles}
-            name="colors"
-            options={props.list}
-            className={classes["basic-multi-select"]}
-            classNamePrefix={classes["react-select"]}
-            isSearchable
-            onChange={props.onChange}
-        />
+        <Hoc>
+            <label className={labelAttachedClass}>Interviewers *</label>
+            <Select
+                defaultValue={[]}
+                isMulti
+                styles={customStyles}
+                name="colors"
+                options={props.list}
+                className={classes["basic-multi-select"]}
+                classNamePrefix={classes["react-select"]}
+                isSearchable
+                onChange={props.onChange}
+            />
+            <div className={classes.invalidFeedback}>{props.error}</div>
+        </Hoc>
     )
 }
 

@@ -5,7 +5,6 @@ import Hoc from '../../hoc/Hoc';
 import CandidatesPieChart from '../DashboardView/CandidatesPieChart/CandidatesPieChart';
 import InterviewsLineChart from './InterviewsLineChart/InterviewsLineChart';
 import CandidatesDoughnutChart from './CandidatesDoughnutChart/CandidatesDoughnutChart';
-import BenchPolarChart from './BenchPolarChart/BenchPolarChart';
 import TopInterviewers from '../DashboardView/TopInterviewers/TopInterviewers';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 

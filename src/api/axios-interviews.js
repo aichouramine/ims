@@ -23,3 +23,7 @@ export const getInterviewsStatisticByDate = date => (
 export const getInterviewDateByCandidateId = id => (
     instance.get("getInterviewByCandidateId/" + id)
 )
+
+export const create = obj => (
+    instance.post("/", obj)
+)

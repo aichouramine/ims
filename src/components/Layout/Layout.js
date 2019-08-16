@@ -1,7 +1,5 @@
 import React from 'react';
 import classes from './Layout.module.css'
-import Toolbar from '../Navigation/Toolbar/Toolbar'
-import Sidebar from '../Navigation/Sidebar/Sidebar'
 
 const layout = (props) => (
     <div className={classes.Wrapper}>
