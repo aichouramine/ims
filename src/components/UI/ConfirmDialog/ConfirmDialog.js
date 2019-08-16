@@ -16,8 +16,8 @@ const confirmDialog = props => {
             </div>
             <div className={`${classes.card_footer}`}>
                 <div className={`${classes.confirm_alert_button_group}`}>
-                    <button type="submit" className="btn btn-primary btn-sm" onClick={props.onConfirmAction}>Yes</button>
-                    <button type="button" className="btn btn-outline-dark btn-sm" onClick={props.onCancel}>No</button>
+                    <button type="submit" className="mb-2 mr-1 btn btn-primary btn-sm" onClick={props.onConfirmAction}>Yes</button>
+                    <button type="button" className="mb-2 mr-1 btn btn-outline-secondary btn-sm" onClick={props.onCancel}>No</button>
                 </div>
             </div>
         </div>

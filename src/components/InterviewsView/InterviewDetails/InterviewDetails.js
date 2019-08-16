@@ -7,33 +7,22 @@ import {levels} from "../../../enums/levels";
 import {locations} from "../../../enums/locations";
 import {interview_status} from "../../../enums/interview_status";
 import {candidate_location} from "../../../enums/candidate_location";
-import Select from 'react-select';
+import MultipleDropdown from '../../shared_components/MultipleDropdown/MultipleDropdown';
 
-const interviewerDetails = props => {
-    // console.log(props.interviewers)
-    // const [selectedOption]
+const interviewDetails = props => {
     const [searchString, setSearch] = useState(" ");
 
-    let list = props.interviewers ? props.interviewers.slice() : [];
-    let selectedInterviewers = [];
+    let list = props.interviewers ? props.interviewers.map(interviewer => {
+        return {
+            value: interviewer.id,
+            label: `${interviewer.firstname} ${interviewer.lastname}`
+        }
+    }) : [];
 
     function handleChange(e){
-        setSearch(e.target.value.trim().toLowerCase())
+        console.log(e)
     }
 
-    function filterInterviewers(event) {
-
-
-        // console.log(searchString);
-
-
-    }
-
-    let search = searchString.trim().toLowerCase();
-
-    if(search.length > 0) {
-        list = list.filter((el) => el.lastname.toLowerCase().match(search))
-    }
 
     return(
         <div className={`${classes.card} h-100 `}>
@@ -50,8 +39,13 @@ const interviewerDetails = props => {
                             <strong className={`d-block mb-2 mt-3 ${classes.text_muted}`}>Candidate details</strong>
                             <div className={classes.form_group_wrapper}>
                                 <div className="form-group pl-0 mb-0" style={{width: '45%'}}>
-                                    <Input disabled value={`${props.candidate.firstname} ${props.candidate.lastname}`}
-                                           inputtype="input" label="Name" type="text" placeholder="Name"/>
+                                    <label className={classes.label}>Name</label>
+                                    <select disabled className={`${classes.dropdown} form-control`}
+                                            value={`${props.candidate.firstname} ${props.candidate.lastname}`}>
+                                        <option selected>{`${props.candidate.firstname} ${props.candidate.lastname}`}</option>
+                                    </select>
+                                    {/*<Input disabled value={`${props.candidate.firstname} ${props.candidate.lastname}`}*/}
+                                           {/*inputtype="input" label="Name" type="text" placeholder="Name"/>*/}
                                 </div>
                                 <div className=" p-0 mb-0" style={{width: '25%'}}>
                                     <Dropdown disabled value={props.candidate.level} label="Level" options={levels}/>
@@ -66,33 +60,24 @@ const interviewerDetails = props => {
                             <div className={classes.form_group_wrapper}>
                                 <div className="form-group p-0 mb-0 d-flex flex-column">
                                     <label className={classes.label}>When</label>
-                                    <Datepicker showTimeSelect={false}/>
+                                    <div className="d-flex my-auto date-range input-group">
+                                        <Datepicker showTimeSelect={false}/>
+                                        <div className="input-group-append">
+                                            <span className={classes.datepicker_calendar__append}>
+                                                <i className="material-icons">date_range</i>
+                                            </span></div>
+                                    </div>
                                 </div>
-                                <div className="form-group p-0 mb-0 d-flex flex-column">
-                                    {/*<Input onChange={handleChange} value={searchString}*/}
-                                           {/*inputtype="input" label="Interviewers" type="text" placeholder="Type here..."/>*/}
+                            </div>
+                            <div className={classes.form_group_wrapper} style={{paddingTop: '10px', }}>
+                                <div className="form-group p-0 mb-0 d-flex flex-column" style={{width: '100%'}}>
                                     <label className={classes.label}>Interviewers</label>
-                                    {/*<Select*/}
-                                        {/*defaultValue={[]}*/}
-                                        {/*isMulti*/}
-                                        {/*name="colors"*/}
-                                        {/*options={ props.interviewers}*/}
-                                        {/*className="basic-multi-select"*/}
-                                        {/*classNamePrefix="select"*/}
-                                    {/*/>*/}
+                                    <MultipleDropdown onChange={handleChange} list={list}/>
                                 </div>
-                                {/*<div className="form-group p-0 mb-0">*/}
-                                    {/*<input list="interviewers"/>*/}
-                                        {/*<datalist id="interviewers">*/}
-                                            {/*{list.map(el => {*/}
-                                                {/*return(*/}
-                                                    {/*<option value={`${el.firstname} ${el.lastname}`}/>*/}
-                                                {/*)*/}
-                                            {/*})}*/}
-
-                                        {/*</datalist>*/}
-                                {/*</div>*/}
-
+                            </div>
+                            <div className={classes.form_group_wrapper} style={{paddingTop: '10px', paddingBottom: '10px'}}>
+                                <Input inputtype="textarea" label="Comment" type="text" placeholder="Comment"
+                                       rows="4" style={{resize: 'none', width: '100%'}} onChange={props.onCommentChanged}/>
                             </div>
                         </div>
                     </form>
@@ -111,4 +96,4 @@ const interviewerDetails = props => {
     )
 }
 
-export default interviewerDetails;
+export default interviewDetails;

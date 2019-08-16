@@ -1,43 +1,108 @@
 :global .react-datepicker{
-    border-radius: 0.575rem !important;
-    z-index: 1000 !important;
-    border: none !important;
-    font-size: 0.75rem !important;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-    background-color: #fff !important;
-    display: inline-block !important;
-    position: relative !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px !important;
+    background-color: #fff;
+    border: 1px solid #d7d7d7;
+    border-radius: 0.3rem;
+    display: inline-block;
+    position: relative;
+
 }
 
+/*:global .react-datepicker__day-names {*/
+    /*padding-top: 10px !important;*/
+/*}*/
+
+/*:global .react-datepicker__day-names > .react-datepicker__day-name{*/
+    /*color: #5a6169 !important;*/
+    /*font-weight: 700 !important;*/
+/*}*/
+
 :global .react-datepicker__header{
-    border: none !important;
-    background: #fff !important;
-    padding-top: 20px;
-    border-bottom-left-radius: 0.575rem !important;
-    border-bottom-right-radius: 0.575rem !important;
-    text-align: center !important;
-    position: relative !important;
+    border: none;
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0;
+}
+
+:global .react-datepicker__current-month{
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif;
+    color: #5a6169;
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 0.844rem;
+    margin-bottom: 5px;
+}
+
+:global .react-datepicker__day--disabled, :global .react-datepicker__month-text--disabled {
+    cursor: default;
+    color: #ccc;
 }
 
 :global .react-datepicker__month-container{
-    border: none !important;
     float: left !important;
     box-shadow: 0 0.5rem 4rem rgba(0, 0, 0, 0.11), 0 10px 20px rgba(0, 0, 0, 0.05), 0 2px 3px rgba(0, 0, 0, 0.06) !important;
 }
 
 :global .react-datepicker__month{
-    padding: 10px 15px !important;
-    margin: 0.4rem !important;
-    text-align: center !important;
+    padding: 10px 15px;
+
 }
 
-:global .react-datepicker__current-month{
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, sans-serif !important;
-    color: #5a6169 !important;
-    font-weight: bold !important;
-    font-size: 0.844rem !important;
+:global .react-datepicker__day{
+    font-weight: 500;
+    font-size: 12px !important;
 }
+
+:global .react-datepicker__navigation {
+    top: 25px;
+    min-width: 0 !important;
+}
+
+:global .react-datepicker__day-names, :global .react-datepicker__week {
+    white-space: nowrap;
+
+}
+
+:global .react-datepicker__day-name{
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, sans-serif;
+    color: #5a6169;
+    display: inline-block;
+    width: 1.7rem;
+    line-height: 1.7rem;
+    text-align: center;
+    margin: 0.166rem;
+    font-weight: 600;
+}
+
+/*:global .react-datepicker__month{*/
+    /*padding: 10px 15px !important;*/
+    /*margin: 0.4rem !important;*/
+    /*text-align: center !important;*/
+    /**/
+/*}*/
+
+/*:global .react-datepicker__navigation{*/
+    /*top: 25px;*/
+    /*background: none;*/
+    /*line-height: 1.7rem;*/
+    /*text-align: center;*/
+    /*cursor: pointer;*/
+    /*position: absolute;*/
+    /*!*top: 10px;*!*/
+    /*padding: 0;*/
+    /*!*border: 0.45rem solid transparent;*!*/
+    /*z-index: 1;*/
+    /*height: 10px;*/
+    /*width: 80%;*/
+    /*!*text-indent: -999em;*!*/
+    /*overflow: hidden;*/
+/*}*/
+
 
 :global .react-datepicker__day--keyboard-selected, :global .react-datepicker__day--selected{
     color: #fff !important;
@@ -55,7 +120,7 @@ input{
     border: 1px solid #e1e5eb;
     font-weight: 300;
     will-change: border-color,box-shadow;
-    border-radius: .25rem;
+    border-radius: .25rem 0 0 .25rem;
     box-shadow: none;
     outline:none;
     -webkit-transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);

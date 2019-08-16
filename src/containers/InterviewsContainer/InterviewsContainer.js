@@ -5,6 +5,7 @@ import InterviewsView from '../../components/InterviewsView/InterviewsView';
 import Modal from '../../components/UI/Modal/Modal';
 import NewInterviewView from '../../components/InterviewsView/InterviewDetails/InterviewDetails';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
+import * as interviewersActions from "../../store/actions/interviewersIndex";
 
 
 class InterviewsContainer extends Component{
@@ -23,6 +24,7 @@ class InterviewsContainer extends Component{
     componentDidMount(){
         this.props.onFetchInterviews(this.getPageNumber(), 10)
         this.props.onFetchTotalInterviewsNumber()
+        this.props.onFetchInterviewers();
     }
 
     addNewHandler() {
@@ -49,9 +51,9 @@ class InterviewsContainer extends Component{
     render(){
         return (
             <Hoc>
-                <Modal show={this.state.showNew} modalClosed={this.addNewCancelHandler}>
-                    <NewInterviewView/>
-                </Modal>
+                {/*<Modal show={this.state.showNew} modalClosed={this.addNewCancelHandler}>*/}
+                    {/*<NewInterviewView interviewers={this.props.interviewers}/>*/}
+                {/*</Modal>*/}
                 <InterviewsView addNew={this.addNewHandler}
                                 interviews={this.props.interviews}
                                 removeInterview={this.props.onRemoveInterview}
@@ -68,7 +70,8 @@ class InterviewsContainer extends Component{
 const mapStateToProps = state => {
     return{
         interviews: state.interviewsReducer.interviews,
-        interviewsNumber: state.interviewsReducer.interviewsNumber
+        interviewsNumber: state.interviewsReducer.interviewsNumber,
+        interviewers: state.interviewersReducer.interviewers,
     }
 
 }
@@ -77,7 +80,8 @@ const mapDispatchToProps = (dispatch) => {
     return{
         onFetchInterviews: (page, size) => dispatch(interviewsActions.fetchInterviews(page, size)),
         onRemoveInterview: (id) => dispatch(interviewsActions.removeInterviewRecord(id)),
-        onFetchTotalInterviewsNumber: () => dispatch(interviewsActions.fetchInterviewsNumber())
+        onFetchTotalInterviewsNumber: () => dispatch(interviewsActions.fetchInterviewsNumber()),
+        onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers()),
     }
 }
 

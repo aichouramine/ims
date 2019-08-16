@@ -25,7 +25,7 @@ const input = props => {
     // {console.log(props)}
     
     return(
-        <div>
+        <div style={{width: '100%'}}>
             <label htmlFor="feFirstname" className={labelAttachedClass}>{props.label}</label>
             {inputElement}
             <div className={classes.invalidFeedback}>{props.error}</div>

@@ -7,7 +7,7 @@ import Hoc from '../../hoc/Hoc'
 import Modal from '../../components/UI/Modal/Modal';
 import ConfirmDialog from '../../components/UI/ConfirmDialog/ConfirmDialog';
 import { toast, ToastContainer } from "react-toastify";
-import NewInterviewView from '../../components/InterviewsView/InterviewDetails/InterviewDetails';
+import InterviewView from '../../components/InterviewsView/InterviewDetails/InterviewDetails';
 import "react-toastify/dist/ReactToastify.css";
 import * as interviewersActions from "../../store/actions/interviewersIndex";
 
@@ -74,15 +74,15 @@ class CandidateCreationContainer extends Component{
     render(){
         return(
             <Hoc>
-                <Modal show={this.state.showConfirm} modalClosed={this.cancelInterviewCreation}>
+                <Modal show={this.state.showConfirm} modalClosed={this.cancelInterviewCreation} customStyle={{top: '20%'}}>
                     <ConfirmDialog
                         message="Candidate is added successfully."
                         subMessage="Would you like to create an interview record for candidate?"
                         onConfirmAction={this.confirmInterviewCreation}
                         onCancel={this.cancelInterviewCreation}/>
                 </Modal>
-                <Modal show={this.state.showInterviewModal} modalClosed={this.cancelInterviewCreation}>
-                    <NewInterviewView interviewers={this.props.interviewers} candidate={this.state.createdCandidate}/>
+                <Modal show={true} modalClosed={this.cancelInterviewCreation} customStyle={{width: '500px', top: '10%'}}>
+                    <InterviewView interviewers={this.props.interviewers} candidate={this.state.createdCandidate}/>
                 </Modal>
                 <CandidateCreationDetails
                     onChangesCanceled={this.cancelChanges}
