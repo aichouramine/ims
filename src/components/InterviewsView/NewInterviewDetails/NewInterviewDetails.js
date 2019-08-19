@@ -19,7 +19,7 @@ const newInterviewDetails = props => {
     const [interviewEntity, update] = useState({
         candidateId: null,
         interviewers: [],
-        date: null,
+        date: moment(new Date()).format("YYYY-MM-DDThh:mm:ss+03:00"),
         status: "SCHEDULED",
         comment: null
     });
@@ -39,12 +39,20 @@ const newInterviewDetails = props => {
     function onInterviewersChanged(e) {
         let updated = {
             ...interviewEntity
+        };
+
+        let errors = {
+            ...errorsEntity
         }
 
         if(e){
             updated.interviewers = e.map(interviewer => {
                 return {id: interviewer.value}
             });
+
+            errors.interviewersError = ''
+
+            setErrors(errors)
         }
         else {
             updated.interviewers = [];
@@ -58,9 +66,15 @@ const newInterviewDetails = props => {
             ...interviewEntity
         }
 
+        let errors = {
+            ...errorsEntity
+        }
+
         updated.date = moment(date).format("YYYY-MM-DDThh:mm:ss+03:00");
+        errors.dateError = '';
 
         update(updated);
+        setErrors(errors)
     }
 
     function onCommentChanged(event){

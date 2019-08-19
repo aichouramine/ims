@@ -159,7 +159,7 @@ class CandidateDetails extends Component{
         return (
             <Hoc>
                 <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
-                    <PageHeader subtitle="People"
+                    <PageHeader subtitle="Candidates"
                                 title={`${this.props.candidate.firstname} ${this.props.candidate.lastname}`}/>
                 </div>
                 <div className="row ">

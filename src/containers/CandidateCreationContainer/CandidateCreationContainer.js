@@ -97,7 +97,7 @@ class CandidateCreationContainer extends Component{
                         onConfirmAction={this.confirmInterviewCreation}
                         onCancel={this.cancelInterviewCreation}/>
                 </Modal>
-                <Modal show={true} modalClosed={this.cancelInterviewCreation} customStyle={{width: '500px', top: '10%'}}>
+                <Modal show={this.state.showInterviewModal} modalClosed={this.cancelInterviewCreation} customStyle={{width: '500px', top: '10%'}}>
                     <NewInterviewView
                         interviewers={this.props.interviewers}
                         candidate={this.state.createdCandidate}

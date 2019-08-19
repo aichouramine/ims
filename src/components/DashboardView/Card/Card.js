@@ -2,8 +2,6 @@ import React from 'react';
 import classes from './Card.module.css';
 
 const card = props => {
-    let count = props.count ? props.count : 0
-
     return (
         <div className={`${classes.Stats_small} ${props.styleClass}`}>
             <div className={`${classes.Card_body} p-0 d-flex`}>

@@ -131,6 +131,10 @@ input:focus{
     outline:none;
 }
 
+.error{
+    border: 1px solid #c4183c !important;
+}
+
 .invalidFeedback {
     margin-top: .25rem;
     font-size: 80%;

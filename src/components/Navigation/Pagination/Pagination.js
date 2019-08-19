@@ -68,6 +68,8 @@ class Pagination extends Component{
                     )
                 }
 
+                return null;
+
             })
         }
 

@@ -18,6 +18,9 @@ const datepicker = props => {
     let labelAttachedClass = classes.label
     if(props.error){
         labelAttachedClass = `${classes.label} ${classes.label__error}`
+
+        let input = document.querySelector("input");
+        input.classList.add(`${classes.error}`);
     }
 
     return(
@@ -36,12 +39,12 @@ const datepicker = props => {
 
                         // minDate={new Date()}
                         // calendarContainer={MyContainer}
-                        calendarClassName={classes.input__error}
+                        // calendarClassName={classes.input__error}
                     />
                     <div className="input-group-append">
-                        <span className={classes.datepicker_calendar__append}>
+                        <div id="calendar" className={classes.datepicker_calendar__append}>
                             <i className="material-icons">date_range</i>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>

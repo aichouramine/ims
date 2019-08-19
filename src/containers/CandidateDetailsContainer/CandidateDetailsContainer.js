@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CandidateDetails from '../../components/CandidateDetails/CandidateDetails';
-import * as candidatesActions from '../../store/actions/candidatesIndex';
 import {getInterviewDateByCandidateId} from '../../api/axios-interviews';
-import {updateCandidate, getCandidateInfo} from '../../api/axios-candidates';
+import {updateCandidate} from '../../api/axios-candidates';
 import { toast, ToastContainer } from "react-toastify";
 import Hoc from '../../hoc/Hoc'
 

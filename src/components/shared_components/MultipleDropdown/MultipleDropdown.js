@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select'
 import classes from './MultipleDropdown.module.css';
 import Hoc from '../../../hoc/Hoc';
+import Radium from 'radium';
 
 const multipleDropdown = props => {
 
@@ -16,12 +17,28 @@ const multipleDropdown = props => {
         option: (provided, state) => ({
             ...provided,
             // color: state.isSelected ? 'red' : '#3d5170',
-            fontSize: '11px'
+            fontSize: '11px',
+            ':hover': {
+                borderColor: attachedColor,
+                boxShadow: 'none'
+            },
         }),
         clearIndicator: () => ({
             display: 'none'
         }),
-        control: (provided) => ({...provided, borderColor: attachedColor}),
+        control: (provided) => ({
+            ...provided,
+            borderColor: attachedColor,
+            outline: 'none',
+            ':hover': {
+                borderColor: attachedColor,
+                boxShadow: 'none'
+            },
+            ':focus': {
+                borderColor: attachedColor,
+                boxShadow: 'none'
+            },
+        }),
         dropdownIndicator: () => ({
             width: '0',
             height: '0',
@@ -45,13 +62,6 @@ const multipleDropdown = props => {
         }),
     }
 
-    // let attachedClass = classes.custom_form_control
-    // let labelAttachedClass = classes.label
-    // if(props.error){
-    //     attachedClass = `${classes.custom_form_control} ${classes.custom_form_control__error}`
-    //     labelAttachedClass = `${classes.label} ${classes.label__error}`
-    // }
-
     return(
         <Hoc>
             <label className={labelAttachedClass}>Interviewers *</label>
@@ -71,4 +81,4 @@ const multipleDropdown = props => {
     )
 }
 
-export default multipleDropdown;
+export default Radium(multipleDropdown);

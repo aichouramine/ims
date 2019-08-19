@@ -3,6 +3,10 @@
     color: #3d5170;
 }
 
+.basic-multi-select:active{
+    border-color: rgb(225, 229, 235) !important;
+}
+
 .label{
     color: #3d5170;
     font-size: 13px;
