@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/actionTypes';
-import {getInterviews, setInterviewToInactive, getInterviewsNumber} from '../../api/axios-interviews';
+import {getInterviews, deleteInterview, getInterviewsNumber} from '../../api/axios-interviews';
 
 export const getAllInterviews = (interviews) => {
     return{
@@ -8,12 +8,19 @@ export const getAllInterviews = (interviews) => {
     }
 }
 
-export const deactivateInterview = (id) => {
+export const deleteInterviewRecord = (id) => {
     return{
         type: actionTypes.REMOVE_INTERVIEW,
         id
     }
 };
+export const deleteInterviewRecordSuccess = () => {
+    return{
+        type: actionTypes.REMOVE_INTERVIEW_SUCCESS,
+        removeSuccess: true
+    }
+};
+
 
 export const getCountOfInterviews = (interviewsNumber) => {
     return{
@@ -36,9 +43,10 @@ export const fetchInterviewsNumber = () => {
     }
 }
 
-export const removeInterviewRecord = (id) => {
+export const removeInterviewRecord = (id, page, size) => {
     return (dispatch) => {
-        setInterviewToInactive(id)
-            .then(() => dispatch(deactivateInterview(id)))
+        deleteInterview(id)
+            .then(() => dispatch(deleteInterviewRecord(id)))
+            // .then((page, size) => dispatch(fetchInterviews(page, size)))
     }
 }

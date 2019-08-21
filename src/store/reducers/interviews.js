@@ -19,6 +19,12 @@ const interviewReducer = (state = initialState, action) => {
                 ...state,
                 interviews: state.interviews.filter(({ id }) => id !== action.id)
             }
+        case actionTypes.REMOVE_INTERVIEW_SUCCESS:
+            return Object.assign({}, state, {
+                removeSuccess: true,
+                removeInProgress: false,
+                removeHasErrored: false,
+            });
         case actionTypes.GET_INTERVIEWS_COUNT:
             return {
                 ...state,

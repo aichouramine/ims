@@ -44,14 +44,15 @@
     font-size: .8rem;
 }
 
-.View_report a {
+.View_report div {
     text-decoration: none;
     color: #3d5170;
     font-weight: 600;
 }
 
-.View_report a:hover{
+.View_report div:hover{
     color: #3281bf;
+    cursor: pointer;
 }
 
 .Text_right{

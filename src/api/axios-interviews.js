@@ -8,8 +8,8 @@ export const getInterviews = (page, size) => (
     instance.get("/getAllInterviews/" + page + "/" + size)
 )
 
-export const setInterviewToInactive = (id) => (
-    instance.put("updateInterviewToInactive/" + id)
+export const deleteInterview = (id) => (
+    instance.delete("deleteInterview/" + id)
 )
 
 export const getInterviewsNumber = () => (

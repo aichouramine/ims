@@ -17,12 +17,11 @@ const calendarView = props => (
                 <Calendar/>
             </div>
             <div className={`${classes.Card_footer} ${classes.Border_top}`}>
-                <div className="row">
-                    <div className={`${classes.View_report} ${classes.Text_right} col`}><a href="#">View all interviews →</a></div>
+                <div className={`${classes.View_report} ${classes.Text_right} col`}>
+                    <div onClick={() => props.redirect('interviews')}>Go to interviews view →</div>
                 </div>
             </div>
         </div>
-        {/*<Calendar/>*/}
     </Hoc>
 )
 

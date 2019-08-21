@@ -1,18 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import './Calendar.module.css';
+import classes from './Calendar.module.css';
 
 const localizer = BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
-// let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
+let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
 const events = [
     {
         id: 0,
         title: 'All Day Event very long title',
         allDay: true,
-        start: new Date(2019, 4, 3),
-        end: new Date(2019, 4, 20),
+        start: new Date(2019, 8, 3),
+        end: new Date(2019, 8, 20),
     },
     {
         id: 1,
@@ -23,19 +23,32 @@ const events = [
 ]
 
 
-const calendar = props => (
-    <BigCalendar
-        events={events}
-        // views={allViews}
-        timeslots={2}
-        step={60}
-        showMultiDayTimes
-        defaultDate={new Date()}
-        defaultView={BigCalendar.Views.WEEK}
-        localizer={localizer}
-        startAccessor="start"
-        endAccessor="end"
-    />
-)
+
+const calendar = props => {
+    const [view, setView] = useState("month");
+
+    return(
+        <div style={{width: '100%'}}>
+            <div className="btn btn-group " style={{width: '30%'}}>
+                <button  onClick={() => setView("week")}>Week</button>
+                <button  onClick={() => setView("month")}>Month</button>
+            </div>
+            <BigCalendar
+                toolbar={false}
+                style={{ height: 500, width: '100%'}}
+                events={events}
+                views={allViews}
+                timeslots={2}
+                step={60}
+                showMultiDayTimes
+                defaultDate={new Date()}
+                view={view}
+                localizer={localizer}
+                startAccessor="start"
+                endAccessor="end"
+            />
+        </div>
+    )
+}
 
 export default calendar;

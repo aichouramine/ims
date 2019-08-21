@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './InterviewsTable.module.css'
 import TableActions from '../../shared_components/TableActions/TableActions'
 import Remove from '../../shared_components/TableActions/Remove/Remove'
-import FollowUp from "../../shared_components/TableActions/FollowUp/FollowUp";
+import Update from "../../shared_components/TableActions/Update/Update";
 import {levels} from "../../../enums/levels";
 import {interview_status} from "../../../enums/interview_status";
 import {locations} from "../../../enums/locations";
@@ -55,6 +55,10 @@ const interviewsTable = (props) => {
 
     }
 
+    function editInterview(obj) {
+        props.viewDetailsAndEdit(obj)
+    }
+
     if(props.list && props.list.length > 0){
         interviews = props.list.map((int, i) => {
             return(
@@ -73,7 +77,7 @@ const interviewsTable = (props) => {
                         </td>
                     <td >
                         <TableActions>
-                            <FollowUp/>
+                            <Update onEdit={() => editInterview(int)}/>
                             <Remove popoverHeader="Remove record" confirmTitle="Remove" elementId={`${int.id}`}
                                     onConfirm={props.onInterviewRemove} intId={int.id}>
 

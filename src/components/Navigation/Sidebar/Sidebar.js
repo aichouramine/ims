@@ -18,7 +18,7 @@ const sidebar = (props) => (
                 <MenuRow title="Interviewers" navLink="/interviewers" icon="people"/>
                 <MenuRow title="Candidates" navLink="/candidates" icon="person"/>
                 <MenuRow title="Interviews" navLink="/interviews" icon="table_chart"/>
-                {/*<MenuRow title="Schedule" navLink="/schedule" icon="insert_invitation"/>*/}
+                <MenuRow title="Schedule" navLink="/schedule" icon="insert_invitation"/>
                 {/*<MenuRow title="Interview Follow-Ups" navLink="/feedbacks" icon="create"/>*/}
                 <MenuRow title="QA Needs" navLink="/needs" icon="how_to_reg"/>
                 {/*<MenuRow title="Help" navLink="/" icon="question_answer"/>*/}

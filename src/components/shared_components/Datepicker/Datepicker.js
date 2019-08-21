@@ -3,9 +3,10 @@ import DatePicker from "react-datepicker";
 import Hoc from '../../../hoc/Hoc'
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import classes from './Datepicker.module.css';
+import moment from 'moment';
 
 const datepicker = props => {
-    const [date, setDate] = useState(new Date());
+    const [date, setDate] = useState(props.date);
 
     function handleDateChange(day) {
         if(props.onChangeDate){
@@ -24,19 +25,20 @@ const datepicker = props => {
     }
 
     return(
+
         <Hoc>
             <div className="d-flex flex-column">
                 <label className={labelAttachedClass}>{props.label}</label>
                 <div className="d-flex flex-row">
                     <DatePicker
                         showTimeSelect={false}
-                        selected={date}
+                        selected={moment(date).toDate()}
                         onChange={day => handleDateChange(day)}
                         timeFormat="HH:mm"
                         timeIntervals={15}
-                        dateFormat="MMMM d, yyyy h:mm aa"
+                        dateFormat="MMMM d, yyyy h:mm a"
                         timeCaption="Time"
-
+                        // showTimeInput
                         // minDate={new Date()}
                         // calendarContainer={MyContainer}
                         // calendarClassName={classes.input__error}

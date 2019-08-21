@@ -3,8 +3,12 @@ import Select from 'react-select'
 import classes from './MultipleDropdown.module.css';
 import Hoc from '../../../hoc/Hoc';
 import Radium from 'radium';
+import makeAnimated from 'react-select/animated';
+
+const animatedComponents = makeAnimated();
 
 const multipleDropdown = props => {
+    let selected = props.selectedInterviewers && props.selectedInterviewers.length > 0 ? props.selectedInterviewers : []
 
     let attachedColor = 'rgb(225, 229, 235);'
     let labelAttachedClass = classes.label
@@ -64,12 +68,14 @@ const multipleDropdown = props => {
 
     return(
         <Hoc>
+            {/*{console.log(selected[0])}*/}
             <label className={labelAttachedClass}>Interviewers *</label>
             <Select
-                defaultValue={[]}
+                // renderValue={selected || ''}
                 isMulti
+                // components={animatedComponents}
                 styles={customStyles}
-                name="colors"
+                name="interviewers"
                 options={props.list}
                 className={classes["basic-multi-select"]}
                 classNamePrefix={classes["react-select"]}
