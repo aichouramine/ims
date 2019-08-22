@@ -7,6 +7,7 @@ import classes from './Calendar.module.css';
 import EventPopover from '../EventPopover/EventPopover';
 import {candidate_location} from "../../../enums/candidate_location";
 import {levels} from "../../../enums/levels";
+import {interview_status} from "../../../enums/interview_status";
 
 const localizer = BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
@@ -33,15 +34,32 @@ const calendar = props => {
     const [view, setView] = useState("month");
     const [elementId, setId] = useState(null);
     const [interview, setInterview] = useState({});
-    const [showPopover, set] = useState(false);
+    const [showPopover, setPopoverState] = useState(false);
     const [selectedElement, setElement] = useState(null);
+    const [selectedDate, setDate] = useState(new Date())
+
+    const minTime = new Date();
+    minTime.setHours(8,30,0);
+    const maxTime = new Date();
+    maxTime.setHours(19,30,0);
+
+    moment.locale('ru');
+
+    let interviewers = (
+        <div>
+            None
+        </div>
+    )
 
     function selectSlotEvent() {
-        let el = selectedElement.parentElement
-        el.classList.remove("rbc-selected");
+        if(selectedElement){
+            let el = selectedElement.parentElement
+            el.classList.remove("rbc-selected");
 
-        set(false)
-        setElement(null)
+            setPopoverState(false)
+            setElement(null)
+        }
+
     }
 
     function selectEvent(data, element) {
@@ -51,7 +69,26 @@ const calendar = props => {
         setId(elementId);
         setInterview(data.desc);
         setElement(element.target)
-        set(true)
+        setPopoverState(true)
+    }
+
+    function printInterviewers(arr) {
+        if(arr && arr.length > 0){
+            interviewers = arr.map((int, i) => {
+                return(
+                    <div key={`${i}`}>
+                        {`${int.firstname} ${int.lastname} `}
+                    </div>
+                )
+            })
+        }
+
+        return interviewers;
+    }
+
+    function onNavigate(d){
+        setDate(d)
+        setPopoverState(false)
     }
 
     return(
@@ -60,12 +97,20 @@ const calendar = props => {
                 popoverHeader={`i-view with ${interview.candidateName} (${levels[interview.level]})`} elementId={elementId}
                 intId={interview.id} show={showPopover}>
 
-                <ul className={classes.desc}>
-                    <li>Start: <span></span></li>
-                    <li>End: <span></span></li>
-                    <li>Location: <span>{candidate_location[interview.location]}</span></li>
-                    <li>Participants: <span></span></li>
-                </ul>
+                <div className="d-flex flex-row">
+                    <ul>
+                        <li>Status: </li>
+                        <li>Start: </li>
+                        <li style={{paddingBottom: '10px'}}>Location: </li>
+                        <li>Participants: </li>
+                    </ul>
+                    <ul className={classes.desc}>
+                        <li>{interview_status[interview.status]}</li>
+                        <li>{interview.startDate}</li>
+                        <li style={{paddingBottom: '10px'}}>{candidate_location[interview.location]}</li>
+                        <li>{printInterviewers(interview.interviewers)}</li>
+                    </ul>
+                </div>
             </EventPopover>
             <div style={{width: '100%'}}>
                 <BigCalendar
@@ -74,10 +119,10 @@ const calendar = props => {
                     events={props.events}
                     views={['week', 'month']}
                     timeslots={2}
-                    step={60}
+                    step={30}
                     selectable={true}
                     showMultiDayTimes
-                    defaultDate={new Date()}
+                    // defaultDate={new Date()}
                     view={view}
                     localizer={localizer}
                     startAccessor="startDate"
@@ -86,6 +131,10 @@ const calendar = props => {
                     onSelectEvent={(data, element) => selectEvent(data, element)}
                     popup={true}
                     onSelectSlot={selectSlotEvent}
+                    onNavigate={onNavigate}
+                    date={selectedDate}
+                    min={minTime}
+                    max={maxTime}
                 />
             </div>
         </Hoc>

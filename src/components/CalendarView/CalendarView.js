@@ -7,18 +7,21 @@ import {levels} from '../../enums/levels'
 import moment from 'moment';
 
 const calendarView = props => {
+    // ${moment(interview.date).format("HH:mm")}
     let events = props.interviews ? props.interviews.map(interview => {
         return {
             id: interview.id,
-            title: `${moment(interview.date).format("HH:mm")} ${interview.candidate.firstname} ${interview.candidate.lastname} 
-            (${levels[interview.candidate.level]})`,
-            'startDate': interview.date,
-            'endDate': interview.date,
+            title: `${interview.candidate.firstname} ${interview.candidate.lastname}  
+            (${levels[interview.candidate.level]}) `,
+            'startDate': moment(interview.date).toDate(),
+            'endDate': moment(interview.date).add(90, 'minute').toDate(),
             desc: {
                 candidateName: `${interview.candidate.firstname} ${interview.candidate.lastname}`,
-                startDate: interview.date,
+                startDate: moment(interview.date).format("DD-MMM-YY, HH:mm"),
                 location: interview.candidate.location,
-                level: interview.candidate.level
+                level: interview.candidate.level,
+                interviewers: interview.interviewers,
+                status: interview.interviewStatus
             }
         }
     }) : []

@@ -1,18 +1,32 @@
 .Popover{
+    /*opacity: .9;*/
+    border: #a4cce1 1px solid;
+    border-radius: 5px;
     box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1) !important;
 }
 
+:global .popover{
+    border: none;
+}
+
 .Popover h3{
-    background-color: #f5f6f8 !important;
+    background-color: #c1e9fe !important;
     font-size: 12px !important;
     font-weight: 700;
     color: #282c34 !important;
+    border-bottom-color: #a4cce1;
 }
 
 .Popover_body{
     font-size: 0.8rem !important;
     line-height: 1.5;
     margin-bottom: 5px;
+    color: #3d5170 !important;
+    font-weight: 700;
+}
+
+.Popover_body span{
+    font-weight: 500;
 }
 
 button{
