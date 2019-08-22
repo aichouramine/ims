@@ -6,7 +6,7 @@ import CandidatesContainer from './containers/CandidatesContainer/CandidatesCont
 import CandidateDetailsContainer from './containers/CandidateDetailsContainer/CandidateDetailsContainer';
 import CandidateCreationContainer from './containers/CandidateCreationContainer/CandidateCreationContainer';
 import InterviewsCalendar from './containers/InterviewsCalendar/InterviewsCalendar'
-import ResourcesNeeds from './containers/ResourcesNeeds/ResourcesNeeds';
+// import ResourcesNeeds from './containers/ResourcesNeeds/ResourcesNeeds';
 import Dashboard from './containers/Dashboard/Dashboard';
 import FollowUp from './containers/FollowUp/FollowUp';
 import InterviewerProfileContainer from './containers/InterviewerProfileContainer/InterviewerProfileContainer';
@@ -41,7 +41,7 @@ class App extends Component {
                               <Route exact path="/candidates" component={CandidatesContainer}/>
                               <Route exact path="/candidates/addNewCandidate" component={CandidateCreationContainer}/>
                               <Route exact path="/candidates/details/:id" component={CandidateDetailsContainer}/>
-                              <Route path="/needs" component={ResourcesNeeds}/>
+                              {/*<Route path="/needs" component={ResourcesNeeds}/>*/}
                               <Route path="/schedule" component={InterviewsCalendar}/>
                               <Route path="/candidates/followUp/:id" component={FollowUp}/>
                               <Route component={NotFound} />

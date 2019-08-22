@@ -1,6 +1,7 @@
 .Card{
     background-color: #fff;
     border: none;
+    height: 800px;
     border-radius: .625rem;
     position: relative;
     display: flex;

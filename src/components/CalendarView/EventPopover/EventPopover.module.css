@@ -1,0 +1,35 @@
+.Popover{
+    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1) !important;
+}
+
+.Popover h3{
+    background-color: #f5f6f8 !important;
+    font-size: 12px !important;
+    font-weight: 700;
+    color: #282c34 !important;
+}
+
+.Popover_body{
+    font-size: 0.8rem !important;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+button{
+    min-width: 50%;
+}
+
+@keyframes bounceOut {
+    0% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 0.8;
+    }
+    50% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 0.9;
+    }
+    100% {
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+        opacity: 1;
+    }
+}
