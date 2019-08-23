@@ -67,7 +67,7 @@ const candidatesTable = (props) => {
                     <td>{printStatus(c.candidateStatus)}</td>
                     <td className={classes.date}>{returnDate(c.startDate)}</td>
                     <td >
-                        <TableActions>
+                        <TableActions style={{width: "65%"}}>
                             <Update onEdit={() => goToProfile(c)}/>
                             <Details onClick={() => goToFollowUpDetails(c)}/>
                             <Remove popoverHeader="Mark as non-active" confirmTitle="Yes" elementId={`${c.id}`}

@@ -27,15 +27,20 @@
 }
 
 .Popover{
+    border: #d9dadc 1px solid;
+    font-family: 'Montserrat', sans-serif;
     box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1) !important;
 }
 
 .Popover h3{
+    font-size: 14px;
+    color: #282c34;
+    font-weight: 600;
     background-color: #f5f6f8 !important;
 }
 
 .Popover_body{
-    font-size: 0.8rem !important;
+    font-size: 0.7rem !important;
     line-height: 1.5;
     margin-bottom: 5px;
 }

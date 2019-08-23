@@ -39,7 +39,7 @@ const calendar = props => {
     const [selectedDate, setDate] = useState(new Date())
 
     const minTime = new Date();
-    minTime.setHours(8,30,0);
+    minTime.setHours(9,0,0);
     const maxTime = new Date();
     maxTime.setHours(19,30,0);
 

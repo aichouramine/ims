@@ -12,7 +12,7 @@ const interviewerCard = props => {
     return(
         <li className={`${classes.card} h-100`} >
             <ul className={classes.wrapper} onClick={() => goToProfile(props.interviewer)}>
-                <div>
+                <div style={{padding: '10px 20px'}}>
                     <div className={`${classes.small_avatar} mr-2 pr-2`}
                          style={{backgroundImage: `url(${props.interviewer.profilePhoto})`}}/>
                 </div>

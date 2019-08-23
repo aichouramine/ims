@@ -77,6 +77,10 @@
     border-radius: 0;
 }
 
+/*:global .rbc-day-slot .rbc-event{*/
+    /*border: 1px solid #718797;*/
+/*}*/
+
 :global .rbc-event.rbc-selected{
     background-color: #c1e9fe;
     border: #282c34 1px solid;

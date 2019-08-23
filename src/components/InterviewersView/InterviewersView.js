@@ -102,7 +102,7 @@ class InterviewersView extends Component{
         if(this.state.cardView){
             currentView = (
                 <div className={`${classes.interviewers_view__body}`}>
-                    <ul>
+                    <ul style={{width: '100%'}}>
                         {interviewers}
                     </ul>
                 </div>

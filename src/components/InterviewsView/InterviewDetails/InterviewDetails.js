@@ -88,10 +88,10 @@ const interviewDetails = props => {
                                     </select>
                                 </div>
                                 <div className=" p-0 mb-0" style={{width: '25%'}}>
-                                    <Dropdown value={details.level} label="Level" options={levels}/>
+                                    <Dropdown disabled value={details.level} label="Level" options={levels}/>
                                 </div>
                                 <div className=" p-0 mb-0" style={{width: '25%'}}>
-                                    <Dropdown value={details.location} label="Location" options={candidate_location}
+                                    <Dropdown disabled value={details.location} label="Location" options={candidate_location}
                                     />
                                 </div>
                             </div>
