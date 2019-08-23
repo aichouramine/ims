@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './TableActions.module.css';
 
 const tableActions = props => {
-    console.log(props)
     let attachedClass = `${classes.TableActions}`
 
     return(
