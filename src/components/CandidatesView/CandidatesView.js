@@ -18,6 +18,16 @@ const candidatesView = props => {
                     </button>
                 </div>
             </div>
+            <div className="d-flex justify-content-end">
+                <div className={`${classes.table_pagination}`}>
+                    <Pagination totalNumber={props.candidatesNumber}
+                                loadItems={props.loadMoreItems}
+                                updateUrl={props.onUrlUpdate}
+                                history={props.history}
+
+                    />
+                </div>
+            </div>
                 <div className="row ">
                     <div className="col">
                         <div className={`${classes.card} card-small mb-4`}>
@@ -32,16 +42,7 @@ const candidatesView = props => {
                         </div>
                     </div>
                 </div>
-                <div className="d-flex justify-content-end w-100">
-                    <div className={`${classes.table_pagination}`}>
-                        <Pagination totalNumber={props.candidatesNumber}
-                                    loadItems={props.loadMoreItems}
-                                    updateUrl={props.onUrlUpdate}
-                                    history={props.history}
 
-                        />
-                    </div>
-                </div>
         </Hoc>
     )
 }

@@ -6,7 +6,7 @@ import Modal from '../../components/UI/Modal/Modal';
 import InterviewDetails from '../../components/InterviewsView/InterviewDetails/InterviewDetails'
 import * as interviewsActions from '../../store/actions/interviewsIndex';
 import * as interviewersActions from "../../store/actions/interviewersIndex";
-import {deleteInterview} from "../../api/axios-interviews";
+import {deleteInterview, getInterviews} from "../../api/axios-interviews";
 import { toast, ToastContainer } from "react-toastify";
 
 class InterviewsContainer extends Component{
@@ -16,7 +16,8 @@ class InterviewsContainer extends Component{
         this.state = {
             showDetails: false,
             showNew: false,
-            interviewDetails: {}
+            interviewDetails: {},
+            interviewers: []
         };
 
         this.addNewHandler = this.addNewHandler.bind(this)
@@ -28,9 +29,33 @@ class InterviewsContainer extends Component{
     }
 
     componentDidMount(){
-        this.props.onFetchInterviews(this.getPageNumber(), 10)
+        this.getInterviewsList(this.getPageNumber(), 10)
         this.props.onFetchTotalInterviewsNumber()
         this.props.onFetchInterviewers();
+    }
+
+    getInterviewsList = (page, count) => {
+        getInterviews(page, count)
+            .then(response => {
+                this.setState({
+                    interviews: response.data
+                })
+            })
+            // .then(()=>{
+            //     toast.success('Interview record was added successfully',
+            //         {
+            //             className: 'toast-body__success',
+            //         }
+            //     );
+            // })
+            .catch(() => {
+                toast.error('Something went wrong. Please try again.',
+                    {
+                        className: 'toast-body__error',
+                    }
+                );
+            })
+
     }
 
     addNewHandler() {
@@ -96,9 +121,9 @@ class InterviewsContainer extends Component{
                         cancel={this.editCancelHandler}/>
                 </Modal>
                 <InterviewsView addNew={this.addNewHandler}
-                                interviews={this.props.interviews}
+                                interviews={this.state.interviews}
                                 removeInterview={this.removeInterviewRecord}
-                                loadMoreItems={this.props.onFetchInterviews}
+                                loadMoreItems={this.getInterviewsList}
                                 interviewsNumber={this.props.interviewsNumber}
                                 onUrlUpdate={this.updateUrl}
                                 history={this.props.history}

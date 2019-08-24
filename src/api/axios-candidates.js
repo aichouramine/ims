@@ -35,3 +35,7 @@ export const updateCandidate = (obj) => (
 export const getCandidateInfo = id => (
     instance.get("getCandidateInfo/" + id)
 )
+
+export const getNewcomersWithDates = () => (
+    instance.get("getNewcomers")
+)

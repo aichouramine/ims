@@ -3,7 +3,7 @@ import classes from './TopInterviewers.module.css';
 import TopInterviewersRow from './TopInterviewersRow/TopInterviewersRow';
 
 const topInterviewers = props => {
-    let interviewers = <span>No data</span>;
+    let interviewers = <li className={classes.no_data}>No data</li>;
 
     if(props.topList && props.topList.length > 0) {
         interviewers = props.topList.map((t, i) => {

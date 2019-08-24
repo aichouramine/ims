@@ -4,7 +4,8 @@ import DashboardView from '../../components/DashboardView/DashboardView';
 import * as interviewersActions from '../../store/actions/interviewersIndex';
 import * as interviewsActions from '../../store/actions/interviewsIndex';
 import { getInterviewsStatisticByDate } from '../../api/axios-interviews';
-import {getCandidatesLevelsCountByDate, getCandidatesByStatus, getCandidatesLocationsCountByDate} from '../../api/axios-candidates';
+import {getCandidatesLevelsCountByDate, getCandidatesByStatus,
+    getCandidatesLocationsCountByDate, getNewcomersWithDates} from '../../api/axios-candidates';
 
 class Dashboard extends Component{
     constructor(props) {
@@ -21,7 +22,8 @@ class Dashboard extends Component{
             statistic: {
                 prevYear: [],
                 currentYear: []
-            }
+            },
+            newcomers: []
         }
     }
 
@@ -35,6 +37,7 @@ class Dashboard extends Component{
         this.getLocationsByDate("currentYear");
         this.getInterviewStatisticByDate("currentYear");
         this.getInterviewStatisticByDate("prevYear");
+        this.getNewcomers();
     }
 
     getRejectedCandidates = () => {
@@ -93,6 +96,18 @@ class Dashboard extends Component{
             })
     }
 
+    getNewcomers = () => {
+        getNewcomersWithDates()
+            .then(response => {
+                this.setState({
+                    newcomers: response.data
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     redirectTo = (page) => {
         this.props.history.push({
             pathname: `${page}`
@@ -113,6 +128,7 @@ class Dashboard extends Component{
                 getLocationsByDate={this.getLocationsByDate}
                 getLevelsByDate={this.getLevels}
                 statistic={this.state.statistic}
+                newcomers={this.state.newcomers}
             />
         )
     }

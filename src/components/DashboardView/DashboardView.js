@@ -6,6 +6,7 @@ import CandidatesPieChart from '../DashboardView/CandidatesPieChart/CandidatesPi
 import InterviewsLineChart from './InterviewsLineChart/InterviewsLineChart';
 import CandidatesDoughnutChart from './CandidatesDoughnutChart/CandidatesDoughnutChart';
 import TopInterviewers from '../DashboardView/TopInterviewers/TopInterviewers';
+import Newcomers from '../DashboardView/Newcomers/Newcomers';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
 const dashboardView = (props) => (
@@ -52,9 +53,9 @@ const dashboardView = (props) => (
             <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
                 <TopInterviewers styleClass={classes.Card} topList={props.topInterviewers} redirect={props.redirect}/>
             </div>
-            {/*<div className="mb-4 col-sm-12 col-md-4 col-lg-4">*/}
-                {/*<BenchPolarChart styleClass={classes.Card}/>*/}
-            {/*</div>*/}
+            <div className="mb-4 col-sm-12 col-md-4 col-lg-4">
+                <Newcomers styleClass={classes.Card} newcomers={props.newcomers} redirect={props.redirect}/>
+            </div>
         </div>
     </Hoc>
 );

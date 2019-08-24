@@ -5,9 +5,10 @@
     color: #3d5170;
     font-weight: 400;
     will-change: border-color,box-shadow;
-    border-radius: .25rem;
+    /*border-radius: .25rem;*/
     box-shadow: none;
     outline: none;
+    padding: 15px 0;
     transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
 }
 

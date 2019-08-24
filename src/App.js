@@ -25,30 +25,31 @@ class App extends Component {
           <Sidebar/>
           <Toolbar/>
           <Route render={({location}) => (
-              <TransitionGroup>
-                  <CSSTransition
-                      key={location.key}
-                      classNames={"page-fade"}
-                      timeout={350}
-                      unmountOnExit
-                  >
-                      <Layout title="Overview">
-                          <Switch location={location}>
-                              <Route path="/" exact component={Dashboard}/>
-                              <Route path="/interviews" component={InterviewsContainer}/>
-                              <Route path="/interviewers" component={InterviewersContainer}/>
-                              <Route path="/profile" component={InterviewerProfileContainer}/>
-                              <Route exact path="/candidates" component={CandidatesContainer}/>
-                              <Route exact path="/candidates/addNewCandidate" component={CandidateCreationContainer}/>
-                              <Route exact path="/candidates/details/:id" component={CandidateDetailsContainer}/>
-                              {/*<Route path="/needs" component={ResourcesNeeds}/>*/}
-                              <Route path="/schedule" component={InterviewsCalendar}/>
-                              <Route path="/candidates/followUp/:id" component={FollowUp}/>
-                              <Route component={NotFound} />
-                          </Switch>
-                      </Layout>
-                  </CSSTransition>
-              </TransitionGroup>
+              <Layout title="Overview">
+                  <Switch location={location}>
+                      <Route path="/" exact component={Dashboard}/>
+                      <Route path="/interviews" component={InterviewsContainer}/>
+                      <Route path="/interviewers" component={InterviewersContainer}/>
+                      <Route path="/profile" component={InterviewerProfileContainer}/>
+                      <Route exact path="/candidates" component={CandidatesContainer}/>
+                      <Route exact path="/candidates/addNewCandidate" component={CandidateCreationContainer}/>
+                      <Route exact path="/candidates/details/:id" component={CandidateDetailsContainer}/>
+                      {/*<Route path="/needs" component={ResourcesNeeds}/>*/}
+                      <Route path="/schedule" component={InterviewsCalendar}/>
+                      <Route path="/candidates/followUp/:id" component={FollowUp}/>
+                      <Route component={NotFound} />
+                  </Switch>
+              </Layout>
+              // <TransitionGroup>
+              //     <CSSTransition
+              //         key={location.key}
+              //         classNames={"page-fade"}
+              //         timeout={350}
+              //         unmountOnExit
+              //     >
+              //
+              //     </CSSTransition>
+              // </TransitionGroup>
           )}/>
 
       </div>
