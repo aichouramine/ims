@@ -25,7 +25,7 @@ class CandidateDetailsContainer extends Component{
 
     componentDidMount(){
         this._isMounted = true;
-
+        window.scrollTo(0, 0)
         // getCandidateInfo(230)
         //     .then(response => {
         //         this.setState({

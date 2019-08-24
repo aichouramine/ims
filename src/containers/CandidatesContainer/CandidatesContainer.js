@@ -15,6 +15,7 @@ class CandidatesContainer extends Component{
     }
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.onFetchCandidates(this.getPageNumber(), 10);
         this.props.onFetchCandidatesNumber();
     }

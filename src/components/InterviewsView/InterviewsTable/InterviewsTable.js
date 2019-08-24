@@ -63,8 +63,9 @@ const interviewsTable = (props) => {
         interviews = props.list.map((int, i) => {
             return(
                 <tr key={`${i}`}>
-                    <td className={classes.name}>
-                        {`${int.candidate.firstname} ${int.candidate.lastname}`}
+                    <td onClick={() => props.openCandidateProfile(int.candidate)} className={classes.name}>
+                        {/*<i className="material-icons">person_outline</i>*/}
+                        <span>{`${int.candidate.firstname} ${int.candidate.lastname}`}</span>
                     </td>
                     <td className={classes.level}>{levels[int.candidate.level]}</td>
                     <td>{locations[int.candidate.location]}</td>

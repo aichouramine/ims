@@ -7,6 +7,7 @@ import Pagination from '../Navigation/Pagination/Pagination';
 import PageHeader from '../Layout/PageHeader/PageHeader';
 
 const interviewsView = (props) => (
+
     <Hoc>
         <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
             <PageHeader subtitle="Statistic" title="Interviews"/>
@@ -46,6 +47,7 @@ const interviewsView = (props) => (
                             onInterviewRemove={props.removeInterview}
                             loadMoreItems={props.loadMoreItems}
                             viewDetailsAndEdit={props.onEditInterview}
+                            openCandidateProfile={props.seeCandidateDetails}
                         />
                     </div>
                 </div>

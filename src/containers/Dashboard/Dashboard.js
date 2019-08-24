@@ -28,6 +28,7 @@ class Dashboard extends Component{
     }
 
     componentDidMount(){
+        window.scrollTo(0, 0)
         this.props.onFetchTopInterviewers();
         this.props.onFetchTotalInterviewsNumber();
         this.getRejectedCandidates();

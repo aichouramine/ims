@@ -8,6 +8,7 @@ import * as interviewsActions from '../../store/actions/interviewsIndex';
 import * as interviewersActions from "../../store/actions/interviewersIndex";
 import {deleteInterview, getInterviews} from "../../api/axios-interviews";
 import { toast, ToastContainer } from "react-toastify";
+import * as candidatesActions from "../../store/actions/candidatesIndex";
 
 class InterviewsContainer extends Component{
     constructor(props) {
@@ -111,6 +112,13 @@ class InterviewsContainer extends Component{
             })
     }
 
+    seeCandidateProfile = (candidate) => {
+        this.props.history.push({
+            pathname: `/candidates/details/${candidate.id}`
+        })
+        this.props.onSeeDetails(candidate)
+    }
+
     render(){
         return (
             <Hoc>
@@ -128,6 +136,7 @@ class InterviewsContainer extends Component{
                                 onUrlUpdate={this.updateUrl}
                                 history={this.props.history}
                                 onEditInterview={this.editInterviewHandler}
+                                seeCandidateDetails={this.seeCandidateProfile}
                 />
                 <ToastContainer
                     position="bottom-right"
@@ -159,6 +168,7 @@ const mapDispatchToProps = (dispatch) => {
         onRemoveInterview: (id) => dispatch(interviewsActions.removeInterviewRecord(id)),
         onFetchTotalInterviewsNumber: () => dispatch(interviewsActions.fetchInterviewsNumber()),
         onFetchInterviewers: () => dispatch(interviewersActions.fetchInterviewers()),
+        onSeeDetails: (obj) => dispatch(candidatesActions.goToCandidateDetails(obj))
     }
 }
 
