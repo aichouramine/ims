@@ -153,10 +153,10 @@ const newInterviewDetails = props => {
                                     </select>
                                 </div>
                                 <div className=" p-0 mb-0" style={{width: '25%'}}>
-                                    <Dropdown disabled value={props.candidate.level} label="Level" options={levels}/>
+                                    <Dropdown disabled type="Level" value={props.candidate.level} label="Level" options={levels}/>
                                 </div>
                                 <div className=" p-0 mb-0" style={{width: '25%'}}>
-                                    <Dropdown disabled value={props.candidate.location} label="Location" options={candidate_location}
+                                    <Dropdown disabled type="Location" value={props.candidate.location} label="Location" options={candidate_location}
                                     />
                                 </div>
                             </div>
@@ -167,7 +167,8 @@ const newInterviewDetails = props => {
                                     <div className="d-flex my-auto date-range input-group">
                                         <Datepicker
                                             label="When *"
-                                            error={errorsEntity.dateError} onChangeDate={onDateChanged} />
+                                            error={errorsEntity.dateError} onChangeDate={onDateChanged}
+                                            dateFormat="MMMM d, yyyy h:mm a"/>
                                     </div>
                                 </div>
                             </div>

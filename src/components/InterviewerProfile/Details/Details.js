@@ -161,7 +161,7 @@ class Details extends Component{
                                 </div>
                                 <div className="col col-md-6 form-group">
                                     <Dropdown onChange={this.onLevelChanged} options={levels} label="Level"
-                                              type="select" value={this.state.profile.level}
+                                              type="Level" value={this.state.profile.level}
                                               error={this.state.levelError}
                                     />
                                     {/*<div className={classes.invalidFeedback}>{this.state.levelError}</div>*/}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import classes from './InterviewDetails.module.css';
 import Datepicker from '../../shared_components/Datepicker/Datepicker';
 import Input from '../../shared_components/Input/Input';
@@ -15,15 +15,9 @@ const initialState = {
     }
 }
 
-let interviewDate;
-
 const interviewDetails = props => {
-    const details = props.interviewDetails.candidate ? props.interviewDetails.candidate : {}
 
-    if(props.interviewDetails.date){
-        interviewDate = props.interviewDetails.date
-    }
-    // interviewDate = props.interviewDetails.date ? props.interviewDetails.date
+    const details = props.interviewDetails.candidate ? props.interviewDetails.candidate : {}
 
     let list = props.interviewers ? props.interviewers.map(interviewer => {
         return {
@@ -88,10 +82,10 @@ const interviewDetails = props => {
                                     </select>
                                 </div>
                                 <div className=" p-0 mb-0" style={{width: '25%'}}>
-                                    <Dropdown disabled value={details.level} label="Level" options={levels}/>
+                                    <Dropdown disabled type="Level" value={details.level} label="Level" options={levels}/>
                                 </div>
                                 <div className=" p-0 mb-0" style={{width: '25%'}}>
-                                    <Dropdown disabled value={details.location} label="Location" options={candidate_location}
+                                    <Dropdown disabled type="Location" value={details.location} label="Location" options={candidate_location}
                                     />
                                 </div>
                             </div>
@@ -100,24 +94,26 @@ const interviewDetails = props => {
                                 <div className="form-group p-0 mb-0 d-flex flex-column">
                                     <div className="d-flex my-auto date-range input-group">
                                         <Datepicker
-                                            date={interviewDate}
+                                            date={props.interviewDetails.date}
                                             label="When *"
                                             error={false}
+                                            dateFormat="MMMM d, yyyy, HH:mm"
+                                            showTimeInput={true}
                                             />
                                     </div>
                                 </div>
                             </div>
-                            {/*<div className={classes.form_group_wrapper} style={{paddingTop: '10px', }}>*/}
-                                {/*<div className="form-group p-0 mb-0 d-flex flex-column" style={{width: '100%'}}>*/}
-                                    {/*<MultipleDropdown*/}
-                                        {/*label="Interviewers *"*/}
-                                        {/*onChange={onInterviewersChanged}*/}
-                                        {/*list={list}*/}
-                                        {/*selectedInterviewers={selectedInterviewers}*/}
-                                        {/*error={false}*/}
-                                    {/*/>*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
+                            <div className={classes.form_group_wrapper} style={{paddingTop: '10px', }}>
+                                <div className="form-group p-0 mb-0 d-flex flex-column" style={{width: '100%'}}>
+                                    <MultipleDropdown
+                                        label="Interviewers *"
+                                        onChange={onInterviewersChanged}
+                                        list={list}
+                                        selectedInterviewers={selectedInterviewers}
+                                        error={false}
+                                    />
+                                </div>
+                            </div>
                             <div className={classes.form_group_wrapper} style={{paddingTop: '10px', paddingBottom: '10px'}}>
                                 <Input inputtype="textarea" label="Comment" type="text" placeholder="Comment"
                                        rows="4" style={{resize: 'none', width: '100%'}} value={props.interviewDetails.comment || ''}/>

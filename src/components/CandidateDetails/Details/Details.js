@@ -28,11 +28,11 @@ const details = props => {
                             />
                         </div>
                         <div className=" p-0 mb-0" style={{width: '20%'}}>
-                            <Dropdown value={props.profile.level} label="Level *" options={levels} onChange={props.onLevelChanged}
+                            <Dropdown value={props.profile.level} type="Level" label="Level *" options={levels} onChange={props.onLevelChanged}
                                       error={props.errors.levelError}/>
                         </div>
                         <div className="p-0 mb-0" style={{width: '20%'}}>
-                            <Dropdown value={props.profile.location} label="Location *" options={candidate_location}
+                            <Dropdown value={props.profile.location} type="Location" label="Location *" options={candidate_location}
                                       onChange={props.onLocationChanged}
                                       error={props.errors.locationError}
                             />

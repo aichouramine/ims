@@ -3,6 +3,7 @@ import classes from './Dropdown.module.css';
 import {levels} from "../../../enums/levels";
 import {candidate_location} from "../../../enums/candidate_location";
 import {english_levels} from "../../../enums/english_levels";
+import {candidate_status} from "../../../enums/candidate_status";
 
 const dropdown = (props) => {
     let options = []
@@ -11,12 +12,14 @@ const dropdown = (props) => {
     }
 
     let category = null;
-    if(props.label.includes("Level")){
+    if(props.type === "Level"){
         category = {...levels}
-    } else if(props.label.includes("Location")){
+    } else if(props.type === "Location"){
         category = {...candidate_location}
-    } else if(props.label === "English"){
-        category = {english_levels}
+    } else if(props.type === "English"){
+        category = {...english_levels}
+    } else if(props.type === "Status"){
+        category = {...candidate_status}
     }
 
     let attachedClass = classes.dropdown
@@ -26,11 +29,16 @@ const dropdown = (props) => {
         labelAttachedClass = `${classes.label} ${classes.label__error}`
     }
 
+    let value = "Select";
+    if(props.value){
+       value = category[props.value]
+    }
+
     return(
         <div>
             <label className={labelAttachedClass}>{props.label}</label>
             <select className={`${attachedClass} form-control`} {...props}
-                    value={category[props.value]}>
+                    value={value}>
                 <option >Select...</option>
                 {options.map((o, ind) => (
                     <option key={ind} >{o}</option>

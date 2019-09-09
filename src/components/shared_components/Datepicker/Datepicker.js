@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import DatePicker from "react-datepicker";
 import Hoc from '../../../hoc/Hoc'
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
@@ -8,12 +8,15 @@ import moment from 'moment';
 const datepicker = props => {
     const [date, setDate] = useState(props.date);
 
+    useEffect(() =>{
+        setDate(props.date)
+    }, [props.date])
+
     function handleDateChange(day) {
+        setDate(day)
         if(props.onChangeDate){
             props.onChangeDate(day)
         }
-
-        setDate(day)
     }
 
     let labelAttachedClass = classes.label
@@ -36,9 +39,9 @@ const datepicker = props => {
                         onChange={day => handleDateChange(day)}
                         timeFormat="HH:mm"
                         timeIntervals={15}
-                        dateFormat="MMMM d, yyyy h:mm a"
+                        dateFormat={props.dateFormat}
                         timeCaption="Time"
-                        // showTimeInput
+                        showTimeInput={props.showTimeInput}
                         // minDate={new Date()}
                         // calendarContainer={MyContainer}
                         // calendarClassName={classes.input__error}

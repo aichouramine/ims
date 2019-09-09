@@ -69,7 +69,7 @@ const interviewsTable = (props) => {
                     </td>
                     <td className={classes.level}>{levels[int.candidate.level]}</td>
                     <td>{locations[int.candidate.location]}</td>
-                    <td>{moment(int.date).format("DD-MMMM-YY, HH:mm a")}</td>
+                    <td>{moment(int.date).format("DD-MMMM-YY, HH:mm")}</td>
                     <td>
                     {printInterviewers(int.interviewers)}
                     </td>

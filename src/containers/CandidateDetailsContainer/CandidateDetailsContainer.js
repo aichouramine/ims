@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CandidateDetails from '../../components/CandidateDetails/CandidateDetails';
 import {getInterviewDateByCandidateId} from '../../api/axios-interviews';
-import {updateCandidate} from '../../api/axios-candidates';
+import {updateCandidate, getCandidateInfo} from '../../api/axios-candidates';
 import { toast, ToastContainer } from "react-toastify";
 import Hoc from '../../hoc/Hoc'
 
@@ -26,6 +26,7 @@ class CandidateDetailsContainer extends Component{
     componentDidMount(){
         this._isMounted = true;
         window.scrollTo(0, 0)
+
         // getCandidateInfo(230)
         //     .then(response => {
         //         this.setState({
@@ -76,9 +77,6 @@ class CandidateDetailsContainer extends Component{
                     }
                 )
             )
-            // .finally(() => {
-            //     this.props.history.goBack();
-            // })
     }
 
     componentWillUnmount() {

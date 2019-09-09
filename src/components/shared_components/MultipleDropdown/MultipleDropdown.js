@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Select from 'react-select'
 import classes from './MultipleDropdown.module.css';
 import Hoc from '../../../hoc/Hoc';
@@ -7,14 +7,26 @@ import makeAnimated from 'react-select/animated';
 
 const animatedComponents = makeAnimated();
 
-const multipleDropdown = props => {
-    let selected = props.selectedInterviewers && props.selectedInterviewers.length > 0 ? props.selectedInterviewers : []
+const multipleDropdown = props =>{
+    const [selected, set] = useState(props.selectedInterviewers)
+    // let selected = props.selectedInterviewers && props.selectedInterviewers.length > 0 ? props.selectedInterviewers : []
+
+    useEffect(() =>{
+        set(props.selectedInterviewers)
+    }, [props.selectedInterviewers])
 
     let attachedColor = 'rgb(225, 229, 235);'
     let labelAttachedClass = classes.label
     if(props.error){
         labelAttachedClass = `${classes.label} ${classes.label__error}`
         attachedColor = '#c4183c'
+    }
+
+    function onInterviewersChange(e){
+        set(e);
+        if(props.onChange){
+            props.onChange(e)
+        }
     }
 
     const customStyles = {
@@ -71,7 +83,7 @@ const multipleDropdown = props => {
             {/*{console.log(selected[0])}*/}
             <label className={labelAttachedClass}>Interviewers *</label>
             <Select
-                // renderValue={selected || ''}
+                value={selected}
                 isMulti
                 // components={animatedComponents}
                 styles={customStyles}
@@ -80,11 +92,11 @@ const multipleDropdown = props => {
                 className={classes["basic-multi-select"]}
                 classNamePrefix={classes["react-select"]}
                 isSearchable
-                onChange={props.onChange}
+                onChange={onInterviewersChange}
             />
             <div className={classes.invalidFeedback}>{props.error}</div>
         </Hoc>
     )
 }
 
-export default Radium(multipleDropdown);
+export default multipleDropdown;

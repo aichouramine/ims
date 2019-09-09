@@ -79,6 +79,12 @@
     font-weight: 600;
 }
 
+:global .react-datepicker-time__caption{
+    font-size: 12px;
+    font-weight: 600;
+    color: #3d5170;
+}
+
 /*:global .react-datepicker__month{*/
     /*padding: 10px 15px !important;*/
     /*margin: 0.4rem !important;*/

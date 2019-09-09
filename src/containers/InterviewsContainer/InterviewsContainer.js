@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Hoc from '../../hoc/Hoc'
 import InterviewsView from '../../components/InterviewsView/InterviewsView';
-import Modal from '../../components/UI/Modal/Modal';
-import InterviewDetails from '../../components/InterviewsView/InterviewDetails/InterviewDetails'
 import * as interviewsActions from '../../store/actions/interviewsIndex';
 import * as interviewersActions from "../../store/actions/interviewersIndex";
 import {deleteInterview, getInterviews} from "../../api/axios-interviews";
@@ -24,8 +22,8 @@ class InterviewsContainer extends Component{
         this.addNewHandler = this.addNewHandler.bind(this)
         this.addNewCancelHandler = this.addNewCancelHandler.bind(this)
         this.updateUrl = this.updateUrl.bind(this)
-        this.editCancelHandler = this.editCancelHandler.bind(this)
-        this.editInterviewHandler = this.editInterviewHandler.bind(this)
+        // this.editCancelHandler = this.editCancelHandler.bind(this)
+        // this.editInterviewHandler = this.editInterviewHandler.bind(this)
         this.removeInterviewRecord = this.removeInterviewRecord.bind(this)
     }
 
@@ -67,16 +65,6 @@ class InterviewsContainer extends Component{
         this.setState({showNew: false})
     }
 
-    editInterviewHandler(obj){
-        this.setState((prevState, props) => ({
-            showDetails: true,
-            interviewDetails: obj
-        }));
-    }
-
-    editCancelHandler(){
-        this.setState({showDetails: false})
-    }
 
     updateUrl(url){
         this.props.history.push(`?${url}`);
@@ -122,12 +110,6 @@ class InterviewsContainer extends Component{
     render(){
         return (
             <Hoc>
-                <Modal show={this.state.showDetails} modalClosed={this.editCancelHandler}>
-                    <InterviewDetails
-                        interviewers={this.props.interviewers}
-                        interviewDetails={this.state.interviewDetails}
-                        cancel={this.editCancelHandler}/>
-                </Modal>
                 <InterviewsView addNew={this.addNewHandler}
                                 interviews={this.state.interviews}
                                 removeInterview={this.removeInterviewRecord}
@@ -137,6 +119,7 @@ class InterviewsContainer extends Component{
                                 history={this.props.history}
                                 onEditInterview={this.editInterviewHandler}
                                 seeCandidateDetails={this.seeCandidateProfile}
+                                interviewers={this.props.interviewers}
                 />
                 <ToastContainer
                     position="bottom-right"

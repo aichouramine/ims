@@ -14,13 +14,14 @@
 .summary_body{
     list-style: none;
     width: 100%;
-    padding: 10px 15px;
+    /*padding: 10px 15px;*/
+    font-size: 13px;
 }
 
 .summary_body__row{
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    /*font-size: 14px;*/
     padding: 5px 0;
     color: #3d5170;
 }
