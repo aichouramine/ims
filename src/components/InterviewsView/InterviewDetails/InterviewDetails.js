@@ -12,10 +12,32 @@ const initialState = {
     errors: {
         dateError: '',
         interviewersError: '',
-    }
+    },
+    comment: ""
 }
 
 const interviewDetails = props => {
+    const [interviewEntity, update] = useState({
+        date: moment(new Date()).format("YYYY-MM-DDThh:mm:ss+03:00"),
+        status: "SCHEDULED",
+        comment: null
+    });
+
+    const [interviewers, updateInterviewers] = useState([]);
+
+    // const [comment, setComment] = useState(initialState.comment);
+
+    useEffect(() => {
+        let selectedInterviewers = props.interviewDetails.interviewers ? props.interviewDetails.interviewers.map(interviewer => {
+            return {
+                label: `${interviewer.firstname} ${interviewer.lastname}`,
+                value: interviewer.id,
+            }
+        }) : [];
+
+        update(props.interviewDetails);
+        updateInterviewers(selectedInterviewers)
+    }, [props.interviewDetails]);
 
     const details = props.interviewDetails.candidate ? props.interviewDetails.candidate : {}
 
@@ -26,45 +48,76 @@ const interviewDetails = props => {
         }
     }) : [];
 
-    let selectedInterviewers = props.interviewDetails.interviewers ? props.interviewDetails.interviewers.map(interviewer => {
-        return {
-            label: `${interviewer.firstname} ${interviewer.lastname}`,
-            value: interviewer.id,
-        }
-    }) : [];
+
 
     function onInterviewersChanged(e) {
-        // let updated = {
-        //     ...interviewEntity
-        // };
-        //
+        let updated = {
+            ...interviewEntity
+        };
+
         // let errors = {
         //     ...errorsEntity
         // }
-        //
-        // if(e){
-        //     updated.interviewers = e.map(interviewer => {
-        //         return {id: interviewer.value}
-        //     });
-        //
-        //     errors.interviewersError = ''
-        //
-        //     setErrors(errors)
-        // }
-        // else {
-        //     updated.interviewers = [];
-        // }
-        //
-        // update(updated);
 
-        console.log(e)
+        if(e){
+            updated.interviewers = e.map(interviewer => {
+                return {id: interviewer.value}
+            });
+
+            // errors.interviewersError = ''
+            //
+            // setErrors(errors)
+        }
+        else {
+            updated.interviewers = [];
+        }
+
+        update(updated);
+
+    }
+
+    function onDateChanged(date){
+        let updated = {
+            ...interviewEntity
+        }
+
+        // let errors = {
+        //     ...errorsEntity
+        // }
+
+        updated.date = moment(date).format("YYYY-MM-DDThh:mm:ss+03:00");
+        // errors.dateError = '';
+
+        update(updated);
+        // setErrors(errors)
+    }
+
+    function onCommentChanged(event) {
+        let updated = {
+            ...interviewEntity
+        }
+
+        updated.comment = event.target.value;
+
+        update(updated);
+
+        // setComment(updated)
+    }
+
+    function updateInterview() {
+        console.log(interviewEntity)
+    }
+
+    function close() {
+        // setComment(initialState.comment);
+        props.onClose();
     }
 
     return(
         <div className={`${classes.card} h-100 `}>
             <div className={`${classes.card_header} ${classes.border_bottom}`}>
                 <h6 className="m-0">Details</h6>
-                <div className={classes.cancel} onClick={props.onClose}>
+                <div className={classes.cancel} onClick={close}>
                     <i className="material-icons">clear</i>
                 </div>
             </div>
@@ -99,6 +152,7 @@ const interviewDetails = props => {
                                             error={false}
                                             dateFormat="MMMM d, yyyy, HH:mm"
                                             showTimeInput={true}
+                                            onChangeDate={onDateChanged}
                                             />
                                     </div>
                                 </div>
@@ -109,14 +163,14 @@ const interviewDetails = props => {
                                         label="Interviewers *"
                                         onChange={onInterviewersChanged}
                                         list={list}
-                                        selectedInterviewers={selectedInterviewers}
+                                        selectedInterviewers={interviewers}
                                         error={false}
                                     />
                                 </div>
                             </div>
                             <div className={classes.form_group_wrapper} style={{paddingTop: '10px', paddingBottom: '10px'}}>
                                 <Input inputtype="textarea" label="Comment" type="text" placeholder="Comment"
-                                       rows="4" style={{resize: 'none', width: '100%'}} value={props.interviewDetails.comment || ''}/>
+                                       rows="4" style={{resize: 'none', width: '100%'}} value={interviewEntity.comment || ''} onChange={onCommentChanged}/>
                             </div>
                         </div>
 
@@ -126,7 +180,7 @@ const interviewDetails = props => {
             <div className={`${classes.card_footer} ${classes.border_top}`}>
                 <div style={{display: 'flex', justifyContent: 'flex-end'}}>
                     <input type="submit" className={`mb-2 mr-1 btn btn-primary btn-sm ${classes.action_button}`}
-                           value="Save"/>
+                           value="Save" onClick={updateInterview}/>
                     <input type="submit"
                            className={`mb-2 mr-1 btn btn-outline-secondary btn-sm ${classes.action_button} ${classes.action_button__cancel}`}
                            value="Cancel" onClick={props.cancel}/>

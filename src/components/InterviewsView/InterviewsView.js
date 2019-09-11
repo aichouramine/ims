@@ -21,14 +21,20 @@ const interviewsView = (props) => {
         set(false);
     }
 
-    return (
-        <Hoc>
-            <Modal show={showDetails} modalClosed={editCancelHandler}>
+    function showModal() {
+        return showDetails && (
+            <Modal show={true} modalClosed={editCancelHandler}>
                 <InterviewDetails
                     interviewers={props.interviewers}
                     interviewDetails={interviewDetails}
                     cancel={editCancelHandler}/>
             </Modal>
+        )
+    }
+
+    return (
+        <Hoc>
+            {showModal()}
             <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
                 <PageHeader subtitle="Statistic" title="Interviews"/>
                 <div style={{width: '200px'}} className="d-flex justify-content-end">
