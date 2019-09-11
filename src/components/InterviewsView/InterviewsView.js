@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import InterviewsTable from './InterviewsTable/InterviewsTable';
 import classes from './InterviewsView.module.css';
 import CandidatesFilterControls from './InterviewsFilterControls/InterviewsFilterControls';
@@ -22,8 +22,8 @@ const interviewsView = (props) => {
     }
 
     function showModal() {
-        return showDetails && (
-            <Modal show={true} modalClosed={editCancelHandler}>
+        return (
+            <Modal show={showDetails} modalClosed={editCancelHandler}>
                 <InterviewDetails
                     interviewers={props.interviewers}
                     interviewDetails={interviewDetails}

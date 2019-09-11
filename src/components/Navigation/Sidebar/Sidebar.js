@@ -2,29 +2,56 @@ import React from 'react';
 import classes from './Sidebar.module.css'
 import MenuRow from './MenuRow/MenuRow'
 
-const sidebar = (props) => (
-    <aside className={`${classes.Sidebar} px-0 col-12 col-md-3 col-lg-2`}>
-        <div>
-            <nav className={`${classes.Main_Logo} align-items-stretch bg-white flex-md-nowrap border-bottom p-0 navbar navbar-light`}>
-                <div className="w-100 mr-0 navbar-brand" style={{display: "flex", justifyContent: "center", alignItems: "center"}} >
-                    {/*<div className={classes.Logo}/>*/}
-                    <span style={{color: "#3d5170", fontWeight: 600}}>QA Interview</span>
+const sidebar = () => {
+    function toggle() {
+        if (document.documentElement.hasAttribute('theme')) {
+            document.documentElement.removeAttribute('theme');
+        }
+        else {
+            document.documentElement.setAttribute('theme', 'dark');
+        }
+    }
+
+    return(
+        <aside className={`${classes.Sidebar} px-0 col-12 col-md-3 col-lg-2`}>
+            <div>
+                <nav
+                    className={`${classes.Main_Logo} align-items-stretch bg-white flex-md-nowrap border-bottom p-0 navbar navbar-light`}>
+                    <div className="w-100 mr-0 navbar-brand"
+                         style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                        {/*<div className={classes.Logo}/>*/}
+                        <span style={{color: "#3d5170", fontWeight: 600}}>QA Interview</span>
+                    </div>
+                </nav>
+            </div>
+            <nav className={classes.Menu_wrapper}>
+                <ul className="nav flex-column">
+                    <MenuRow title="Dashboard" navLink="/" icon="insert_chart_outlined"/>
+                    <MenuRow title="Interviewers" navLink="/interviewers" icon="people"/>
+                    <MenuRow title="Candidates" navLink="/candidates" icon="person"/>
+                    <MenuRow title="Interviews" navLink="/interviews" icon="table_chart"/>
+                    <MenuRow title="Schedule" navLink="/schedule" icon="insert_invitation"/>
+                    {/*<MenuRow title="Interview Follow-Ups" navLink="/feedbacks" icon="create"/>*/}
+                    {/*<MenuRow title="QA Needs" navLink="/needs" icon="how_to_reg"/>*/}
+                    {/*<MenuRow title="Help" navLink="/" icon="question_answer"/>*/}
+                </ul>
+                {/*<div className="boxes">*/}
+                    {/*<input type="checkbox" id="mode" onChange={toggle}/>*/}
+                    {/*<label className="label-for-check" htmlFor="mode">Enable Dark Mode!</label>*/}
+                {/*</div>*/}
+                <div className={classes.slider_wrapper}>
+                    <div className="d-flex flex-row justify-content-center align-items-center " style={{margin: '10px 0'}}>
+                        <label className={classes.switch}>
+                            <input type="checkbox" onChange={toggle}/>
+                            <span className={`${classes.slider} ${classes.round}`}></span>
+                        </label>
+                        <label style={{fontSize: '0.8em'}} htmlFor="mode">Enable Dark Mode!</label>
+                    </div>
                 </div>
+                {/*<input onClick={toggle} type="button" value="Light/Dark" id="toggle-theme"/>*/}
             </nav>
-        </div>
-        <nav className={classes.Menu_wrapper}>
-            <ul className="nav flex-column">
-                <MenuRow title="Dashboard" navLink="/" icon="insert_chart_outlined"/>
-                <MenuRow title="Interviewers" navLink="/interviewers" icon="people"/>
-                <MenuRow title="Candidates" navLink="/candidates" icon="person"/>
-                <MenuRow title="Interviews" navLink="/interviews" icon="table_chart"/>
-                <MenuRow title="Schedule" navLink="/schedule" icon="insert_invitation"/>
-                {/*<MenuRow title="Interview Follow-Ups" navLink="/feedbacks" icon="create"/>*/}
-                {/*<MenuRow title="QA Needs" navLink="/needs" icon="how_to_reg"/>*/}
-                {/*<MenuRow title="Help" navLink="/" icon="question_answer"/>*/}
-            </ul>
-        </nav>
-    </aside>
-);
+        </aside>
+    )
+};
 
 export default sidebar;

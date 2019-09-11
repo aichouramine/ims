@@ -39,6 +39,8 @@ const interviewDetails = props => {
         updateInterviewers(selectedInterviewers)
     }, [props.interviewDetails]);
 
+
+
     const details = props.interviewDetails.candidate ? props.interviewDetails.candidate : {}
 
     let list = props.interviewers ? props.interviewers.map(interviewer => {
