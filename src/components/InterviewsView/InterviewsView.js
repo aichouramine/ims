@@ -18,6 +18,7 @@ const interviewsView = (props) => {
     }
 
     function editCancelHandler(){
+        setDetails({})
         set(false);
     }
 
