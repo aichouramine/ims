@@ -15,7 +15,7 @@
 
 .Card_header{
     padding: 1rem;
-    color: #3d5170;
+    /*color: #3d5170;*/
     background-color: #fff;
 }
 
@@ -47,7 +47,7 @@
 
 .View_report div {
     text-decoration: none;
-    color: #3d5170;
+    /*color: #3d5170;*/
     font-weight: 600;
 }
 

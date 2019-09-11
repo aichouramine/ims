@@ -9,7 +9,7 @@
 }
 
 .Text_fiord_blue{
-    color: #3d5170!important;
+    color: var(--text-color-normal) !important;
 }
 
 .Text_reagent_gray{

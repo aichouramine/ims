@@ -13,7 +13,6 @@
 
 .Card_header{
     padding: 1rem;
-    color: #3d5170;
     background-color: #fff;
 }
 
@@ -45,7 +44,6 @@
 
 .total {
     text-decoration: none;
-    color: #3d5170;
     font-weight: 600;
     padding-right: 25px;
 }

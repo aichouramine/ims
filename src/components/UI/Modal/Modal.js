@@ -9,8 +9,6 @@ const modal = (props) => {
         opacity: props.show ? '1' : '0'
     }
 
-
-
     return(
         <Hoc>
             <Backdrop show={props.show} clicked={props.modalClosed}/>

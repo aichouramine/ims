@@ -1,3 +1,10 @@
+:root {
+  --red: #ff6f69;
+  --beige: #ffeead;
+  --yellow: #ffcc5c;
+  --text-color-normal: #3d5170;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -5,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f5f6f8;
-  color: #3d5170;
+  color: var(--text-color-normal);
 
 }
 

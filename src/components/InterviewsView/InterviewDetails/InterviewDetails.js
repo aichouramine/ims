@@ -48,8 +48,6 @@ const interviewDetails = props => {
         }
     }) : [];
 
-
-
     function onInterviewersChanged(e) {
         let updated = {
             ...interviewEntity
