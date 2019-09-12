@@ -2,6 +2,12 @@
     padding: .625rem 1rem;
     font-size: .8125rem;
     justify-content: space-between !important;
+    background-color: var(--card-bg-color);
+    border-top: 1px solid var(--border-color);
+}
+
+.List_item:first-child{
+    border-top: 0;
 }
 
 .Text_semibold{
@@ -9,9 +15,9 @@
 }
 
 .Text_fiord_blue{
-    color: var(--text-color-normal) !important;
+    color: var(--font-color) !important;
 }
 
 .Text_reagent_gray{
-    color: #818ea3!important;
+    color: var(--font-color)!important;
 }

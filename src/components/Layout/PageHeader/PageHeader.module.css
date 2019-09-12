@@ -1,6 +1,6 @@
 .page_subtitle{
     letter-spacing: .125rem;
-    color: #818ea3;
+    color: var(--page-subtitle-color);
     font-size: .625rem;
 }
 
@@ -10,5 +10,5 @@
     line-height: 1;
     margin: 0;
     padding: 0;
-    color: var(--text-color-normal);
+    color: var(--font-color);
 }

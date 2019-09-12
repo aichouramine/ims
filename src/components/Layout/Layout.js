@@ -7,7 +7,7 @@ const layout = (props) => (
             <main className={`${classes.Content} main-content-container container-fluid px-5 mb-4`}>
                 {props.children}
             </main>
-            <footer style={{height: '3.75rem'}} className="d-flex p-2 px-3 bg-white border-top align-items-center flex-shrink-0">
+            <footer style={{height: '3.75rem'}} className="d-flex p-2 px-3 border-top align-items-center flex-shrink-0">
                 <div className="container-fluid">
                     <span style={{fontSize: '12px'}}>ignatovich.dm@gmail.com</span>
                 </div>

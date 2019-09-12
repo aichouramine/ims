@@ -2,26 +2,32 @@
     height: auto;
     font-size: .8125rem;
     line-height: 1.5;
-    color: #3d5170;
+    color: var(--font-color);
     font-weight: 400;
     will-change: border-color,box-shadow;
     /*border-radius: .25rem;*/
     box-shadow: none;
     outline: none;
-    padding: 15px 0;
+    margin: 15px 0;
     transition: box-shadow .25s cubic-bezier(.27,.01,.38,1.06),border .25s cubic-bezier(.27,.01,.38,1.06);
 }
 
 .Page_link{
-    color: #4366e0;
+    color: var(--font-color);
     font-weight: 400;
     text-decoration: none;
+    background-color: var(--nav-bg-color) !important;
     cursor: pointer;
+}
+
+.Page_link:hover{
+    color: var(--font-color);
+    font-weight: 700;
 }
 
 .active_page_link{
     color: #ffffff;
-    background-color: #4366e0;
+    background-color: var(--pagination-item-bg-color) !important;
 }
 
 .active_page{

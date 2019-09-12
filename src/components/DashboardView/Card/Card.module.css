@@ -10,14 +10,14 @@
 .Stats_small_label{
     font-size: .75rem;
     letter-spacing: .0625rem;
-    color: #818ea3;
+    color: var(--font-color);
     font-weight: 600;
 }
 
 .Stats_small_value{
     font-size: 2.0625rem;
     font-weight: 500;
-    color: #3d5170;
+    color: var(--card-title-color);
 }
 
 .Stats_small_data{

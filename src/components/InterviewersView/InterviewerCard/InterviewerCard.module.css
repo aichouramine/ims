@@ -1,9 +1,9 @@
 .card{
-    background-color: #fff;
+    background-color: var(--card-bg-color);
     border: none;
     border-radius: .625rem;
     position: relative;
-    color: #818ea3;
+    color: var(--font-color);
     display: flex;
     flex-direction: column;
     min-width: 0;
@@ -11,7 +11,7 @@
     background-clip: initial;
     width: 100%;
     transition: all .2s ease-in-out;
-    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
+    box-shadow: 0 0.125rem 0.625rem rgba(4, 4, 9, 0.12);
 }
 
 .card > ul {
@@ -58,7 +58,7 @@
 .right_info__field_name{
     font-size: 18px;
     font-weight: 600;
-    color: #425476;
+    color: var(--card-title-color);
     padding-left: 0;
     margin-bottom: 5px;
 }

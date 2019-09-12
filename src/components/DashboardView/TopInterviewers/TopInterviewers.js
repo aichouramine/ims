@@ -21,7 +21,7 @@ const topInterviewers = props => {
                 <h6 className="m-0">Top 5 Interviewers</h6>
             </div>
             <div className="d-flex p-0 card-body">
-                <ul className="list-group-small list-group list-group-sm list-group-flush w-100">
+                <ul className={`list-group-small list-group list-group-sm list-group-flush w-100`}>
                     {interviewers}
                 </ul>
             </div>

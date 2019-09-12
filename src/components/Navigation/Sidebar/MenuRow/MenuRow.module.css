@@ -15,12 +15,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 1px solid #e1e5eb;
+    border-bottom: 1px solid var(--nav-border-color);
     font-weight: 400;
-    color: #3d5170;
+    color: var(--font-color);
     padding: .9375rem 1.5625rem;
 }
 
 .NavLink i {
     font-size: 22px;
+}
+
+.NavLink:hover{
+    color: var(--nav-item-hover-color);
+    font-weight: 700;
 }

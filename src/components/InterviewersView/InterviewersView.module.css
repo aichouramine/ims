@@ -36,7 +36,7 @@
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 1.4;
-    color: #818ea3;
+    color: var(--page-subtitle-color);
 }
 
 .interviewers_view__body{
@@ -63,13 +63,13 @@ ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #818ea3;
+    color: var(--page-subtitle-color);
     cursor: pointer;
     padding: 0 5px 20px 0;
 }
 
 .toggle_wrapper::before{
-    background: #818ea3;
+    background: var(--page-subtitle-color);
     content: "";
     display: inline-block;
     height: 24px;
@@ -78,7 +78,7 @@ ul {
 }
 
 .toggle_wrapper__view{
-    color: #818ea3;
+    color: var(--page-subtitle-color);
     cursor: pointer;
 
 }
@@ -93,15 +93,15 @@ ul {
 }
 
 .toggle_wrapper__grid:hover{
-    color: #007bff;
+    color: var(--pagination-item-bg-color);
 }
 
 .toggle_wrapper__list:hover{
-    color: #007bff;
+    color: var(--pagination-item-bg-color);
 }
 
 .active_view{
-    color: #007bff;
+    color: var(--pagination-item-bg-color);
 }
 
 /*@media (min-width: 1000px) and (min-height: 700px) {*/

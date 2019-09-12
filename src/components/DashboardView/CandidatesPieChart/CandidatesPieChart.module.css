@@ -1,7 +1,6 @@
 .Card_header{
     padding: 1rem;
-    color: #3d5170;
-    background-color: #fff;
+    background-color: var(--card-bg-color);
 }
 
 .Card_header:first-child{

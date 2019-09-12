@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Toolbar.module.css';
 
 const toolbar = (props) => (
-    <div className={`${classes.Toolbar} sticky-top bg-white`}>
+    <div className={`${classes.Toolbar} sticky-top`}>
         <nav className="navbar align-items-stretch navbar-light flex-md-nowrap p-0" style={{height: "3.75rem"}}>
             {/*<form className="main-navbar__search d-none d-md-flex d-lg-flex">*/}
                 {/*<div className={`${classes.Input_group} input-group input-group-seamless ml-3`}>*/}

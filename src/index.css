@@ -6,7 +6,7 @@
   --main-hue: var(--red-hue);
   --theme-darkness: 1;
   --text-color-normal: #3d5170;
-  --nav-bg-color: hsl(var(--main-hue), 50%, 50%);
+
   --nav-text-color: hsl(var(--main-hue), 50%, 10%);
   --container-bg-color: hsl(var(--main-hue), 50%, 95%);
 
@@ -15,7 +15,22 @@
   --footer-bg-color: hsl(var(--main-hue), 93%, 88%);
 
   --button-text-color: hsl(var(--main-hue), 50%, 20%);
-  filter: brightness(var(--theme-darkness));
+  /*filter: brightness(var(--theme-darkness));*/
+
+  --primary-color: #fff;
+  --secondary-color: #536390;
+
+  --font-color: #3d5170;
+  --page-subtitle-color: #818ea3;
+  --bg-color: #f5f6f8;
+  --footer-color: var(--primary-color);
+  --nav-bg-color: var(--primary-color);
+  --nav-border-color: #e1e5eb;
+  --nav-item-hover-color: #3e6996;
+  --pagination-item-bg-color: #4366e0;
+  --card-bg-color: var(--primary-color);
+  --border-color: #e0e0e0;
+  --card-title-color: #3d5170;
 }
 
 :root[theme='dark'] {
@@ -26,7 +41,6 @@
   --main-hue: var(--blue-hue);
   --theme-darkness: 1;
 
-  --nav-bg-color: hsl(var(--main-hue), 50%, 90%);
   --nav-text-color: hsl(var(--main-hue), 50%, 10%);
   --container-bg-color: hsl(var(--main-hue), 50%, 95%);
 
@@ -37,7 +51,22 @@
 
   --button-text-color: hsl(var(--main-hue), 50%, 20%);
 
-  filter: invert(1) brightness(var(--theme-darkness));
+  /*filter: invert(1) brightness(var(--theme-darkness));*/
+
+  --primary-color: #fff;
+  --secondary-color: #818cab;
+
+  --font-color: var(--primary-color);
+  --page-subtitle-color: #e2e2e2;
+  --bg-color: #1f1f1f;
+  --nav-bg-color: #2a2a2a;
+  --footer-color: #2a2a2a;
+  --nav-border-color: var(--primary-color);;
+  --nav-item-hover-color: #be7500;
+  --pagination-item-bg-color: #be7500;
+  --card-bg-color: #2a2a2a;
+  --border-color: #e2e2e2;
+  --card-title-color: #be7500;
 }
 
 body {
@@ -46,13 +75,13 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f5f6f8;
-  color: var(--text-color-normal);
+  background-color: var(--bg-color);
+  color: var(--font-color);
 
 }
 
 nav{
-  background: #ffffff;
+  background: var(--nav-bg-color);
 }
 
 code {

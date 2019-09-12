@@ -37,11 +37,11 @@ const sidebar = () => {
         <aside className={`${classes.Sidebar} px-0 col-12 col-md-3 col-lg-2`}>
             <div>
                 <nav
-                    className={`${classes.Main_Logo} align-items-stretch bg-white flex-md-nowrap border-bottom p-0 navbar navbar-light`}>
+                    className={`${classes.Main_Logo} align-items-stretch flex-md-nowrap border-bottom p-0 navbar `}>
                     <div className="w-100 mr-0 navbar-brand"
                          style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                         {/*<div className={classes.Logo}/>*/}
-                        <span style={{color: "#3d5170", fontWeight: 600}}>QA Interview</span>
+                        <span style={{fontWeight: 600}}>QA Interview</span>
                     </div>
                 </nav>
             </div>
