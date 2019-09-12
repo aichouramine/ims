@@ -1,14 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import classes from './Sidebar.module.css'
 import MenuRow from './MenuRow/MenuRow'
 
 const sidebar = () => {
-    function toggle() {
-        if (document.documentElement.hasAttribute('theme')) {
-            document.documentElement.removeAttribute('theme');
+    const [checked, set] = useState(null);
+
+    useEffect(() => {
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+
+            if (currentTheme === 'dark') {
+                set(true)
+                document.documentElement.setAttribute('theme', 'dark');
+            } else {
+                set(false)
+            }
+        }
+    }, []);
+
+    function toggle(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('theme', 'dark');
+            localStorage.setItem('theme', 'dark')
+            set(true)
         }
         else {
-            document.documentElement.setAttribute('theme', 'dark');
+            document.documentElement.removeAttribute('theme');
+            localStorage.setItem('theme', 'light')
+            set(false)
         }
     }
 
@@ -35,20 +56,15 @@ const sidebar = () => {
                     {/*<MenuRow title="QA Needs" navLink="/needs" icon="how_to_reg"/>*/}
                     {/*<MenuRow title="Help" navLink="/" icon="question_answer"/>*/}
                 </ul>
-                {/*<div className="boxes">*/}
-                    {/*<input type="checkbox" id="mode" onChange={toggle}/>*/}
-                    {/*<label className="label-for-check" htmlFor="mode">Enable Dark Mode!</label>*/}
-                {/*</div>*/}
                 <div className={classes.slider_wrapper}>
                     <div className="d-flex flex-row justify-content-center align-items-center " style={{margin: '10px 0'}}>
                         <label className={classes.switch}>
-                            <input type="checkbox" onChange={toggle}/>
+                            <input type="checkbox" id="checkbox" onChange={toggle} checked={checked}/>
                             <span className={`${classes.slider} ${classes.round}`}></span>
                         </label>
                         <label style={{fontSize: '0.8em'}} htmlFor="mode">Enable Dark Mode!</label>
                     </div>
                 </div>
-                {/*<input onClick={toggle} type="button" value="Light/Dark" id="toggle-theme"/>*/}
             </nav>
         </aside>
     )
