@@ -50,7 +50,7 @@ const introduction = props => {
                                 <span>100%</span>
                             </div>
                             <div className={`${classes.progress} ${classes.progress_sm}`}>
-                                <div className="progress-bar bg-primary progress-value" role="progressbar" aria-valuenow="100"
+                                <div className="progress-bar progress-value" role="progressbar" aria-valuenow="100"
                                      aria-valuemin="0" aria-valuemax="100" style={{width: "100%"}}>
                                 </div>
                             </div>

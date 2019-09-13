@@ -1,8 +1,8 @@
 .label{
     display: block;
-    color: #3d5170;
+    color: var(--font-color);
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
     box-sizing: border-box;
 }
 
@@ -11,15 +11,13 @@
     width: 100%;
     font-size: 0.8125rem;
     line-height: 1.5;
-    color: rgb(73, 80, 87);
-    background-color: rgb(255, 255, 255);
+    color: var(--page-subtitle-color);
+    background-color: var(--input-bg-color);
     font-weight: 300;
     will-change: border-color, box-shadow;
     box-shadow: none;
     padding: 0.4375rem 0.75rem;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(225, 229, 235);
+    border: 1px solid var(--border-color);
     border-image: initial;
     border-radius: 0.25rem;
     transition: box-shadow 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s, border 0.25s cubic-bezier(0.27, 0.01, 0.38, 1.06) 0s;
@@ -48,5 +46,6 @@
 }
 
 .custom_form_control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    font-size: 11px;
+    font-size: 10px;
+    color: var(--page-subtitle-color);
 }

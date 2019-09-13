@@ -1,6 +1,5 @@
 .label{
     display: block;
-    color: #3d5170;
     font-size: 13px;
     font-weight: 400;
     box-sizing: border-box;
@@ -12,9 +11,9 @@
     padding: .4375rem .75rem;
     font-size: .8125rem;
     line-height: 1.5;
-    color: #3d5170;
-    background-color: #fff;
-    border: 1px solid #e1e5eb;
+    color: var(--page-subtitle-color);
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--border-color);
     font-weight: 300;
     will-change: border-color,box-shadow;
     border-radius: .25rem;
@@ -42,14 +41,17 @@
 
 select:focus{
     outline:none;
+    background-color: var(--input-bg-color);
 }
 
 select:active{
     outline: none;
+    background-color: var(--input-bg-color);
 }
 
 .dropdown::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-size: 11px;
+    color: var(--page-subtitle-color);
 }
 
 select.form-control:not([size]):not([multiple]) {

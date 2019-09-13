@@ -11,7 +11,7 @@ const candidatesView = props => {
             <div className="page-header no-gutters py-4 row mb-5 d-flex justify-content-between align-items-center ">
                 <PageHeader subtitle="People" title="Candidates"/>
                 <div style={{width: '200px'}} className="d-flex justify-content-end">
-                    <button className="btn btn-primary d-flex align-items-center" style={{width: '120px', fontSize: '14px'}}
+                    <button className={`btn btn-primary d-flex align-items-center ${classes.btn}` } style={{width: '120px', fontSize: '14px'}}
                             onClick={props.addNewCandidate}>
                         <i className="material-icons" style={{fontSize: '14px', paddingRight: '5px'}}>add_circle_outline</i>
                         Add new

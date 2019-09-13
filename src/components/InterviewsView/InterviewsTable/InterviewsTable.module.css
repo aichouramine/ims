@@ -5,6 +5,7 @@
     overflow: scroll;
     text-align: center;
     font-size: 0.8rem;
+    color: var(--font-color);
 }
 
 .Table > thead > tr > th {
@@ -32,7 +33,7 @@
 .name span{
     width: 200px;
     text-decoration: underline;
-    color: #0066cc;
+    color: var(--name-link-color);
     font-weight: 500;
     cursor: pointer;
 }
@@ -41,9 +42,10 @@
     font-size: 16px;
 }
 
-.name:hover{
+.name span:hover{
     cursor: pointer;
-    /*transform: scale(1.1) ;*/
+    transform: scale(1.04);
+    font-weight: 700;
 }
 
 .level{

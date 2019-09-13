@@ -1,5 +1,5 @@
 .card{
-    background-color: #fff;
+    background-color: var(--card-bg-color);
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -9,14 +9,13 @@
     word-wrap: break-word;
     background-clip: border-box;
     border: none;
-    color: #3d5170;
     border-radius: .625rem;
     /*border-top-right-radius: 0;*/
-    box-shadow: 0 0.46875rem 2.1875rem rgba(90,97,105,.1), 0 0.9375rem 1.40625rem rgba(90,97,105,.1), 0 0.25rem 0.53125rem rgba(90,97,105,.12), 0 0.125rem 0.1875rem rgba(90,97,105,.1)
+    box-shadow: 0 0.125rem 0.625rem rgba(4, 4, 9, 0.12);
 }
 
 .card .card_header{
-    background-color: #fff !important;
+    background-color: var(--card-bg-color);
 }
 
 .card_header:first-child{
@@ -27,4 +26,15 @@
     margin: 0;
     white-space: nowrap;
     text-align: right;
+}
+
+.btn{
+    background-color: var(--add-btn-color);
+    border-color: var(--add-btn-color);
+}
+
+.btn:hover{
+    background-color: var(--add-btn-color);
+    border-color: var(--add-btn-color);
+    box-shadow: 0 0.125rem 0.625rem var(--add-btn-shadow-color);
 }

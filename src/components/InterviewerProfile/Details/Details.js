@@ -178,10 +178,10 @@ class Details extends Component{
                     </div>
                     <div className={`${classes.Card_footer}`}>
                         <div style={{display: 'flex', justifyContent: 'flex-end'}}>
-                            <button type="submit" className={`mb-2 mr-1 btn btn-primary btn-sm ${classes.action_button}`}
+                            <button type="submit" className={`mb-2 mr-1 btn btn-sm ${classes.action_button} ${classes.action_button__submit}`}
                             >Save</button>
 
-                            <button type="button" className={`mb-2 mr-1 btn btn-outline-secondary btn-sm ${classes.action_button}`}
+                            <button type="button" className={`mb-2 mr-1 btn btn-outline-secondary btn-sm ${classes.action_button} ${classes.action_button__cancel}`}
                                     onClick={this.props.onCancel}>Cancel</button>
                         </div>
                     </div>

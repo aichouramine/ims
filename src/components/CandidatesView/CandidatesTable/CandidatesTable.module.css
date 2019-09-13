@@ -5,6 +5,7 @@
     overflow: scroll;
     text-align: center;
     font-size: 0.8rem;
+    color: var(--font-color);
 }
 
 .Table > thead > tr > th {

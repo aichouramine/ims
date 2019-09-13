@@ -4,6 +4,7 @@ import MenuRow from './MenuRow/MenuRow'
 
 const sidebar = () => {
     const [checked, set] = useState(null);
+    const [label, setLabel] = useState("Enable Dark Mode!")
 
     useEffect(() => {
         const currentTheme = localStorage.getItem('theme');
@@ -14,6 +15,7 @@ const sidebar = () => {
             if (currentTheme === 'dark') {
                 set(true)
                 document.documentElement.setAttribute('theme', 'dark');
+                setLabel("Disable Dark Mode!")
             } else {
                 set(false)
             }
@@ -25,11 +27,13 @@ const sidebar = () => {
             document.documentElement.setAttribute('theme', 'dark');
             localStorage.setItem('theme', 'dark')
             set(true)
+            setLabel("Disable Dark Mode!")
         }
         else {
             document.documentElement.removeAttribute('theme');
             localStorage.setItem('theme', 'light')
             set(false)
+            setLabel("Enable Dark Mode!")
         }
     }
 
@@ -62,7 +66,7 @@ const sidebar = () => {
                             <input type="checkbox" id="checkbox" onChange={toggle} checked={checked}/>
                             <span className={`${classes.slider} ${classes.round}`}></span>
                         </label>
-                        <label style={{fontSize: '0.8em'}} htmlFor="mode">Enable Dark Mode!</label>
+                        <label style={{fontSize: '0.8em'}} htmlFor="mode">{label}</label>
                     </div>
                 </div>
             </nav>

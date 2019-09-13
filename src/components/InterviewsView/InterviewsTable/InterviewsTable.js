@@ -94,7 +94,7 @@ const interviewsTable = (props) => {
 
     return(
         <table className={`${classes.Table} table mb-0`}>
-            <thead className="bg-light">
+            <thead>
             <tr>
                 {/*<th scope="col">#</th>*/}
                 <th scope="col">Name</th>
