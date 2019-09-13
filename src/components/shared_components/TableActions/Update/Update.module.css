@@ -10,5 +10,5 @@
 
 .Update i:hover{
     cursor: pointer;
-    color: #0075ea;
+    color: var(--pagination-item-bg-color);
 }

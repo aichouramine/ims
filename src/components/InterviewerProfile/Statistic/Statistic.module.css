@@ -1,5 +1,5 @@
 .Card{
-    background-color: #fff;
+    background-color: var(--card-bg-color);
     border: none;
     border-radius: .625rem;
     position: relative;
@@ -8,12 +8,12 @@
     min-width: 0;
     word-wrap: break-word;
     background-clip: initial;
-    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
+    box-shadow: 0 0.125rem 0.625rem rgba(4, 4, 9, 0.12);
 }
 
 .Card_header{
     padding: 1rem;
-    background-color: #fff;
+    background-color: var(--card-bg-color);
 }
 
 .Card_header:first-child{

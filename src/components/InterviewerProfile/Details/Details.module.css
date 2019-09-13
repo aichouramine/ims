@@ -1,7 +1,7 @@
 .card_header{
     padding: 1rem;
     color: #3d5170;
-    background-color: #fff;
+    background-color: var(--card-bg-color);
 }
 
 .card_header:first-child{

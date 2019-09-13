@@ -51,7 +51,7 @@ const interviewersTable = (props) => {
 
     return(
         <table className={`${classes.Table} table mb-0`}>
-            <thead className="bg-light">
+            <thead>
             <tr role="row">
                 {/*<th scope="col"><span >ID</span></th>*/}
                 <th scope="col"><span >Name</span></th>

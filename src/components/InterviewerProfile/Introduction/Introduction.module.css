@@ -10,31 +10,30 @@
     /*animation: float 6s ease-in-out infinite;*/
     transition: all .4s ease-in-out;
     background-size: cover;
-
+    color: var(--page-subtitle-color);
 }
 
 .card_header{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--card-bg-color);
     padding: 1rem 1.25rem;
 }
 
 .name_text{
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     font-weight: 500;
-    color: rgb(61, 81, 112);
+    /*color: rgb(61, 81, 112);*/
 }
 
 .position_text{
     font-size: .95rem;
     letter-spacing: .0425rem;
-    color: #707c90;
+    color: var(--page-subtitle-color);
     font-weight: 600;
 }
 
 .email_text{
     font-size: .75rem;
     letter-spacing: .0325rem;
-    color: #818ea3;
     font-weight: 400;
 }
 
@@ -55,15 +54,15 @@
 .skills_title{
     font-size: .75rem;
     letter-spacing: .0625rem;
-    color: #818ea3;
+    color: var(--page-subtitle-color);
     font-weight: 700;
 }
 
 .skills_text{
     font-size: .75rem;
     letter-spacing: .0625rem;
-    color: #818ea3;
-    font-weight: 600;
+    font-weight: 500;
+    color: var(--page-subtitle-color);
 }
 
 .progress{
@@ -83,10 +82,14 @@
 
 .workload{
     margin: 0 !important;
+    background-color: var(--card-bg-color);
+    border-top: thin solid var(--border-color);
+
 }
 
 .progress_wrapper{
     color: rgb(90, 97, 105);
+    padding: 15px 0;
 }
 
 .workload_wrapper{
@@ -103,6 +106,7 @@
 .skills_group{
     border-radius: 0 0 .625rem .625rem !important;
     text-align: left !important;
+    border-top: thin solid var(--border-color);
 }
 
 .update i{

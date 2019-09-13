@@ -41,7 +41,7 @@ const introduction = props => {
                     {interviewerStatus}
                 </div>
                 <ul className={`list-group list-group-flush ${classes.workload}`} >
-                    <li className="px-4 list-group-item">
+                    <li className="px-4">
                         <div className={classes.progress_wrapper}>
                             <div className={classes.workload_wrapper}>
                                 <strong className={`${classes.skills_title} ${classes.text_uppercase} d-block mb-2`}>
@@ -56,7 +56,7 @@ const introduction = props => {
                             </div>
                         </div>
                     </li>
-                    <li className={`p-4 list-group-item ${classes.skills_group}`}>
+                    <li className={`p-4 ${classes.skills_group}`}>
                         <strong className={`${classes.skills_title} ${classes.text_uppercase} d-block mb-2`}>
                             Key Skills
                         </strong>
