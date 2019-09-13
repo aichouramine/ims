@@ -1,5 +1,5 @@
 .summary{
-    background-color: #fff;
+    background-color: var(--card-bg-color);
     border: none;
     border-radius: .625rem;
     position: relative;
@@ -8,7 +8,7 @@
     min-width: 0;
     word-wrap: break-word;
     background-clip: initial;
-    box-shadow: 0 2px 0 rgba(90,97,105,.11), 0 4px 8px rgba(90,97,105,.12), 0 10px 10px rgba(90,97,105,.06), 0 7px 70px rgba(90,97,105,.1);
+    box-shadow: 0 0.125rem 0.625rem rgba(4, 4, 9, 0.12);
 }
 
 .summary_body{
@@ -23,23 +23,20 @@
     justify-content: space-between;
     /*font-size: 14px;*/
     padding: 5px 0;
-    color: #3d5170;
+
 }
 
 .summary_body__title{
-    color: #3d5170;
     font-weight: 500;
 }
 
 .summary_body__text{
-    color: #98a0a8;
+    color: #787e86;
     font-weight: 400;
 }
 
 .summary_card_header{
     padding: 1rem;
-    color: #3d5170;
-    background-color: #fff;
 }
 
 .edit{
